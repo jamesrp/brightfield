@@ -49,8 +49,8 @@ function plainSlab(g) {
   g.fillStyle = '#333'; g.font = '22px sans-serif';
   g.fillText('Brightfield tile spec v2 · 1024 x 1536 · transparent outside the art', 40, 70);
   g.fillText('Blue dashes: nothing left/right of these columns, nothing above the top line', 40, 100);
-  g.fillText('Red: exact slab outline (pointy-top hex, 960 wide, side depth 113)', 40, 130);
-  g.fillText('Hex centre (512, 1040)', cx + 26, cy - 8);
+  g.fillText(`Red: exact slab outline (pointy-top hex, 960 wide, kerb depth ${d})`, 40, 130);
+  g.fillText(`Hex centre (${cx}, ${cy})`, cx + 26, cy - 8);
   fs.writeFileSync(path.join(out, 'guide.png'), cv.toBuffer('image/png'));
 }
 console.log('wrote', out);

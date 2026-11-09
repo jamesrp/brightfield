@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Snaps one raw imagegen tile onto the exact spec v2 geometry.
 //   1. finds the painted ground slab (widest opaque row near the bottom, and the lowest opaque row)
-//   2. scales it uniformly so the slab is 960 px wide, centres it, and puts its bottom at y 1507.7
+//   2. scales it uniformly so the slab is 960 px wide, centres it, and puts its bottom at y 1522.5
 //   3. clears anything outside the hex columns or below the slab outline (reports how much)
 //   4. optional --sides FILE: pastes the two side faces from a family slab (assets/tiles/_slab/*.png)
 //      so every tile of that family has identical, exact edges
@@ -39,7 +39,7 @@ function measure(img) {
   }
   const [input, output] = files;
   if (!input || !output) { console.error('usage: fit-tile.cjs raw.png out.png [--sides slab.png] [--no-align]'); process.exit(2); }
-  const img = await loadImage(fs.readFileSync(input));
+  const img = await loadImage(path.resolve(input));
   const cv = createCanvas(w, h), g = cv.getContext('2d');
   g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
   let report;
@@ -59,7 +59,7 @@ function measure(img) {
   g.globalCompositeOperation = 'destination-in'; g.fillStyle = '#000'; S.path(g, S.KEEP); g.fill();
   g.globalCompositeOperation = 'source-over';
   if (sidesFile) {
-    const slab = await loadImage(fs.readFileSync(sidesFile));
+    const slab = await loadImage(path.resolve(sidesFile));
     for (const side of [S.SIDE_LEFT, S.SIDE_RIGHT]) { g.save(); S.path(g, side); g.clip(); g.drawImage(slab, 0, 0, w, h); g.restore(); }
   }
   fs.mkdirSync(path.dirname(path.resolve(output)), { recursive: true });

@@ -1,7 +1,11 @@
 // Brightfield tile art spec v2: the one source of truth for tile geometry.
 // Mirrors SPEC in src/tile-art.js. Units are tile pixels on a 1024 x 1536 canvas.
 'use strict';
-const SPEC = Object.freeze({ w: 1024, h: 1536, cx: 512, cy: 1040, halfW: 480, faceHalfH: 354.7, depth: 113, headroom: 24 });
+// The board plot (src/art.js ART.BOARD) fixes the side depth: the kerb, in tile pixels.
+require('../../src/art.js');
+const BOARD = globalThis.ART.BOARD;
+const SPEC = Object.freeze({ w: 1024, h: 1536, cx: 512, cy: 1130, halfW: 480, faceHalfH: 354.7,
+  depth: Math.round(BOARD.kerb * 480 / (BOARD.tileRadius * Math.sqrt(3) / 2) * 10) / 10, headroom: 24 });
 const { w, h, cx, cy, halfW: hw, faceHalfH: fh, depth: d } = SPEC;
 const q = fh / 2; // height of each slanted edge
 // Pointy-top hex top face, clockwise from the top vertex.
@@ -27,4 +31,4 @@ function inPoly(poly, x, y) {
 function path(g, poly) { g.beginPath(); poly.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); }
 const STAGES = ['0', '1', '2', 'leaf', 'star', 'magic'];
 const AXES = ['power', 'move', 'food', 'water', 'home', 'make', 'waste', 'wild'];
-module.exports = { SPEC, FACE, SILHOUETTE, SIDE_LEFT, SIDE_RIGHT, KEEP, frontEdgeY, bottomY, backEdgeY, inPoly, path, STAGES, AXES };
+module.exports = { BOARD, SPEC, FACE, SILHOUETTE, SIDE_LEFT, SIDE_RIGHT, KEEP, frontEdgeY, bottomY, backEdgeY, inPoly, path, STAGES, AXES };

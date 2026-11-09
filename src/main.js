@@ -448,6 +448,69 @@
   }
 
   function hexPath(x, y, u) { g.beginPath(); for (let i = 0; i < 6; i++) { const a = (Math.PI / 3) * i + Math.PI / 6; const px = x + Math.cos(a) * u, py = y + Math.sin(a) * u * SQ; if (i) g.lineTo(px, py); else g.moveTo(px, py); } g.closePath(); }
+  // v0.12 board: every building stands on its own full-hex plot, raised a low
+  // kerb above lanes that run between the plots (ART.BOARD). The lane surface
+  // follows the travel tech: cart track, cobbles, tarmac, garden path,
+  // guideway, moonstone. Travellers drive along the lanes.
+  const BOARD = ART.BOARD || { tileRadius: 0.93, kerb: 0.19, plinth: 0.19 };
+  const LANES = {
+    '0': { road: '#b49b6c', kerb: '#8b7352', mark: 'ruts', line: '#977c52' },
+    '1': { road: '#a89f92', kerb: '#857c70', mark: 'cobbles', line: '#8c8378' },
+    '2': { road: '#72777c', kerb: '#9a9a92', mark: 'dash', line: '#f3efdf' },
+    leaf: { road: '#d2bf8e', kerb: '#6fa04e', mark: 'flowers', line: '#f6d55e' },
+    star: { road: '#e4ecf0', kerb: '#c9d6dd', mark: 'glow', line: '#4fd0f0' },
+    magic: { road: '#86729f', kerb: '#6a5a86', mark: 'glints', line: '#f2d06c' },
+  };
+  function laneStyle() { const e = s.era.move; return LANES[e < 3 ? String(e) : (s.variant.move || 'leaf')] || LANES['0']; }
+  // Lane network: the edges of the full hexes, in hex units (x right, y down, before the squash).
+  function laneGraph(R) {
+    if (V.lanes && V.lanes.R === R) return V.lanes;
+    const P = new Map(), edges = [], seen = new Set(), cells = {};
+    const vid = (X, Y) => { const k = Math.round(X * 1000) + ',' + Math.round(Y * 1000); if (!P.has(k)) P.set(k, { X, Y, n: [] }); return k; };
+    for (let q = -R; q <= R; q++) for (let r = -R; r <= R; r++) {
+      if (B.hexDist(q, r) > R) continue;
+      const cx = SQ3 * (q + r / 2), cy = 1.5 * r, ids = [];
+      for (let i = 0; i < 6; i++) { const a = (Math.PI / 3) * i + Math.PI / 6; ids.push(vid(cx + Math.cos(a), cy + Math.sin(a))); }
+      cells[B.key(q, r)] = ids;
+      for (let i = 0; i < 6; i++) {
+        const a = ids[i], b = ids[(i + 1) % 6], k = a < b ? a + '|' + b : b + '|' + a;
+        if (seen.has(k)) continue; seen.add(k); edges.push([a, b]); P.get(a).n.push(b); P.get(b).n.push(a);
+      }
+    }
+    return (V.lanes = { R, P, edges, cells });
+  }
+  function laneRoute(G, from, to) {
+    const prev = new Map([[from, null]]), queue = [from];
+    while (queue.length) { const k = queue.shift(); if (k === to) break; for (const n of G.P.get(k).n) if (!prev.has(n)) { prev.set(n, k); queue.push(n); } }
+    if (!prev.has(to)) return null;
+    const out = []; for (let k = to; k; k = prev.get(k)) out.unshift(G.P.get(k)); return out;
+  }
+  const laneX = (X) => V.cx + V.u * X, laneY = (Y) => V.cy + V.u * (Y * SQ + BOARD.kerb);
+  function drawLanes(R, list) {
+    const u = V.u, st = laneStyle(), G = laneGraph(R), kerb = u * BOARD.kerb, plinth = u * BOARD.plinth, c = 1 - V.smog;
+    const road = mix(shade(st.road, -0.18), st.road, c), side = mix('#6f573b', '#86674a', c);
+    // plinth sides, then the lane surface (one full hex per cell, so the lanes join up)
+    for (const [q, r] of list) { const x = hx(q, r), y = hy(q, r) + kerb; hexPath(x, y + plinth, u); g.fillStyle = side; g.fill(); g.fillRect(x - u * SQ3 / 2, y, u * SQ3, plinth); }
+    for (const [q, r] of list) { hexPath(hx(q, r), hy(q, r) + kerb, u * 1.01); g.fillStyle = road; g.fill(); }
+    // markings along the middle of each lane
+    const lw = Math.max(1, u * 0.022);
+    g.save(); g.lineCap = 'round';
+    for (const [a, b] of G.edges) {
+      const A = G.P.get(a), Bv = G.P.get(b), x1 = laneX(A.X), y1 = laneY(A.Y), x2 = laneX(Bv.X), y2 = laneY(Bv.Y);
+      if (st.mark === 'dash') { g.strokeStyle = st.line; g.lineWidth = lw; g.setLineDash([u * 0.09, u * 0.08]); g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y2); g.stroke(); g.setLineDash([]); }
+      else if (st.mark === 'ruts' || st.mark === 'cobbles' || st.mark === 'glints') {
+        const n = st.mark === 'ruts' ? 2 : 6;
+        for (let i = 0; i < n; i++) {
+          const k = (i + 0.5) / n, x = x1 + (x2 - x1) * k, y = y1 + (y2 - y1) * k;
+          if (st.mark === 'ruts') { g.strokeStyle = st.line; g.lineWidth = lw * 0.8; g.beginPath(); g.moveTo(x1 + (x2 - x1) * (k - 0.22), y1 + (y2 - y1) * (k - 0.22)); g.lineTo(x1 + (x2 - x1) * (k + 0.22), y1 + (y2 - y1) * (k + 0.22)); g.stroke(); }
+          else if (st.mark === 'cobbles') ell(g, x, y, u * 0.028, u * 0.018, st.line);
+          else { const tw = 0.5 + 0.5 * Math.sin(V.t * 2 + x * 0.13 + y * 0.07); g.globalAlpha = 0.35 + 0.6 * tw; circle(g, x, y, u * 0.016 * (0.7 + tw * 0.6), st.line); g.globalAlpha = 1; }
+        }
+      } else if (st.mark === 'glow') { g.strokeStyle = 'rgba(79,208,240,0.25)'; g.lineWidth = lw * 3; g.beginPath(); g.moveTo(x1, y1); g.lineTo(x2, y2); g.stroke(); g.strokeStyle = st.line; g.lineWidth = lw * 0.8; g.stroke(); }
+      else if (st.mark === 'flowers') { for (let i = 0; i < 3; i++) { const k = (i + 0.5) / 3, x = x1 + (x2 - x1) * k, y = y1 + (y2 - y1) * k; circle(g, x, y, u * 0.02, ['#f6d55e', '#f49ac1', '#ffffff'][(i + Math.round(x)) % 3]); } }
+    }
+    g.restore();
+  }
   const GROUND = { home: '#f0b080', power: '#e8e0a0', food: '#e0c070', water: '#8fd0f0', move: '#c8c0b8', make: '#d0b0e0', waste: '#a8d8b0', wild: '#3f9a3a' };
   function groups() {
     if (V.grp && V.grp.turn === s.turn && V.grp.n === s.log.length) return V.grp.m;
@@ -463,13 +526,14 @@
   }
   function drawBoard() {
     const bubbles = [], gm = groups(), flags = [];
-    const R = s.radius, u = V.u, c = 1 - V.smog, depth = u * 0.19, tileRadius = 0.93;
+    const R = s.radius, u = V.u, c = 1 - V.smog, depth = u * BOARD.kerb, tileRadius = BOARD.tileRadius, lane = laneStyle();
     const grass = mix('#9b9561', '#7fcf5b', V.vivid), grassHi = mix('#a8a26c', '#97dc6e', V.vivid), side = mix('#7b6142', '#8a6a46', c);
     const list = [];
     for (let q = -R; q <= R; q++) for (let r = -R; r <= R; r++) if (B.hexDist(q, r) <= R) list.push([q, r]);
     list.sort((a, b) => a[1] - b[1] || a[0] - b[0]);
     // board shadow
     g.globalAlpha = 0.07; ell(g, V.cx, V.cy + depth + u * 0.45, u * SQ3 * (R + 0.35), u * 1.5 * SQ * (R + 0.45), '#2a2a1a'); g.globalAlpha = 1;
+    drawLanes(R, list);
     const growing = V.t - V.growT < 1.2;
     // pass 1: ground tiles (sides first for outer ring, then tops)
     for (const [q, r] of list) {
@@ -478,7 +542,7 @@
       let a = 1; if (growing && d === R) { const k = Math.min(1, (V.t - V.growT - (Math.atan2(r, q) + Math.PI) / TAU * 0.4) / 0.5); a = Math.max(0, k); y += (1 - a) * 30; }
       if (a <= 0) continue;
       g.globalAlpha = a;
-      hexPath(x, y + depth, u * tileRadius); g.fillStyle = side; g.fill();
+      hexPath(x, y + depth, u * tileRadius); g.fillStyle = mix(shade(lane.kerb, -0.2), lane.kerb, c); g.fill();
       g.fillRect(x - u * SQ3 / 2 * tileRadius, y, u * SQ3 * tileRadius, depth);
       const t = s.tiles[B.key(q, r)];
       hexPath(x, y, u * tileRadius);
@@ -492,7 +556,7 @@
         for (const [nq, nr] of B.neighbors(q, r)) {
           const n = s.tiles[B.key(nq, nr)]; if (n && n.type === t.type) continue;
           const ang = Math.atan2((hy(nq, nr) - y) / SQ, hx(nq, nr) - x), i = (((Math.round((ang - Math.PI / 3) / (Math.PI / 3))) % 6) + 6) % 6;
-          const a1 = (Math.PI / 3) * i + Math.PI / 6, a2 = a1 + Math.PI / 3, ru = u * 0.90;
+          const a1 = (Math.PI / 3) * i + Math.PI / 6, a2 = a1 + Math.PI / 3, ru = u * tileRadius * 0.96;
           g.beginPath(); g.moveTo(x + Math.cos(a1) * ru, y + Math.sin(a1) * ru * SQ); g.lineTo(x + Math.cos(a2) * ru, y + Math.sin(a2) * ru * SQ); g.stroke();
         }
       }
@@ -505,6 +569,7 @@
     else if (V.sel >= 0 && V.hover) { const [q, r] = V.hover.split(',').map(Number); if (B.hexDist(q, r) <= R && s.tiles[V.hover]) { hexPath(hx(q, r), hy(q, r), u * tileRadius); g.strokeStyle = 'rgba(255,255,255,0.25)'; g.lineWidth = 2; g.stroke(); } }
     const hint = idleHint();
     if (hint) { const x = hx(hint.q, hint.r), y = hy(hint.q, hint.r), p = 0.5 + 0.5 * Math.sin(V.t * 4); hexPath(x, y, u * (0.76 + p * 0.12)); g.strokeStyle = `rgba(255,240,150,${0.5 + p * 0.4})`; g.lineWidth = 3; g.stroke(); }
+    travellers(V.dtBoard || 1 / 60); // on the lanes: plots and buildings in front hide them
     // pass 2: buildings + critters in depth order
     const night = V.finale && ['star','magic'].includes(V.finale.crown) && V.t - V.finale.t > 2;
     for (const [q, r] of list) {
@@ -566,14 +631,27 @@
     if (moves.length && V.trav.length < 4 + moves.length * 2 && Math.random() < dt * (0.6 + moves.length * 0.25)) {
       const m = moves[Math.floor(Math.random() * moves.length)];
       const dests = Object.values(s.tiles).filter((t) => (t.type === 'home' || t.type === 'make' || t.type === 'food') && B.hexDist(t.q - m.q, t.r - m.r) <= 3 && (t.q !== m.q || t.r !== m.r));
-      if (dests.length) { const d = dests[Math.floor(Math.random() * dests.length)]; V.trav.push({ a: [m.q, m.r], b: [d.q, d.r], t: 0, dur: 2.5 + B.hexDist(d.q - m.q, d.r - m.r) * 1.2, back: Math.random() < 0.5 }); }
+      if (dests.length) {
+        // drive along the lanes from a corner of the travel tile to a corner of the destination
+        const d = dests[Math.floor(Math.random() * dests.length)], G = laneGraph(s.radius), pick = (ids) => ids[Math.floor(Math.random() * 6)];
+        let pts = laneRoute(G, pick(G.cells[B.key(m.q, m.r)]), pick(G.cells[B.key(d.q, d.r)]));
+        if (pts && pts.length > 1) {
+          if (Math.random() < 0.5) pts = pts.reverse();
+          let len = 0; for (let j = 1; j < pts.length; j++) len += Math.hypot(pts[j].X - pts[j - 1].X, pts[j].Y - pts[j - 1].Y);
+          V.trav.push({ pts, len, t: 0, dur: 1.5 + len * 0.9 });
+        }
+      }
     }
     const era = s.era.move, v = s.variant.move;
     for (let i = V.trav.length - 1; i >= 0; i--) {
       const tr = V.trav[i]; tr.t += dt; const k = tr.t / tr.dur; if (k >= 1) { V.trav.splice(i, 1); continue; }
-      const e = k * k * (3 - 2 * k), [a, b] = tr.back ? [tr.b, tr.a] : [tr.a, tr.b];
-      const x = hx(a[0], a[1]) + (hx(b[0], b[1]) - hx(a[0], a[1])) * e, y = hy(a[0], a[1]) + (hy(b[0], b[1]) - hy(a[0], a[1])) * e + V.u * 0.3;
-      const dir = hx(b[0], b[1]) >= hx(a[0], a[1]) ? 1 : -1, fade = Math.min(1, k * 8, (1 - k) * 8), sc = V.u / 30;
+      if (!tr.pts) { V.trav.splice(i, 1); continue; }
+      let dist = (k * k * (3 - 2 * k)) * tr.len, j = 1;
+      for (; j < tr.pts.length - 1; j++) { const sl = Math.hypot(tr.pts[j].X - tr.pts[j - 1].X, tr.pts[j].Y - tr.pts[j - 1].Y); if (dist <= sl) break; dist -= sl; }
+      const p0 = tr.pts[j - 1], p1 = tr.pts[j], sl = Math.hypot(p1.X - p0.X, p1.Y - p0.Y) || 1, f = Math.min(1, dist / sl);
+      const x = laneX(p0.X + (p1.X - p0.X) * f), y = laneY(p0.Y + (p1.Y - p0.Y) * f);
+      const dir = p1.X > p0.X + 1e-6 ? 1 : p1.X < p0.X - 1e-6 ? -1 : (tr.dir || 1); tr.dir = dir;
+      const fade = Math.min(1, k * 8, (1 - k) * 8), sc = V.u / 30;
       if (ART.drawTraveller && ART.drawTraveller(g, era < 3 ? String(era) : v, x, y, V.u, dir, V.t + i, fade)) continue; // imagegen sprite when listed
       g.globalAlpha = fade; g.save(); g.translate(x, y); g.scale(dir * sc, sc);
       ell(g, 0, 2, 6, 1.6, 'rgba(0,0,0,0.18)');
@@ -1245,7 +1323,7 @@
     if (!V.titleTown) { V.titleTown = B.newGame({ mode: 'cozy', seed: 7 }); demoFill(V.titleTown, 40); }
     const keep = s; s = V.titleTown; fitBoard();
     V.smog += ((B.smogLevel(s)) - V.smog) * 0.02; V.vivid = 1 - V.smog;
-    sky(); haze(); drawBoard(); travellers(1 / 60); drawParticles(1 / 60);
+    sky(); haze(); V.dtBoard = 1 / 60; drawBoard(); drawParticles(1 / 60);
     s = keep; if (s) fitBoard();
     { const rg = g.createRadialGradient(W / 2, H * 0.48, 10, W / 2, H * 0.48, Math.max(W, H) * 0.55); rg.addColorStop(0, 'rgba(255,250,235,0.7)'); rg.addColorStop(0.6, 'rgba(255,250,235,0.35)'); rg.addColorStop(1, 'rgba(255,250,235,0)'); g.fillStyle = rg; g.fillRect(0, 0, W, H); }
     g.textAlign = 'center'; g.textBaseline = 'middle';
@@ -1330,7 +1408,7 @@
     if (V.finale) V.vivid = Math.min(1, V.vivid + dt * 0.2);
     V.eve += (eveTarget() - V.eve) * Math.min(1, dt * 0.35);
     AU.update({ eve: V.eve, progress: Math.min(1, s.sunLevel / 18), clean: 1 - V.smog, critters: s.critterCount, futurePaths: futurePaths() });
-    sky(); haze(); drawBoard(); travellers(dt); drawParticles(dt); evening(); drawFloats(dt); drawFinale(dt);
+    sky(); haze(); V.dtBoard = dt; drawBoard(); drawParticles(dt); evening(); drawFloats(dt); drawFinale(dt);
     if (!V.finale) { drawSunMeter(); drawSpecies(); drawTech(); drawHand(); spotlight(); drawGoal(dt); drawGuide(); }
     drawFork();
     if (!V.finale && !V.fork) { peekTick(); drawPeek(); }

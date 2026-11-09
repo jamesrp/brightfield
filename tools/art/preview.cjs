@@ -52,7 +52,7 @@ const label = (st) => (st === '0' || st === '1' || st === '2') ? { era: +st, var
     });
     v.step(120);
     const file = path.join(out, `board-${name}.png`); v.save(file);
-    const img = await loadImage(fs.readFileSync(file)), cv = createCanvas(1000, 640), g = cv.getContext('2d');
+    const img = await loadImage(path.resolve(file)), cv = createCanvas(1000, 640), g = cv.getContext('2d');
     g.imageSmoothingQuality = 'high'; g.drawImage(img, f.V.cx - 250, f.V.cy - 190, 500, 320, 0, 0, 1000, 640);
     fs.writeFileSync(path.join(out, `closeup-${name}.png`), cv.toBuffer('image/png'));
   }

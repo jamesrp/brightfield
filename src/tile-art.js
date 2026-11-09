@@ -8,8 +8,8 @@
   const A = root.ART, M = root.BF_TILE_ART;
   if (!A || typeof root.Image !== 'function') return;
   // Canonical tile geometry in tile pixels. Keep in sync with tools/art/spec.cjs.
-  const SPEC = Object.freeze({ w: 1024, h: 1536, cx: 512, cy: 1040, halfW: 480, faceHalfH: 354.7, depth: 113 });
-  const HEX_HALF_W = 0.93 * Math.sqrt(3) / 2; // board hex half-width in units of u (main.js tileRadius 0.93)
+  const HEX_HALF_W = ((A.BOARD && A.BOARD.tileRadius) || 0.93) * Math.sqrt(3) / 2; // board plot half-width in units of u (art.js BOARD)
+  const SPEC = Object.freeze({ w: 1024, h: 1536, cx: 512, cy: 1130, halfW: 480, faceHalfH: 354.7, depth: ((A.BOARD && A.BOARD.kerb) || 0.19) * 480 / HEX_HALF_W });
   A.tileSpec = SPEC;
   const tiles = (M && M.tiles) || {}, sprites = (M && M.sprites) || {}, travellers = (M && M.travellers) || {};
   const imgs = Object.create(null), failed = [];

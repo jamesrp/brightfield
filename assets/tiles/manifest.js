@@ -1,7 +1,7 @@
 // BRIGHTFIELD per-tile art manifest (art spec v2). See docs/ART-DIRECTION.md.
 // A building listed here is drawn from its own PNG; anything not listed keeps
 // the v0.9 atlas art. All coordinates are tile pixels on the 1024 x 1536
-// canvas (hex centre 512,1040). Paths are relative to assets/tiles/.
+// canvas (hex centre 512,1130). Paths are relative to assets/tiles/.
 //
 // Example entry (delete the leading // to use):
 //   tiles: {

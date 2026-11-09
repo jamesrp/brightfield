@@ -203,5 +203,10 @@
   function heartBadge(g, x, y, r, c = '#ff5c86') { g.fillStyle = c; g.beginPath(); g.moveTo(x, y + r * 0.9); g.bezierCurveTo(x - r * 1.4, y - r * 0.1, x - r * 0.6, y - r * 1.2, x, y - r * 0.4); g.bezierCurveTo(x + r * 0.6, y - r * 1.2, x + r * 1.4, y - r * 0.1, x, y + r * 0.9); g.fill(); g.strokeStyle = '#fff'; g.lineWidth = Math.max(1, r * 0.22); g.stroke(); }
   function frownBadge(g, x, y, r) { circle(g, x, y, r + 1.2, '#fff'); circle(g, x, y, r, '#9aa3ad'); circle(g, x - r * 0.35, y - r * 0.2, r * 0.13, '#fff'); circle(g, x + r * 0.35, y - r * 0.2, r * 0.13, '#fff'); g.strokeStyle = '#fff'; g.lineWidth = Math.max(1, r * 0.16); g.beginPath(); g.arc(x, y + r * 0.55, r * 0.38, Math.PI * 1.15, Math.PI * 1.85); g.stroke(); }
 
-  root.ART = { drawBuilding, drawCritter, mix, shade, rgb, hex2rgb, box, tree, pine, circle, ell, glowDot, flower, turbine, panel, TAU, drawReason, heartBadge, frownBadge, bolt };
+  // Board geometry, shared by main.js and the tile art (docs/ART-DIRECTION.md).
+  // Each building stands on its own plot: a hex of radius tileRadius (in hex
+  // units u), raised kerb*u above the lanes that run between the plots. The
+  // whole board sits on a plinth plinth*u deep.
+  const BOARD = Object.freeze(Object.assign({ tileRadius: 0.88, kerb: 0.06, plinth: 0.17 }, root.BF_BOARD || {}));
+  root.ART = { BOARD, drawBuilding, drawCritter, mix, shade, rgb, hex2rgb, box, tree, pine, circle, ell, glowDot, flower, turbine, panel, TAU, drawReason, heartBadge, frownBadge, bolt };
 })(typeof window !== 'undefined' ? window : globalThis);

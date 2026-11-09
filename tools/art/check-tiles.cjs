@@ -17,7 +17,7 @@ function loadManifest() {
 
 async function checkTile(file) {
   const fails = [], notes = [];
-  const img = await loadImage(fs.readFileSync(file));
+  const img = await loadImage(path.resolve(file));
   if (img.width !== w || img.height !== h) { fails.push(`size ${img.width}x${img.height}, want ${w}x${h}`); return { fails, notes }; }
   const cv = createCanvas(w, h), g = cv.getContext('2d'); g.drawImage(img, 0, 0);
   const px = g.getImageData(0, 0, w, h).data, A = (x, y) => px[(y * w + x) * 4 + 3];

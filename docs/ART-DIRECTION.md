@@ -37,6 +37,33 @@ Render `npm run art:preview` and open `tools/art/out/gallery.png` and
 The painting itself (palette, detail, charm, lighting) is good. Keep it. The job is
 to put the same art on the right base, then make the motion painted too.
 
+## 1a. The board: plots and lanes
+
+Decided with James: every building fills a **full hex plot**, and plots are
+separated by **lanes** (little streets) rather than sitting edge to edge. The board
+code already draws this (see `src/art.js` `ART.BOARD` and `drawLanes` in
+`src/main.js`):
+
+- Each plot is a hex of radius 0.88 board units, raised a low **kerb** (0.06
+  units) above the lanes. The gaps between plots are the lanes, and the whole
+  board stands on a plinth.
+- The lane surface follows the travel technology the player has: dirt cart track
+  (Stage 0), cobbles (1), tarmac with a dashed line (2), gravel garden path with
+  flowers (Nature), pale guideway with a teal light line (Future), violet
+  moonstone with twinkling gold glints (Magic).
+- Travellers (the little vehicles) now drive along the lanes from the travel
+  building to homes, farms and workshops, and buildings in front hide them.
+
+Why lanes and not thin borders: with thin borders the plots touch and the town
+reads as one busy carpet; lanes give each building its own clear plot, make the
+grid obvious for a child placing tiles, show the age through the roads, and give
+the travellers somewhere to drive. Buildings are about 5% smaller than with
+borders, which still reads well on a phone.
+
+So the tiles do **not** paint roads around their edges; the board does that. A
+tile paints its plot: the full hex top face plus a thin kerb. Paths or roads on a
+plot may run right out to the plot edge so they meet the lane.
+
 ## 2. Target look
 
 - Same style as the v0.9 tiles: cosy, detailed isometric miniatures, warm light,
@@ -47,8 +74,9 @@ to put the same art on the right base, then make the motion painted too.
 - Camera: the board's own view. Top face is the hex squashed to 0.64 of its width
   (about 40° elevation). Buildings must sit in that same perspective; do not paint
   them straight-on or from a steeper angle.
-- Every building sits on a **full** hex slab: the grass/ground top face reaches all
-  six edges of the hex, and two front side faces show the slab's thickness.
+- Every building sits on a **full** hex plot: the grass/ground top face reaches all
+  six edges of the hex, and the two front side faces show a thin kerb (stone,
+  hedge, metal or gold trim depending on the age) where the plot meets the lane.
 - One building's worth of content per tile. Keep the main structure in the
   middle; small props (carts, crates, benches, flowers) fill the rest of the top
   face so the hex never looks empty.
@@ -66,18 +94,20 @@ Every tile is one PNG:
 | --- | --- |
 | Canvas | **1024 × 1536 px**, RGBA, fully transparent background |
 | Hex | pointy-top: vertices at top and bottom, vertical left and right sides |
-| Hex centre (top face) | **(512, 1040)** |
-| Top face | half-width **480** (x 32 to 992), half-height **354.7** (y 685.3 to 1394.7) |
-| Top face vertices | (512, 685.3) (992, 862.6) (992, 1217.4) (512, 1394.7) (32, 1217.4) (32, 862.6) |
-| Side faces | the two front faces only, straight down **113 px** |
-| Slab bottom outline | (32, 1330.4) → (512, 1507.7) → (992, 1330.4) |
+| Hex centre (top face) | **(512, 1130)** |
+| Top face | half-width **480** (x 32 to 992), half-height **354.7** (y 775.3 to 1484.7) |
+| Top face vertices | (512, 775.3) (992, 952.7) (992, 1307.4) (512, 1484.7) (32, 1307.4) (32, 952.7) |
+| Side faces (kerb) | the two front faces only, straight down **37.8 px** |
+| Slab bottom outline | (32, 1345.2) → (512, 1522.5) → (992, 1345.2) |
 | Headroom | nothing above **y = 24** |
 | Keep region | nothing left of x = 32, right of x = 992, or below the slab bottom outline |
 | Above the slab | anything tall (towers, trees, turbine blades) may rise above the face, inside the x 32–992 columns |
 
 On the board the game scales the whole PNG uniformly so the top face lands exactly
-on the board hex (scale = board hex half-width / 480). So a tile that matches these
-numbers sits perfectly with no plate-on-plate and no gaps between neighbours.
+on the board plot (scale = plot half-width / 480) and the kerb drops exactly to the
+lane. So a tile that matches these numbers sits perfectly, with no plate-on-plate.
+The kerb depth comes from `ART.BOARD` (37.8 px = 0.06 / (0.88 × √3/2) × 480); if
+the board geometry ever changes, `tools/art/spec.cjs` and the templates follow it.
 
 ### Templates (in `assets/tiles/_template/`)
 
@@ -93,18 +123,18 @@ numbers sits perfectly with no plate-on-plate and no gaps between neighbours.
 Regenerate the templates with `npm run art:templates` (geometry lives in
 `tools/art/spec.cjs`, the single source of truth, mirrored in `src/tile-art.js`).
 
-### Slab sides by family
+### Kerbs by family
 
-So a whole town reads as one board, the two side faces should be identical within a
+So a whole town reads as one board, the two kerb faces should be identical within a
 family. Paint one plain slab per family into `assets/tiles/_slab/<family>.png`
 (same 1024 × 1536 canvas, side faces only matter) and paste it onto every tile with
 `fit-tile --sides`:
 
 | Family | Stages | Side faces |
 | --- | --- | --- |
-| `earth` | 0, 1, 2 | layered brown soil, a thin grass lip at the top, a few stones |
-| `garden` | leaf | rich dark soil with roots and moss |
-| `alloy` | star | white/pearl panel with a thin teal light line and gold trim |
+| `earth` | 0, 1, 2 | grey-brown kerbstones under a thin grass lip |
+| `garden` | leaf | a low clipped hedge or mossy log edging |
+| `alloy` | star | white/pearl edge with a thin teal light line |
 | `arcane` | magic | violet stone blocks with a gold band |
 
 The top face's rim (the strip where it meets the sides) should be the same grass /
@@ -119,7 +149,7 @@ material on every tile of a family.
 2. Snap it to the spec:
    `npm run art:fit -- raw.png assets/tiles/<stage>/<type>.png --sides assets/tiles/_slab/<family>.png`
    This finds the painted slab, scales it to exactly 960 px wide, puts its bottom on
-   y 1507.7, clears anything outside the keep region, and pastes the family sides.
+   y 1522.5, clears anything outside the keep region, and pastes the family sides.
    It prints how many pixels it clipped; "LOTS clipped" means regenerate.
 3. Check it: `npm run art:check -- assets/tiles/<stage>/<type>.png` (geometry only),
    then list it in `assets/tiles/manifest.js` and run `npm run art:check` (every
@@ -219,7 +249,7 @@ These are suggestions; pick one or two motions per tile that suit what is painte
 
 ## 6. Per-tile notes for the repaint
 
-All 48 tiles get the new slab (that is the main fix). On top of that:
+All 48 tiles get the new full-hex plot (that is the main fix). On top of that:
 
 - **Stage 2 (all 8):** paint at the same building scale as Stage 0/1; v0.9 Stage 2
   sits smaller on its slab.
@@ -251,7 +281,8 @@ branch.
    motions above, and the six traveller sprites.
 3. **Round 3, glow and effects.** Glow layers for Future, Magic and night windows;
    painted smoke puffs, sparkles, petals and critters (Claude adds the code hooks
-   first).
+   first). Optional: a small seamless lane texture per age to replace the
+   code-drawn lane surface.
 
 ## 8. Acceptance checks
 
@@ -261,9 +292,10 @@ A round passes when all of these hold:
       headroom, slab at least 99.5% solid, slab edges within 3 px of the spec lines,
       manifest valid, actor paths on the top face).
 - [ ] `npm test` passes.
-- [ ] In `tools/art/out/closeup-*.png` no board-green rim shows around any slab, and
-      neighbouring tiles touch edge to edge with no overlap.
-- [ ] Side faces are identical across a family.
+- [ ] In `tools/art/out/closeup-*.png` each building fills its plot (no grass rim
+      or second plate inside it), every lane between plots stays clear, and nothing
+      hangs over a neighbour's plot.
+- [ ] Kerb faces are identical across a family.
 - [ ] Each building still reads clearly at gallery size (about 150 px wide).
 - [ ] Style, palette and light match the rest of the set; nothing looks like a
       different artist.

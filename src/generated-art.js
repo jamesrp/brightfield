@@ -59,7 +59,8 @@
 
   // Board-only layout: keep icon and field-guide framing unchanged. The
   // fresh illustrations are scaled uniformly, never stretched or masked.
-  A.boardFootprint = Object.freeze({ tileRadius: 0.93, imageSide: 1.68, groundOffset: 0.18 });
+  const PLOT = (A.BOARD && A.BOARD.tileRadius) || 0.93; // board plot radius (art.js); these atlases were fitted to 0.93
+  A.boardFootprint = Object.freeze({ tileRadius: PLOT, imageSide: 1.68, groundOffset: 0.18 });
   // Measured ground slab of each atlas cell: [slab width, slab centre x, slab
   // bottom, whole-picture width], as fractions of the 443 px cell
   // (tools/art/measure-atlas.py).
@@ -95,6 +96,10 @@
       side *= Math.min(A.slabFit.width / slab[0], A.slabFit.maxWidth / slab[3]);
       left = x - slab[1] * side;
       top = base - slab[2] * side;
+    }
+    if (grounded && PLOT !== 0.93) { // shrink about the plot centre to fit the board's plot
+      const k = PLOT / 0.93 * 0.99, yc = y - u * A.boardFootprint.groundOffset;
+      left = x + (left - x) * k; top = yc + (top - yc) * k; side *= k;
     }
     const cellW = img.naturalWidth / 4, cellH = img.naturalHeight / 2;
     const px = function (v) { return left + v * side; };

@@ -16,7 +16,7 @@ function fixture(){
   fs.writeFileSync(path.join(dir,'car.png'),car.toBuffer('image/png'));
   const rel=f=>path.relative(TILES,path.join(dir,f));
   return {
-    tiles:{'food:0':{src:rel('tile.png'),emitters:[[512,520,1]],actors:[{sprite:'car',path:[[250,1150],[780,1150]],period:4}]},
+    tiles:{'food:0':{src:rel('tile.png'),emitters:[[512,610,1]],actors:[{sprite:'car',path:[[250,1150],[780,1150]],period:4}]},
            'home:1':{src:rel('missing.png')}},
     sprites:{car:{src:rel('car.png'),anchor:[40,50]}},
     travellers:{'0':'car'},
@@ -30,11 +30,11 @@ test('a spec v2 tile lands exactly on the board hex, animates its actors, and ke
   const cv=createCanvas(420,420),g=cv.getContext('2d'),x=210,y=250,u=120;
   const draw=t=>{g.clearRect(0,0,420,420);const em=A.drawBuilding(g,'food',0,null,x,y+u*.18,u,t,false,{grounded:true});return {em,px:g.getImageData(0,0,420,420).data};};
   const {em,px}=draw(0),a=(X,Y)=>px[(Math.round(Y)*420+Math.round(X))*4+3];
-  const r=.93*u,hw=Math.sqrt(3)/2*r;
+  const r=A.BOARD.tileRadius*u,hw=Math.sqrt(3)/2*r,kb=A.BOARD.kerb*u;
   assert.ok(a(x-hw+2,y)>200&&a(x+hw-2,y)>200,'face reaches both board hex sides');
   assert.equal(a(x-hw-3,y),0);assert.equal(a(x+hw+3,y),0);
   assert.ok(a(x,y+r*.64-2)>200,'face reaches the board hex front vertex');
-  assert.ok(a(x,y+r*.64+u*.19-2)>200&&a(x,y+r*.64+u*.19+3)===0,'slab side is the board depth');
+  assert.ok(a(x,y+r*.64+kb-2)>200&&a(x,y+r*.64+kb+3)===0,'slab side is the board kerb');
   assert.equal(em.length,1);assert.ok(Math.abs(em[0][0]-x)<1&&em[0][1]<y-u*.5,'emitter maps into board space');
   assert.notDeepEqual(Buffer.from(px),Buffer.from(draw(1.3).px),'actor moves');
   assert.ok(A.drawTraveller(g,'0',100,100,u,1,0,1),'listed traveller drawn as a sprite');
