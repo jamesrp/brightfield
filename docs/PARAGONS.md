@@ -47,4 +47,4 @@ All eight are labelled **Imagine** in the field guide.
 - New state: `learned` (futures known per track), `style` (the look the next building uses), `paragons` (each track's three hexes and the turn it formed). Tiles built in their future remember their look in `v`.
 - New log actions: `['l', axis, future]` learn, `['m', axis, k1, k2, k3]` merge, and `['p', i, q, r, future]` when a building's look differs from the track's first future. v0.11 saves load unchanged.
 - Undo after a placement still works as before. Learning and merging are not undone by the undo button (they have their own picker and confirm prompt).
-- Art: until `assets/paragons.png` exists the game draws a placeholder (the three buildings around a spire that grades from wood and leaves through white ceramic to amethyst, with a crown). See `docs/PARAGON-ART-BRIEF.md`.
+- Art: until `assets/paragons/<type>-a.png` and `-b.png` exist, the game draws a placeholder (the three buildings around a spire that grades from wood and leaves through white ceramic to amethyst, with a crown). See `docs/PARAGON-ART-BRIEF.md`.

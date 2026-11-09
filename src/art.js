@@ -208,7 +208,7 @@
   // around one central spire that blends all three futures: living wood and leaves at the root (Nature), white
   // ceramic with gold bands in the middle (Future), and amethyst crystal at the top (Magic), with a motif per track.
   // x, y = the ground point at the middle of the triangle. spots = [{dx, dy, v}] for the three hexes (screen px).
-  // Codex art (assets/paragons.png) replaces this whole drawing when it exists: see generated-art.js.
+  // Painted art in assets/paragons/ replaces this whole drawing when it exists: see generated-art.js.
   const FUT = { leaf: '#8fd46a', star: '#7fd0ff', magic: '#c198f2' };
   function paragonSpots(u) { const SQ = 0.64, s3 = Math.sqrt(3); return [{ dx: -u * s3 / 2, dy: -u * 1.5 * SQ / 3, v: 'leaf' }, { dx: u * s3 / 2, dy: -u * 1.5 * SQ / 3, v: 'star' }, { dx: 0, dy: u * 1.5 * SQ * 2 / 3, v: 'magic' }]; }
   function paragonCrown(g, x, y, r, t) {

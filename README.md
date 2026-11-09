@@ -10,7 +10,7 @@ Jay's request, inspired by Bloons TD 6: each track can make **one Paragon**, a l
 - **Merge a triangle.** A Nature, a Future and a Magic building of the same kind, all three touching each other, pulse gold. A prompt offers "Merge into a Paragon!" (or tap one of them later). One Paragon per track.
 - **What it does.** +25 sunbeams when it forms, and anything built touching it earns double sunbeams. It keeps its three hexes, so neighbours and groups work as before.
 - **The eight:** The Everlight, Anywhere Station, The Everfeast Tree, The Moonspring, The Skyhearth, The Wonderworks, The Phoenix Ring and The Wildheart. Tap one to read about it in the field guide.
-- **Art.** A procedural placeholder draws the three buildings around a crowned spire until `assets/paragons.png` arrives. See `docs/PARAGON-ART-BRIEF.md` and `docs/paragon-cell-guide.png`. `index.html?mode=cozy&qa=paragon` opens a demo town (in a separate QA save) for checking it.
+- **Art.** A procedural placeholder draws the three buildings around a crowned spire until the Paragon art arrives in `assets/paragons/` (two layouts per Paragon, on full hexes). See `docs/PARAGON-ART-BRIEF.md`. `index.html?mode=cozy&qa=paragon` opens a demo town (in a separate QA save) for checking it.
 - **Saves.** v0.11 towns load unchanged. A town that never learns a second future plays exactly as before.
 
 Design notes and tuning: `docs/PARAGONS.md`.

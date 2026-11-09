@@ -1,19 +1,24 @@
 # Paragon art brief (for the imagegen pass)
 
-Eight new miniatures, one per track, in **one** transparent PNG atlas: `assets/paragons.png`. The game loads it automatically if it exists and falls back to a procedural placeholder if not. No code changes are needed to drop it in.
+Eight landmarks, one per track. Each comes in **two layouts**, so that is 16 PNGs in `assets/paragons/`. The game picks a file up automatically and draws a procedural placeholder for any that are missing. No code changes are needed to drop them in.
 
-If a general tile and animation spec exists in this repo (`docs/`), follow it too. Where the two disagree on style, the general spec wins; the layout contract below is what the renderer needs.
+Follow the general tile spec, `docs/ART-DIRECTION.md` (tile spec v2), for style, slab look and the art workflow. A Paragon is three of its hexes merged into one. Where the two disagree on style, the general spec wins; the geometry below is what the renderer needs.
 
-## Layout contract (what the renderer assumes)
+## Geometry
 
-- **Atlas:** 4 columns × 2 rows of **square** cells, transparent RGBA. Suggested size 2048 × 1024 (512 px cells); any size works if cells stay square.
-- **Order** (same as every building atlas): top row power, travel, food, water; bottom row homes, making, reuse, nature.
-- **Anchor:** each Paragon stands on the three board hexes it merged. The renderer puts the point where those three hexes meet at **50% across and 62% down** the cell.
-- **Scale:** three board hexes side by side span **80% of the cell width**. So the landmark's footprint is roughly the middle half of the cell.
-- **Ground:** a single rounded, three-lobed plinth (a clover-shaped island) whose base fits inside an ellipse about **50% of the cell wide** (height × 0.64, the board's isometric squash), centred on the anchor. It sits on top of the town's own grass hexes, and a merge can point either way (one hex behind and two in front, or the reverse), so keep the plinth rounded rather than drawing three sharp hex outlines.
-- **Height:** nothing above **8%** of the cell (the crown tip), no ground below **92%**.
-- **Background:** zero alpha outside the art. No backdrop, glow cloud, baked shadow, checkerboard, text or border.
-- See `docs/paragon-cell-guide.png` for the guide lines on one cell. The green and red outlines are the two ways the three hexes can sit.
+- **Files:** `assets/paragons/<type>-a.png` and `<type>-b.png`, where type is power, move, food, water, home, make, waste or wild.
+- **Canvas:** **2048 × 2048 px**, RGBA, fully transparent background.
+- **Hexes:** three **full** spec-v2 hexes (pointy-top, top face half-width 480, half-height 354.7, front side faces 113 px deep), all touching.
+- **Layout a, one hex behind and two in front:** hex centres (1024, 1019.95), (544, 1552), (1504, 1552). Anchor (1024, 1374.65).
+- **Layout b, two hexes behind and one in front:** hex centres (544, 1019.95), (1504, 1019.95), (1024, 1552). Anchor (1024, 1197.3).
+- **Anchor:** the point where the three hexes meet. The game puts it on the same point of the board, at the same scale as every tile, so the painted hexes land exactly on the board's.
+- **Keep region:** nothing left of x = 64, right of x = 1984, above y = 24, or below the slab bottoms.
+- **Ground:** the three top faces reach every outer edge, like every v2 tile. Across the inside edges they merge into one plaza, because the Paragon is one place. Keep the outer edges and the front side faces the same as a v2 tile so it sits in the town's borders and roads like any other building.
+- Templates, made by `node tools/art/paragon-templates.cjs` from `tools/art/paragon-spec.cjs`, are in `assets/paragons/_template/`:
+  - `guide-a.png`, `guide-b.png`: exact outlines, allowed columns, headroom and the anchor. For looking at.
+  - `base-a.png`, `base-b.png`: a plain slab at the exact geometry, to use as the reference or edit image.
+  - `mask-a.png`, `mask-b.png`: edit masks that keep the side faces and let the model paint the top faces and the sky.
+- Paint the landmark once per type, then fit it to both layouts. The building is the same; only the ground under it changes.
 
 ## Style
 
@@ -40,14 +45,14 @@ Every Paragon wears a small **gold crown with three jewels (leaf green, sky cyan
 
 ## Prompt starting point
 
-> Use case: stylized-concept. Production transparent PNG sprite atlas for a cozy isometric town game. EXACTLY 8 independent detailed miniature landmarks, regular 4-column 2-row grid on a wide 2:1 canvas, each cell square. Each landmark stands on one rounded three-lobed clover-shaped ground plinth, centred horizontally, plinth centre 62% down the cell, plinth about 50% of the cell wide, front edge no lower than 92%, tallest point no higher than 8%. Warm detailed painterly 3D game miniature aesthetic matching the attached reference atlases, lovely crisp material detail, cheerful cozy spirit, lit upper-left. Each landmark blends three styles into ONE structure: solarpunk (warm wood, greenery, flowers), technofuturist (white ceramic, gold trim, cyan glass) and gentle magic (purple roofs, amethyst crystals, gold stars, lanterns). Each wears a small gold crown with green, cyan and amethyst jewels at its top. Transparent background outside sprites: zero alpha, no backdrop, no haze or glow outside silhouette, no shadow cloud, no checkerboard. No labels, text, borders or shared scene. Top row left to right (1)…(4), bottom row (5)…(8): [the eight descriptions above].
+> Use case: stylized-concept. One transparent 2048 × 2048 PNG of a single detailed miniature landmark for a cozy isometric town game, edited onto the attached base image so it stands on its three-hex ground exactly; keep the side faces. The landmark rises from where the three hexes meet; nothing above 24 px from the top. Warm detailed painterly 3D game miniature aesthetic matching the attached reference atlases, lovely crisp material detail, cheerful cozy spirit, lit upper-left. Each landmark blends three styles into ONE structure: solarpunk (warm wood, greenery, flowers), technofuturist (white ceramic, gold trim, cyan glass) and gentle magic (purple roofs, amethyst crystals, gold stars, lanterns). Each wears a small gold crown with green, cyan and amethyst jewels at its top. Transparent background outside the art: zero alpha, no backdrop, no haze or glow outside the silhouette, no shadow cloud, no checkerboard. No labels or text. [One of the eight descriptions above.]
 
-Attach `assets/buildings-leaf.png`, `buildings-star.png` and `buildings-magic.png` as style references.
+Attach `base-a.png` (or `base-b.png`) and its mask as the edit inputs, and the Nature, Future and Magic building art as style references.
 
 ## Checking it in the game
 
-1. Save the atlas as `assets/paragons.png`.
-2. Open `index.html?mode=cozy&qa=paragon`. It opens a demo town with every track finished and every future learned, and one Paragon already made. The other tracks have a triangle ready to merge.
-3. Every Paragon also shows in the field guide card (tap it).
-4. Run `npm test`. The art test checks that all atlases load.
-5. Add the prompt, size and SHA-256 to `docs/art-provenance.json` and `SHA256SUMS.txt` like the other atlases.
+1. Save the files as `assets/paragons/<type>-a.png` and `<type>-b.png`.
+2. Open `index.html?mode=cozy&qa=paragon`. It opens a demo town (in a separate QA save) with The Everlight already made in layout a, and a food triangle in layout b ready to merge.
+3. Every Paragon also shows in its field-guide card (tap it).
+4. Run `npm test`. `tests/paragon-art-v12.test.cjs` checks the geometry against the board.
+5. Add the prompt, size and SHA-256 to `docs/art-provenance.json` and `SHA256SUMS.txt` like the other art.
