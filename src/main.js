@@ -3,7 +3,7 @@
   'use strict';
   const B = window.BF, ART = window.ART, AU = window.AUDIO, TECHS = window.TECHS;
   const { mix, shade, circle, ell, glowDot, TAU } = ART;
-  const Q = new URLSearchParams(location.search);
+  const Q = new URLSearchParams(location.search || window.BRIGHTFIELD_QUERY || ''); // a hosted preview can preset a query
   const cv = document.getElementById('c'), g = cv.getContext('2d');
   const SQ = 0.64, SQ3 = Math.sqrt(3);
   const futureColor = (v, leaf = '#8fd46a', star = '#7fd0ff') => v === 'magic' ? '#c198f2' : v === 'star' ? star : leaf;
