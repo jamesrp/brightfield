@@ -15,3 +15,7 @@ All six atlases were visually inspected. The complete 48-building rendered galle
 The runtime scales uniformly and does not apply silhouette clipping. Live turbine hubs and tram/maglev paths were recalibrated to the new illustrations. Small independent effects retain the original animated spirit; Magic adds crystal glow, runic arcs, moon-water rings and rising motes.
 
 Automated checks load all six PNGs, render every sprite, verify grounded horizontal/front tile bounds, detect animation changes, and exercise negative tile-time offsets. Real Chrome checks confirmed the new art in the chooser, field guide, town and final celebrations.
+
+## Next: tile spec v2
+
+The v0.9 atlases are being replaced tile by tile with per-tile PNGs whose slab is exactly the board hex, plus painted actor sprites for animation. See ART-DIRECTION.md for the spec, tools and acceptance checks.

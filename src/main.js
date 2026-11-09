@@ -574,6 +574,7 @@
       const e = k * k * (3 - 2 * k), [a, b] = tr.back ? [tr.b, tr.a] : [tr.a, tr.b];
       const x = hx(a[0], a[1]) + (hx(b[0], b[1]) - hx(a[0], a[1])) * e, y = hy(a[0], a[1]) + (hy(b[0], b[1]) - hy(a[0], a[1])) * e + V.u * 0.3;
       const dir = hx(b[0], b[1]) >= hx(a[0], a[1]) ? 1 : -1, fade = Math.min(1, k * 8, (1 - k) * 8), sc = V.u / 30;
+      if (ART.drawTraveller && ART.drawTraveller(g, era < 3 ? String(era) : v, x, y, V.u, dir, V.t + i, fade)) continue; // imagegen sprite when listed
       g.globalAlpha = fade; g.save(); g.translate(x, y); g.scale(dir * sc, sc);
       ell(g, 0, 2, 6, 1.6, 'rgba(0,0,0,0.18)');
       if (era === 0) { g.fillStyle = '#8b5a3c'; ell(g, 4, -3, 3.5, 2, '#8b5a3c'); g.fillRect(6, -7, 1.6, 4); g.fillStyle = '#a0784a'; g.fillRect(-7, -5, 8, 3.5); circle(g, -5, 0, 1.8, '#4a3020'); circle(g, -1, 0, 1.8, '#4a3020'); }

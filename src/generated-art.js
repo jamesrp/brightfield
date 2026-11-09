@@ -47,45 +47,6 @@
     }
     dot(g, 0, 0, radius * 0.085, '#f7efda'); g.restore();
   }
-  function vehicle(g, x, y, size, color, t, train, floating, slope = .20) {
-    g.save(); g.translate(x, y); g.scale(size, size); g.transform(1, slope, 0, 1, 0, 0);
-    ellipse(g, 0, 0.03, 0.53, 0.11, 'rgba(28,37,33,.35)');
-    const len = train ? 1.1 : 0.8;
-    if (floating) {
-      g.shadowBlur = 6; g.shadowColor = '#77eaff';
-      g.fillStyle = '#7bd5ed'; g.fillRect(-len / 2, -0.12, len, 0.04); g.shadowBlur = 0;
-    } else {
-      for (const wx of [-len * .33, len * .33]) {
-        dot(g, wx, -0.015, .085, '#252e2c'); dot(g, wx, -0.015, .032, '#b3c2bb');
-      }
-    }
-    g.fillStyle = color; g.fillRect(-len / 2, -0.29, len, .23);
-    g.fillStyle = train ? '#e9d5a2' : '#d9ddd0';
-    g.beginPath(); g.moveTo(-len / 2, -.29); g.lineTo(-len / 2 + .11, -.39);
-    g.lineTo(len / 2 + .09, -.39); g.lineTo(len / 2, -.29); g.closePath(); g.fill();
-    g.fillStyle = '#8bb6bf';
-    for (let j = 0; j < (train ? 4 : 2); j++) g.fillRect(-len / 2 + .08 + j * .23, -.265, .17, .10);
-    g.fillStyle = '#e9da8b'; g.fillRect(len / 2 - .045, -.16, .04, .05);
-    if (train && !floating) {
-      g.fillStyle = '#517d3d'; g.fillRect(-len / 2 + .08, -.42, len * .8, .05);
-      for (let j = 0; j < 5; j++) dot(g, -len / 2 + .18 + j * .16, -.43, .035, j % 2 ? '#e6ba69' : '#739548');
-    }
-    g.restore();
-  }
-  function horse(g, x, y, size, t) {
-    g.save(); g.translate(x, y); g.scale(size, size);
-    ellipse(g, 0, -.27, .3, .13, '#80502c');
-    g.strokeStyle = '#5a3a27'; g.lineWidth = .065; g.lineCap = 'round';
-    for (let i = 0; i < 4; i++) {
-      const lx = i < 2 ? -.19 : .18, step = Math.sin(t * 5 + i * 2) * .06;
-      g.beginPath(); g.moveTo(lx, -.25); g.lineTo(lx + step, -.04); g.stroke();
-    }
-    g.fillStyle = '#895936'; g.beginPath(); g.moveTo(.16, -.28); g.lineTo(.23, -.62);
-    g.lineTo(.37, -.62); g.lineTo(.40, -.48); g.lineTo(.29, -.44); g.lineTo(.27, -.22); g.fill();
-    g.fillStyle = '#37291e'; g.fillRect(.20, -.62, .045, .26);
-    dot(g, .34, -.56, .016, '#201b14'); g.restore();
-  }
-
   // Emission strengths retain the procedural art's original smoke behaviour.
   // Coordinates are calibrated to the generated chimney mouths in each cell.
   const emissions = {
@@ -99,14 +60,42 @@
   // Board-only layout: keep icon and field-guide framing unchanged. The
   // fresh illustrations are scaled uniformly, never stretched or masked.
   A.boardFootprint = Object.freeze({ tileRadius: 0.93, imageSide: 1.68, groundOffset: 0.18 });
+  // Measured ground slab of each atlas cell: [slab width, slab centre x, slab
+  // bottom, whole-picture width], as fractions of the 443 px cell
+  // (tools/art/measure-atlas.py).
+  // On the board each slab is scaled and moved so all 48 slabs share one width
+  // and one baseline. Without this, Stage 2 (wind turbines...) sat ~14% smaller
+  // and higher than its neighbours. Icons and the field guide are unchanged.
+  const SLAB = {
+    'power:0': [0.8929,0.4983,0.9402,0.8952], 'move:0': [0.8929,0.4983,0.9402,0.8974], 'food:0': [0.9087,0.4972,0.9402,0.9109], 'water:0': [0.8906,0.4994,0.9402,0.8929],
+    'home:0': [0.8997,0.4904,0.9098,0.9087], 'make:0': [0.8906,0.4972,0.9098,0.8929], 'waste:0': [0.8997,0.4994,0.9098,0.9019], 'wild:0': [0.8929,0.5006,0.9098,0.8952],
+    'power:1': [0.8974,0.4983,0.9312,0.8997], 'move:1': [0.9042,0.4949,0.9312,0.9087], 'food:1': [0.8997,0.4972,0.929,0.9493], 'water:1': [0.8771,0.5017,0.9335,0.8794],
+    'home:1': [0.9245,0.4938,0.9346,0.9357], 'make:1': [0.9109,0.4961,0.9346,0.9245], 'waste:1': [0.9064,0.5028,0.9346,0.9154], 'wild:1': [0.9019,0.4983,0.9346,0.9267],
+    'power:2': [0.7373,0.4994,0.8794,0.7396], 'move:2': [0.7756,0.5028,0.8816,0.7802], 'food:2': [0.7802,0.4983,0.8816,0.7869], 'water:2': [0.7689,0.4927,0.8816,0.7756],
+    'home:2': [0.7644,0.5242,0.8557,0.7892], 'make:2': [0.7914,0.5017,0.8557,0.7959], 'waste:2': [0.7914,0.4972,0.8557,0.7982], 'wild:2': [0.7711,0.5006,0.8557,0.7937],
+    'power:leaf': [0.9042,0.4994,0.9064,0.92], 'move:leaf': [0.9064,0.4961,0.9064,0.9154], 'food:leaf': [0.9042,0.4994,0.9064,0.929], 'water:leaf': [0.9042,0.5017,0.9064,0.9109],
+    'home:leaf': [0.9042,0.4994,0.9076,0.9515], 'make:leaf': [0.9042,0.4994,0.9053,0.9357], 'waste:leaf': [0.9042,0.4994,0.9053,0.9154], 'wild:leaf': [0.9042,0.5017,0.9053,0.9448],
+    'power:star': [0.8658,0.4961,0.9177,0.9087], 'move:star': [0.8749,0.4893,0.9177,0.9335], 'food:star': [0.8658,0.5006,0.9177,0.8952], 'water:star': [0.8636,0.5017,0.9222,0.9357],
+    'home:star': [0.8568,0.5006,0.9256,0.8726], 'make:star': [0.8523,0.4938,0.9256,0.8546], 'waste:star': [0.8636,0.4972,0.9256,0.8929], 'wild:star': [0.8726,0.4972,0.9256,0.9538],
+    'power:magic': [0.8591,0.4994,0.9019,0.8613], 'move:magic': [0.8591,0.4972,0.9042,0.8613], 'food:magic': [0.8591,0.4994,0.9042,0.9312], 'water:magic': [0.8568,0.5006,0.9042,0.8591],
+    'home:magic': [0.8636,0.5017,0.903,0.8658], 'make:magic': [0.8613,0.4983,0.903,0.8636], 'waste:magic': [0.8591,0.5017,0.903,0.8681], 'wild:magic': [0.8568,0.5028,0.903,0.938]
+  };
+  A.slabFit = Object.freeze({ width: 0.90, bottom: 0.945, maxWidth: 0.945 }); // largest that keeps every octagonal slab inside the board hex
   A.drawBuilding = function (g, axis, era, variant, x, y, u, time, night, layout) {
     const stage = era === 3 ? variant || 'leaf' : String(era);
     const img = atlases[stage], idx = axes.indexOf(axis);
     if (!img || idx < 0) return fallback(g, axis, era, variant, x, y, u, time, night);
     const t = Number.isFinite(time) ? time : 0;
     const grounded = layout && layout.grounded;
-    const side = u * (grounded ? A.boardFootprint.imageSide : 1.90);
-    const left = x - side / 2, top = y + u * (grounded ? .28 : .34) - side;
+    let side = u * (grounded ? A.boardFootprint.imageSide : 1.90);
+    let left = x - side / 2, top = y + u * (grounded ? .28 : .34) - side;
+    const slab = grounded && SLAB[axis + ':' + stage];
+    if (slab) {
+      const base = top + A.slabFit.bottom * side;
+      side *= Math.min(A.slabFit.width / slab[0], A.slabFit.maxWidth / slab[3]);
+      left = x - slab[1] * side;
+      top = base - slab[2] * side;
+    }
     const cellW = img.naturalWidth / 4, cellH = img.naturalHeight / 2;
     const px = function (v) { return left + v * side; };
     const py = function (v) { return top + v * side; };
@@ -161,25 +150,21 @@
         dot(g, px(.27 + ph * .28), py(.48 - ph * .18), Math.max(.4, u * .015), 'rgba(255,243,180,.8)');
       }
     }
-    if (axis === 'move') {
-      const trip = (Math.sin(t * .45) + 1) / 2;
-      if (stage === '0') horse(g, px(.43 + trip * .17), py(.76 + trip * .04), side * .15, t);
-      else if (stage === '1' || stage === '2') {
-        const vx = px(.40 + trip * .18), vy = py(.78 + trip * .04);
-        vehicle(g, vx, vy, side * .22, stage === '1' ? '#ad4830' : '#4b8ca3', t, false, false);
-        if (stage === '1') emitter.push([vx - side * .09, vy - side * .02, 1.8]);
-        else pulse(g, px(.34), py(.63), side * .035, '#caff9b', .5 + .3 * Math.sin(t * 4));
-      } else if (stage === 'leaf') {
-        vehicle(g, px(.43 + trip * .27), py(.84 - trip * .20), side * .14, '#c49d4d', t, true, false, -.65);
-      } else if (stage === 'star') {
-        const trip2 = phase(t * .14);
-        vehicle(g, px(.20 + trip2 * .60), py(.73 - trip2 * .26), side * .15, '#e2eeec', t, true, true, -.43);
-      }
+    // v0.11.1: the painted miniatures already show the horse, tractor, car,
+    // tram and maglev. The old procedural vehicles were drawn on top as flat
+    // boxes (a second car in front of the garage, a maglev floating off its
+    // rail), so they are gone until matching imagegen actor sprites arrive
+    // (docs/ART-DIRECTION.md). Exhaust stays where the painted tractor is.
+    if (axis === 'move' && stage === '2') pulse(g, px(.34), py(.63), side * .035, '#caff9b', .5 + .3 * Math.sin(t * 4));
+    if (axis === 'food' && stage === '0') emitter.push([px(.69), py(.53), 1.4]);
+    if (axis === 'move' && stage === 'leaf') {
+      // station lanterns breathe; the painted tram stays put
+      for (const [lx, ly, k] of [[.35, .38, 0], [.59, .45, 1.7]]) pulse(g, px(lx), py(ly), side * .05, '#ffe2a0', .35 + .25 * Math.sin(t * 2.2 + k));
     }
-    if (axis === 'food' && stage === '0') {
-      const trip = (Math.sin(t * .35) + 1) / 2, vx = px(.30 + trip * .28), vy = py(.73 + trip * .07);
-      vehicle(g, vx, vy, side * .16, '#a86934', t, false, false);
-      emitter.push([vx + side * .045, vy - side * .064, 1.4]);
+    if (axis === 'move' && stage === 'star') {
+      // a soft light glides along the maglev guideway
+      const k = phase(t * .22);
+      pulse(g, px(.20 + k * .60), py(.73 - k * .26), side * .07, '#9ff3ff', Math.sin(k * Math.PI) * .55);
     }
     if (axis === 'water' && (stage === '2' || stage === 'leaf')) {
       for (let i = 0; i < 3; i++) {
