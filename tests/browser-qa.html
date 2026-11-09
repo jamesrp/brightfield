@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Brightfield v0.9 browser QA</title><style>body{margin:0;background:#faf8ef;font:14px system-ui}header{height:52px;display:flex;align-items:center;gap:8px;padding:0 10px}button{padding:6px 10px}iframe{border:0;width:100%;height:calc(100vh - 52px)}#status{font-size:12px}</style><header><button id="choice">Magic choice</button><button id="town">Magic town</button><button id="mixed">Shared finale</button><button id="crown">Magic finale</button><span id="status">Ready</span></header><iframe id="game" src="../index.html?qa=1&mode=cozy&seed=47&auto=35&cards=0"></iframe><script>
+const game=document.querySelector('#game'),status=document.querySelector('#status');
+const setup=()=>{const f=game.contentWindow.__BF;f.start({mode:'cozy',seed:47});f.V.noCards=true;f.demoFill(f.s,35);f.fitBoard();f.V.u=f.V.uT;return f};
+document.querySelector('#choice').onclick=()=>{const f=setup();f.s.era.home=2;f.s.variant.home=null;f.s.ideas=1;f.doUpgrade('home');};
+document.querySelector('#town').onclick=()=>{const f=setup();for(const a of f.B.AXES){f.s.era[a]=3;f.s.variant[a]='magic'}f.s.ideasSpent=24;f.s.crowned='magic';f.s.over=false;f.save();};
+document.querySelector('#mixed').onclick=()=>{const f=setup();f.B.AXES.forEach((a,i)=>{f.s.era[a]=3;f.s.variant[a]=['leaf','star','magic'][i%3]});f.s.ideasSpent=24;f.s.crowned='mixed';f.startFinale('mixed');f.V.finale.t-=8;};
+document.querySelector('#crown').onclick=()=>{const f=setup();for(const a of f.B.AXES){f.s.era[a]=3;f.s.variant[a]='magic'}f.s.ideasSpent=24;f.s.crowned='magic';f.startFinale('magic');f.V.finale.t-=8;};
+setInterval(()=>{const w=game.contentWindow,f=w.__BF;if(!f)return;const a=w.AUDIO,art=w.ART.generatedStatus();status.textContent=`Home ${f.s.era.home}/${f.s.variant.home||'-'} · ideas ${f.s.ideas} · art ${art.ready}/${art.total} · audio ${a.ctx?a.ctx.state:'idle'} · ${a.on?'sound on':'muted'}`;},200);
+</script></html>

@@ -1,0 +1,146 @@
+{
+  "seeds": [
+    7,
+    17,
+    42,
+    101,
+    314
+  ],
+  "leaf": [
+    {
+      "placements": 56,
+      "upgrades": 24,
+      "crown": "leaf"
+    },
+    {
+      "placements": 51,
+      "upgrades": 24,
+      "crown": "leaf"
+    },
+    {
+      "placements": 52,
+      "upgrades": 24,
+      "crown": "leaf"
+    },
+    {
+      "placements": 53,
+      "upgrades": 24,
+      "crown": "leaf"
+    },
+    {
+      "placements": 47,
+      "upgrades": 24,
+      "crown": "leaf"
+    }
+  ],
+  "star": [
+    {
+      "placements": 56,
+      "upgrades": 24,
+      "crown": "star"
+    },
+    {
+      "placements": 50,
+      "upgrades": 24,
+      "crown": "star"
+    },
+    {
+      "placements": 52,
+      "upgrades": 24,
+      "crown": "star"
+    },
+    {
+      "placements": 53,
+      "upgrades": 24,
+      "crown": "star"
+    },
+    {
+      "placements": 47,
+      "upgrades": 24,
+      "crown": "star"
+    }
+  ],
+  "magic": [
+    {
+      "placements": 56,
+      "upgrades": 24,
+      "crown": "magic"
+    },
+    {
+      "placements": 50,
+      "upgrades": 24,
+      "crown": "magic"
+    },
+    {
+      "placements": 52,
+      "upgrades": 24,
+      "crown": "magic"
+    },
+    {
+      "placements": 53,
+      "upgrades": 24,
+      "crown": "magic"
+    },
+    {
+      "placements": 47,
+      "upgrades": 24,
+      "crown": "magic"
+    }
+  ],
+  "baseline": {
+    "leaf": [
+      {
+        "placements": 51,
+        "upgrades": 24,
+        "crown": "leaf"
+      },
+      {
+        "placements": 53,
+        "upgrades": 24,
+        "crown": "leaf"
+      },
+      {
+        "placements": 54,
+        "upgrades": 24,
+        "crown": "leaf"
+      },
+      {
+        "placements": 53,
+        "upgrades": 24,
+        "crown": "leaf"
+      },
+      {
+        "placements": 53,
+        "upgrades": 24,
+        "crown": "leaf"
+      }
+    ],
+    "star": [
+      {
+        "placements": 51,
+        "upgrades": 24,
+        "crown": "star"
+      },
+      {
+        "placements": 53,
+        "upgrades": 24,
+        "crown": "star"
+      },
+      {
+        "placements": 54,
+        "upgrades": 24,
+        "crown": "star"
+      },
+      {
+        "placements": 52,
+        "upgrades": 24,
+        "crown": "star"
+      },
+      {
+        "placements": 52,
+        "upgrades": 24,
+        "crown": "star"
+      }
+    ]
+  }
+}
