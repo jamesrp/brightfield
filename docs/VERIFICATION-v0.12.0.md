@@ -23,7 +23,7 @@ New interface tests (`ui-v12`): tapping a finished row opens the learn picker wi
 
 ## Art path
 
-Paragon art follows tile spec v2: three full hexes, in two layouts (one hex behind and two in front, or the reverse). New tests (`paragon-art-v12`) check that the renderer and `tools/art/paragon-spec.cjs` agree, that each layout's painted hex centres land on the board's hex centres to within half a pixel at the board's own scale, and that a missing image falls back to the placeholder. The two guide templates were also dropped in as stand-ins and rendered on the board, one Paragon per layout; their outlines sat exactly on the board hexes. The stand-ins were removed; no Paragon art ships in this version.
+Paragon art follows tile spec v2 with lanes (`docs/ART-DIRECTION.md` section 1a): three full plots spaced as on the board, joined into one raised plaza that covers the lanes between them, in two layouts (one plot behind and two in front, or the reverse). New tests (`paragon-art-v12`) check that the renderer and `tools/art/paragon-spec.cjs` agree, that each layout's painted plot centres land on the board's hex centres to within half a pixel and at the plot size (board unit × 0.88), and that a missing image falls back to the placeholder. The two guide templates were also dropped in as stand-ins and rendered on the board, one Paragon per layout; their plot outlines sat inside the board hexes as expected. The stand-ins were removed; no Paragon art ships in this version.
 
 ## Not checked
 
