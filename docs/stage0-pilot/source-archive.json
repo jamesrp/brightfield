@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "source_commit": "2d97b7133d0e86cc7028a3971c04c7f7686bb4ec",
+  "storage": "Outside git. Set BRIGHTFIELD_ART_ARCHIVE to the archive root; paths below are relative to that root.",
+  "files": [
+    {
+      "path": "docs/stage0-pilot/kerb-edits/earth-before.png",
+      "bytes": 1149380,
+      "sha256": "58733c279d99ade21e13dbb744c8f8009b1b570a1f08248776826bd865f0a1ec"
+    },
+    {
+      "path": "docs/stage0-pilot/kerb-edits/earth-decoded.png",
+      "bytes": 1068266,
+      "sha256": "dcfc3201dc9cfe3d33a8bcce26619f294d81e774f8cf2c947533c72d79e636fe"
+    },
+    {
+      "path": "docs/stage0-pilot/kerb-edits/earth-fitted.png",
+      "bytes": 974369,
+      "sha256": "5978e1b53cd91cce5ea91c04b7bf3e40fe41788306d143f3472332997290ab9c"
+    },
+    {
+      "path": "docs/stage0-pilot/kerb-edits/earth-generated.png",
+      "bytes": 1579932,
+      "sha256": "8b9da28e509259131fd567fce12063ecd5725979917f2aa4068bc35e66f27b57"
+    },
+    {
+      "path": "docs/stage0-pilot/kerb-edits/garden-before.png",
+      "bytes": 1194102,
+      "sha256": "5680ae404ecdff5bd07d30039b515b1e88125cc444f731256d42ad8aee96a825"
+    },
+    {
+      "path": "docs/stage0-pilot/kerb-edits/garden-decoded.png",
+      "bytes": 1150838,
+      "sha256": "ca35b828df5c367a49de28c711750b2a6c9658c6dbcf640582c189379624bac0"
+    },
+    {
+      "path": "docs/stage0-pilot/kerb-edits/garden-fitted.png",
+      "bytes": 1060704,
+      "sha256": "8cf7e5afccaf7843934a8d00e48931fcada6a47185b1514ee89b962ed824d906"
+    },
+    {
+      "path": "docs/stage0-pilot/kerb-edits/garden-generated.png",
+      "bytes": 1674741,
+      "sha256": "ec7cee900282689b19d26938369296afcfa4eb3c30f79368564f445663f1c356"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/0/food.png",
+      "bytes": 1399389,
+      "sha256": "1a19da6b65ef4d7f62afec56666f1c1689ee0b5ce01a5dd6dd2a33ddc28fc1d6"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/0/home.png",
+      "bytes": 1675075,
+      "sha256": "92555989e590a2af6533257ee5b561eb7c231e35245c007f648b3a32b08dae37"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/0/make.png",
+      "bytes": 1604702,
+      "sha256": "409c58d06f9478b93e4f3e5fd961e4cbc71aec150272e7e2442a2f53aca2a3a9"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/0/move.png",
+      "bytes": 1557198,
+      "sha256": "d9091d6c80c334129645d87104fd768cf6263b049568f4d010e53d3877fa947e"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/0/power.png",
+      "bytes": 1703775,
+      "sha256": "6227aaca6aaa28eb25da346ab10dadfa28cb49a8bc8c4f02e29e4130b217a5c3"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/0/waste.png",
+      "bytes": 1410963,
+      "sha256": "f9ab8e5fba529b491725635254282241f095d13b2640b2b5adcbde10c33a93c4"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/0/water.png",
+      "bytes": 1663452,
+      "sha256": "0e9e48886cc53116a3aa0f88064d4ee459ac5c91d710365c468e486b262eafd3"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/0/wild.png",
+      "bytes": 1881514,
+      "sha256": "6c343035931ca549b4c927a3b53fa0cf4415dc9f470af6c2d36fad7eefec081d"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/_slab/alloy.png",
+      "bytes": 839384,
+      "sha256": "323355da0a572efead2445eff5453c843ad67bb43f028f64882dacdb30c8efdd"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/_slab/arcane.png",
+      "bytes": 963920,
+      "sha256": "75dadc7206d884c5c0a33cd75a79dc22d35d8f8746ed6cb00d0d32c2025471b0"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/_slab/earth.png",
+      "bytes": 1271164,
+      "sha256": "564c40d8df5fd175bee898bf381d1eb0c1a2ee3b3418bd53698e30b1ceeff2b9"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/assets/tiles/_slab/garden.png",
+      "bytes": 1327846,
+      "sha256": "6788344c41bdf23e26fd83120557e0bb09b02b92a94e6e67d61416ab8beaf7fb"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/review/board-0.png",
+      "bytes": 909436,
+      "sha256": "5a14ed9927105a68d6bdfc0fee6a8a8790cb403434ce725edd086e2185a7c7b6"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/review/closeup-0.png",
+      "bytes": 1348412,
+      "sha256": "cd1915d56e1bb0aa9fcc1dc308d79bd76661b23bc2d9cd6e48c24797ee9b1831"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/review/family-slabs.png",
+      "bytes": 425475,
+      "sha256": "726afe8e39ab1437d01f1f5511fe5a30946cba099a91c08126a5c7ff938c0ec9"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/review/gallery.png",
+      "bytes": 2352319,
+      "sha256": "c79575bffefbd4382f4abae7744efe33c2483673baf212c85fe81ea5b4a27b4b"
+    },
+    {
+      "path": "docs/stage0-pilot/pre-lanes/review/stage0-sheet.png",
+      "bytes": 1005690,
+      "sha256": "1b839d9ba484608df5d191634c6cace3e4a7b1b7607dabffb6a3b32c0302f9ce"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/food/decoded.png",
+      "bytes": 1446527,
+      "sha256": "9f2f6364700fd2e6f7eb0736408fe2e68233e59ab82b1bb8c2339bc20e48ed95"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/food/first-fit.png",
+      "bytes": 1398911,
+      "sha256": "0f9f683d0f8660a873ee433b2863138cd2c99b4e838afabef01068028aefb659"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/food/raw.png",
+      "bytes": 1942660,
+      "sha256": "2680024c25bcef2cad2b5f28307135e1177d2c1e031b255fdf74509d13ad1bd3"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/home/candidate-1-decoded.png",
+      "bytes": 1798407,
+      "sha256": "c7852fcc309eea2b05868ec974adc9e69030872dcfa39f8e62d57666b369e805"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/home/candidate-1.png",
+      "bytes": 2350405,
+      "sha256": "a0b7c1cd5c1b5c993f416c408e701d83be878c99e4c2e52c11f7a10ad130552c"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/home/first-fit.png",
+      "bytes": 1688868,
+      "sha256": "53b9bd3320d77cae1bcd3cc2bd549d3c164fa7f586b595e610b1ad57b3586d45"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/make/candidate-1-decoded.png",
+      "bytes": 1676098,
+      "sha256": "b35e5441a1d51022a0a30262a53822302638e22f29c8f86a142bc264f8d6a280"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/make/candidate-1.png",
+      "bytes": 2184879,
+      "sha256": "6ef604aa4e6ae200f8f762ddaa89cba00448b232af469c346c93949e96261b95"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/make/first-fit.png",
+      "bytes": 1600200,
+      "sha256": "b4df768ecbb545ab2fa84918fed8f5744433bda48848645f7500b0bfe03967c1"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/move/decoded.png",
+      "bytes": 1706073,
+      "sha256": "d468e72b1df563477c93947f50fe66dc2c773fcaf74b31012a26926f6a0fa245"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/move/first-fit.png",
+      "bytes": 1575496,
+      "sha256": "67b12504009907ca9f32d2f938bd05ca61c8120a4054a5bd36af28d3ddfb440e"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/move/raw.png",
+      "bytes": 2248026,
+      "sha256": "2dc572784c3d25e4fb276ce79926f1b69458102a74da12a82d1b25bc54025341"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/power/decoded.png",
+      "bytes": 1852819,
+      "sha256": "40f16f3ed2a53b6bc03c5c6a0a6fb570e45a84977515abdd571830f1bad15d4c"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/power/first-fit.png",
+      "bytes": 1720754,
+      "sha256": "285e091b91aa37009c06fa12bb534f4170461aa13594a5193ef974941e5b9b9c"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/power/preliminary-fit.png",
+      "bytes": 1710257,
+      "sha256": "bcbc6be8a9cca684a54e6b40c0b81d156a6a8f360e437131d638e001da14eb6b"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/power/raw.png",
+      "bytes": 2357749,
+      "sha256": "e7a11d568eafd57f892fd7f3513d5974b322f4ee6b614565693c79dac61612d7"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/waste/candidate-1-decoded.png",
+      "bytes": 1514718,
+      "sha256": "c09f44229c1afa880901098c3923a5c5c85f4c6e523d0868b50b0a6d5af3cfee"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/waste/candidate-1.png",
+      "bytes": 2049344,
+      "sha256": "74b3ceb4bef7f1d62525fab391e8db80ea3574a7fb819da966124561e8e7f6b9"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/waste/first-fit.png",
+      "bytes": 1424015,
+      "sha256": "59eac39e639939e1de2cc54e85d0fa91075e17b115b740c5457efbf6b3ce2880"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/water/decoded.png",
+      "bytes": 1775046,
+      "sha256": "b68d282252c1c11f7a936a566302e7add1b5652c55ec9d42dce0d8cd6b41e676"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/water/edited-decoded.png",
+      "bytes": 1793783,
+      "sha256": "46c6362917839099f1e18e6b159dc36124723403a8728b0c8e1cdd9a5c9c7ada"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/water/edited-raw.png",
+      "bytes": 2316958,
+      "sha256": "0673666afb89524b88da40f76a8a2fa274334364c782b2b7e677c0eb7ae8eeef"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/water/first-fit.png",
+      "bytes": 1648039,
+      "sha256": "55d655ac065121bb79e414342524927aab625958751a5ee34f6515e49b9a7101"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/water/raw.png",
+      "bytes": 2334395,
+      "sha256": "448f57af325c6e8446e13a59eae477fb1b15c227ba4a091c900852d2f38dfa17"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/wild/candidate-1-decoded.png",
+      "bytes": 2047843,
+      "sha256": "6ddb273380a88a2f8ed7714b3afe701037f782ec3d507287e8c65dba551f8230"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/wild/candidate-1.png",
+      "bytes": 2541123,
+      "sha256": "fa4962e8d6c581305c22a40789d1947f9583dbc9f38ef15586abe491b00aa9ec"
+    },
+    {
+      "path": "docs/stage0-pilot/raw/wild/first-fit.png",
+      "bytes": 1902723,
+      "sha256": "9a5b2c13db79f97139912b8bcec766237bd2cbfd5e57321ef1d0c03324952125"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/alloy-before-opaque-sides.png",
+      "bytes": 840048,
+      "sha256": "7982c0e4b23023626e3f12b838c129089278776eeeb06aea19fc2073a61feca0"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/alloy-composed.png",
+      "bytes": 880879,
+      "sha256": "5545360623e3579c49ee3f00f107d41121bde6f405e16cb75e8a0c4f267689c1"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/alloy-normalized.png",
+      "bytes": 1032123,
+      "sha256": "e7df3a6932853608433744358379fb76c5b57f2fdafa6e6323d20e6baf031edd"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/arcane-before-opaque-sides.png",
+      "bytes": 964673,
+      "sha256": "492ff2196ab370e371a6d64eddf78eaa8e7964a25d323b772d2082db98d83a3b"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/arcane-composed.png",
+      "bytes": 1025703,
+      "sha256": "8674f582219613eea85428f97340705d04cbad109edc3027944f8953eaa98acc"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/arcane-normalized.png",
+      "bytes": 1082040,
+      "sha256": "109d6d2f85865320258d91f4cafcfd9ea4a47e06204cdc4155d70294666e95b9"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/earth-before-opaque-sides.png",
+      "bytes": 1275361,
+      "sha256": "01a22ada59dbdfd7f18bf324f0458e80514cbb3dee694536da5bc9e7b8731a28"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/earth-normalized.png",
+      "bytes": 1414425,
+      "sha256": "c5521b0b5cc7256b7a89c5a5b0026c12639561aecd53ee106018a04041e45381"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/garden-before-opaque-sides.png",
+      "bytes": 1333724,
+      "sha256": "8929d5cab610916837f1dbff0471b2e979a367060ed3ba94cc6ef765db5f1579"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/garden-normalized.png",
+      "bytes": 1457692,
+      "sha256": "ad9fa931ef698d1ffedabf9631722772c7472452a33a1c35a78e9e74ab5e9bc8"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/raw/alloy.png",
+      "bytes": 1704402,
+      "sha256": "1a7cd0dccb7d6429e42e8dc07c7db6e14b3a1233daaf392b336f222513e561d3"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/raw/arcane.png",
+      "bytes": 1627345,
+      "sha256": "2b4f29fe7977b1d8fedaaf57a8b1d2ad52e75673c0bfa5ab3340316f721f9ca9"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/raw/earth.png",
+      "bytes": 1986373,
+      "sha256": "8550d13a8ac83a779ca8a3ae17af53df457caa4de5733211bab334857729a2a6"
+    },
+    {
+      "path": "docs/stage0-pilot/slabs/raw/garden.png",
+      "bytes": 2013587,
+      "sha256": "e53dc5234b41ea99c17bf94285a1eb9df6ac6d1a1f63fae1ed6fdcf9f8a3e97e"
+    }
+  ]
+}

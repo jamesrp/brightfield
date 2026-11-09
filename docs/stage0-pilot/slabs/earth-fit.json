@@ -1,0 +1,1 @@
+{"input":"docs/stage0-pilot/slabs/earth-normalized.png","output":"assets/tiles/_slab/earth.png","scale":1.001,"dx":0,"dy":-2.9,"measured":{"bottom":1509,"slabWidth":959,"slabCx":511.5,"widestRow":970},"clippedPixels":1529,"verdict":"ok"}

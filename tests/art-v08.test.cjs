@@ -2,8 +2,8 @@ const {test}=require('node:test'),assert=require('node:assert/strict');
 const {createCanvas}=require('@napi-rs/canvas');
 const {make}=require('./ui-harness.cjs');
 
-test('all 48 board illustrations stay within their raised hex footprint',async()=>{
-  const v=make(1024,768,'?mode=cozy&seed=7&cards=0',true),A=v.c.ART;
+test('all 48 legacy atlas illustrations stay within their raised hex footprint',async()=>{
+  const v=make(1024,768,'?mode=cozy&seed=7&cards=0',true,{tileArt:{version:2,tiles:{}}}),A=v.c.ART;
   await A.assetsReady;
   const cv=createCanvas(420,420),g=cv.getContext('2d'),x=210,y=280,u=120;
   const radius=A.boardFootprint.tileRadius*u,halfWidth=Math.sqrt(3)/2*radius;

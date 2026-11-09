@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "translation_y": 90,
+  "building_scale": 1,
+  "files": [
+    {
+      "file": "0/power.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "0/move.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "0/food.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "0/water.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "0/home.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "0/make.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "0/waste.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "0/wild.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "_slab/earth.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "_slab/garden.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "_slab/alloy.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    },
+    {
+      "file": "_slab/arcane.png",
+      "topRGBAChanges": 0,
+      "kerbRGBAChangesVsEarth": 0,
+      "outsideAlphaPixels": 0
+    }
+  ]
+}

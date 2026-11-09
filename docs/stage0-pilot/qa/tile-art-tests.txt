@@ -1,0 +1,14 @@
+✔ a spec v2 tile lands exactly on the board hex, animates its actors, and keeps emitters (122.226654ms)
+✔ a listed tile whose file is missing, and every unlisted tile, keep the atlas art (142.103393ms)
+✔ every shipped manifest tile and image loads with a known type and stage (1398.200742ms)
+✔ every listed tile reuses its family’s shared side pixels (216.091916ms)
+✔ manifest keys select the matching slab family and reject malformed keys (2.306152ms)
+✔ loader status counts shared tile, glow and sprite sources only once (104.485329ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2377.07081

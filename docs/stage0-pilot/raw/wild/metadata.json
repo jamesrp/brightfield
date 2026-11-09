@@ -1,0 +1,49 @@
+{
+  "method": "built-in image_gen",
+  "references": [
+    "assets/tiles/_template/base-plain.png",
+    "assets/buildings-0.png"
+  ],
+  "raw": "candidate-1.png",
+  "decoded": "candidate-1-decoded.png",
+  "prompt": "prompt.txt",
+  "final": "assets/tiles/0/wild.png",
+  "requested_dimensions": [
+    1024,
+    1536
+  ],
+  "transparent_background": true,
+  "visual_qa": "Full meadow, large focal oak, pond, rocks and flowers; no critters or butterflies. Full-size fitted image reviewed: recognizable matching painterly subject; no baked moving objects; shared soil sides. Narrow bright grass infill visible at rear edge, blends acceptably at game scale.",
+  "geometry_status": "PASS: 1024x1536 RGBA; centre(512,1130); kerb37.8px; 100% plot coverage; edges within0.5px.",
+  "notes": "Original raw PNG preserved. Canvas loadImage(path) and redraw used to normalize codec because fitter loadImage(Buffer) rejected original as Invalid SVG.",
+  "normalization": {
+    "method": "generated earth destination-over, clipped to exact slab silhouette; shared sides reapplied",
+    "filledPixels": 7196,
+    "faceFilledPixels": 6639,
+    "shared_side_opacity": "The generated family side interiors were made fully opaque before compositing; exact shared side pixels are regression-tested."
+  },
+  "sha256": {
+    "candidate-1-decoded.png": "6ddb273380a88a2f8ed7714b3afe701037f782ec3d507287e8c65dba551f8230",
+    "candidate-1.png": "fa4962e8d6c581305c22a40789d1947f9583dbc9f38ef15586abe491b00aa9ec",
+    "first-fit.png": "9a5b2c13db79f97139912b8bcec766237bd2cbfd5e57321ef1d0c03324952125",
+    "final": "ea2e311f75cf612449a15f43b369d5a40b9533205e2e1ae994a7dbe6f5e732ce"
+  },
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "pre_lanes_final_sha256": "6c343035931ca549b4c927a3b53fa0cf4415dc9f470af6c2d36fad7eefec081d",
+  "lanes_revision": {
+    "base_commit": "948b010da6580de0341ccf3e05d56b3c1599661f",
+    "source": "docs/stage0-pilot/pre-lanes/assets/tiles/0/wild.png",
+    "source_storage": "external archive; see docs/stage0-pilot/source-archive.json",
+    "source_sha256": "6c343035931ca549b4c927a3b53fa0cf4415dc9f470af6c2d36fad7eefec081d",
+    "translation_y": 90,
+    "building_scale": 1,
+    "kerb_source": "assets/tiles/_slab/earth.png",
+    "steps": [
+      "docs/stage0-pilot/migrate-lanes.cjs",
+      "docs/stage0-pilot/kerb-edits/apply-kerbs.cjs"
+    ]
+  }
+}

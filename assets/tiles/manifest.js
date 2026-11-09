@@ -20,7 +20,16 @@
 //   travellers: { '0': 'cart', '1': 'sooty-car', '2': 'ev', leaf: 'garden-tram', star: 'maglev-pod', magic: 'wisp-lantern' },
 window.BF_TILE_ART = window.BF_TILE_ART || {
   version: 2,
-  tiles: {},
+  tiles: {
+    'power:0': { src: '0/power.png', emitters: [[634, 466, 1.2], [773, 529, 1.0]] },
+    'move:0': { src: '0/move.png' },
+    'food:0': { src: '0/food.png' },
+    'water:0': { src: '0/water.png' },
+    'home:0': { src: '0/home.png', emitters: [[353, 601, 0.6]] },
+    'make:0': { src: '0/make.png', emitters: [[312, 606, 0.9], [430, 592, 0.9]] },
+    'waste:0': { src: '0/waste.png' },
+    'wild:0': { src: '0/wild.png' },
+  },
   sprites: {},
   travellers: {},
 };

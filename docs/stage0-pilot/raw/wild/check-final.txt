@@ -1,0 +1,8 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> brightfield@0.11.0 art:check
+> node tools/art/check-tiles.cjs assets/tiles/0/wild.png
+
+PASS assets/tiles/0/wild.png
+  top y=387, slab 100.0% solid, edges within 1.1 px
+all checks pass

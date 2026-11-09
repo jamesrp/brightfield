@@ -2,9 +2,38 @@
 // Art spec v2: per-tile PNGs whose slab is exactly the board hex, with actor sprites and travellers.
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
-const {createCanvas}=require('@napi-rs/canvas');const {make}=require('./ui-harness.cjs');
+const {createCanvas,loadImage}=require('@napi-rs/canvas');const {make}=require('./ui-harness.cjs');
 const S=require('../tools/art/spec.cjs');
 const ROOT=path.resolve(__dirname,'..'),TILES=path.join(ROOT,'assets/tiles');
+
+// Validate the complete key, not just the first two colon-separated fields.
+function tileFamily(key){
+  const parts=key.split(':');
+  assert.equal(parts.length,2,`${key}: expected type:stage`);
+  const [axis,stage]=parts;
+  assert.ok(S.AXES.includes(axis),`${key}: unknown building type`);
+  assert.ok(S.STAGES.includes(stage),`${key}: unknown stage`);
+  return {0:'earth',1:'earth',2:'earth',leaf:'garden',star:'alloy',magic:'arcane'}[stage];
+}
+function imageSources(manifest){
+  const sources=new Set();
+  for(const [key,tile] of Object.entries(manifest.tiles || {})){
+    tileFamily(key);
+    assert.ok(typeof tile.src==='string'&&tile.src.length,`${key}: missing tile source`);
+    sources.add(tile.src);
+    if(tile.glow)sources.add(tile.glow);
+  }
+  for(const [name,sprite] of Object.entries(manifest.sprites || {})){
+    assert.ok(typeof sprite.src==='string'&&sprite.src.length,`${name}: missing sprite source`);
+    sources.add(sprite.src);
+  }
+  return sources;
+}
+function shippedManifest(){
+  const context={window:{}};
+  require('node:vm').runInNewContext(fs.readFileSync(path.join(TILES,'manifest.js'),'utf8'),context);
+  return context.window.BF_TILE_ART;
+}
 
 function fixture(){
   const dir=fs.mkdtempSync(path.join(os.tmpdir(),'bf-tiles-')),{w,h,cx,cy}=S.SPEC;
@@ -42,17 +71,65 @@ test('a spec v2 tile lands exactly on the board hex, animates its actors, and ke
 });
 
 test('a listed tile whose file is missing, and every unlisted tile, keep the atlas art',async()=>{
-  const v=make(1024,768,'?mode=cozy&cards=0',true,{tileArt:fixture()}),w=make(1024,768,'?mode=cozy&cards=0',true);
+  const v=make(1024,768,'?mode=cozy&cards=0',true,{tileArt:fixture()}),w=make(1024,768,'?mode=cozy&cards=0',true,{tileArt:{version:2,tiles:{}}});
   for(const z of [v,w]){await z.c.ART.assetsReady;await z.c.ART.tileArtReady;}
   const render=(A,axis,era)=>{const cv=createCanvas(260,260),g=cv.getContext('2d');A.drawBuilding(g,axis,era,null,130,200,110,.7,false,{grounded:true});return Buffer.from(g.getImageData(0,0,260,260).data);};
   for(const [axis,era] of [['home',1],['power',2],['wild',0]]) assert.deepEqual(render(v.c.ART,axis,era),render(w.c.ART,axis,era));
 });
 
-test('the empty shipped manifest loads no extra images, and the spec template passes its own checks',async()=>{
+test('every shipped manifest tile and image loads with a known type and stage',async()=>{
   const v=make(1024,768,'?mode=cozy&cards=0',true);await v.c.ART.assetsReady;await v.c.ART.tileArtReady;
-  assert.equal(v.c.ART.tileArtStatus().listed,0);
+  const manifest=v.c.BF_TILE_ART,sources=imageSources(manifest),status=v.c.ART.tileArtStatus();
+  assert.ok(Object.keys(manifest.tiles).length>0,'the shipped manifest lists tiles');
+  // The loader counts unique sources, including optional glows and sprites, not tile keys.
+  for(const src of sources)assert.ok(v.imageLoads.includes('assets/tiles/'+src),`${src}: image requested`);
+  assert.equal(status.listed,sources.size);
+  assert.equal(status.ready,sources.size);
+  assert.equal(status.failed.length,0,`failed images: ${status.failed.join(', ')}`);
   const {execFileSync}=require('node:child_process');
   const out=execFileSync(process.execPath,[path.join(ROOT,'tools/art/check-tiles.cjs'),path.join(TILES,'_template/base-plain.png')]).toString();
   assert.match(out,/all checks pass/);
   assert.match(execFileSync(process.execPath,[path.join(ROOT,'tools/art/check-tiles.cjs')]).toString(),/all checks pass/,'shipped manifest is valid');
+});
+
+test('every listed tile reuses its family’s shared side pixels',async()=>{
+  const pixels=async file=>{const img=await loadImage(file),c=createCanvas(S.SPEC.w,S.SPEC.h);c.getContext('2d').drawImage(img,0,0);return c.getContext('2d').getImageData(0,0,S.SPEC.w,S.SPEC.h).data;};
+  const manifest=shippedManifest(),slabs=new Map();
+  const samples=[];
+  for(let y=0;y<S.SPEC.h;y++)for(let x=33;x<991;x++){
+    if(y>S.frontEdgeY(x)+3&&y<S.bottomY(x)-3)samples.push((y*S.SPEC.w+x)*4);
+  }
+  for(const [key,tile] of Object.entries(manifest.tiles)){
+    const family=tileFamily(key);
+    if(!slabs.has(family))slabs.set(family,await pixels(path.join(TILES,'_slab',family+'.png')));
+    const slab=slabs.get(family),data=await pixels(path.join(TILES,tile.src));
+    let differences=0;
+    for(const i of samples)for(let k=0;k<4;k++)if(data[i+k]!==slab[i+k])differences++;
+    assert.equal(differences,0,`${key} uses the shared ${family} side faces`);
+  }
+});
+
+
+test('manifest keys select the matching slab family and reject malformed keys',()=>{
+  for(const axis of S.AXES)for(const [stage,family] of Object.entries({0:'earth',1:'earth',2:'earth',leaf:'garden',star:'alloy',magic:'arcane'})){
+    assert.equal(tileFamily(`${axis}:${stage}`),family);
+  }
+  for(const key of ['food','food:','food:0:extra',':0','unknown:0','food:3','food:unknown']){
+    assert.throws(()=>tileFamily(key),assert.AssertionError,key);
+  }
+});
+
+test('loader status counts shared tile, glow and sprite sources only once',async()=>{
+  const manifest=fixture(),tile=manifest.tiles['food:0'];
+  delete manifest.tiles['home:1'];
+  manifest.tiles['home:1']={src:tile.src};
+  manifest.tiles['wild:2']={src:tile.src,glow:manifest.sprites.car.src};
+  const v=make(1024,768,'?mode=cozy&cards=0',true,{tileArt:manifest});
+  await v.c.ART.assetsReady;await v.c.ART.tileArtReady;
+  assert.equal(Object.keys(manifest.tiles).length,3);
+  assert.equal(imageSources(manifest).size,2);
+  const status=v.c.ART.tileArtStatus();
+  assert.equal(status.listed,2);
+  assert.equal(status.ready,2);
+  assert.equal(status.failed.length,0);
 });

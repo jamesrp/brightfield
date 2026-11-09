@@ -30,9 +30,9 @@ const label = (st) => (st === '0' || st === '1' || st === '2') ? { era: +st, var
       const { era, variant } = label(st), x = col * CW + CW / 2, y = row * CH + 175, u = 92;
       // the board hex underneath, as the game draws it
       g.save(); g.translate(x, y); g.fillStyle = '#8a6a46'; g.beginPath();
-      for (let i = 0; i < 6; i++) { const a = Math.PI / 3 * i + Math.PI / 6, px = Math.cos(a) * u * .93, py = Math.sin(a) * u * .93 * .64 + u * .19; i ? g.lineTo(px, py) : g.moveTo(px, py); } g.fill();
+      for (let i = 0; i < 6; i++) { const a = Math.PI / 3 * i + Math.PI / 6, px = Math.cos(a) * u * S.BOARD.tileRadius, py = Math.sin(a) * u * S.BOARD.tileRadius * .64 + u * S.BOARD.kerb; i ? g.lineTo(px, py) : g.moveTo(px, py); } g.fill();
       g.fillStyle = '#97cf6a'; g.beginPath();
-      for (let i = 0; i < 6; i++) { const a = Math.PI / 3 * i + Math.PI / 6, px = Math.cos(a) * u * .93, py = Math.sin(a) * u * .93 * .64; i ? g.lineTo(px, py) : g.moveTo(px, py); } g.fill(); g.restore();
+      for (let i = 0; i < 6; i++) { const a = Math.PI / 3 * i + Math.PI / 6, px = Math.cos(a) * u * S.BOARD.tileRadius, py = Math.sin(a) * u * S.BOARD.tileRadius * .64; i ? g.lineTo(px, py) : g.moveTo(px, py); } g.fill(); g.restore();
       A.drawBuilding(g, axis, era, variant, x, y + u * .18, u, .8, false, { grounded: true });
       const isNew = !!tiles[axis + ':' + st];
       g.fillStyle = isNew ? '#1d7a3a' : '#8a7f6a'; g.font = 'bold 13px sans-serif';

@@ -1,0 +1,23 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> brightfield@0.12.0 art:check
+> node tools/art/check-tiles.cjs
+
+PASS power:0 (0/power.png)
+  top y=449, slab 100.0% solid, edges within 0.5 px
+PASS move:0 (0/move.png)
+  top y=597, slab 100.0% solid, edges within 0.5 px
+PASS food:0 (0/food.png)
+  top y=745, slab 100.0% solid, edges within 0.5 px
+PASS water:0 (0/water.png)
+  top y=493, slab 100.0% solid, edges within 0.5 px
+PASS home:0 (0/home.png)
+  top y=581, slab 100.0% solid, edges within 0.5 px
+PASS make:0 (0/make.png)
+  top y=574, slab 100.0% solid, edges within 0.5 px
+PASS waste:0 (0/waste.png)
+  top y=774, slab 100.0% solid, edges within 0.5 px
+PASS wild:0 (0/wild.png)
+  top y=477, slab 100.0% solid, edges within 0.5 px
+8 tiles listed; 40 of 48 standard tiles still on the old atlas art.
+all checks pass

@@ -1,0 +1,1 @@
+{"input":"docs/stage0-pilot/raw/power/decoded.png","output":"assets/tiles/0/power.png","scale":0.9928,"dx":3.2,"dy":9.6,"measured":{"bottom":1509,"slabWidth":967,"slabCx":512.5,"widestRow":970},"clippedPixels":966,"verdict":"ok"}
