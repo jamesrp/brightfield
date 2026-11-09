@@ -82,7 +82,21 @@
     return variant === 'magic' ? '+1 sunbeam beside homes, water or reuse.' : variant === 'star' ? '+1 sunbeam beside power, travel, making or homes.' : '+1 sunbeam beside nature, food or water.';
   }
   function tech(axis, era, variant) { const k = era === 3 ? variant || 'leaf' : era; return T[axis][k]; }
-  const TECHS = { T, tech, statusNote, futureBonus, FUTURE_STATUS };
+  // v0.12 Paragons: one per track, made by merging its Nature, Future and Magic buildings.
+  // Each one blends all three ways of living: growing things (Nature), clever machines (Future) and wonder (Magic).
+  // name / line: what the card says. weave: how the three futures became one (for parents and the art brief).
+  const PARAGONS = {
+    power: { name: 'The Everlight', line: 'A great tree with mirror leaves catches the sun and feeds it to a tiny star held inside a giant crystal. The crystal keeps shining all night.', weave: 'Sun mirrors grow as leaves; the fusion star sits in the beacon crystal; daylight is stored as starlight.' },
+    move: { name: 'Anywhere Station', line: 'A floating train glides around a ring of flowering track, through a magic doorway, and comes out anywhere in town.', weave: 'The maglev ring is a living garden rail; the portal is the station gate; the tram roof garden blooms on every carriage.' },
+    food: { name: 'The Everfeast Tree', line: 'A giant fruit tree grows up through a spiral of misty glass gardens. Its glowing fruit grows back as soon as you pick it.', weave: 'The food forest is the trunk; the aeroponic tiers spiral round it as glass rings; the enchanted fruit glows and regrows.' },
+    water: { name: 'The Moonspring', line: 'By moonlight, water climbs up glass towers full of kelp, then tumbles down steps of reeds and lilies, cleaner at every step.', weave: 'Kelp bioreactor towers lift the water; the moonwell makes it flow upward; the wetland terraces clean it on the way down.' },
+    home: { name: 'The Skyhearth', line: 'A whole neighbourhood lives in one enormous tree: treehouses, glass sky-homes and little wizard towers, joined by bridges and floating lanterns.', weave: 'The canopy village tree is the frame; arcology glass balconies spiral up the trunk; starlight-village turrets crown the branches.' },
+    make: { name: 'The Wonderworks', line: 'Neighbours, tiny robot helpers and floating magic tools fix and build things together, so nothing is ever wasted.', weave: 'The repair guild is the open workshop; the nanofab crystal and the spellforge fire are one shared furnace; tools float to whoever needs them.' },
+    waste: { name: 'The Phoenix Ring', line: 'A ring of giant glowing mushrooms and a golden phoenix machine turn broken old things into brand-new treasures.', weave: 'The mycelium grid becomes a fairy ring; the matter reclaimer is the phoenix\u2019s glowing heart; transmutation sparks fly from its wings.' },
+    wild: { name: 'The Wildheart', line: 'An ancient glowing tree grows up through a glass dome that has opened like a flower. Wildflowers spill out, and every animal is welcome.', weave: 'The biosphere dome opens into petals; the luminous grove tree rises through it; the wildflower expanse spills over the rim.' },
+  };
+  for (const a of Object.keys(PARAGONS)) Object.assign(PARAGONS[a], { status: 'Imagine', town: 'Made by merging your Nature, Future and Magic ' + {power:'power plants',move:'stations',food:'farms',water:'waterworks',home:'homes',make:'workshops',waste:'reuse yards',wild:'wild places'}[a] + '. Anything you build touching it earns double sunbeams.' });
+  const TECHS = { T, tech, statusNote, futureBonus, FUTURE_STATUS, PARAGONS };
   if (typeof module !== 'undefined' && module.exports) module.exports = TECHS;
   else root.TECHS = TECHS;
 })(typeof window !== 'undefined' ? window : globalThis);

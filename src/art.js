@@ -208,5 +208,102 @@
   // units u), raised kerb*u above the lanes that run between the plots. The
   // whole board sits on a plinth plinth*u deep.
   const BOARD = Object.freeze(Object.assign({ tileRadius: 0.88, kerb: 0.06, plinth: 0.17 }, root.BF_BOARD || {}));
-  root.ART = { BOARD, drawBuilding, drawCritter, mix, shade, rgb, hex2rgb, box, tree, pine, circle, ell, glowDot, flower, turbine, panel, TAU, drawReason, heartBadge, frownBadge, bolt };
+  // ---------- v0.12 Paragons (placeholder) ----------
+  // A Paragon keeps the three hexes it was merged from. This placeholder draws the three crown buildings drawn together
+  // around one central spire that blends all three futures: living wood and leaves at the root (Nature), white
+  // ceramic with gold bands in the middle (Future), and amethyst crystal at the top (Magic), with a motif per track.
+  // x, y = the ground point at the middle of the triangle. spots = [{dx, dy, v}] for the three hexes (screen px).
+  // Painted art in assets/paragons/ replaces this whole drawing when it exists: see generated-art.js.
+  const FUT = { leaf: '#8fd46a', star: '#7fd0ff', magic: '#c198f2' };
+  function paragonSpots(u) { const SQ = 0.64, s3 = Math.sqrt(3); return [{ dx: -u * s3 / 2, dy: -u * 1.5 * SQ / 3, v: 'leaf' }, { dx: u * s3 / 2, dy: -u * 1.5 * SQ / 3, v: 'star' }, { dx: 0, dy: u * 1.5 * SQ * 2 / 3, v: 'magic' }]; }
+  function paragonCrown(g, x, y, r, t) {
+    // a gold crown with one jewel per future: leaf green, sky blue, amethyst
+    g.fillStyle = '#f2c94c'; g.strokeStyle = '#a87a1a'; g.lineWidth = Math.max(0.8, r * 0.12);
+    g.beginPath(); g.moveTo(x - r, y + r * 0.45); g.lineTo(x - r, y - r * 0.35); g.lineTo(x - r * 0.5, y + r * 0.05); g.lineTo(x, y - r * 0.7); g.lineTo(x + r * 0.5, y + r * 0.05); g.lineTo(x + r, y - r * 0.35); g.lineTo(x + r, y + r * 0.45); g.closePath(); g.fill(); g.stroke();
+    [['leaf', -r * 0.62], ['star', 0], ['magic', r * 0.62]].forEach(([v, dx], i) => { circle(g, x + dx, y + r * 0.12 - (i === 1 ? r * 0.25 : 0), r * 0.22, FUT[v]); circle(g, x + dx - r * 0.06, y + r * 0.06 - (i === 1 ? r * 0.25 : 0), r * 0.07, 'rgba(255,255,255,0.9)'); });
+  }
+  function paragonGlyph(g, x, y, r, t = 0) { glowDot(g, x, y, r * 2.2, '#fff2b0', 0.55 + 0.15 * Math.sin(t * 3)); paragonCrown(g, x, y, r, t); }
+  function spire(g, x, y, H, w, t) {
+    // root (wood + leaves) -> ceramic with gold bands -> crystal
+    const grad = g.createLinearGradient(x, y, x, y - H);
+    grad.addColorStop(0, '#8a5a34'); grad.addColorStop(0.3, '#a7764a'); grad.addColorStop(0.38, '#f4efe4'); grad.addColorStop(0.7, '#eaf2f6'); grad.addColorStop(0.78, '#c9a6f0'); grad.addColorStop(1, '#8f5fd6');
+    g.fillStyle = grad; g.beginPath(); g.moveTo(x - w, y); g.quadraticCurveTo(x - w * 0.35, y - H * 0.45, x - w * 0.22, y - H); g.lineTo(x + w * 0.22, y - H); g.quadraticCurveTo(x + w * 0.35, y - H * 0.45, x + w, y); g.closePath(); g.fill();
+    g.strokeStyle = '#d8a93a'; g.lineWidth = Math.max(0.8, w * 0.12);
+    for (const k of [0.42, 0.58, 0.72]) { const hw = w * (0.95 - k * 0.7); g.beginPath(); g.ellipse(x, y - H * k, hw, hw * 0.3, 0, 0, Math.PI); g.stroke(); }
+    // windows of light up the ceramic part
+    for (let i = 0; i < 3; i++) { const yy = y - H * (0.47 + i * 0.1); g.fillStyle = 'rgba(127,208,255,' + (0.6 + 0.3 * Math.sin(t * 2 + i)) + ')'; g.fillRect(x - w * 0.08, yy - w * 0.12, w * 0.16, w * 0.22); }
+    // roots and leaves at the base
+    g.strokeStyle = '#7a5434'; g.lineWidth = Math.max(1, w * 0.18); g.lineCap = 'round';
+    for (const d of [-1, 1]) { g.beginPath(); g.moveTo(x + d * w * 0.6, y - H * 0.08); g.quadraticCurveTo(x + d * w * 1.2, y - H * 0.02, x + d * w * 1.6, y + w * 0.15); g.stroke(); }
+    g.lineCap = 'butt';
+    for (let i = 0; i < 7; i++) { const a = i / 7 * TAU + Math.sin(t + i) * 0.1, rr = w * 0.9; ell(g, x + Math.cos(a) * rr, y - H * 0.3 + Math.sin(a) * rr * 0.3, w * 0.35, w * 0.16, i % 2 ? '#7fcf5b' : '#5cb04a'); }
+    for (let i = 0; i < 4; i++) flower(g, x - w * 0.8 + i * w * 0.55, y - H * 0.06 + (i % 2) * w * 0.15, ['#ff8fb1', '#ffd34d', '#c58bff', '#ffffff'][i]);
+  }
+  function crystal(g, x, y, r, c = '#b778e8') {
+    g.fillStyle = c; g.beginPath(); g.moveTo(x, y - r * 1.5); g.lineTo(x + r * 0.7, y); g.lineTo(x, y + r * 0.6); g.lineTo(x - r * 0.7, y); g.closePath(); g.fill();
+    g.fillStyle = 'rgba(255,240,255,0.55)'; g.beginPath(); g.moveTo(x, y - r * 1.5); g.lineTo(x - r * 0.7, y); g.lineTo(x - r * 0.15, y); g.closePath(); g.fill();
+  }
+  const MOTIF = {
+    power(g, x, y, r, t) { for (let i = 0; i < 6; i++) { const a = -Math.PI / 2 + (i - 2.5) * 0.42; g.save(); g.translate(x + Math.cos(a) * r * 1.3, y + Math.sin(a) * r * 1.0); g.rotate(a + Math.PI / 2); ell(g, 0, 0, r * 0.32, r * 0.55, '#f6d36b'); ell(g, -r * 0.06, -r * 0.08, r * 0.14, r * 0.3, '#fff3c0'); g.restore(); }
+      crystal(g, x, y + r * 0.4, r * 0.95, 'rgba(183,120,232,0.8)'); const p = 0.6 + 0.4 * Math.sin(t * 3); glowDot(g, x, y - r * 0.1, r * 1.1, '#9ff3ff', 0.5 + 0.3 * p); circle(g, x, y - r * 0.1, r * 0.32 + p * r * 0.06, '#f4ffff');
+      g.strokeStyle = '#bfe6ff'; g.lineWidth = Math.max(0.8, r * 0.1); g.beginPath(); g.ellipse(x, y - r * 0.1, r * 0.75, r * 0.28, t * 0.5, 0, TAU); g.stroke(); },
+    move(g, x, y, r, t) { glowDot(g, x, y, r * 1.2, '#e0b8ff', 0.6); const pg = g.createRadialGradient(x, y, 0, x, y, r * 0.8); pg.addColorStop(0, '#fff0ff'); pg.addColorStop(0.5, '#b778e8'); pg.addColorStop(1, '#5a2f9a'); g.fillStyle = pg; g.beginPath(); g.ellipse(x, y, r * 0.55, r * 0.8, 0, 0, TAU); g.fill();
+      g.strokeStyle = '#d8a93a'; g.lineWidth = Math.max(1, r * 0.16); g.beginPath(); g.ellipse(x, y, r * 1.5, r * 0.55, -0.15, 0, TAU); g.stroke(); for (let i = 0; i < 8; i++) { const a = i / 8 * TAU; flower(g, x + Math.cos(a) * r * 1.5, y + Math.sin(a) * r * 0.55 - Math.sin(a) * r * 0.22, ['#ff8fb1', '#ffd34d', '#ffffff'][i % 3]); }
+      const a = t * 0.9, px = x + Math.cos(a) * r * 1.5, py = y + Math.sin(a) * r * 0.55 - Math.cos(a) * 0; ell(g, px, py - r * 0.12, r * 0.38, r * 0.16, '#ffffff'); g.fillStyle = '#4fb8ff'; g.fillRect(px - r * 0.3, py - r * 0.2, r * 0.6, r * 0.06); ell(g, px, py - r * 0.3, r * 0.18, r * 0.07, '#7fcf5b'); },
+    food(g, x, y, r, t) { for (const k of [0.75, -0.1]) { g.strokeStyle = 'rgba(160,230,255,0.85)'; g.lineWidth = Math.max(1, r * 0.13); g.beginPath(); g.ellipse(x, y + r * k, r * (1.2 - k * 0.2), r * 0.32, 0, 0, TAU); g.stroke(); }
+      circle(g, x - r * 0.5, y - r * 0.35, r * 0.7, '#5cb04a'); circle(g, x + r * 0.5, y - r * 0.4, r * 0.65, '#6cc458'); circle(g, x, y - r * 0.85, r * 0.7, '#7fcf5b');
+      for (let i = 0; i < 7; i++) { const fx = x + Math.cos(i * 2.1) * r * 0.8, fy = y - r * 0.5 + Math.sin(i * 1.7) * r * 0.45, p = 0.5 + 0.5 * Math.sin(t * 2 + i); glowDot(g, fx, fy, r * 0.35, '#ffe08a', 0.4 * p); circle(g, fx, fy, r * 0.13, i % 3 ? '#ffb627' : '#d06aff'); } },
+    water(g, x, y, r, t) { glowDot(g, x, y - r * 0.2, r * 1.3, '#e6e0ff', 0.5); { const R = r * 0.85, cy = y - r * 0.2; g.fillStyle = '#f2c94c'; g.beginPath(); g.arc(x, cy, R, 0.9, -0.9, false); g.arc(x + R * 0.5, cy, R * 0.79, -1.42, 1.42, true); g.closePath(); g.fill(); }
+      for (let i = 0; i < 6; i++) { const ph = (t * 0.5 + i / 6) % 1; g.globalAlpha = Math.sin(ph * Math.PI); circle(g, x + Math.sin(i * 2) * r * 0.5, y + r * 2.5 - ph * r * 2.8, r * 0.12, '#9fe4ff'); } g.globalAlpha = 1;
+      for (let i = 0; i < 3; i++) { const p = ((t * 0.4 + i / 3) % 1); g.globalAlpha = 1 - p; g.strokeStyle = '#d6f4ff'; g.lineWidth = 1; g.beginPath(); g.ellipse(x, y + r * 0.9, r * (0.3 + p), r * (0.1 + p * 0.3), 0, 0, TAU); g.stroke(); } g.globalAlpha = 1; },
+    home(g, x, y, r, t) { circle(g, x - r * 0.7, y, r * 0.75, '#5cb04a'); circle(g, x + r * 0.7, y - r * 0.05, r * 0.7, '#6cc458'); circle(g, x, y - r * 0.5, r * 0.85, '#7fcf5b');
+      for (let i = 0; i < 6; i++) { const wx = x + Math.cos(i * 1.9) * r * 0.75, wy = y - r * 0.2 + Math.sin(i * 1.3) * r * 0.35; g.fillStyle = '#ffe9a8'; g.fillRect(wx - r * 0.08, wy - r * 0.1, r * 0.16, r * 0.18); }
+      for (const [dx, dy, s2] of [[-0.6, -0.9, 0.8], [0.1, -1.35, 1], [0.7, -0.85, 0.75]]) { const tx = x + dx * r, ty = y + dy * r; g.fillStyle = '#f4efe4'; g.fillRect(tx - r * 0.15 * s2, ty, r * 0.3 * s2, r * 0.35 * s2); g.fillStyle = '#8f5fd6'; g.beginPath(); g.moveTo(tx - r * 0.22 * s2, ty); g.lineTo(tx, ty - r * 0.55 * s2); g.lineTo(tx + r * 0.22 * s2, ty); g.fill(); circle(g, tx, ty - r * 0.6 * s2, r * 0.07, '#ffd34d'); }
+      for (let i = 0; i < 3; i++) { const lx = x + (i - 1) * r * 1.3, ly = y - r * 1.4 + Math.sin(t * 1.5 + i) * r * 0.15; glowDot(g, lx, ly, r * 0.35, '#ffd685', 0.6); circle(g, lx, ly, r * 0.1, '#ffe9a8'); } },
+    make(g, x, y, r, t) { g.save(); g.translate(x, y); g.rotate(t * 0.4); g.fillStyle = '#d8a93a'; for (let i = 0; i < 8; i++) { g.rotate(TAU / 8); g.fillRect(-r * 0.14, -r * 0.95, r * 0.28, r * 0.3); } circle(g, 0, 0, r * 0.72, '#e6be55'); circle(g, 0, 0, r * 0.45, '#f4efe4'); g.restore();
+      crystal(g, x, y + r * 0.25, r * 0.45, '#7fd0ff'); glowDot(g, x, y, r * 0.8, '#ffb46a', 0.35 + 0.15 * Math.sin(t * 4));
+      for (let i = 0; i < 3; i++) { const a = t * 0.8 + i * TAU / 3, tx = x + Math.cos(a) * r * 1.4, ty = y + Math.sin(a) * r * 0.6; g.save(); g.translate(tx, ty); g.rotate(a); g.fillStyle = '#8a5a34'; g.fillRect(-r * 0.05, -r * 0.3, r * 0.1, r * 0.5); g.fillStyle = i === 1 ? '#c198f2' : '#9aa3ad'; g.fillRect(-r * 0.18, -r * 0.38, r * 0.36, r * 0.14); g.restore(); } },
+    waste(g, x, y, r, t) { const f = Math.sin(t * 2) * 0.12; for (const d of [-1, 1]) { g.fillStyle = '#f2c94c'; g.beginPath(); g.moveTo(x, y); g.quadraticCurveTo(x + d * r * 1.2, y - r * (1.3 + f), x + d * r * 2.0, y - r * (0.9 + f)); g.quadraticCurveTo(x + d * r * 1.3, y - r * 0.5, x + d * r * 1.6, y - r * 0.2); g.quadraticCurveTo(x + d * r * 0.9, y - r * 0.1, x, y + r * 0.3); g.fill(); g.strokeStyle = '#e58a3a'; g.lineWidth = 1; g.stroke(); }
+      glowDot(g, x, y - r * 0.1, r * 1.0, '#9ff3ff', 0.6); circle(g, x, y - r * 0.1, r * 0.45, '#d6f8ff'); circle(g, x, y - r * 0.1, r * 0.25, '#7fd0ff');
+      for (let i = 0; i < 6; i++) { const ph = (t * 0.6 + i / 6) % 1; g.globalAlpha = 1 - ph; circle(g, x + Math.cos(i * 2.4) * r * (0.5 + ph * 1.2), y - r * 0.1 - ph * r * 1.2, r * 0.08, i % 2 ? '#c198f2' : '#ffd34d'); } g.globalAlpha = 1; },
+    wild(g, x, y, r, t) { circle(g, x - r * 0.6, y - r * 0.1, r * 0.7, '#c58bff'); circle(g, x + r * 0.6, y - r * 0.15, r * 0.65, '#6cc458'); circle(g, x, y - r * 0.6, r * 0.8, '#7fcf5b'); circle(g, x + r * 0.2, y - r * 0.9, r * 0.45, '#d9b0ff');
+      for (let i = 0; i < 6; i++) { const p = 0.5 + 0.5 * Math.sin(t * 3 + i * 1.3); glowDot(g, x + Math.cos(i * 1.7) * r, y - r * 0.4 + Math.sin(i * 2.3) * r * 0.5, r * 0.25, '#fff7c0', 0.6 * p); }
+      for (let i = 0; i < 2; i++) { const a = t * 0.7 + i * Math.PI, bx = x + Math.cos(a) * r * 1.5, by = y - r * 0.8 + Math.sin(a * 2) * r * 0.3, fl = Math.abs(Math.sin(t * 9 + i)); ell(g, bx - r * 0.1, by, r * 0.12 * fl + 0.5, r * 0.15, '#ffb0e0'); ell(g, bx + r * 0.1, by, r * 0.12 * fl + 0.5, r * 0.15, '#ffd34d'); } },
+  };
+  // Petal-dome / mushroom ring / water steps around the base, so each track's Paragon has its own ground too.
+  const BASE = {
+    wild(g, x, y, R, t) { g.strokeStyle = 'rgba(190,240,255,0.85)'; g.lineWidth = 1.5; for (let i = 0; i < 7; i++) { const a = Math.PI + i / 6 * Math.PI, px = x + Math.cos(a) * R, py = y + Math.sin(a) * R * 0.35; g.beginPath(); g.moveTo(px, py); g.quadraticCurveTo(px + Math.cos(a) * R * 0.25, py - R * 0.5, px + Math.cos(a) * R * 0.45, py - R * 0.3); g.stroke(); } },
+    waste(g, x, y, R, t) { for (let i = 0; i < 8; i++) { const a = i / 8 * TAU, mx = x + Math.cos(a) * R * 0.7, my = y + Math.sin(a) * R * 0.25; g.fillStyle = '#efe6d2'; g.fillRect(mx - 1.2, my - R * 0.12, 2.4, R * 0.12); ell(g, mx, my - R * 0.12, R * 0.12, R * 0.06, i % 2 ? '#c198f2' : '#ff9a6a'); glowDot(g, mx, my - R * 0.14, R * 0.12, '#e0c4ff', 0.35 + 0.2 * Math.sin(t * 2 + i)); } },
+    water(g, x, y, R, t) { for (let i = 0; i < 3; i++) { g.strokeStyle = 'rgba(160,220,255,0.8)'; g.lineWidth = 1.2; g.beginPath(); g.ellipse(x, y + R * 0.05 * i, R * (0.45 + i * 0.22), R * (0.14 + i * 0.07), 0, 0, TAU); g.stroke(); } for (let i = 0; i < 5; i++) ell(g, x + Math.cos(i * 1.3) * R * 0.8, y + Math.sin(i * 1.3) * R * 0.25, R * 0.07, R * 0.035, '#7fcf5b'); },
+  };
+  function drawParagon(g, axis, x, y, u, t, night, spots) {
+    spots = (spots || paragonSpots(u)).slice().sort((a, b) => a.dy - b.dy);
+    const R = u * 1.55;
+    // shared golden ground where the three hexes meet
+    glowDot(g, x, y, R * 1.25, '#fff1a8', 0.55 + 0.1 * Math.sin(t * 2));
+    if (BASE[axis]) BASE[axis](g, x, y, R, t);
+    const back = spots.filter((p) => p.dy <= 0), front = spots.filter((p) => p.dy > 0);
+    const bu = u * 0.78, db = root.ART.drawBuilding; // the generated atlas renderer when it has loaded
+    for (const p of back) db(g, axis, 3, p.v, x + p.dx * 0.9, y + p.dy * 0.9 + bu * 0.18, bu, t, night, { grounded: true });
+    // the spire: Nature at the root, Future in the middle, Magic at the top
+    const H = u * 2.4, w = u * 0.55, topY = y - H;
+    glowDot(g, x, topY + u * 0.1, u * 1.6, '#fff4c8', 0.35);
+    for (const [i, v] of ['leaf', 'star', 'magic'].entries()) { const ph = t * 1.2 + i * TAU / 3; glowDot(g, x + Math.cos(ph) * u * 0.6, topY + u * 0.2 + Math.sin(ph) * u * 0.2, u * 0.9, FUT[v], 0.22); }
+    spire(g, x, y, H, w, t);
+    // three ribbons, one per future, flowing from each building up into the spire
+    for (const p of spots) {
+      const sx = x + p.dx * 0.9, sy = y + p.dy * 0.9 - u * 0.5;
+      g.strokeStyle = FUT[p.v]; g.lineWidth = Math.max(1.2, u * 0.07); g.setLineDash([u * 0.18, u * 0.12]); g.lineDashOffset = -t * u * 0.6;
+      g.beginPath(); g.moveTo(sx, sy); g.quadraticCurveTo(x + p.dx * 0.4, topY + u * 0.2, x, topY + u * 0.55); g.stroke(); g.setLineDash([]);
+    }
+    MOTIF[axis](g, x, topY, u * 0.55, t);
+    paragonCrown(g, x, topY - u * 0.95 + Math.sin(t * 1.5) * u * 0.06, u * 0.32, t);
+    for (const p of front) db(g, axis, 3, p.v, x + p.dx * 0.9, y + p.dy * 0.9 + bu * 0.18, bu, t, night, { grounded: true });
+    // motes of all three colours rising
+    for (let i = 0; i < 9; i++) { const ph = (t * 0.25 + i / 9) % 1, c = FUT[['leaf', 'star', 'magic'][i % 3]]; g.globalAlpha = Math.sin(ph * Math.PI) * 0.9; circle(g, x + Math.sin(i * 2.2 + t * 0.5) * R * 0.8, y - ph * H * 1.1, Math.max(0.8, u * 0.045), c); }
+    g.globalAlpha = 1;
+    return [];
+  }
+
+  root.ART = { BOARD, drawParagon, paragonGlyph, paragonCrown, drawBuilding, drawCritter, mix, shade, rgb, hex2rgb, box, tree, pine, circle, ell, glowDot, flower, turbine, panel, TAU, drawReason, heartBadge, frownBadge, bolt };
 })(typeof window !== 'undefined' ? window : globalThis);
