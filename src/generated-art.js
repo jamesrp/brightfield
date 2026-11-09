@@ -22,10 +22,12 @@
   }));
   // v0.12 Paragons: optional per-Paragon PNGs in assets/paragons/, loaded only once a Paragon is on the board.
   // Until the art lands a file is missing, and art.js draws a procedural placeholder instead.
-  // Geometry (docs/PARAGON-ART-BRIEF.md, tools/art/paragon-spec.cjs): 2048 x 2048 canvas, three full spec-v2 hexes
-  // (half-width 480). Layout a = one hex behind, two in front; b = two behind, one in front. The anchor is where
-  // the three hexes meet, and the game puts it on the same point of the board.
-  const PARAGON_SPEC = { size: 2048, cx: 1024, halfW: 480, anchorY: { a: 1374.65, b: 1197.3 } };
+  // Geometry (docs/PARAGON-ART-BRIEF.md, tools/art/paragon-spec.cjs): a 2304 x 2304 canvas holding three
+  // tile-spec-v2 plots (top face half-width 480) and a plaza over the lanes between them. Layout a = one plot
+  // behind, two in front; b = two behind, one in front. The anchor is where the three plots' lanes meet, and
+  // the game puts it on that point of the board at the same scale as every tile. A test checks this against
+  // the tool; if ART.BOARD's plot size changes, regenerate the templates and update these numbers.
+  const PARAGON_SPEC = { size: 2304, cx: 1152, halfW: 480, tileRadius: 0.88, anchorY: { a: 1681.95, b: 1480.41 } };
   A.PARAGON_SPEC = PARAGON_SPEC;
   const placeholderParagon = A.drawParagon;
   if (placeholderParagon) {
@@ -44,7 +46,7 @@
     A.paragonLayout = layoutOf;
     // Where the 2048 x 2048 Paragon image goes so its hexes sit on the board's (board hex size u, anchor at x, y).
     A.paragonPlacement = function (x, y, u, layout) {
-      const k = (u * Math.sqrt(3) / 2) / PARAGON_SPEC.halfW;
+      const k = (u * ((A.BOARD && A.BOARD.tileRadius) || PARAGON_SPEC.tileRadius) * Math.sqrt(3) / 2) / PARAGON_SPEC.halfW;
       return { k, side: PARAGON_SPEC.size * k, left: x - PARAGON_SPEC.cx * k, top: y - PARAGON_SPEC.anchorY[layout] * k };
     };
     A.drawParagon = function (g, axis, x, y, u, time, night, spots) {
