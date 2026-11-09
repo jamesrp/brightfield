@@ -290,6 +290,8 @@
     },
     goal() { if (!A.ctx) return; const t = now(); bell(K(84), t, 0.05, A.sfx); bell(K(91), t + 0.12, 0.05, A.sfx); },
     clear() { if (!A.ctx) return; duck(0.5, 1.2); const t = now(); const f = noise(t, 1.0, 0.12, 300, 1, 'bandpass'); f.frequency.exponentialRampToValueAtTime(3000, t + 0.9); [72, 76, 79, 84, 88, 91].forEach((m, i) => bell(K(m), t + 0.3 + i * 0.07, 0.06, A.sfx)); },
+    // v0.12 Paragon: a Nature pluck, a Future bell and a Magic crystal climbing together.
+    paragon() { if (!A.ctx) return; duck(0.3, 2.8); const t = now(); tone('sine', 55, 55, t, 4.5, 0.22); [60, 64, 67, 71, 74, 76, 79, 83, 86, 88, 91].forEach((m, i) => (i % 3 === 0 ? pluck(m, t + i * 0.1, 0.09, 1, A.sfx) : (i % 3 === 1 ? bell : crystal)(m, t + i * 0.1, 0.09, A.sfx))); noise(t + 0.2, 3, 0.07, 7000, 0.3, 'highpass'); },
     crown(v) { if (!A.ctx) return; duck(0.3, 2.5); const t = now(); tone('sine', 65, 65, t, 4, 0.25); (v === 'magic' ? [60,67,74,76,78,83,86,88] : v === 'star' ? [60, 67, 71, 74, 79, 83, 86, 91] : [60, 64, 67, 72, 76, 79, 84, 88]).forEach((m, i) => (v === 'magic' ? crystal : bell)(m, t + i * 0.12, 0.1, A.sfx)); noise(t, 3, 0.08, 8000, 0.3, 'highpass'); },
   };
   root.AUDIO = { _A: A, plan, chordAt, finalePath, moodOf, keyOf, bpmOf, MOODS, init, setMute, update, S, get on() { return A.on; }, get ctx() { return A.ctx; } };

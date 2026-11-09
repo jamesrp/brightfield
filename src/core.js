@@ -1,7 +1,7 @@
 // BRIGHTFIELD core rules. Pure, deterministic, seeded. Runs in the browser (window.BF) and Node (require).
 (function (root) {
   'use strict';
-  const VERSION = '0.11.0';
+  const VERSION = '0.12.0';
   const AXES = ['power', 'move', 'food', 'water', 'home', 'make', 'waste', 'wild'];
   // v0.6: adjacency OPINIONS with real-world reasons (the son's wish #2: "why do things go next to each other?").
   // Each rule is directed: tile type `a` (the one who thinks) has an opinion about a neighbouring `b`.
@@ -83,10 +83,11 @@
   function discoveries(s) {
     return DISCOVERIES.filter((d) => Object.entries(d.needs).every(([a, e]) => s.era[a] >= e));
   }
-  function linkBonuses(s, a, b) {
+  // v0.12: va / vb are the future styles of the two buildings (a track can know several futures once it learns them).
+  function linkBonuses(s, a, b, va, vb) {
     const reasons = [];
-    for (const [source, target] of [[a, b], [b, a]]) {
-      const v = s.variant[source], rule = FUTURE_BONUSES[v];
+    for (const [source, target, sv] of [[a, b, va], [b, a, vb]]) {
+      const v = sv || s.variant[source], rule = FUTURE_BONUSES[v];
       if (s.era[source] === 3 && rule && rule.targets.includes(target)) reasons.push({ kind: 'future', variant: v, source, target });
     }
     const future = reasons.length ? 1 : 0;
@@ -176,6 +177,8 @@
     // v0.11 free play: town demand (like SimCity's demand meter). With every type always on offer, the town asks for a mix.
     // A kind at least `demandNeed` below the average count is 'need'; at least `demandPlenty` above it (and 3+ tiles) is 'plenty'.
     demandOn: true, demandNeed: 1, demandPlenty: 1.5, demandMult: { need: 1.5, ok: 1, plenty: 0.5 },
+    // v0.12 Paragons: learning another future costs one idea; merging pays a burst; buildings placed touching a Paragon earn x2.
+    paragonOn: true, learnCost: 1, paragonBurst: 25, paragonAura: 2,
   };
   function sunNeed(L) { return Math.round(TUNE.sunBase * Math.pow(L, TUNE.sunGrow)); }
 
@@ -187,7 +190,8 @@
       radius: TUNE.startRadius,
       tiles: {}, // key -> {q,r,type,critter}
       era: Object.fromEntries(AXES.map((a) => [a, 0])),
-      variant: Object.fromEntries(AXES.map((a) => [a, null])), // 'leaf' | 'star' | 'magic' at era 3
+      variant: Object.fromEntries(AXES.map((a) => [a, null])), // 'leaf' | 'star' | 'magic' at era 3 (the track's first future: it decides the crown)
+      learned: {}, style: {}, paragons: {}, // v0.12: futures each track knows, the look new buildings use, and merged Paragons
       sun: 0, sunLevel: 0, ideas: 0, ideasSpent: 0,
       hand: [], deck: null, swaps: mode === 'challenge' ? TUNE.challengeSwaps : Infinity,
       species: {}, critterCount: 0,
@@ -331,16 +335,18 @@
   }
 
   // What would placing `type` at (q,r) score? Pure.
-  function preview(s, type, q, r) {
+  function preview(s, type, q, r, style) {
     if (!type || !inBoard(s, q, r) || s.tiles[key(q, r)]) return null;
     const mult = 1 + s.era[type];
+    const mine = s.era[type] === MAX_ERA ? (style && known(s, type).includes(style) ? style : styleOf(s, type)) : null;
     const links = [];
-    let plus = 0, minus = 0, bonus = 0;
+    let plus = 0, minus = 0, bonus = 0, paragon = null;
     for (const [nq, nr] of neighbors(q, r)) {
       const t = s.tiles[key(nq, nr)];
       if (!t) continue;
+      if (t.paragon && !paragon) paragon = t.paragon;
       const ops = linkOps(s, type, t.type);
-      const linkBonus = linkBonuses(s, type, t.type);
+      const linkBonus = linkBonuses(s, type, t.type, mine, tileStyle(s, t));
       if (!ops.length && !linkBonus.points) continue;
       const lp = ops.filter((o) => o.v > 0).length, lm = ops.filter((o) => o.v < 0).length;
       links.push({ q: nq, r: nr, hearts: lp, frowns: lm, ops, bonus: linkBonus.points, bonuses: linkBonus });
@@ -357,12 +363,14 @@
     else if (g > TUNE.districtAt) district = TUNE.districtExtra;
     const wish = wishes.length * TUNE.wishBonus;
     const hood = hoodOf(s, q, r, type);
-    const raw = 1 + h * mult + bonus + district + wish + (hood ? hood.points : 0);
+    // v0.12: a building placed touching a Paragon earns double.
+    const aura = paragon ? TUNE.paragonAura : 1;
+    const raw = (1 + h * mult + bonus + district + wish + (hood ? hood.points : 0)) * aura;
     // v0.11: town demand scales the whole placement (free play only).
     const dem = demand(s, type), base = Math.max(1, Math.round(raw * TUNE.demandMult[dem]));
     // v0.10: smog hides part of the sun. A placement still always earns at least one sunbeam.
     const points = Math.max(1, Math.round(base * sunFactor(s)));
-    return { type, q, r, links, hearts: h, likes: plus, frowns: minus, mult, bonus, district, group: g, wishes, wish, hood, raw, demand: dem, base, dimmed: base - points, points };
+    return { type, q, r, style: mine, paragon, aura, links, hearts: h, likes: plus, frowns: minus, mult, bonus, district, group: g, wishes, wish, hood, raw, demand: dem, base, dimmed: base - points, points };
   }
 
   function nbCounts(s, q, r) {
@@ -427,10 +435,10 @@
       (s.hand.every((h) => !h) || boardFull(s)) && AXES.some((a) => canUpgrade(s, a));
   }
 
-  function place(s, handIdx, q, r) {
+  function place(s, handIdx, q, r, style) {
     if (s.over) return null;
     const type = s.hand[handIdx];
-    const p = preview(s, type, q, r);
+    const p = preview(s, type, q, r, style);
     if (!p) return null;
     rememberUndo(s);
     s.turn++;
@@ -444,13 +452,14 @@
       if (want.length) wish = want[Math.floor(rnd(s) * want.length)];
     }
     s.tiles[key(q, r)] = { q, r, type, critter: null, born: s.turn, wish };
+    if (p.style) s.tiles[key(q, r)].v = p.style; // v0.12: each future-era building keeps the look it was built with
     // Keep the board calm: only the newest few wishes stay; older ones quietly drift away (no penalty).
     if (wish) { const w = Object.values(s.tiles).filter((x) => x.wish).sort((a, b) => a.born - b.born); while (w.length > TUNE.maxWishes) w.shift().wish = null; }
-    const ev = [{ type: 'place', tile: type, q, r, points: p.points, raw: p.raw, dimmed: p.dimmed, demand: p.demand, links: p.links, bonus: p.bonus, district: p.district, group: p.group, hood: p.hood, wishes: p.wishes, wish: p.wish, newWish: wish }];
+    const ev = [{ type: 'place', tile: type, q, r, style: p.style, paragon: p.paragon, aura: p.aura, points: p.points, raw: p.raw, dimmed: p.dimmed, demand: p.demand, links: p.links, bonus: p.bonus, district: p.district, group: p.group, hood: p.hood, wishes: p.wishes, wish: p.wish, newWish: wish }];
     ev.push(...addSun(s, p.points, q, r));
     ev.push(...settleCritters(s));
     if (s.mode !== 'cozy') s.hand[handIdx] = draw(s); // free play keeps its full palette
-    s.log.push(['p', handIdx, q, r]);
+    s.log.push(p.style && p.style !== s.variant[type] ? ['p', handIdx, q, r, p.style] : ['p', handIdx, q, r]);
     ev.push(...endCheck(s));
     return ev;
   }
@@ -490,7 +499,7 @@
     s.ideas--; s.ideasSpent++;
     const before = pairOps(s, axis);
     s.era[axis] = next;
-    if (next === MAX_ERA) s.variant[axis] = variant;
+    if (next === MAX_ERA) { s.variant[axis] = variant; learnedOf(s)[axis] = [variant]; styleMap(s)[axis] = variant; }
     const changed = diffOps(before, pairOps(s, axis));
     let n = 0;
     for (const k in s.tiles) if (s.tiles[k].type === axis) n++;
@@ -507,6 +516,81 @@
     ev.push(...endCheck(s));
     return ev;
   }
+
+  // ---- v0.12 Paragons ----
+  // A track that has reached its future can learn the other two futures (one idea each). New buildings of that kind
+  // can then be built in any known look. A Nature, a Future and a Magic building of the same kind that all touch each
+  // other (a little triangle of hexes) can merge into that track's one Paragon: a landmark that keeps all three hexes.
+  const FUTURES = ['leaf', 'star', 'magic'];
+  function learnedOf(s) { return s.learned || (s.learned = {}); }
+  function styleMap(s) { return s.style || (s.style = {}); }
+  function paragonMap(s) { return s.paragons || (s.paragons = {}); }
+  function known(s, axis) {
+    if (s.era[axis] !== MAX_ERA) return [];
+    const l = (s.learned && s.learned[axis]) || [];
+    const out = s.variant[axis] ? [s.variant[axis]] : [];
+    for (const v of l) if (!out.includes(v)) out.push(v);
+    return FUTURES.filter((v) => out.includes(v));
+  }
+  function styleOf(s, axis) { const v = s.style && s.style[axis]; return v && known(s, axis).includes(v) ? v : s.variant[axis]; }
+  function tileStyle(s, t) { return s.era[t.type] === MAX_ERA ? (t.v || s.variant[t.type]) : null; }
+  function canLearn(s, axis, variant) {
+    if (!TUNE.paragonOn || s.over || s.ideas < TUNE.learnCost || s.era[axis] !== MAX_ERA) return false;
+    const k = known(s, axis);
+    return variant ? FUTURES.includes(variant) && !k.includes(variant) : k.length < FUTURES.length;
+  }
+  function learn(s, axis, variant) {
+    if (!canLearn(s, axis, variant) || !variant) return null;
+    rememberUndo(s);
+    s.ideas -= TUNE.learnCost; s.ideasSpent += TUNE.learnCost;
+    const l = learnedOf(s); l[axis] = known(s, axis).concat(variant);
+    styleMap(s)[axis] = variant; // the next buildings of this kind use the new look
+    s.log.push(['l', axis, variant]);
+    const ev = [{ type: 'learn', axis, variant, known: known(s, axis), all: known(s, axis).length === FUTURES.length }];
+    ev.push(...endCheck(s));
+    return ev;
+  }
+  // Pick which known look new buildings of `axis` use (a view choice: placements log their own look).
+  function setStyle(s, axis, variant) { if (!known(s, axis).includes(variant)) return false; styleMap(s)[axis] = variant; return true; }
+  function cycleStyle(s, axis) { const k = known(s, axis); if (k.length < 2) return null; const i = k.indexOf(styleOf(s, axis)); styleMap(s)[axis] = k[(i + 1) % k.length]; return styleMap(s)[axis]; }
+  // Every ready merge for `axis`: triangles of three touching buildings, one of each future. [[k1,k2,k3], ...] sorted keys.
+  function paragonSpots(s, axis) {
+    if (!TUNE.paragonOn || s.era[axis] !== MAX_ERA || (s.paragons && s.paragons[axis])) return [];
+    const out = [], seen = new Set();
+    for (const k in s.tiles) {
+      const t = s.tiles[k]; if (t.type !== axis || t.paragon) continue;
+      for (let i = 0; i < 6; i++) {
+        const [d1q, d1r] = DIRS[i], [d2q, d2r] = DIRS[(i + 1) % 6];
+        const a = s.tiles[key(t.q + d1q, t.r + d1r)], b = s.tiles[key(t.q + d2q, t.r + d2r)];
+        if (!a || !b || a.type !== axis || b.type !== axis || a.paragon || b.paragon) continue;
+        const looks = new Set([tileStyle(s, t), tileStyle(s, a), tileStyle(s, b)]);
+        if (looks.size !== 3) continue;
+        const tri = [k, key(a.q, a.r), key(b.q, b.r)].sort(), id = tri.join('|');
+        if (!seen.has(id)) { seen.add(id); out.push(tri); }
+      }
+    }
+    return out;
+  }
+  function allParagonSpots(s) { const out = []; for (const a of AXES) for (const tri of paragonSpots(s, a)) out.push({ axis: a, tiles: tri }); return out; }
+  function merge(s, axis, tiles) {
+    if (s.over || !tiles || tiles.length !== 3) return null;
+    const want = tiles.slice().sort().join('|');
+    const tri = paragonSpots(s, axis).find((t) => t.join('|') === want);
+    if (!tri) return null;
+    rememberUndo(s);
+    s.turn++;
+    const ts = tri.map((k) => s.tiles[k]);
+    for (const t of ts) { t.paragon = axis; t.wish = null; }
+    paragonMap(s)[axis] = { tiles: tri, born: s.turn };
+    s.log.push(['m', axis, ...tri]);
+    const pts = TUNE.paragonBurst;
+    const ev = [{ type: 'paragon', axis, tiles: tri, points: pts }];
+    ev.push(...addSun(s, pts, ts[0].q, ts[0].r));
+    ev.push(...settleCritters(s));
+    ev.push(...endCheck(s));
+    return ev;
+  }
+  function paragonCount(s) { return Object.keys(s.paragons || {}).length; }
 
   function swap(s) {
     if (s.over || s.swaps <= 0 || s.mode === 'cozy') return null; // nothing to swap when every type is on offer
@@ -569,9 +653,11 @@
     for (const a of log) {
       // v0.6 UI cleared `over` without logging it. Recover subsequent actions.
       if (a[0] !== 'c' && s.over && s.mode === 'cozy' && s.crowned) continueTown(s);
-      if (a[0] === 'p') place(s, a[1], a[2], a[3]);
+      if (a[0] === 'p') place(s, a[1], a[2], a[3], a[4]);
       else if (a[0] === 'u') upgrade(s, a[1], a[2]);
       else if (a[0] === 's') swap(s);
+      else if (a[0] === 'l') learn(s, a[1], a[2]);
+      else if (a[0] === 'm') merge(s, a[1], a.slice(2));
       else if (a[0] === 'c') continueTown(s);
     }
     return s;
@@ -594,6 +680,7 @@
   }
 
   const BF = {
+    FUTURES, known, styleOf, tileStyle, canLearn, learn, setStyle, cycleStyle, paragonSpots, allParagonSpots, merge, paragonCount,
     palette, demand, NEEDS, LOCK_REASONS, smokyKinds, skyClear, locksFor, needsOf, unlocksOf, sunFactor,
     VERSION, canUndo, undo, waitingForIdeas, FUTURE_BONUSES, DISCOVERIES, discoveries, linkBonuses, continueTown, AXES, RULES, REASONS, EMIT, ERA_NAMES, MAX_ERA, CRITTERS, DIRS, TUNE,
     key, hexDist, newGame, preview, place, upgrade, canUpgrade, swap, legalHexes, smogLevel, localSmog,

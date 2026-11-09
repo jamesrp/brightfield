@@ -43,7 +43,14 @@
     for (const o of opens) html += '<p class="tree-open"><b>→ Opens the way to '+escape(stepName(o.axis, o.era))+'.</b> '+escape(B.LOCK_REASONS[o.why])+'</p>';
     return html + '</div>';
   }
+  // v0.12 Paragon card: one trophy per track, made from all three futures.
+  function openParagon(cd, s, cb) {
+    const pg=T.PARAGONS[cd.axis], fut=['leaf','star','magic'].map(v=>T.tech(cd.axis,3,v).name);
+    mount('<div class="guide-kicker">Paragon · '+names[cd.axis]+'</div><h2 id="guide-title">'+escape(pg.name)+'</h2><div class="truth-badge imagine">Imagine</div><div class="guide-intro"><div class="guide-picture"><canvas width="560" height="340" aria-label="Animated '+escape(pg.name)+' illustration"></canvas></div><div><p class="tech-line">'+escape(pg.line)+'</p><p class="truth-note">'+escape(T.statusNote('Imagine'))+'</p><h3>In your town</h3><p>'+escape(pg.town)+'</p></div></div><div class="future-effect paragon-effect"><b>♛ Made from all three futures</b><br>❧ '+escape(fut[0])+' + ★ '+escape(fut[1])+' + ✧ '+escape(fut[2])+'</div><details><summary>How it blends Nature, Future and Magic</summary><p>'+escape(pg.weave)+'</p></details>',cb);
+    active=cd;
+  }
   function open(cd, s, cb) {
+    if (cd.kind==='paragon' && T.PARAGONS && T.PARAGONS[cd.axis]) return openParagon(cd, s, cb);
     const tc=T.tech(cd.axis,cd.era,cd.variant), status=tc.status || 'Today';
     const simulation = cd.era === 3 ? '<div class="future-effect"><b>'+(cd.variant==='magic'?'✧ Magic future':cd.variant==='star'?'★ Tech future':'❧ Nature future')+'</b><br>'+escape(T.futureBonus(cd.variant))+'</div>' : '';
     const temp=Object.assign({},s,{era:Object.assign({},s.era,{[cd.axis]:cd.era}),variant:Object.assign({},s.variant,{[cd.axis]:cd.variant})});
@@ -74,7 +81,8 @@
     A.circle(g,w*.79,h*.23,25,'#ffe49a');
     for(let i=0;i<3;i++) {let x=((i*220+t*7)%(w+170))-85;A.ell(g,x,58+i*27,62,14,'#fff9e6');}
     A.ell(g,w/2,h*.92,w*.45,h*.2,'#93b978');
-    A.drawBuilding(g,active.axis,active.era,active.variant,w/2,h*.85,Math.min(w*.3,h*.48),t,false);
+    if (active.kind==='paragon' && A.drawParagon) A.drawParagon(g,active.axis,w/2,h*.74,Math.min(w*.16,h*.24),t,false);
+    else A.drawBuilding(g,active.axis,active.era,active.variant,w/2,h*.85,Math.min(w*.3,h*.48),t,false);
   }
   root.INSPECTOR={open,close,discoveries,tick,get isOpen(){return !!panel && !panel.hidden;}};
 })(window);

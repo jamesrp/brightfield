@@ -8,5 +8,5 @@ test('all generated atlases load, all 48 buildings render, representative live a
  const render=(a,e,z,t)=>{g.clearRect(0,0,260,260);const em=A.drawBuilding(g,a,e,z,130,200,110,t,false);assert.ok(Array.isArray(em));for(const pt of em)assert.ok(pt.every(Number.isFinite));const pix=g.getImageData(0,0,260,260).data;assert.ok(pix.some((c,i)=>i%4===3&&c>0));return Buffer.from(pix);};
  for(const a of v.c.BF.AXES)for(const stage of [0,1,2,'leaf','star','magic'])render(a,typeof stage==='number'?stage:3,typeof stage==='string'?stage:null,.7);
  for(const [a,e,z] of [['power',2,null],['power',3,'star'],['move',3,'leaf'],['water',3,'star'],['wild',3,'leaf']])assert.notDeepEqual(render(a,e,z,0),render(a,e,z,1.4));
- v.step(5);assert.equal(v.imageLoads.length,6);
+ v.step(5);assert.equal(v.imageLoads.length,7);
 });

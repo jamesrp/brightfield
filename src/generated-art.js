@@ -20,6 +20,36 @@
       img.src = base + 'buildings-' + stage + '.png';
     });
   }));
+  // v0.12 Paragons: optional assets/paragons.png (4 x 2 square cells, same order as the building atlases).
+  // Until Codex's art lands the file is missing, and art.js draws a procedural placeholder instead.
+  // Layout contract (docs/PARAGON-ART-BRIEF.md): the three-hex slab is centred, spans 80% of the cell width,
+  // and the point where the three hexes meet sits 62% of the way down the cell (front slab edge near 92%, like the building atlases).
+  let paragonAtlas = null;
+  const placeholderParagon = A.drawParagon;
+  if (placeholderParagon) {
+    const pimg = new root.Image();
+    pimg.onload = function () { paragonAtlas = pimg; };
+    pimg.onerror = function () { paragonAtlas = null; };
+    pimg.src = base + 'paragons.png';
+    A.drawParagon = function (g, axis, x, y, u, time, night, spots) {
+      const idx = axes.indexOf(axis);
+      if (!paragonAtlas || idx < 0) return placeholderParagon(g, axis, x, y, u, time, night, spots);
+      const cw = paragonAtlas.naturalWidth / 4, ch = paragonAtlas.naturalHeight / 2;
+      const side = u * Math.sqrt(3) * 2 / 0.8, left = x - side / 2, top = y - side * 0.62;
+      g.save(); g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
+      g.drawImage(paragonAtlas, (idx % 4) * cw, Math.floor(idx / 4) * ch, cw, ch, left, top, side, side * ch / cw);
+      const t = Number.isFinite(time) ? time : 0;
+      for (let i = 0; i < 9; i++) { // motes in all three futures' colours keep it alive
+        const ph = phase(t * .22 + i / 9);
+        g.save(); g.globalAlpha *= Math.sin(ph * Math.PI) * .8;
+        dot(g, x + Math.sin(i * 2.2 + t * .5) * side * .3, top + side * (.62 - ph * .5), Math.max(.6, u * .04), ['#c8ff9a', '#9fe4ff', '#e0c4ff'][i % 3]);
+        g.restore();
+      }
+      g.restore();
+      return [];
+    };
+    A.paragonArtReady = function () { return !!paragonAtlas; };
+  }
   A.generatedStatus = function () {
     return { ready: Object.keys(atlases).length, total: stages.length, failed: failures.slice() };
   };
