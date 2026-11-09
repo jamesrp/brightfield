@@ -1,6 +1,19 @@
-# BRIGHTFIELD · v0.11.0
+# BRIGHTFIELD · v0.12.0
 
 A gentle, offline town-builder for mouse or touch. Open `index.html` in a browser. No build step, account, download at play time, or external service is needed.
+
+## New in v0.12: Paragons
+
+Jay's request, inspired by Bloons TD 6: each track can make **one Paragon**, a landmark that blends Nature, Future and Magic into one.
+
+- **Learn the other futures.** Once a track reaches its future, its row glows violet. Tap it to learn another future for 1 idea. New buildings of that kind come in the new look; tap the picked card again (or press its number twice) to switch looks. Each building keeps the look it was built in, and the first future still decides the crown.
+- **Merge a triangle.** A Nature, a Future and a Magic building of the same kind, all three touching each other, pulse gold. A prompt offers "Merge into a Paragon!" (or tap one of them later). One Paragon per track.
+- **What it does.** +25 sunbeams when it forms, and anything built touching it earns double sunbeams. It keeps its three hexes, so neighbours and groups work as before.
+- **The eight:** The Everlight, Anywhere Station, The Everfeast Tree, The Moonspring, The Skyhearth, The Wonderworks, The Phoenix Ring and The Wildheart. Tap one to read about it in the field guide.
+- **Art.** A procedural placeholder draws the three buildings around a crowned spire until the Paragon art arrives in `assets/paragons/` (two layouts per Paragon, on full hexes). See `docs/PARAGON-ART-BRIEF.md`. `index.html?mode=cozy&qa=paragon` opens a demo town (in a separate QA save) for checking it.
+- **Saves.** v0.11 towns load unchanged. A town that never learns a second future plays exactly as before.
+
+Design notes and tuning: `docs/PARAGONS.md`.
 
 ## New in v0.11: every building, every turn (free play)
 
@@ -82,4 +95,4 @@ Browser saves belong to the browser and file/site origin. Opening this separate 
 
 Run `node --test tests/*.test.*` from this folder. Canvas/UI tests need the development dependency `@napi-rs/canvas`; the game itself has no dependencies.
 
-The local-only `tests/browser-qa.html` fixture offers reproducible Magic choices and finales for real-browser inspection. It uses an isolated QA save namespace when served locally. See `docs/VERIFICATION-v0.11.0.md` (and the earlier notes) for completed tests and remaining device limits, and `docs/ART-PROVENANCE.md` for artwork generation details.
+The local-only `tests/browser-qa.html` fixture offers reproducible Magic choices and finales for real-browser inspection. It uses an isolated QA save namespace when served locally. See `docs/VERIFICATION-v0.12.0.md`, `docs/VERIFICATION-v0.11.0.md` (and the earlier notes) for completed tests and remaining device limits, and `docs/ART-PROVENANCE.md` for artwork generation details.

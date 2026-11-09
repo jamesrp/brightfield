@@ -20,6 +20,51 @@
       img.src = base + 'buildings-' + stage + '.png';
     });
   }));
+  // v0.12 Paragons: optional per-Paragon PNGs in assets/paragons/, loaded only once a Paragon is on the board.
+  // Until the art lands a file is missing, and art.js draws a procedural placeholder instead.
+  // Geometry (docs/PARAGON-ART-BRIEF.md, tools/art/paragon-spec.cjs): 2048 x 2048 canvas, three full spec-v2 hexes
+  // (half-width 480). Layout a = one hex behind, two in front; b = two behind, one in front. The anchor is where
+  // the three hexes meet, and the game puts it on the same point of the board.
+  const PARAGON_SPEC = { size: 2048, cx: 1024, halfW: 480, anchorY: { a: 1374.65, b: 1197.3 } };
+  A.PARAGON_SPEC = PARAGON_SPEC;
+  const placeholderParagon = A.drawParagon;
+  if (placeholderParagon) {
+    const pcache = Object.create(null);
+    const paragonImage = function (axis, layout) {
+      const k = axis + '-' + layout;
+      if (!pcache[k]) {
+        const img = new root.Image(), entry = pcache[k] = { img, ok: false };
+        img.onload = function () { entry.ok = true; };
+        img.onerror = function () { entry.ok = false; };
+        img.src = base + 'paragons/' + k + '.png';
+      }
+      return pcache[k].ok ? pcache[k].img : null;
+    };
+    const layoutOf = spots => (spots && spots.filter(p => p.dy > 0).length === 1 ? 'b' : 'a');
+    A.paragonLayout = layoutOf;
+    // Where the 2048 x 2048 Paragon image goes so its hexes sit on the board's (board hex size u, anchor at x, y).
+    A.paragonPlacement = function (x, y, u, layout) {
+      const k = (u * Math.sqrt(3) / 2) / PARAGON_SPEC.halfW;
+      return { k, side: PARAGON_SPEC.size * k, left: x - PARAGON_SPEC.cx * k, top: y - PARAGON_SPEC.anchorY[layout] * k };
+    };
+    A.drawParagon = function (g, axis, x, y, u, time, night, spots) {
+      const layout = layoutOf(spots), img = axes.includes(axis) ? paragonImage(axis, layout) : null;
+      if (!img) return placeholderParagon(g, axis, x, y, u, time, night, spots);
+      const { side, left, top } = A.paragonPlacement(x, y, u, layout);
+      g.save(); g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high';
+      g.drawImage(img, left, top, side, side);
+      const t = Number.isFinite(time) ? time : 0;
+      for (let i = 0; i < 9; i++) { // motes in all three futures' colours keep it alive
+        const ph = phase(t * .22 + i / 9);
+        g.save(); g.globalAlpha *= Math.sin(ph * Math.PI) * .8;
+        dot(g, x + Math.sin(i * 2.2 + t * .5) * side * .3, y - side * ph * .45, Math.max(.6, u * .04), ['#c8ff9a', '#9fe4ff', '#e0c4ff'][i % 3]);
+        g.restore();
+      }
+      g.restore();
+      return [];
+    };
+    A.paragonArtReady = function (axis, layout) { const e = pcache[axis + '-' + (layout || 'a')]; return !!(e && e.ok); };
+  }
   A.generatedStatus = function () {
     return { ready: Object.keys(atlases).length, total: stages.length, failed: failures.slice() };
   };

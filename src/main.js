@@ -3,13 +3,13 @@
   'use strict';
   const B = window.BF, ART = window.ART, AU = window.AUDIO, TECHS = window.TECHS;
   const { mix, shade, circle, ell, glowDot, TAU } = ART;
-  const Q = new URLSearchParams(location.search);
+  const Q = new URLSearchParams(location.search || window.BRIGHTFIELD_QUERY || ''); // a hosted preview can preset a query
   const cv = document.getElementById('c'), g = cv.getContext('2d');
   const SQ = 0.64, SQ3 = Math.sqrt(3);
   const futureColor = (v, leaf = '#8fd46a', star = '#7fd0ff') => v === 'magic' ? '#c198f2' : v === 'star' ? star : leaf;
   const futurePaths = () => ['leaf','star','magic'].filter(v => B.AXES.some(a => s.era[a] === 3 && s.variant[a] === v));
   // Internal browser QA must never read, overwrite or clear a player's town.
-  const STORE_PREFIX = Q.get('qa') === '1' ? 'brightfield.qa.' : 'brightfield.';
+  const STORE_PREFIX = Q.get('qa') ? 'brightfield.qa.' : 'brightfield.'; // any QA page keeps its own save
   const SAVE = STORE_PREFIX + 'v1.save', BEST = STORE_PREFIX + 'v07.best', SEEN = STORE_PREFIX + 'v1.seen';
   let W = 0, H = 0, DPR = 1;
   let s = null; // game state
@@ -31,8 +31,19 @@
 
   const forkControls=document.createElement('div'); forkControls.id='future-choices';forkControls.hidden=true;
   forkControls.setAttribute('role','group');forkControls.setAttribute('aria-label','Choose your final upgrade');
-  for(const [i,v] of ['leaf','star','magic'].entries()) {const b=document.createElement('button');b.textContent=(i+1)+'. '+['Nature','Future','Magic'][i];b.onclick=()=>{if(V.fork)doUpgrade(V.fork.axis,v);};forkControls.appendChild(b);}
+  for(const [i,v] of ['leaf','star','magic'].entries()) {const b=document.createElement('button');b.textContent=(i+1)+'. '+['Nature','Future','Magic'][i];b.onclick=()=>{if(V.fork)forkPick(v);};forkControls.appendChild(b);}
   const forkCancel=document.createElement('button');forkCancel.textContent='Not yet';forkCancel.onclick=()=>{V.fork=null;};forkControls.appendChild(forkCancel);document.body.appendChild(forkControls);
+  // v0.12 Paragons: a merge prompt with its own touch/keyboard-readable buttons.
+  const mergeControls=document.createElement('div'); mergeControls.id='paragon-choices'; mergeControls.hidden=true;
+  mergeControls.setAttribute('role','group'); mergeControls.setAttribute('aria-label','Merge into a Paragon');
+  const mergeYes=document.createElement('button'); mergeYes.textContent='Merge into a Paragon!'; mergeYes.onclick=()=>doMerge(); mergeControls.appendChild(mergeYes);
+  const mergeNo=document.createElement('button'); mergeNo.textContent='Not yet'; mergeNo.onclick=()=>{V.merge=null;}; mergeControls.appendChild(mergeNo);
+  document.body.appendChild(mergeControls);
+  function syncForkButtons() {
+    const k = V.fork && V.fork.learn ? B.known(s, V.fork.axis) : [];
+    forkControls.setAttribute('aria-label', V.fork && V.fork.learn ? 'Learn another future' : 'Choose your final upgrade');
+    [...forkControls.children].slice(0, 3).forEach((b, i) => { const v = B.FUTURES[i], has = k.includes(v); b.disabled = has; b.textContent = (i + 1) + '. ' + ['Nature', 'Future', 'Magic'][i] + (has ? ' (you have it)' : ''); });
+  }
   const cameraControls = document.createElement('div');
   cameraControls.id = 'camera-controls'; cameraControls.hidden = true;
   cameraControls.setAttribute('role', 'group'); cameraControls.setAttribute('aria-label', 'Town view');
@@ -45,7 +56,7 @@
   }
   const cameraHint = document.createElement('span'); cameraHint.textContent = 'Scroll / pinch to zoom · drag when zoomed';
   cameraControls.appendChild(cameraHint); document.body.appendChild(cameraControls);
-  function cameraAllowed() { return !!s && V.screen === 'play' && !V.card && !V.finale && !V.fork && !guide.isOpen; }
+  function cameraAllowed() { return !!s && V.screen === 'play' && !V.card && !V.finale && !V.fork && !V.merge && !guide.isOpen; }
   function clearGesture(resetKeys = false) { V.cameraPointers.clear(); V.gesture = null; if (resetKeys) V.space = false; V.press = null; V.drag = null; cv.style.cursor = ''; }
   function applyCamera() {
     // Keep enough of the town within reach, even after a resize or board growth.
@@ -119,7 +130,7 @@
     guide.close(); clearGesture(true); V.zoom = 1; V.panX = V.panY = 0;
     s = saved ? B.deserialize(JSON.stringify(saved)) : log ? B.replay(opts, log) : B.newGame(opts);
     V.card=null; V.cardQ=[]; V.peek=null; V.press=null; V.drag=null; V.hoverRow=null; V.trav=[]; V.hintCache=null; V.wishHint=null;
-    V.sel = -1; V.prev = null; V.anim = {}; V.flips = {}; V.parts = []; V.floats = []; V.ripples = []; V.fork = null; V.finale = null; V.toast = null; V.toastQ = []; V.goalStage = null; V.rowFlash = {};
+    V.sel = -1; V.prev = null; V.anim = {}; V.flips = {}; V.parts = []; V.floats = []; V.ripples = []; V.fork = null; V.merge = null; V.finale = null; V.toast = null; V.toastQ = []; V.goalStage = null; V.rowFlash = {};
     V.smog = B.smogLevel(s); V.eve = eveTarget(); fitBoard(); V.u = V.uT; V.screen = 'play'; V.idle = 0; V.lastInput = V.t;
     V.guide = V.seen.placed ? null : 'place';
     if (s.crowned && s.over) startFinale(s.crowned, true);
@@ -152,6 +163,7 @@
           setTimeout(() => AU.S.party(e.hood.friends.length), 300);
         }
         if (e.district) { V.ripples.push({ x, y, t: 0, c: '#fff4b0' }); V.floats.push({ k: 'district', x, y: y - V.u * 1.6, t: 0, life: 1.6, type: e.tile }); }
+        if (e.aura > 1) { V.floats.push({ k: 'aura', x: x + V.u * 0.9, y: y - V.u * 1.4, t: -0.1, life: 1.8, n: e.aura }); if (!V.seen.aura) { markSeen('aura'); toast('Next to a Paragon: double sunbeams!', { k: 'paragon', axis: e.paragon }); } }
       } else if (e.type === 'critter') {
         const x = hx(e.q, e.r), y = hy(e.q, e.r);
         V.floats.push({ k: 'critter', x, y: y - V.u * 1.2, t: 0, life: 2.2, id: e.critter, first: e.first });
@@ -179,6 +191,24 @@
         if (e.points) setTimeout(() => flySun(V.cx, V.cy - 40, e.points), 300 + list.length * 70);
         (e.changed || []).slice(0, 12).forEach((c, i) => V.floats.push({ k: 'thought', q: c.q, r: c.r, oq: c.oq, or: c.or, why: c.why, kind: c.kind, t: -0.5 - list.length * 0.07 - i * 0.12, life: 3.0 }));
         if (!V.noCards) toast('New: ' + TECHS.tech(e.axis, e.era, e.variant).name + '. Tap a building to explore.', { k: 'bld', axis: e.axis, era: e.era, v: e.variant });
+        if (e.era === 3 && B.TUNE.paragonOn && !V.seen.learnTip) { markSeen('learnTip'); toast('Tip: tap a finished row to learn its other futures and build a Paragon', { k: 'paragon', axis: e.axis }); }
+      } else if (e.type === 'learn') {
+        // v0.12: a finished track learned another future. New buildings of this kind use the new look.
+        AU.S.upgrade(e.variant); V.rowFlash[e.axis] = V.t;
+        { const ri = B.AXES.indexOf(e.axis), rc = techRects()[ri]; if (rc) for (let j = 0; j < 22; j++) V.parts.push({ k: 'spark', x: rc.x + rc.w / 2, y: rc.y + rc.h / 2, vx: Math.cos(j / 22 * TAU) * 3.2, vy: Math.sin(j / 22 * TAU) * 2.2 - 1, life: 1, t: 0, c: futureColor(e.variant, '#c8ff9a', '#9fe4ff') }); }
+        const nm = TECHS.tech(e.axis, 3, e.variant).name;
+        const hi = s.hand.indexOf(e.axis); if (hi >= 0 && s.mode === 'cozy') V.sel = hi;
+        toast(e.all ? nm + '! Build a Nature, Future and Magic one all touching to make a Paragon' : 'New look: ' + nm + '. Tap the card again to switch looks', { k: 'bld', axis: e.axis, era: 3, v: e.variant });
+      } else if (e.type === 'paragon') {
+        // v0.12: three buildings, one of each future, merge into the track's Paragon.
+        const pc = TECHS.PARAGONS[e.axis], c0 = paragonCentre(e.tiles);
+        V.paragonT = V.paragonT || {}; V.paragonT[e.axis] = V.t;
+        V.ripples.push({ x: c0.x, y: c0.y, t: 0, c: '#fff1a8' });
+        for (let j = 0; j < 70; j++) V.parts.push({ k: j % 3 ? 'spark' : 'confetti', x: c0.x, y: c0.y - V.u * 1.2, vx: Math.cos(j / 70 * TAU) * (2 + Math.random() * 3), vy: Math.sin(j / 70 * TAU) * 2.4 - 2, life: 1.8, t: -0.2 - Math.random() * 0.2, c: ['#c8ff9a', '#9fe4ff', '#e0c4ff', '#ffe36a'][j % 4], ph: Math.random() * TAU });
+        V.floats.push({ k: 'paragon', x: c0.x, y: c0.y - V.u * 3.3, t: -0.2, life: 3.2, axis: e.axis });
+        flySun(c0.x, c0.y - V.u * 1.5, e.points, 0.5);
+        toast(pc.name + '! A Paragon. Build next to it for double sunbeams', { k: 'paragon', axis: e.axis });
+        (AU.S.paragon || AU.S.crown)('mixed');
       } else if (e.type === 'skyclear') {
         // v0.10: the end of the Cleanup act. The haze lifts, the far smokestacks go quiet, every future opens.
         toast('The sky is clear! Every future is open now', { k: 'skyclear' });
@@ -219,7 +249,32 @@
     consume(ev); save();
     V.prev = null; V.sel = s.hand[V.sel] ? V.sel : s.hand.findIndex(Boolean);
     V.lastInput = V.t;
+    // v0.12: did this building complete a Paragon triangle? Offer the merge straight away.
+    const spot = B.allParagonSpots(s).find((p) => p.tiles.includes(B.key(q, r)));
+    if (spot) { const town = s; setTimeout(() => { if (s === town && V.screen === 'play' && !V.finale && !s.over) openMerge(spot); }, 650); }
     return true;
+  }
+  function openMerge(spot) { if (!spot || V.finale) return; closeCard(); V.fork = null; V.peek = null; V.merge = { axis: spot.axis, tiles: spot.tiles, t: V.t }; AU.S.pick(); }
+  function doMerge() {
+    if (!V.merge) return;
+    const m = V.merge; V.merge = null;
+    const ev = B.merge(s, m.axis, m.tiles);
+    if (!ev) { AU.S.deny(); return; }
+    m.tiles.forEach((k, i) => { V.anim[k] = V.t + 0.05 * i; });
+    consume(ev); markSeen('paragon'); save(); V.lastInput = V.t;
+  }
+  function forkPick(v) { if (!V.fork) return; if (V.fork.learn) doLearn(V.fork.axis, v); else doUpgrade(V.fork.axis, v); }
+  function doLearn(axis, v) {
+    if (!B.canLearn(s, axis, v)) { AU.S.deny(); return; }
+    const ev = B.learn(s, axis, v); V.fork = null;
+    consume(ev); save();
+  }
+  function paragonCentre(tiles) { let x = 0, y = 0; for (const k of tiles) { const [q, r] = k.split(',').map(Number); x += hx(q, r); y += hy(q, r); } return { x: x / tiles.length, y: y / tiles.length }; }
+  function spotFor(k) { return B.allParagonSpots(s).find((p) => p.tiles.includes(k)); }
+  function tapTile(tile) {
+    if (tile.paragon) { openCard({ axis: tile.paragon, era: 3, variant: B.tileStyle(s, tile), kind: 'paragon' }); return; }
+    const sp = spotFor(B.key(tile.q, tile.r)); if (sp) { openMerge(sp); return; }
+    openCard({ axis: tile.type, era: s.era[tile.type], variant: B.tileStyle(s, tile) || s.variant[tile.type], kind: 'inspect' });
   }
   function doUpgrade(axis, variant) {
     if (!B.canUpgrade(s, axis)) { AU.S.deny(); return; }
@@ -241,7 +296,7 @@
   // ---------- finale ----------
   function startFinale(crown, instant) {
     clearGesture(true);
-    guide.close(); V.card=null; V.cardQ=[]; V.peek=null; V.press=null; V.drag=null; V.fork=null;
+    guide.close(); V.card=null; V.cardQ=[]; V.peek=null; V.press=null; V.drag=null; V.fork=null; V.merge=null;
     V.finale = { crown, t: instant ? V.t - 9 : V.t, lanterns: [] };
     for (let i = 0; i < 60; i++) V.finale.lanterns.push({ x: Math.random(), y: 0.4 + Math.random() * 0.6, sp: 0.02 + Math.random() * 0.04, ph: Math.random() * TAU, c: Math.random() });
     AU.S.crown(crown); AU.update({ finale: crown, futurePaths: futurePaths() }); markSeen('crown_' + crown); V.sel = -1; V.prev = null; fitBoard();
@@ -267,10 +322,15 @@
     if (V.card) return cardClick(x, y);
     if (V.finale) return finaleClick(x, y);
     if (V.fork) return forkClick(x, y);
+    if (V.merge) return mergeClick(x, y);
     if (V.peek && V.peek.sticky) { V.peek = null; return; }
     const h = hitHUD(x, y);
     if (h) {
-      if (h.k === 'card') { V.sel = h.i; V.drag = { i: h.i, x, y, moved: false }; AU.S.pick(); }
+      if (h.k === 'card') {
+        // v0.12: tapping the selected card again switches between the futures this kind knows.
+        if (V.sel === h.i && B.known(s, s.hand[h.i]).length > 1) { B.cycleStyle(s, s.hand[h.i]); V.hover = null; V.prev = null; V.cardFlip = { i: h.i, t: V.t }; save(); }
+        V.sel = h.i; V.drag = { i: h.i, x, y, moved: false }; AU.S.pick();
+      }
       else if (h.k === 'swap') doSwap();
       else if (h.k === 'undo') doUndo();
       else if (h.k === 'tech') V.press = { axis: h.axis, t: V.t, x, y, touch: e.pointerType !== 'mouse' }; // upgrade on pointerup, so a long-press can just show the card
@@ -280,13 +340,13 @@
     }
     const [q, r] = pick(x, y);
     const tile = s.tiles[B.key(q,r)];
-    if (tile) { openCard({axis:tile.type,era:s.era[tile.type],variant:s.variant[tile.type],kind:'inspect'}); return; }
+    if (tile) { tapTile(tile); return; }
     if (V.sel >= 0) doPlace(q, r);
   }
   function onMove(e) {
     const x = e.clientX, y = e.clientY; V.mouse = { x, y };
     if (V.drag) V.drag.moved = V.drag.moved || Math.hypot(x - V.drag.x, y - V.drag.y) > 12;
-    if (!s || V.screen !== 'play' || V.fork || V.finale || V.card) return;
+    if (!s || V.screen !== 'play' || V.fork || V.merge || V.finale || V.card) return;
     if (e.pointerType === 'mouse' || !e.pointerType) { const h = hitHUD(x, y); const ax = h && h.k === 'tech' ? h.axis : null; if (!ax) { if (V.peek && !V.peek.sticky) V.peek = null; V.hoverRow = null; } else if (!V.hoverRow || V.hoverRow.axis !== ax) { V.hoverRow = { axis: ax, t: V.t }; if (V.peek && !V.peek.sticky) V.peek = null; } }
     const [q, r] = pick(x, y);
     const hk = B.key(q, r);
@@ -298,13 +358,13 @@
   }
   function onUp(e) {
     AU.init(); // iOS Safari only unlocks audio on touchend/pointerup
-    if (V.drag && V.drag.moved && V.screen === 'play' && !V.card && !V.finale && !V.fork) { const [q, r] = pick(e.clientX, e.clientY); doPlace(q, r); }
+    if (V.drag && V.drag.moved && V.screen === 'play' && !V.card && !V.finale && !V.fork && !V.merge) { const [q, r] = pick(e.clientX, e.clientY); doPlace(q, r); }
     V.drag = null;
-    if (V.press) { const p = V.press; V.press = null; if (V.peek && V.peek.sticky && V.peek.fromPress) { V.peek.fromPress = false; return; } const h = hitHUD(e.clientX, e.clientY); if (h && h.k === 'tech' && h.axis === p.axis) { if (V.peek && !V.peek.sticky) V.peek = null; V.hoverRow = null; if(B.canUpgrade(s,p.axis)) doUpgrade(p.axis); else if (s.era[p.axis] < 3 && B.locksFor(s,p.axis).length) { if (s.ideas > 0) AU.S.deny(); const nx = s.era[p.axis] + 1; openCard(nx < 3 ? {axis:p.axis,era:nx,variant:null,kind:'locked'} : {axis:p.axis,era:s.era[p.axis],variant:s.variant[p.axis],kind:'locked',treeEra:3}); } else openCard({axis:p.axis,era:s.era[p.axis],variant:s.variant[p.axis],kind:'inspect'}); } }
+    if (V.press) { const p = V.press; V.press = null; if (V.peek && V.peek.sticky && V.peek.fromPress) { V.peek.fromPress = false; return; } const h = hitHUD(e.clientX, e.clientY); if (h && h.k === 'tech' && h.axis === p.axis) { if (V.peek && !V.peek.sticky) V.peek = null; V.hoverRow = null; if(B.canUpgrade(s,p.axis)) doUpgrade(p.axis); else if (B.canLearn(s,p.axis)) { V.fork = { axis: p.axis, t: V.t, learn: true }; AU.S.pick(); } else if (s.era[p.axis] < 3 && B.locksFor(s,p.axis).length) { if (s.ideas > 0) AU.S.deny(); const nx = s.era[p.axis] + 1; openCard(nx < 3 ? {axis:p.axis,era:nx,variant:null,kind:'locked'} : {axis:p.axis,era:s.era[p.axis],variant:s.variant[p.axis],kind:'locked',treeEra:3}); } else openCard({axis:p.axis,era:s.era[p.axis],variant:s.variant[p.axis],kind:'inspect'}); } }
   }
   function boardTap(x, y) {
     const [q, r] = pick(x, y), tile = s.tiles[B.key(q, r)];
-    if (tile) openCard({axis:tile.type, era:s.era[tile.type], variant:s.variant[tile.type], kind:'inspect'});
+    if (tile) tapTile(tile);
     else if (V.sel >= 0) doPlace(q, r);
   }
   function cameraDown(e) {
@@ -370,12 +430,13 @@
     if (V.screen !== 'play') return;
     if (V.card) { if (e.key === 'Escape') closeCard(); return; }
     if (V.finale) return;
-    if (V.fork) { if (['1','2','3'].includes(e.key)) { e.preventDefault(); doUpgrade(V.fork.axis,['leaf','star','magic'][+e.key-1]); } else if(e.key==='Escape') V.fork=null; return; }
+    if (V.fork) { if (['1','2','3'].includes(e.key)) { e.preventDefault(); forkPick(['leaf','star','magic'][+e.key-1]); } else if(e.key==='Escape') V.fork=null; return; }
+    if (V.merge) { if (e.key === 'Enter' || e.key === '1') { if (e.preventDefault) e.preventDefault(); doMerge(); } else if (e.key === 'Escape' || e.key === '2') V.merge = null; return; }
     if (cameraAllowed() && !e.ctrlKey && !e.metaKey && !e.altKey) {
       if (e.key === ' ' && !(document.activeElement && document.activeElement.tagName === 'BUTTON')) { V.space=true; if(e.preventDefault)e.preventDefault(); }
       if (['+', '=', '-', '_', '0'].includes(e.key)) { if(e.preventDefault)e.preventDefault(); if(e.key === '0') resetCamera(); else zoomAt(V.zoom * (e.key === '+' || e.key === '=' ? 1.25 : 0.8),V.baseX,V.baseY); return; }
     }
-    if (/^[1-9]$/.test(e.key) && s.hand[+e.key - 1]) { V.sel = +e.key - 1; V.hover = null; AU.S.pick(); }
+    if (/^[1-9]$/.test(e.key) && s.hand[+e.key - 1]) { const i = +e.key - 1; if (V.sel === i && B.known(s, s.hand[i]).length > 1) { B.cycleStyle(s, s.hand[i]); V.prev = null; V.cardFlip = { i, t: V.t }; save(); } V.sel = i; V.hover = null; AU.S.pick(); }
     if ((e.key === 'z' || e.key === 'Z') && (e.ctrlKey || e.metaKey)) doUndo();
     if (V.card && (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter')) { closeCard(); return; }
     if (e.key === 'Escape') { V.sel = -1; V.prev = null; V.fork = null; V.peek = null; }
@@ -500,6 +561,8 @@
       if (!t) { g.fillStyle = shade(grass, -0.12); for (let i = 0; i < 3; i++) { const ox = ((q * 7 + r * 13 + i * 5) % 9) - 4, oy = ((q * 3 + r * 5 + i * 7) % 5) - 2; g.fillRect(x + ox * u * 0.12, y + oy * u * 0.1, 1.5, 3); } }
       g.globalAlpha = 1;
     }
+    // v0.12: a ready Paragon triangle glows gold until it is merged
+    for (const sp of (V.finale ? [] : B.allParagonSpots(s))) { const p = 0.5 + 0.5 * Math.sin(V.t * 4); for (const k of sp.tiles) { const [q, r] = k.split(',').map(Number); hexPath(hx(q, r), hy(q, r), u * (0.8 + p * 0.08)); g.strokeStyle = `rgba(255,214,90,${0.55 + p * 0.4})`; g.lineWidth = 3.5; g.stroke(); } }
     // hover highlight + idle hint
     if (V.prev) { const x = hx(V.prev.q, V.prev.r), y = hy(V.prev.q, V.prev.r); hexPath(x, y, u * tileRadius); g.fillStyle = 'rgba(255,250,210,0.45)'; g.fill(); g.strokeStyle = '#fff6c8'; g.lineWidth = 2.5; g.stroke(); }
     else if (V.sel >= 0 && V.hover) { const [q, r] = V.hover.split(',').map(Number); if (B.hexDist(q, r) <= R && s.tiles[V.hover]) { hexPath(hx(q, r), hy(q, r), u * tileRadius); g.strokeStyle = 'rgba(255,255,255,0.25)'; g.lineWidth = 2; g.stroke(); } }
@@ -507,14 +570,16 @@
     if (hint) { const x = hx(hint.q, hint.r), y = hy(hint.q, hint.r), p = 0.5 + 0.5 * Math.sin(V.t * 4); hexPath(x, y, u * (0.76 + p * 0.12)); g.strokeStyle = `rgba(255,240,150,${0.5 + p * 0.4})`; g.lineWidth = 3; g.stroke(); }
     // pass 2: buildings + critters in depth order
     const night = V.finale && ['star','magic'].includes(V.finale.crown) && V.t - V.finale.t > 2;
+    const parLast = {}; for (const [q, r] of list) { const t = s.tiles[B.key(q, r)]; if (t && t.paragon) parLast[t.paragon] = B.key(q, r); }
     for (const [q, r] of list) {
       const k = B.key(q, r), t = s.tiles[k];
       if (!t) continue;
+      if (t.paragon) { if (parLast[t.paragon] === k) drawParagonAt(t.paragon, night); continue; }
       const x = hx(q, r), y0 = hy(q, r);
       let y = y0, sc = 1;
       const a0 = V.anim[k];
       if (a0 !== undefined) { const p = (V.t - a0) / 0.45; if (p < 1) { const b = 1 - Math.pow(1 - Math.min(1, p * 1.6), 3); y = y0 - (1 - b) * 70; sc = p > 0.6 ? 1 + Math.sin((p - 0.6) / 0.4 * Math.PI) * 0.12 : 1; } }
-      let era = s.era[t.type], variant = s.variant[t.type];
+      let era = s.era[t.type], variant = B.tileStyle(s, t) || s.variant[t.type];
       const fl = V.flips[k];
       let fy = 1;
       if (fl) { const p = (V.t - fl.t0) / 0.5; if (p < 0) { era = fl.from; variant = null; } else if (p < 1) { fy = Math.abs(Math.cos(p * Math.PI)); if (p < 0.5) { era = fl.from; variant = null; } if (p > 0.45 && !fl.sp) { fl.sp = 1; for (let i = 0; i < 10; i++) V.parts.push({ k: 'spark', x, y: y0 - u * 0.5, vx: (Math.random() - 0.5) * 3, vy: -Math.random() * 3, life: 1, t: 0, c: futureColor(s.variant[t.type], '#fff2a0', '#bfefff') }); } } else delete V.flips[k]; }
@@ -546,7 +611,7 @@
     if (V.prev && V.sel >= 0) {
       const p = V.prev, x = hx(p.q, p.r), y = hy(p.q, p.r);
       g.globalAlpha = 0.62 + 0.15 * Math.sin(V.t * 5);
-      ART.drawBuilding(g, p.type, s.era[p.type], s.variant[p.type], x, y + u * 0.18 - 6 - Math.sin(V.t * 4) * 2, u, V.t, false, { grounded: true });
+      ART.drawBuilding(g, p.type, s.era[p.type], p.style || s.variant[p.type], x, y + u * 0.18 - 6 - Math.sin(V.t * 4) * 2, u, V.t, false, { grounded: true });
       g.globalAlpha = 1;
       for (const l of p.links) {
         g.strokeStyle = l.bonus ? 'rgba(255,210,80,0.95)' : l.hearts ? 'rgba(255,120,150,0.85)' : 'rgba(110,115,125,0.8)'; g.lineWidth = 3; g.setLineDash([4, 4]); g.lineDashOffset = -V.t * 20; g.beginPath(); g.moveTo(x, y); g.lineTo(hx(l.q, l.r), hy(l.q, l.r)); g.stroke(); g.setLineDash([]);
@@ -555,9 +620,22 @@
       const th = []; for (const l of p.links) for (const o of l.ops || []) { const self = o.by === 'self'; th.push({ q: self ? p.q : l.q, r: self ? p.r : l.r, oq: self ? l.q : p.q, or: self ? l.r : p.r, why: o.why, kind: o.v > 0 ? 'like' : 'frown' }); }
       { const bw = 54 + (p.district ? 24 : 0) + (p.hood ? 26 : 0); drawThoughts(th, 1, [{ x, y: y - u * 2.0, r: bw / 2 + 2 }, { x: x - bw / 4, y: y - u * 2.0, r: 16 }, { x: x + bw / 4, y: y - u * 2.0, r: 16 }, { x: x + bw / 2 + 14, y: y - u * 2.0, r: 12 }, ...(p.dimmed > 0 ? [{ x: x - bw / 2 - 26, y: y - u * 2.0, r: 22 }] : [])]); }
       bubble(x, y - u * 2.0, p.points, p.district, p.hood, p.dimmed, p.demand);
+      if (p.aura > 1) { g.font = 'bold 13px system-ui'; g.textAlign = 'center'; g.fillStyle = '#fff3b0'; g.strokeStyle = '#7a5a10'; g.lineWidth = 3; const ty = y - u * 2 - (p.bonus ? 41 : 25); g.strokeText('×' + p.aura + ' Paragon', x, ty); g.fillText('×' + p.aura + ' Paragon', x, ty); }
       if(p.bonus) {g.font='bold 12px system-ui';g.textAlign='center';g.fillStyle='#fff9de';g.strokeStyle='#44694b';g.lineWidth=3;g.strokeText('+'+p.bonus+' connected',x,y-u*2-25);g.fillText('+'+p.bonus+' connected',x,y-u*2-25);}
       { const bw = 54 + (p.district ? 24 : 0) + (p.hood ? 26 : 0); smogBadge(x + bw / 2 + 14, y - u * 2.0, B.EMIT[p.type][s.era[p.type]], 1); }
     }
+  }
+  // v0.12: the Paragon is drawn once, over the middle of its three hexes, when the depth pass reaches its front-most hex.
+  function drawParagonAt(axis, night) {
+    const P = s.paragons[axis]; if (!P) return;
+    const c0 = paragonCentre(P.tiles), u = V.u;
+    const born = V.paragonT && V.paragonT[axis] !== undefined ? (V.t - V.paragonT[axis]) / 0.9 : 1;
+    const spots = P.tiles.map((k) => { const t = s.tiles[k]; return { dx: hx(t.q, t.r) - c0.x, dy: hy(t.q, t.r) - c0.y, v: B.tileStyle(s, t) }; });
+    ell(g, c0.x, c0.y + u * 0.2, u * 1.6, u * 0.5, 'rgba(30,40,20,0.14)');
+    g.save();
+    if (born < 1) { const b = 1 - Math.pow(1 - Math.max(0, born), 3); g.translate(c0.x, c0.y); g.scale(0.4 + 0.6 * b, 0.2 + 0.8 * b); g.translate(-c0.x, -c0.y); g.globalAlpha = Math.max(0.15, b); }
+    ART.drawParagon(g, axis, c0.x, c0.y, u, V.t, night, spots);
+    g.restore(); g.globalAlpha = 1;
   }
   // ---------- ambient travellers (UI only): carts -> sooty cars -> EVs -> trams / maglev pods ----------
   function travellers(dt) {
@@ -660,6 +738,8 @@
       else if (f.k === 'wish') { const r = 14 + k * 10; g.save(); g.translate(f.x + V.u * 0.4, f.y - k * 24); g.scale(1 + Math.sin(Math.min(1, k * 3) * Math.PI) * 0.3, 1); heart(0, 0, r, '#ff6b8a'); g.restore(); }
       else if (f.k === 'district') { const r = 18 + k * 30; g.strokeStyle = '#fff2a0'; g.lineWidth = 3; g.beginPath(); g.arc(f.x, f.y + 26, r, 0, TAU); g.stroke(); for (let j = 0; j < 3; j++) sunIcon(f.x + (j - 1) * 16, f.y - k * 20 - (j === 1 ? 6 : 0), 5, a); }
       else if (f.k === 'loss') { const dx = -k * 18, dy = -k * 26; smogSun(f.x + dx - 9, f.y + dy, 12, a); g.globalAlpha = a; g.fillStyle = '#fff'; g.strokeStyle = '#5f584f'; g.lineWidth = 3.5; g.font = 'bold 16px "Trebuchet MS", system-ui, sans-serif'; g.textAlign = 'left'; g.textBaseline = 'middle'; g.strokeText('−' + f.n, f.x + dx + 6, f.y + dy); g.fillText('−' + f.n, f.x + dx + 6, f.y + dy); }
+      else if (f.k === 'aura') { const yy = f.y - k * 22; g.font = 'bold 17px "Trebuchet MS", system-ui'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.lineWidth = 4; g.strokeStyle = '#8a5a10'; g.strokeText('×' + f.n, f.x + 14, yy); g.fillStyle = '#ffe36a'; g.fillText('×' + f.n, f.x + 14, yy); ART.paragonCrown(g, f.x - 8, yy, 8, V.t); }
+      else if (f.k === 'paragon') { const pc = TECHS.PARAGONS[f.axis], yy = f.y - k * 18, sc = 1 + Math.sin(Math.min(1, k * 4) * Math.PI) * 0.15; g.save(); g.translate(f.x, yy); g.scale(sc, sc); g.font = 'bold 22px "Trebuchet MS", system-ui'; const tw = g.measureText(pc.name).width + 54; g.fillStyle = 'rgba(255,250,235,0.95)'; rr(-tw / 2, -20, tw, 40, 20); g.fill(); g.strokeStyle = '#e6b83a'; g.lineWidth = 3; g.stroke(); ART.paragonCrown(g, -tw / 2 + 22, 0, 11, V.t); g.fillStyle = '#5a3a00'; g.textAlign = 'left'; g.textBaseline = 'middle'; g.fillText(pc.name, -tw / 2 + 40, 1); g.restore(); }
       else if (f.k === 'critter') { g.fillStyle = 'rgba(255,255,255,0.9)'; circle(g, f.x, f.y - k * 16, 22, 'rgba(255,255,255,0.88)'); ART.drawCritter(g, f.id, f.x, f.y - k * 16 + 12, 1.1, V.t, 0); if (f.first) { g.strokeStyle = '#ffcf3f'; g.lineWidth = 3; g.beginPath(); g.arc(f.x, f.y - k * 16, 22 + Math.sin(V.t * 8) * 2, 0, TAU); g.stroke(); } }
     }
     g.globalAlpha = 1;
@@ -741,11 +821,14 @@
     B.AXES.forEach((a, i) => {
       if (i === nr) { const rr0 = rows[i]; glowDot(g, rr0.x + rr0.w / 2, rr0.y + rr0.h / 2, rr0.w * 0.75, '#fff27a', 0.35 + 0.25 * Math.sin(V.t * 5)); }
       const r = rows[i], era = s.era[a], locks = era < 3 ? B.locksFor(s, a) : [], can = avail && era < 3 && !locks.length;
+      const learnable = era === 3 && !V.finale && B.canLearn(s, a), par = s.paragons && s.paragons[a];
       const fk = V.rowFlash[a] !== undefined ? (V.t - V.rowFlash[a]) / 1.2 : 1;
       if (fk < 1) glowDot(g, r.x + r.w / 2, r.y + r.h / 2, r.w * (0.6 + fk * 0.6), futureColor(s.variant[a], '#fff27a', '#9fe4ff'), (1 - fk) * 0.9);
       const pulse = can ? 0.5 + 0.5 * Math.sin(V.t * 4 + i * 0.6) : 0;
       g.fillStyle = can ? `rgba(255,248,210,${0.85 + pulse * 0.15})` : 'rgba(255,255,255,0.55)'; rr(r.x, r.y, r.w, r.h, 12); g.fill();
       if (can) { g.strokeStyle = `rgba(255,190,40,${0.5 + pulse * 0.5})`; g.lineWidth = 3; g.stroke(); }
+      if (learnable) { const lp = 0.5 + 0.5 * Math.sin(V.t * 3 + i); g.strokeStyle = `rgba(183,120,232,${0.35 + lp * 0.35})`; g.lineWidth = 2.5; g.stroke(); }
+      if (par) { g.strokeStyle = '#e6b83a'; g.lineWidth = 2.5; g.stroke(); }
       const iu = Math.min(r.h * 0.5, 30);
       // current building
       g.save(); rr(r.x + 4, r.y + 3, r.h - 6, r.h - 6, 9); g.clip(); g.fillStyle = mix('#cfc6a8', '#bfe8a8', era / 3); g.fillRect(r.x, r.y, r.h, r.h);
@@ -765,7 +848,19 @@
         const narrow = r.w < r.h * 2, bx = narrow ? r.x + r.w - 13 : ax + 22, by = narrow ? r.y + 15 : ay + 2;
         if (can) bulb(bx, by, 0.7 + pulse * 0.1, true);
         else if (locks.length) lockBadge(narrow ? bx : ax + 24, by, locks[0], nx, ny, iu);
-      } else { g.fillStyle = futureColor(s.variant[a], '#55b84a', '#4fb8ff'); crownGlyph(r.x + r.w - 24, r.y + r.h * 0.42, 9, s.variant[a]); }
+      } else if (par) { crownGlyph(r.x + r.w - 24, r.y + r.h * 0.42, 9, 'paragon'); }
+      else {
+        // v0.12: a finished row can learn its other futures (ghosts of the ones still to learn, plus a bulb).
+        const kn = B.known(s, a), miss = B.FUTURES.filter((v) => !kn.includes(v));
+        if (learnable && miss.length) {
+          const nx = r.x + r.w - r.h * 0.5, ny = r.y + r.h * 0.62;
+          g.save(); rr(r.x + 2, r.y + 2, r.w - 4, r.h - 4, 10); g.clip(); g.globalAlpha = 0.85;
+          miss.forEach((v, j) => ART.drawBuilding(g, a, 3, v, nx + (j - (miss.length - 1) / 2) * iu * 0.55, ny, iu * 0.42, V.t, false));
+          g.restore(); g.globalAlpha = 1;
+          const narrowRow = r.w < r.h * 2; bulb(narrowRow ? r.x + r.w - 13 : r.x + r.h + 30, narrowRow ? r.y + 15 : r.y + r.h * 0.38 + 2, 0.6, true);
+        } else crownGlyph(r.x + r.w - 24, r.y + r.h * 0.42, 9, s.variant[a]);
+        if (kn.length > 1) kn.forEach((v, j) => crownGlyph(r.x + r.h + 10 + j * 11, r.y + 11, 4.5, v));
+      }
     });
   }
   // v0.10 tech tree on the row: a padlock on the next building, plus a picture of what it needs first
@@ -787,6 +882,7 @@
     needPic(x, y, 11, lock);
   }
   function crownGlyph(x, y, r, v) {
+    if (v === 'paragon') { ART.paragonGlyph(g, x, y, r * 1.1, V.t); return; }
     if (v==='mixed') { const paths=s?futurePaths():['leaf','star','magic']; paths.forEach((v,i)=>crownGlyph(x+(i-(paths.length-1)/2)*r*.75,y,r*.65,v));return;}
     if (v==='magic') { g.fillStyle='#b778e8'; g.beginPath(); g.moveTo(x,y-r);g.lineTo(x+r*.65,y);g.lineTo(x,y+r);g.lineTo(x-r*.65,y);g.closePath();g.fill();g.strokeStyle='#f9e2ff';g.lineWidth=1.5;g.beginPath();g.moveTo(x,y-r*.7);g.lineTo(x,y+r*.7);g.stroke();return; }
     if (v === 'star') { g.fillStyle = '#5fc4ff'; g.beginPath(); for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr2 = i % 2 ? r * 0.45 : r; g.lineTo(x + Math.cos(a) * rr2, y + Math.sin(a) * rr2); } g.fill(); }
@@ -807,8 +903,11 @@
       g.save(); rr(c.x + 7, y + 7, c.w - 14, c.h * 0.6, 10); g.clip();
       const sg = g.createLinearGradient(0, y, 0, y + c.h * 0.6); sg.addColorStop(0, mix('#cfe2ea', '#bfe6ff', V.vivid)); sg.addColorStop(1, mix('#d8d2a8', '#c8ecb0', V.vivid)); g.fillStyle = sg; g.fillRect(c.x, y, c.w, c.h);
       ell(g, c.x + c.w / 2, y + c.h * 0.54, c.w * 0.36, c.w * 0.1, mix('#a8a070', '#8fd46a', V.vivid));
-      ART.drawBuilding(g, type, s.era[type], s.variant[type], c.x + c.w / 2, y + c.h * 0.55, c.w * 0.36, V.t, false);
+      { const cf = V.cardFlip && V.cardFlip.i === i ? (V.t - V.cardFlip.t) / 0.3 : 1, fy = cf < 1 ? Math.abs(Math.cos(cf * Math.PI)) : 1, ax = c.x + c.w / 2, ay = y + c.h * 0.55;
+        g.save(); g.translate(ax, ay); g.scale(1, fy); g.translate(-ax, -ay);
+        ART.drawBuilding(g, type, s.era[type], (cf < 0.5 ? null : B.styleOf(s, type)) || s.variant[type], ax, ay, c.w * 0.36, V.t, false); g.restore(); }
       g.restore();
+      { const kn = B.known(s, type); if (kn.length > 1) { const cur = B.styleOf(s, type), py = y + 7 + c.h * 0.6 - 9; kn.forEach((v, j) => { const px = c.x + c.w / 2 + (j - (kn.length - 1) / 2) * 15; circle(g, px, py, 6.5, v === cur ? '#fffbe8' : 'rgba(255,255,255,0.55)'); if (v === cur) { g.strokeStyle = '#ffb627'; g.lineWidth = 1.5; g.beginPath(); g.arc(px, py, 6.5, 0, TAU); g.stroke(); } g.globalAlpha = v === cur ? 1 : 0.45; crownGlyph(px, py, 4.5, v); g.globalAlpha = 1; }); } }
       smogBadge(c.x + c.w - (pal ? 17 : 22), y + (pal ? 17 : 22), B.EMIT[type][s.era[type]], pal ? 0.8 : 1);
       if (pal) { // v0.11 town demand: green = the town needs this, grey = plenty already
         const dem = B.demand(s, type);
@@ -949,6 +1048,7 @@
     else if (k === 'critter') { glowDot(g, x, y, 28, '#fff27a', 0.6); ART.drawCritter(g, pic.id, x, y + 10, 1.5, V.t, 0); }
     else if (k === 'smogsun') { smogSun(x, y + 2, 17); }
     else if (k === 'demand') { g.fillStyle = '#fbf5e4'; rr(x - 13, y - 17, 26, 32, 5); g.fill(); g.strokeStyle = pic.plenty ? '#b0aea6' : '#5ab446'; g.lineWidth = 2; g.stroke(); ART.drawBuilding(g, pic.axis, s.era[pic.axis], s.variant[pic.axis], x, y + 8, 11, V.t, false); demandBadge(x - 11, y - 15, 7, pic.plenty ? 'plenty' : 'need'); }
+    else if (k === 'paragon') { glowDot(g, x, y, 30, '#fff1a8', 0.8); ART.paragonCrown(g, x, y - 2, 13, V.t); }
     else if (k === 'skyclear') { glowDot(g, x, y, 30, '#fff27a', 0.8); sunIcon(x - 6, y + 1, 10); crownGlyph(x + 14, y - 8, 6, 'leaf'); crownGlyph(x + 16, y + 6, 6, 'star'); crownGlyph(x + 4, y + 14, 6, 'magic'); }
   }
   function goalInfo() {
@@ -1148,7 +1248,7 @@
   function drawPeek() {
     const P = V.peek; if (!P || !s) return;
     const a = Math.min(1, (V.t - P.t) / 0.18), ax = P.axis, era = s.era[ax], ri = B.AXES.indexOf(ax), row = techRects()[ri];
-    const cards = era === 2 ? [[3, 'leaf', 'Nature'], [3, 'star', 'Future'], [3, 'magic', 'Magic']] : era === 3 ? [[3, s.variant[ax], 'You have']] : [[era + 1, null, 'Next idea']];
+    const cards = era === 2 ? [[3, 'leaf', 'Nature'], [3, 'star', 'Future'], [3, 'magic', 'Magic']] : era === 3 ? B.FUTURES.map((v) => [3, v, B.known(s, ax).includes(v) ? 'You have' : 'Learn it']) : [[era + 1, null, 'Next idea']];
     const cw = Math.min(310, (W - 40) / cards.length - 10), ch = Math.min(410,H-100), total = cards.length * cw + (cards.length - 1) * 10;
     let x0, y0;
     if (portrait()) { x0 = W / 2 - total / 2; y0 = Math.max(10, row.y - ch - 12); }
@@ -1166,26 +1266,50 @@
     if (!V.fork) return;
     const a = Math.min(1, (V.t - V.fork.t) / 0.3);
     g.fillStyle = `rgba(30,30,50,${0.5 * a})`; g.fillRect(0, 0, W, H);
+    const learnMode = !!V.fork.learn, kn = learnMode ? B.known(s, V.fork.axis) : [];
     for (const f of forkRects()) {
       const hov = Math.hypot(V.mouse.x - f.x, V.mouse.y - f.y) < f.r, sc = (hov ? 1.06 : 1) * (0.7 + 0.3 * a);
-      const leaf = f.v === 'leaf', magic = f.v === 'magic';
-      g.save(); g.translate(f.x, f.y); g.scale(sc, sc);
+      const leaf = f.v === 'leaf', magic = f.v === 'magic', has = kn.includes(f.v);
+      g.save(); g.translate(f.x, f.y); g.scale(sc, sc); if (has) g.globalAlpha = 0.45;
       glowDot(g, 0, 0, f.r * 1.5, futureColor(f.v,'#c8ff9a','#9fe4ff'), 0.5);
       const bg = g.createRadialGradient(0, -f.r * 0.3, 4, 0, 0, f.r); bg.addColorStop(0, magic ? '#fff0ff' : leaf ? '#fff6d0' : '#e6f4ff'); bg.addColorStop(1, magic ? '#aa73d8' : leaf ? '#9fd877' : '#6c8fd8'); g.fillStyle = bg; g.beginPath(); g.arc(0, 0, f.r, 0, TAU); g.fill();
       g.strokeStyle = '#fff'; g.lineWidth = 5; g.stroke();
       ART.drawBuilding(g, V.fork.axis, 3, f.v, 0, f.r * 0.45, f.r * 0.62, V.t, !leaf);
-      g.restore();
+      g.restore(); g.globalAlpha = 1;
       crownGlyph(f.x, f.y - f.r - 26, 18 * sc, f.v);
       g.globalAlpha = a; g.font = 'bold 17px "Trebuchet MS", system-ui'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.lineWidth = 5; g.strokeStyle = 'rgba(30,30,50,0.6)';
       const tc = TECHS.tech(V.fork.axis, 3, f.v), colW = Math.min(f.r * 2.5, W / 3 - 12); let ly = f.y + f.r + 26;
       for (const ln of wrap(tc.name, colW)) { g.strokeText(ln, f.x, ly); g.fillStyle = '#fff'; g.fillText(ln, f.x, ly); ly += 20; }
       g.font = 'bold 12px system-ui'; g.fillStyle = magic ? '#ecd2ff' : leaf ? '#d6ffbf' : '#cdeeff'; g.fillText(magic ? 'magic future' : leaf ? 'nature future' : 'tech future', f.x, ly); ly += 20;
-      g.font = 'bold 12px system-ui'; g.fillStyle = '#fff5c7'; g.fillText(tc.status, f.x, ly); ly += 22;
+      g.font = 'bold 12px system-ui'; g.fillStyle = '#fff5c7'; g.fillText(has ? '✓ You have this one' : learnMode ? 'Learn it: 1 idea' : tc.status, f.x, ly); ly += 22;
       g.font = 'bold 14px system-ui'; g.fillStyle = 'rgba(255,255,255,0.96)'; wrap(TECHS.futureBonus(f.v), colW).forEach((ln, j) => g.fillText(ln, f.x, ly + j * 19)); g.globalAlpha = 1;
     }
-    g.globalAlpha = a; g.font = 'bold 15px system-ui'; g.fillStyle = 'rgba(255,255,255,0.85)'; g.textAlign = 'center'; wrap('Choose Nature, Future or Magic. Share 3+ in two paths, or 2+ in all three.', W - 30).forEach((ln, j, arr) => g.fillText(ln, W / 2, forkRects()[0].y - forkRects()[0].r - 70 - (arr.length - 1 - j) * 18)); g.globalAlpha = 1;
+    const forkTitle = learnMode ? 'Learn another future. Then build a Nature, a Future and a Magic one, all touching, to make a Paragon.' : 'Choose Nature, Future or Magic. Share 3+ in two paths, or 2+ in all three.';
+    g.globalAlpha = a; g.font = 'bold 15px system-ui'; g.fillStyle = 'rgba(255,255,255,0.85)'; g.textAlign = 'center'; wrap(forkTitle, W - 30).forEach((ln, j, arr) => g.fillText(ln, W / 2, forkRects()[0].y - forkRects()[0].r - 70 - (arr.length - 1 - j) * 18)); g.globalAlpha = 1;
   }
-  function forkClick(x, y) { for (const f of forkRects()) if (Math.hypot(x - f.x, y - f.y) < f.r) { doUpgrade(V.fork.axis, f.v); return; } V.fork = null; }
+  function forkClick(x, y) { for (const f of forkRects()) if (Math.hypot(x - f.x, y - f.y) < f.r) { forkPick(f.v); return; } V.fork = null; }
+
+  // ---------- v0.12 Paragon merge prompt ----------
+  function mergeRects() { const u = Math.max(26, Math.min(W * 0.075, H * 0.085, 64)); return { x: W / 2, y: Math.min(H * 0.5, H - 190), u, r: u * 2.6 }; }
+  function drawMerge() {
+    if (!V.merge) return;
+    const M = V.merge, a = Math.min(1, (V.t - M.t) / 0.35), R = mergeRects(), pc = TECHS.PARAGONS[M.axis];
+    g.fillStyle = `rgba(30,30,50,${0.6 * a})`; g.fillRect(0, 0, W, H);
+    g.globalAlpha = a;
+    glowDot(g, R.x, R.y - R.u, R.r * 1.4, '#fff1a8', 0.45);
+    const conv = Math.min(1, (V.t - M.t) / 0.8), e = 1 - Math.pow(1 - conv, 3);
+    const spots = B.FUTURES.map((v, i) => ({ v, dx: [-0.87, 0.87, 0][i] * R.u * (2.4 - 1.4 * e), dy: [-0.32, -0.32, 0.64][i] * R.u * (2.4 - 1.4 * e) }));
+    ART.drawParagon(g, M.axis, R.x, R.y, R.u, V.t, false, spots);
+    g.textAlign = 'center'; g.textBaseline = 'middle'; g.lineWidth = 5; g.strokeStyle = 'rgba(30,30,50,0.6)';
+    g.font = 'bold 15px system-ui'; g.fillStyle = '#ffe9a0'; g.fillText('Merge into a Paragon?', W / 2, Math.max(28, R.y - R.u * 4.4));
+    let ty = R.y + R.u * 1.35;
+    g.font = 'bold 26px "Trebuchet MS", system-ui'; g.strokeText(pc.name, W / 2, ty); g.fillStyle = '#fff'; g.fillText(pc.name, W / 2, ty); ty += 28;
+    g.font = '15px system-ui'; g.fillStyle = 'rgba(255,255,255,0.95)'; for (const ln of wrap(pc.line, Math.min(520, W - 40))) { g.fillText(ln, W / 2, ty); ty += 19; }
+    ty += 6; g.font = 'bold 14px system-ui'; g.fillStyle = '#fff3b0';
+    for (const ln of wrap('+' + B.TUNE.paragonBurst + ' sunbeams now. Anything you build touching it earns double sunbeams. One Paragon of each kind.', Math.min(520, W - 40))) { g.fillText(ln, W / 2, ty); ty += 18; }
+    g.globalAlpha = 1;
+  }
+  function mergeClick(x, y) { const R = mergeRects(); if (Math.hypot(x - R.x, y - (R.y - R.u)) < R.r) doMerge(); else V.merge = null; }
 
   // ---------- finale ----------
   function drawFinale(dt) {
@@ -1312,13 +1436,25 @@
     }
   }
 
+  // ?qa=paragon: a demo town for checking Paragon art. Seven tracks finished with their other futures learned
+  // (travel still has one to learn), one Paragon made, one triangle ready to merge. Uses the QA save, never the real one.
+  function paragonDemo(st) {
+    const F = B.FUTURES;
+    B.AXES.forEach((a, i) => { if (a === 'wild') { st.era[a] = 2; return; } st.era[a] = 3; st.variant[a] = F[i % 3]; st.learned = st.learned || {}; st.learned[a] = a === 'move' ? [F[i % 3]] : F.slice(); st.style = st.style || {}; st.style[a] = F[i % 3]; });
+    const tri = (a, cells) => cells.forEach(([q, r], j) => B.place(st, st.hand.indexOf(a), q, r, F[j]));
+    tri('power', [[0, 0], [1, 0], [1, -1]]); B.merge(st, 'power', B.paragonSpots(st, 'power')[0]);
+    tri('food', [[-1, 1], [0, 1], [-1, 2]]);
+    for (const a of ['home', 'water', 'wild', 'make', 'home', 'waste', 'move', 'wild']) { let best = null; for (const [q, r] of B.legalHexes(st)) { const p = B.preview(st, a, q, r); if (!best || p.points > best.p.points) best = { q, r, p }; } if (best) B.place(st, st.hand.indexOf(a), best.q, best.r); }
+    st.ideas = 3; V.paragonT = { power: V.t - 5 };
+  }
+
   // ---------- main loop ----------
   let last = performance.now();
   function frame(now) {
     const dt = Math.min(0.05, (now - last) / 1000); last = now; V.t += dt; V.dt = dt;
     g.setTransform(DPR, 0, 0, DPR, 0, 0);
-    cameraControls.hidden=!cameraAllowed();forkControls.hidden=!V.fork;
-    connectionsButton.hidden=V.screen!=='play' || !!V.finale || !!V.fork || !!V.card;
+    cameraControls.hidden=!cameraAllowed();forkControls.hidden=!V.fork;mergeControls.hidden=!V.merge;if(V.fork)syncForkButtons();
+    connectionsButton.hidden=V.screen!=='play' || !!V.finale || !!V.fork || !!V.merge || !!V.card;
     if(s) {const label='Connections '+B.discoveries(s).length+'/'+B.DISCOVERIES.length; if(connectionsButton.textContent!==label)connectionsButton.textContent=label;}
     if (V.screen === 'title') { drawTitle(); requestAnimationFrame(frame); return; }
     V.u += (V.uT - V.u) * 0.06;
@@ -1331,8 +1467,8 @@
     AU.update({ eve: V.eve, progress: Math.min(1, s.sunLevel / 18), clean: 1 - V.smog, critters: s.critterCount, futurePaths: futurePaths() });
     sky(); haze(); drawBoard(); travellers(dt); drawParticles(dt); evening(); drawFloats(dt); drawFinale(dt);
     if (!V.finale) { drawSunMeter(); drawSpecies(); drawTech(); drawHand(); spotlight(); drawGoal(dt); drawGuide(); }
-    drawFork();
-    if (!V.finale && !V.fork) { peekTick(); drawPeek(); }
+    drawFork(); drawMerge();
+    if (!V.finale && !V.fork && !V.merge) { peekTick(); drawPeek(); }
     drawCard();
     if (V.screen === 'end') drawEnd();
     requestAnimationFrame(frame);
@@ -1349,10 +1485,11 @@
 
   // ---------- boot ----------
   resize();
-  window.__BF = { forkControls, cameraControls, cameraButtons, zoomAt, resetCamera, pick, fitBoard, save, loadSave, canUndo, doUndo, finaleClick, guide, connectionsButton, openCard, closeCard, drawThoughts, TECHS, goalStage, goalInfo, get s() { return s; }, get W() { return W; }, get H() { return H; }, cardRects, swapRect, undoRect, techRects, titleButtons, finaleButtons, forkRects, hx, hy, V, start, demoFill, consume, startFinale, B, doUpgrade, doPlace, bestMove };
+  window.__BF = { mergeControls, doMerge, doLearn, openMerge, mergeRects, forkPick, forkControls, cameraControls, cameraButtons, zoomAt, resetCamera, pick, fitBoard, save, loadSave, canUndo, doUndo, finaleClick, guide, connectionsButton, openCard, closeCard, drawThoughts, TECHS, goalStage, goalInfo, get s() { return s; }, get W() { return W; }, get H() { return H; }, cardRects, swapRect, undoRect, techRects, titleButtons, finaleButtons, forkRects, hx, hy, V, start, demoFill, consume, startFinale, B, doUpgrade, doPlace, bestMove };
   if (Q.get('mode') || Q.get('auto')) {
     V.forkPref = Q.get('fork') || null; V.noCards = Q.get('cards') === '0';
     start({ mode: Q.get('mode') || 'cozy', seed: +(Q.get('seed') || 3) });
+    if (Q.get('qa') === 'paragon') { paragonDemo(s); V.smog = B.smogLevel(s); V.vivid = 1 - V.smog; fitBoard(); V.u = V.uT; }
     if (Q.get('auto')) { demoFill(s, +Q.get('auto')); V.smog = B.smogLevel(s); V.vivid = 1 - V.smog; fitBoard(); V.u = V.uT; }
     if (Q.get('finale')) { s.crowned = Q.get('finale'); startFinale(Q.get('finale')); V.finale.t -= +(Q.get('ft') || 8); }
   }
