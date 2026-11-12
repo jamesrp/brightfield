@@ -1,0 +1,1 @@
+{"input":"docs/stage0-pilot/raw/water/decoded.png","output":"assets/tiles/0/water.png","scale":0.999,"dx":1,"dy":1.3,"measured":{"bottom":1508,"slabWidth":961,"slabCx":511.5,"widestRow":969},"clippedPixels":1452,"verdict":"ok"}

@@ -1,0 +1,41 @@
+{
+  "method": "built-in image_gen",
+  "references": [
+    "assets/tiles/_template/base-plain.png",
+    "assets/buildings-0.png"
+  ],
+  "final": "assets/tiles/0/move.png",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparent_background": true,
+  "prompt": "prompt.txt",
+  "normalization": {
+    "method": "generated earth destination-over, clipped to exact slab silhouette; shared sides reapplied",
+    "filledPixels": 3162,
+    "faceFilledPixels": 2626,
+    "shared_side_opacity": "The generated family side interiors were made fully opaque before compositing; exact shared side pixels are regression-tested."
+  },
+  "sha256": {
+    "decoded.png": "d468e72b1df563477c93947f50fe66dc2c773fcaf74b31012a26926f6a0fa245",
+    "first-fit.png": "67b12504009907ca9f32d2f938bd05ca61c8120a4054a5bd36af28d3ddfb440e",
+    "raw.png": "2dc572784c3d25e4fb276ce79926f1b69458102a74da12a82d1b25bc54025341",
+    "final": "1b2263b02256faaa26c22ce625d99dcfaf3beda1fb9cd92ecfae24fe60ca888a"
+  },
+  "geometry_status": "PASS: 1024x1536 RGBA; centre(512,1130); kerb37.8px; 100% plot coverage; edges within0.5px.",
+  "pre_lanes_final_sha256": "d9091d6c80c334129645d87104fd768cf6263b049568f4d010e53d3877fa947e",
+  "lanes_revision": {
+    "base_commit": "948b010da6580de0341ccf3e05d56b3c1599661f",
+    "source": "docs/stage0-pilot/pre-lanes/assets/tiles/0/move.png",
+    "source_storage": "external archive; see docs/stage0-pilot/source-archive.json",
+    "source_sha256": "d9091d6c80c334129645d87104fd768cf6263b049568f4d010e53d3877fa947e",
+    "translation_y": 90,
+    "building_scale": 1,
+    "kerb_source": "assets/tiles/_slab/earth.png",
+    "steps": [
+      "docs/stage0-pilot/migrate-lanes.cjs",
+      "docs/stage0-pilot/kerb-edits/apply-kerbs.cjs"
+    ]
+  }
+}

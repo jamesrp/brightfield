@@ -19,3 +19,11 @@ Automated checks load all six PNGs, render every sprite, verify grounded horizon
 ## Next: tile spec v2
 
 The v0.9 atlases are being replaced tile by tile with per-tile PNGs whose slab is exactly the board hex, plus painted actor sprites for animation. See ART-DIRECTION.md for the spec, tools and acceptance checks.
+
+## Stage 0 spec-v2 pilot: plots and lanes (2026-11-09)
+
+The pilot contains four reusable family kerbs and eight Stage 0 static tiles. It follows the revised brief at upstream commit `948b010`: centre (512,1130), a full hex face and 37.8 px kerb. Original building paintings were translated down 90 px without scaling. Earth and garden received targeted built-in imagegen material edits to grey-brown kerbstones and mossy log edging. Only kerb surfaces were replaced; original top/structure art was preserved.
+
+The current [pilot review](stage0-pilot/README.md) records original and revised prompts, raw art, geometry conversion, material compositing and final checksums. Raw/intermediate images and the initial deep-slab pilot are preserved outside git. `stage0-pilot/source-archive.json` records all 66 archived image hashes and the reproduction instructions are in the pilot README. Its five current review sheets remain in git. The canonical `art-provenance.json` record and `SHA256SUMS.txt` describe the revised outputs.
+
+After rebasing onto main at `29b4cb29` and count-agnostic test cleanup, all 87 tests pass. Geometry checks show 100% plot coverage, with tile edges within 0.5 px, and all eight share identical earth kerb pixels. Gallery and close-up inspection verify clear code-drawn lanes and no board-green rim. On-plot paths remain inside plots. This pilot adds no Paragon art, later-stage tiles, actors or glow layers. Concurrent upstream Paragon work is preserved. It is submitted on a review branch only; merging and deployment are outside this revision.

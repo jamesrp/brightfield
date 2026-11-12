@@ -1,0 +1,42 @@
+{
+  "method": "built-in image_gen",
+  "references": [
+    "assets/tiles/_template/base-plain.png",
+    "assets/buildings-0.png"
+  ],
+  "final": "assets/tiles/0/power.png",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparent_background": true,
+  "prompt": "prompt.txt",
+  "normalization": {
+    "method": "generated earth destination-over, clipped to exact slab silhouette; shared sides reapplied",
+    "filledPixels": 773,
+    "faceFilledPixels": 331,
+    "shared_side_opacity": "The generated family side interiors were made fully opaque before compositing; exact shared side pixels are regression-tested."
+  },
+  "sha256": {
+    "decoded.png": "40f16f3ed2a53b6bc03c5c6a0a6fb570e45a84977515abdd571830f1bad15d4c",
+    "first-fit.png": "285e091b91aa37009c06fa12bb534f4170461aa13594a5193ef974941e5b9b9c",
+    "preliminary-fit.png": "bcbc6be8a9cca684a54e6b40c0b81d156a6a8f360e437131d638e001da14eb6b",
+    "raw.png": "e7a11d568eafd57f892fd7f3513d5974b322f4ee6b614565693c79dac61612d7",
+    "final": "f2971a2099e18b3626fbe704a963e477cd77142e0fd577023795811181729ddf"
+  },
+  "geometry_status": "PASS: 1024x1536 RGBA; centre(512,1130); kerb37.8px; 100% plot coverage; edges within0.5px.",
+  "pre_lanes_final_sha256": "6227aaca6aaa28eb25da346ab10dadfa28cb49a8bc8c4f02e29e4130b217a5c3",
+  "lanes_revision": {
+    "base_commit": "948b010da6580de0341ccf3e05d56b3c1599661f",
+    "source": "docs/stage0-pilot/pre-lanes/assets/tiles/0/power.png",
+    "source_storage": "external archive; see docs/stage0-pilot/source-archive.json",
+    "source_sha256": "6227aaca6aaa28eb25da346ab10dadfa28cb49a8bc8c4f02e29e4130b217a5c3",
+    "translation_y": 90,
+    "building_scale": 1,
+    "kerb_source": "assets/tiles/_slab/earth.png",
+    "steps": [
+      "docs/stage0-pilot/migrate-lanes.cjs",
+      "docs/stage0-pilot/kerb-edits/apply-kerbs.cjs"
+    ]
+  }
+}

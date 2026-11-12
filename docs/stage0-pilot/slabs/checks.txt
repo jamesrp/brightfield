@@ -1,0 +1,9 @@
+PASS assets/tiles/_slab/earth.png
+  top y=773, slab 100.0% solid, edges within 0.5 px
+PASS assets/tiles/_slab/garden.png
+  top y=776, slab 100.0% solid, edges within 1.0 px
+PASS assets/tiles/_slab/alloy.png
+  top y=775, slab 100.0% solid, edges within 0.5 px
+PASS assets/tiles/_slab/arcane.png
+  top y=775, slab 100.0% solid, edges within 0.5 px
+all checks pass

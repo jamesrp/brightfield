@@ -1,0 +1,10 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> brightfield@0.11.0 art:check
+> node tools/art/check-tiles.cjs assets/tiles/0/make.png
+
+FAIL assets/tiles/0/make.png
+  slab only 99.0% solid (holes or a smaller/different plate)
+  slab side edges off by up to 70.0 px (want <= 3)
+  top y=484, slab 99.0% solid, edges within 70.0 px
+2 problem(s)

@@ -1,2 +1,5 @@
 node_modules/
 tools/art/out/
+# Keep generated source/intermediate images outside git; retain final review sheets.
+docs/stage0-pilot/**/*.png
+!docs/stage0-pilot/review/*.png

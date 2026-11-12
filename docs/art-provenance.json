@@ -224,5 +224,129 @@
     "recommended_row_split": 443,
     "packaged_file": "assets/buildings-magic.png",
     "source_row_split": 443.5
+  },
+  "tile_spec_v2_stage0_pilot": {
+    "date": "2026-11-09",
+    "revision": "plots-and-lanes",
+    "base_branch": "claude/project-thread-8c53rq",
+    "base_commit": "948b010da6580de0341ccf3e05d56b3c1599661f",
+    "integration_base_commit": "29b4cb29afe87d0a43850f4540e4100d3ac3c1a9",
+    "review_base_branch": "main",
+    "original_base_commit": "99cd62fcf8821005b260ac3a47c245d78411a7af",
+    "method": "built-in image_gen; exact-geometry fitting/composition; integer 90px translation of original paintings and kerb material edits",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "scope": "4 reusable family kerbs and 8 Stage 0 static tiles only; stop for review before remaining 40, actors, travellers or glows",
+    "raw_source_directory": "external archive rooted at BRIGHTFIELD_ART_ARCHIVE",
+    "source_archive_manifest": "docs/stage0-pilot/source-archive.json",
+    "geometry": {
+      "w": 1024,
+      "h": 1536,
+      "cx": 512,
+      "cy": 1130,
+      "halfW": 480,
+      "faceHalfH": 354.7,
+      "depth": 37.8,
+      "headroom": 24
+    },
+    "original_geometry": {
+      "center": [
+        512,
+        1040
+      ],
+      "depth": 113
+    },
+    "original_snapshot": "docs/stage0-pilot/pre-lanes (relative to external archive root)",
+    "outputs": [
+      {
+        "file": "assets/tiles/0/power.png",
+        "kind": "stage0_static_tile",
+        "sha256": "f2971a2099e18b3626fbe704a963e477cd77142e0fd577023795811181729ddf",
+        "original_prompt": "Use case: stylized-concept. Production Brightfield Stage 0 POWER base tile. Image 1 is the mandatory exact-geometry slab reference and edit target; image 2 is STYLE ONLY (use the coal power plant at top left, NOT its wrong slab). Paint ONE warm detailed painterly isometric miniature coal power plant in orange brick, slate roof, two tall brick chimneys, brass/iron pipes, big stationary boiler, coal heap and sacks. Empty short narrow-gauge rails across foreground for a future coal wagon actor. OMIT smoke, steam, wagons, moving wheels, vehicles, people. Cheerful cozy tactile game miniature, ochre brick timber forest green, upper-left light, rich soft colors and readable architectural focal point. Canvas exactly 1024x1536 RGBA transparent. Preserve image 1 slab footprint, position and proportions EXACTLY: pointy-top hex top face vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6). True six-sided hex with vertical left/right edges, pointed rear and pointed front, NOT octagon or flat front. Two front sides extend vertically 113px to bottom point (512,1507.7). Grass/ground fills the complete face edge to edge, not a smaller inset platform. Build directly on the one slab at about 40 degree elevation, with main roof centered and small props on remaining ground. All structure above y24, inside x32..992, and inside lower slab outline. Earth side faces layered brown soil, thin grass lip, a few stones. No extra slab, text, labels, logos, UI, cast shadow below slab, haze or backdrop. True zero alpha outside art. Exactly one tile, not an atlas. Match the painting detail and softness of image2, while keeping image1 exact geometry.",
+        "process": "docs/stage0-pilot/raw/power/metadata.json"
+      },
+      {
+        "file": "assets/tiles/0/move.png",
+        "kind": "stage0_static_tile",
+        "sha256": "1b2263b02256faaa26c22ce625d99dcfaf3beda1fb9cd92ecfae24fe60ca888a",
+        "original_prompt": "Use case: stylized-concept. Production Brightfield Stage 0 TRAVEL / MOVE base tile. Image 1 is the mandatory exact-geometry slab reference and edit target; image 2 is STYLE ONLY (use the horse stable at top row second, NOT its wrong slab). Paint ONE warm detailed painterly isometric miniature rustic timber horse stable with muted forest-green shingle roof, warm wood beams, two open empty stalls, hay bales, trough, sacks and horseshoe over the doorway. Empty broad dirt path curves across foreground for a future horse and cart actor. Use the stable at top row second in image2 for design. OMIT horses, carts, wheels, smoke, vehicles, animals and people. Cheerful cozy tactile game miniature, ochre brick timber forest green, upper-left light, rich soft colors and readable architectural focal point. Canvas exactly 1024x1536 RGBA transparent. Preserve image 1 slab footprint, position and proportions EXACTLY: pointy-top hex top face vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6). True six-sided hex with vertical left/right edges, pointed rear and pointed front, NOT octagon or flat front. Two front sides extend vertically 113px to bottom point (512,1507.7). Grass/ground fills the complete face edge to edge, not a smaller inset platform. Build directly on the one slab at about 40 degree elevation, with main roof centered and small props on remaining ground. All structure above y24, inside x32..992, and inside lower slab outline. Earth side faces layered brown soil, thin grass lip, a few stones. No extra slab, text, labels, logos, UI, cast shadow below slab, haze or backdrop. True zero alpha outside art. Exactly one tile, not an atlas. Match the painting detail and softness of image2, while keeping image1 exact geometry.",
+        "process": "docs/stage0-pilot/raw/move/metadata.json"
+      },
+      {
+        "file": "assets/tiles/0/food.png",
+        "kind": "stage0_static_tile",
+        "sha256": "febfa575a7b696d067318fce254dcb7b57d680f2cae27768ebf5e43b2c092bbe",
+        "original_prompt": "Use case: stylized-concept. Production Brightfield Stage 0 FOOD base tile. Image 1 is the mandatory exact-geometry slab reference and edit target; image 2 is STYLE ONLY (use the tractor farm at top row third, NOT its wrong slab). Paint ONE warm detailed painterly isometric miniature rustic tractor farm: small red timber barn with white braces and slate roof, small cream grain silo, tidy vegetable crop rows, golden corn/wheat, sunflowers, fence only along part of edge, baskets and tools. An EMPTY broad packed-earth farm lane curves in front of the barn and fields, for a future tractor actor. Use farm at top row third in image2 for design. OMIT tractor, all vehicles, moving objects, animals, people and smoke. Cheerful cozy tactile game miniature, ochre brick timber forest green, upper-left light, rich soft colors and readable architectural focal point. Canvas exactly 1024x1536 RGBA transparent. Preserve image 1 slab footprint, position and proportions EXACTLY: pointy-top hex top face vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6). True six-sided hex with vertical left/right edges, pointed rear and pointed front, NOT octagon or flat front. Two front sides extend vertically 113px to bottom point (512,1507.7). Grass/ground fills the complete face edge to edge, not a smaller inset platform. Build directly on the one slab at about 40 degree elevation, with main roof centered and small props on remaining ground. All structure above y24, inside x32..992, and inside lower slab outline. Earth side faces layered brown soil, thin grass lip, a few stones. No extra slab, text, labels, logos, UI, cast shadow below slab, haze or backdrop. True zero alpha outside art. Exactly one tile, not an atlas. Match the painting detail and softness of image2, while keeping image1 exact geometry.",
+        "process": "docs/stage0-pilot/raw/food/metadata.json"
+      },
+      {
+        "file": "assets/tiles/0/water.png",
+        "kind": "stage0_static_tile",
+        "sha256": "60626d3036aa9942b4cfbd1026354c106d721885410b61ef522c1dfdb025ef9d",
+        "original_prompt": "Use case: stylized-concept. Production Brightfield Stage 0 WATER base tile. Image 1 is the mandatory exact-geometry slab reference and edit target; image 2 is STYLE ONLY (use the deep well at top row fourth, NOT its wrong slab). Paint ONE warm detailed painterly isometric miniature deep stone well with a sturdy round pale stone ring, visible dark water, thick timber posts, terracotta red tiled canopy roof, and stationary wooden winch beam under canopy. Frame the well with stepping stones, a curved worn path, grass, daisies, ferns and a few rocks, filling the whole hex edge to edge without crowding the central focal well. Use the well at top row fourth in image2 for design. Leave the winch beam bare with a clear attachment point under it: OMIT bucket, dangling rope, crank handle or other moving components (a bucket and rope will be a later actor). No extra barrel/bucket nearby. OMIT smoke, animals, people, vehicles. Cheerful cozy tactile game miniature, ochre brick timber forest green, upper-left light, rich soft colors and readable architectural focal point. Canvas exactly 1024x1536 RGBA transparent. Preserve image 1 slab footprint, position and proportions EXACTLY: pointy-top hex top face vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6). True six-sided hex with vertical left/right edges, pointed rear and pointed front, NOT octagon or flat front. Two front sides extend vertically 113px to bottom point (512,1507.7). Grass/ground fills the complete face edge to edge, not a smaller inset platform. Build directly on the one slab at about 40 degree elevation, with main roof centered and small props on remaining ground. All structure above y24, inside x32..992, and inside lower slab outline. Earth side faces layered brown soil, thin grass lip, a few stones. No extra slab, text, labels, logos, UI, cast shadow below slab, haze or backdrop. True zero alpha outside art. Exactly one tile, not an atlas. Match the painting detail and softness of image2, while keeping image1 exact geometry.",
+        "original_geometry_refinement_prompt": "Use case: precise-object-edit. Image1 is target water well tile. Image2 is mandatory exact-geometry empty earth slab. Change ONLY the ground slab in image1 so the ground covers precisely image2 footprint. Keep the detailed well, stone ring, terracotta roof, timbers, plants and paths at identical positions and scale. Remove no architecture. Extend the grassy ground at the REAR LEFT and REAR RIGHT corners to fill the correct pointy-top hex of image2; target rear tip at (512,685.3), upper-left corner (32,862.6), upper-right corner(992,862.6). Left/right edges vertical from y862.6 to1217.4. Front tip512,1394.7. 113px soil sides end at512,1507.7. Need full painted ground, not empty transparent triangular wedges behind the existing scene. True transparent RGBA 1024x1536 outside this slab/roof. Do NOT add another smaller slab on top. Blend grassy extension seamlessly into ground. Same painterly miniature style and upper-left illumination. Keep bucket, rope, crank, people, smoke and animals absent.",
+        "process": "docs/stage0-pilot/raw/water/metadata.json"
+      },
+      {
+        "file": "assets/tiles/0/home.png",
+        "kind": "stage0_static_tile",
+        "sha256": "6cf061b1d22b0f911112b90cfffcc2b2dd421e85ee67db7d7a6071221d86f53c",
+        "original_prompt": "Use case: stylized-concept. ONE production static base tile for Brightfield Stage 0, 1024x1536 RGBA transparent canvas. Image 1 is style reference only: match its warm detailed painterly miniature materials, brick ochre timber forest green, crisp charming cozy small-scale readability. Image 2 is EXACT geometry reference: build directly upon this full slab, do not place a smaller slab atop it. Preserve pointy-top six-sided face with top/bottom vertices and vertical left/right sides: face vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6). Two front side faces descend 113px; bottom point (512,1507.7). Ground fully covers whole top face to all edges. Camera about40deg, upper-left warm light. Preserve 32px left/right transparent margin and at least24px top headroom; building may rise into sky region above slab. Absolutely no pixels outside those columns, no separate plate, no octagon, no square slab. Outside silhouette truly transparent, no backdrop, no checkerboard, no labels/text/logos, no external cast shadows. No people, creatures, vehicles, smoke, particles or other animated objects. Subject: cozy chimney cottage, one substantial welcoming cream plaster and timber house with warm red terracotta tiled roof, brick chimney WITHOUT SMOKE, green shutters, flower boxes, stone doorstep and curving garden path, low wood garden fence and richly planted flowers around the cottage. Strong cottage silhouette like bottom-left of style reference. Fill full slab with garden/grass/path; do not add moving elements.",
+        "process": "docs/stage0-pilot/raw/home/metadata.json"
+      },
+      {
+        "file": "assets/tiles/0/make.png",
+        "kind": "stage0_static_tile",
+        "sha256": "e6a126482d4787cf5be9b897d99ae588dfa068ac24d280ad33000f9993180e59",
+        "original_prompt": "Use case: stylized-concept. ONE production static base tile for Brightfield Stage 0, 1024x1536 RGBA transparent canvas. Image 1 is style reference only: match its warm detailed painterly miniature materials, brick ochre timber forest green, crisp charming cozy small-scale readability. Image 2 is EXACT geometry reference: build directly upon this full slab, do not place a smaller slab atop it. Preserve pointy-top six-sided face with top/bottom vertices and vertical left/right sides: face vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6). Two front side faces descend 113px; bottom point (512,1507.7). Ground fully covers whole top face to all edges. Camera about40deg, upper-left warm light. Preserve 32px left/right transparent margin and at least24px top headroom; building may rise into sky region above slab. Absolutely no pixels outside those columns, no separate plate, no octagon, no square slab. Outside silhouette truly transparent, no backdrop, no checkerboard, no labels/text/logos, no external cast shadows. No people, creatures, vehicles, smoke, particles or other animated objects. Subject: smokestack mill in warm brick with slate roof, arched windows, broad green loading doors, timber loading dock and crates, two tall brick chimneys WITHOUT SMOKE. Omit waterwheel entirely, no wheel or wheel spokes, leave clear empty space beside left wall for a future separate wheel actor. Static grass and worn yard paths fill the full hex. Strong single mill silhouette matching reference bottom row second building, but no waterwheel, no haze or glow.",
+        "process": "docs/stage0-pilot/raw/make/metadata.json"
+      },
+      {
+        "file": "assets/tiles/0/waste.png",
+        "kind": "stage0_static_tile",
+        "sha256": "92413798da1705022485bfb5ea9eab4bd3c8da0485aa612b1e05d505720fb69f",
+        "original_prompt": "Use case: stylized-concept. ONE production static base tile for Brightfield Stage 0, 1024x1536 RGBA transparent canvas. Image 1 is style reference only: match its warm detailed painterly miniature materials, brick ochre timber forest green, crisp charming cozy small-scale readability. Image 2 is EXACT geometry reference: build directly upon this full slab, do not place a smaller slab atop it. Preserve pointy-top six-sided face with top/bottom vertices and vertical left/right sides: face vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6). Two front side faces descend 113px; bottom point (512,1507.7). Ground fully covers whole top face to all edges. Camera about40deg, upper-left warm light. Preserve 32px left/right transparent margin and at least24px top headroom; building may rise into sky region above slab. Absolutely no pixels outside those columns, no separate plate, no octagon, no square slab. Outside silhouette truly transparent, no backdrop, no checkerboard, no labels/text/logos, no external cast shadows. No people, creatures, vehicles, smoke, particles or other animated objects. Subject: small Victorian town discard/reuse yard, a clearly readable piled heap of discarded lumber, broken crockery and metal scraps in centre, tied dark rubbish bags, three old rusty ochre-red and green barrels, weathered short timber back fence. Patchy grass and dirt paths cover entire hex ground, bright modest wildflowers around edges. Charming orderly painterly clutter matching style reference bottom-row third tile. No gull, birds, animals, people, smoke or haze. All junk static; no vehicles.",
+        "process": "docs/stage0-pilot/raw/waste/metadata.json"
+      },
+      {
+        "file": "assets/tiles/0/wild.png",
+        "kind": "stage0_static_tile",
+        "sha256": "ea2e311f75cf612449a15f43b369d5a40b9533205e2e1ae994a7dbe6f5e732ce",
+        "original_prompt": "Use case: stylized-concept. ONE production static base tile for Brightfield Stage 0, 1024x1536 RGBA transparent canvas. Image 1 is style reference only: match its warm detailed painterly miniature materials, brick ochre timber forest green, crisp charming cozy small-scale readability. Image 2 is EXACT geometry reference: build directly upon this full slab, do not place a smaller slab atop it. Preserve pointy-top six-sided face with top/bottom vertices and vertical left/right sides: face vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6). Two front side faces descend 113px; bottom point (512,1507.7). Ground fully covers whole top face to all edges. Camera about40deg, upper-left warm light. Preserve 32px left/right transparent margin and at least24px top headroom; building may rise into sky region above slab. Absolutely no pixels outside those columns, no separate plate, no octagon, no square slab. Outside silhouette truly transparent, no backdrop, no checkerboard, no labels/text/logos, no external cast shadows. No people, creatures, vehicles, smoke, particles or other animated objects. Subject: rich edge-to-edge grassy wildflower meadow, one large handsome focal oak tree slightly left of centre, rounded leafy crown staying within side margins, knotted natural trunk; a small clear pond to the right, grey rounded rocks, dense varied grasses and daisies and pink/purple/yellow wildflowers all the way to all six slab edges. Keep clear focal composition readable small. Cozy Stage0 natural landscape matching bottom-right style tile. No butterflies, birds, insects, critters, people, lanterns or buildings. Pond static, no fountain. Ground must remain full broad hex, not smaller island.",
+        "process": "docs/stage0-pilot/raw/wild/metadata.json"
+      },
+      {
+        "file": "assets/tiles/_slab/earth.png",
+        "kind": "reusable_family_kerb",
+        "sha256": "696c80de2b364636ee7ae5f7a759a97a4d8a743cc9487005a552202f70a55ead",
+        "original_prompt": "Use case: style-transfer. Paint the supplied exact slab template as a richly textured cosy isometric game miniature EARTH family reusable blank slab. Preserve its exact silhouette, position and 1024x1536 transparent canvas. Top is fine soft grass; two FRONT side faces are solid layered warm brown soil, thin grass lip, a few small embedded stones. No buildings, props, trees, text, logos or cast shadow. Warm light upper left, darker right face. Detailed painted material, clean sharp planar edges, fully opaque solid faces. Exact top vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6); sides extrude vertically 113px, bottom centre (512,1507.7). Do not move or shrink slab. Keep upper half empty transparent.",
+        "material_edit_prompt": "Use case: precise-object-edit. Edit this single Brightfield reusable EARTH plot slab. Change ONLY the two very thin visible front kerb faces from layered brown soil to hand-painted GREY-BROWN KERBSTONES with small natural stone block joints, under the existing thin grass lip. The sides are a LOW KERB, not a deep earth block. Do not change the grass top face, its texture, shape, size, position or illumination. Keep the 1024x1536 transparent canvas and identical silhouette. Exact geometry: pointy hex face centre512,1130; halfwidth480, halfheight354.7. Top face front point512,1484.7. Front kerb depth ONLY37.8px; lowest point512,1522.5. Left/right x32,992; upper corners y952.65, lower corners1307.35; kerb lower side corners1345.15. Perspective unchanged; warm light upper left, darker right. No roads, paths, buildings, objects, text, borders, shadows outside silhouette or ground underneath. Fully opaque stone surfaces, genuine transparent background outside. Do not move, shrink, enlarge, rotate, rescale, crop, round or change the plot. Preserve every pixel of grass above the front lip. Only replace the narrow soil faces with grey-brown kerbstone material.",
+        "process": "docs/stage0-pilot/README.md"
+      },
+      {
+        "file": "assets/tiles/_slab/garden.png",
+        "kind": "reusable_family_kerb",
+        "sha256": "aa8fab6f2a4fe1d3241928348559460344c7689013239f11ab120e481f853361",
+        "original_prompt": "Use case: style-transfer. Paint the supplied exact slab template as a richly textured cosy isometric game miniature GARDEN family reusable blank slab. Preserve its exact silhouette, position and 1024x1536 transparent canvas. Top is soft lush moss grass; two FRONT side faces are solid rich dark chocolate soil with delicate branching roots embedded in soil, moss at top rim, tiny stones. No buildings, props, trees, text, logos or cast shadow. Warm light upper left, darker right face. Detailed painted material, clean sharp planar edges, fully opaque solid faces. Exact top vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6); sides extrude vertically 113px, bottom centre (512,1507.7). Do not move or shrink slab. Keep upper half empty transparent.",
+        "material_edit_prompt": "Use case: precise-object-edit. Edit this single Brightfield reusable GARDEN plot slab. Change ONLY the two very thin visible front kerb faces from exposed brown soil and roots to hand-painted MOSS-COVERED LOW LOG EDGING, warm dark wood mostly covered by rich green moss, under the existing grass lip. The sides are a LOW KERB, not a deep earth block. Do not change the grass top face, its texture, shape, size, position or illumination. Keep the 1024x1536 transparent canvas and identical silhouette. Exact geometry: pointy hex face centre512,1130; halfwidth480, halfheight354.7. Top face front point512,1484.7. Front kerb depth ONLY37.8px; lowest point512,1522.5. Left/right x32,992; upper corners y952.65, lower corners1307.35; kerb lower side corners1345.15. Perspective unchanged; warm light upper left, darker right. No roads, paths, buildings, objects, text, borders, shadows outside silhouette or ground underneath. Fully opaque moss-and-log surfaces, genuine transparent background outside. Do not move, shrink, enlarge, rotate, rescale, crop, round or change the plot. Preserve every pixel of grass above the front lip. Only replace the narrow soil faces with lush mossy log edging. A low clipped organic green edge, not soil strata or exposed roots. Keep it very low and inside the same kerb footprint.",
+        "process": "docs/stage0-pilot/README.md"
+      },
+      {
+        "file": "assets/tiles/_slab/alloy.png",
+        "kind": "reusable_family_kerb",
+        "sha256": "098aa1f165e6675293f24d1ddd6791ad1fb6d2fa8b520d0b23ab5026cbebf423",
+        "original_prompt": "Use case: style-transfer. Paint the supplied exact slab template as a richly textured cosy isometric game miniature ALLOY family reusable blank slab. Preserve its exact silhouette, position and 1024x1536 transparent canvas. Top is pale pearl alloy panel surface; two FRONT side faces are solid satin white/pearl panels with a single thin teal light line under the top rim and fine brushed gold trim. Elegant subtle panel joins. No soil or grass. No buildings, props, trees, text, logos or cast shadow. Warm light upper left, darker right face. Detailed hand-painted material, clean sharp planar edges, fully opaque solid faces. Exact top vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6); sides extrude vertically 113px, bottom centre (512,1507.7). Do not move or shrink slab. Keep upper half empty transparent.",
+        "process": "docs/stage0-pilot/README.md"
+      },
+      {
+        "file": "assets/tiles/_slab/arcane.png",
+        "kind": "reusable_family_kerb",
+        "sha256": "3cbc9d24b067d1a68dcf77cae21dd07405272f4931e2c3f5bd91f4f3b0958687",
+        "original_prompt": "Use case: style-transfer. Paint the supplied exact slab template as a richly textured cosy isometric game miniature ARCANE family reusable blank slab. Preserve its exact silhouette, position and 1024x1536 transparent canvas. Top is subtly mottled violet stone with restrained seams; two FRONT side faces are solid purple/violet stone blocks with a fine continuous gold band near the upper edge. Rich purple shadows, gentle lavender highlights, hand-cut block texture. No soil or grass. No buildings, props, trees, text, logos or cast shadow. Warm light upper left, darker right face. Detailed hand-painted material, clean sharp planar edges, fully opaque solid faces. Exact top vertices (512,685.3),(992,862.6),(992,1217.4),(512,1394.7),(32,1217.4),(32,862.6); sides extrude vertically 113px, bottom centre (512,1507.7). Do not move or shrink slab. Keep upper half empty transparent.",
+        "process": "docs/stage0-pilot/README.md"
+      }
+    ]
   }
 }

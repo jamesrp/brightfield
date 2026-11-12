@@ -1,0 +1,49 @@
+{
+  "method": "built-in image_gen",
+  "references": [
+    "assets/tiles/_template/base-plain.png",
+    "assets/buildings-0.png"
+  ],
+  "raw": "candidate-1.png",
+  "decoded": "candidate-1-decoded.png",
+  "prompt": "prompt.txt",
+  "final": "assets/tiles/0/make.png",
+  "requested_dimensions": [
+    1024,
+    1536
+  ],
+  "transparent_background": true,
+  "visual_qa": "Brick mill, two chimneys without smoke, loading doors and crates, no waterwheel. Full-size fitted image reviewed: recognizable matching painterly subject; no baked moving objects; shared soil sides. Narrow bright grass infill visible at rear edge, blends acceptably at game scale.",
+  "geometry_status": "PASS: 1024x1536 RGBA; centre(512,1130); kerb37.8px; 100% plot coverage; edges within0.5px.",
+  "notes": "Original raw PNG preserved. Canvas loadImage(path) and redraw used to normalize codec because fitter loadImage(Buffer) rejected original as Invalid SVG.",
+  "normalization": {
+    "method": "generated earth destination-over, clipped to exact slab silhouette; shared sides reapplied",
+    "filledPixels": 8298,
+    "faceFilledPixels": 7738,
+    "shared_side_opacity": "The generated family side interiors were made fully opaque before compositing; exact shared side pixels are regression-tested."
+  },
+  "sha256": {
+    "candidate-1-decoded.png": "b35e5441a1d51022a0a30262a53822302638e22f29c8f86a142bc264f8d6a280",
+    "candidate-1.png": "6ef604aa4e6ae200f8f762ddaa89cba00448b232af469c346c93949e96261b95",
+    "first-fit.png": "b4df768ecbb545ab2fa84918fed8f5744433bda48848645f7500b0bfe03967c1",
+    "final": "e6a126482d4787cf5be9b897d99ae588dfa068ac24d280ad33000f9993180e59"
+  },
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "pre_lanes_final_sha256": "409c58d06f9478b93e4f3e5fd961e4cbc71aec150272e7e2442a2f53aca2a3a9",
+  "lanes_revision": {
+    "base_commit": "948b010da6580de0341ccf3e05d56b3c1599661f",
+    "source": "docs/stage0-pilot/pre-lanes/assets/tiles/0/make.png",
+    "source_storage": "external archive; see docs/stage0-pilot/source-archive.json",
+    "source_sha256": "409c58d06f9478b93e4f3e5fd961e4cbc71aec150272e7e2442a2f53aca2a3a9",
+    "translation_y": 90,
+    "building_scale": 1,
+    "kerb_source": "assets/tiles/_slab/earth.png",
+    "steps": [
+      "docs/stage0-pilot/migrate-lanes.cjs",
+      "docs/stage0-pilot/kerb-edits/apply-kerbs.cjs"
+    ]
+  }
+}

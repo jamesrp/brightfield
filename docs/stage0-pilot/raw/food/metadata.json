@@ -1,0 +1,41 @@
+{
+  "method": "built-in image_gen",
+  "references": [
+    "assets/tiles/_template/base-plain.png",
+    "assets/buildings-0.png"
+  ],
+  "final": "assets/tiles/0/food.png",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparent_background": true,
+  "prompt": "prompt.txt",
+  "normalization": {
+    "method": "generated earth destination-over, clipped to exact slab silhouette; shared sides reapplied",
+    "filledPixels": 5375,
+    "faceFilledPixels": 5039,
+    "shared_side_opacity": "The generated family side interiors were made fully opaque before compositing; exact shared side pixels are regression-tested."
+  },
+  "sha256": {
+    "decoded.png": "9f2f6364700fd2e6f7eb0736408fe2e68233e59ab82b1bb8c2339bc20e48ed95",
+    "first-fit.png": "0f9f683d0f8660a873ee433b2863138cd2c99b4e838afabef01068028aefb659",
+    "raw.png": "2680024c25bcef2cad2b5f28307135e1177d2c1e031b255fdf74509d13ad1bd3",
+    "final": "febfa575a7b696d067318fce254dcb7b57d680f2cae27768ebf5e43b2c092bbe"
+  },
+  "geometry_status": "PASS: 1024x1536 RGBA; centre(512,1130); kerb37.8px; 100% plot coverage; edges within0.5px.",
+  "pre_lanes_final_sha256": "1a19da6b65ef4d7f62afec56666f1c1689ee0b5ce01a5dd6dd2a33ddc28fc1d6",
+  "lanes_revision": {
+    "base_commit": "948b010da6580de0341ccf3e05d56b3c1599661f",
+    "source": "docs/stage0-pilot/pre-lanes/assets/tiles/0/food.png",
+    "source_storage": "external archive; see docs/stage0-pilot/source-archive.json",
+    "source_sha256": "1a19da6b65ef4d7f62afec56666f1c1689ee0b5ce01a5dd6dd2a33ddc28fc1d6",
+    "translation_y": 90,
+    "building_scale": 1,
+    "kerb_source": "assets/tiles/_slab/earth.png",
+    "steps": [
+      "docs/stage0-pilot/migrate-lanes.cjs",
+      "docs/stage0-pilot/kerb-edits/apply-kerbs.cjs"
+    ]
+  }
+}

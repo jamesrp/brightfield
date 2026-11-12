@@ -1,0 +1,14 @@
+[
+  {
+    "family": "earth",
+    "material_source": "docs/stage0-pilot/kerb-edits/earth-generated.png",
+    "top_face": "unchanged from migrated original",
+    "transparent_boundary_samples_replaced_from_nearest_painted_kerb": 420
+  },
+  {
+    "family": "garden",
+    "material_source": "docs/stage0-pilot/kerb-edits/garden-generated.png",
+    "top_face": "unchanged from migrated original",
+    "transparent_boundary_samples_replaced_from_nearest_painted_kerb": 978
+  }
+]

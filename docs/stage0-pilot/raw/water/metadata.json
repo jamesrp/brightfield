@@ -1,0 +1,49 @@
+{
+  "method": "built-in image_gen",
+  "references": [
+    "assets/tiles/_template/base-plain.png",
+    "assets/buildings-0.png"
+  ],
+  "final": "assets/tiles/0/water.png",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparent_background": true,
+  "prompt": "prompt.txt",
+  "normalization": {
+    "method": "generated earth destination-over, clipped to exact slab silhouette; shared sides reapplied",
+    "filledPixels": 10614,
+    "faceFilledPixels": 10060,
+    "shared_side_opacity": "The generated family side interiors were made fully opaque before compositing; exact shared side pixels are regression-tested."
+  },
+  "refinement": {
+    "prompt": "edit-prompt.txt",
+    "raw": "edited-raw.png",
+    "reference": "assets/tiles/_slab/earth.png",
+    "reason": "Initial well ground missed rear corners; targeted imagegen edit extended the face before fitting."
+  },
+  "sha256": {
+    "decoded.png": "b68d282252c1c11f7a936a566302e7add1b5652c55ec9d42dce0d8cd6b41e676",
+    "edited-decoded.png": "46c6362917839099f1e18e6b159dc36124723403a8728b0c8e1cdd9a5c9c7ada",
+    "edited-raw.png": "0673666afb89524b88da40f76a8a2fa274334364c782b2b7e677c0eb7ae8eeef",
+    "first-fit.png": "55d655ac065121bb79e414342524927aab625958751a5ee34f6515e49b9a7101",
+    "raw.png": "448f57af325c6e8446e13a59eae477fb1b15c227ba4a091c900852d2f38dfa17",
+    "final": "60626d3036aa9942b4cfbd1026354c106d721885410b61ef522c1dfdb025ef9d"
+  },
+  "geometry_status": "PASS: 1024x1536 RGBA; centre(512,1130); kerb37.8px; 100% plot coverage; edges within0.5px.",
+  "pre_lanes_final_sha256": "0e9e48886cc53116a3aa0f88064d4ee459ac5c91d710365c468e486b262eafd3",
+  "lanes_revision": {
+    "base_commit": "948b010da6580de0341ccf3e05d56b3c1599661f",
+    "source": "docs/stage0-pilot/pre-lanes/assets/tiles/0/water.png",
+    "source_storage": "external archive; see docs/stage0-pilot/source-archive.json",
+    "source_sha256": "0e9e48886cc53116a3aa0f88064d4ee459ac5c91d710365c468e486b262eafd3",
+    "translation_y": 90,
+    "building_scale": 1,
+    "kerb_source": "assets/tiles/_slab/earth.png",
+    "steps": [
+      "docs/stage0-pilot/migrate-lanes.cjs",
+      "docs/stage0-pilot/kerb-edits/apply-kerbs.cjs"
+    ]
+  }
+}

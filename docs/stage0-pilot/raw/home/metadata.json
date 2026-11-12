@@ -1,0 +1,49 @@
+{
+  "method": "built-in image_gen",
+  "references": [
+    "assets/tiles/_template/base-plain.png",
+    "assets/buildings-0.png"
+  ],
+  "raw": "candidate-1.png",
+  "decoded": "candidate-1-decoded.png",
+  "prompt": "prompt.txt",
+  "final": "assets/tiles/0/home.png",
+  "requested_dimensions": [
+    1024,
+    1536
+  ],
+  "transparent_background": true,
+  "visual_qa": "Cozy red roof cottage, chimney without smoke, flower boxes and garden. No moving objects. Full-size fitted image reviewed: recognizable matching painterly subject; no baked moving objects; shared soil sides. Narrow bright grass infill visible at rear edge, blends acceptably at game scale.",
+  "geometry_status": "PASS: 1024x1536 RGBA; centre(512,1130); kerb37.8px; 100% plot coverage; edges within0.5px.",
+  "notes": "Original raw PNG preserved. Canvas loadImage(path) and redraw used to normalize codec because fitter loadImage(Buffer) rejected original as Invalid SVG.",
+  "normalization": {
+    "method": "generated earth destination-over, clipped to exact slab silhouette; shared sides reapplied",
+    "filledPixels": 4342,
+    "faceFilledPixels": 3767,
+    "shared_side_opacity": "The generated family side interiors were made fully opaque before compositing; exact shared side pixels are regression-tested."
+  },
+  "sha256": {
+    "candidate-1-decoded.png": "c7852fcc309eea2b05868ec974adc9e69030872dcfa39f8e62d57666b369e805",
+    "candidate-1.png": "a0b7c1cd5c1b5c993f416c408e701d83be878c99e4c2e52c11f7a10ad130552c",
+    "first-fit.png": "53b9bd3320d77cae1bcd3cc2bd549d3c164fa7f586b595e610b1ad57b3586d45",
+    "final": "6cf061b1d22b0f911112b90cfffcc2b2dd421e85ee67db7d7a6071221d86f53c"
+  },
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "pre_lanes_final_sha256": "92555989e590a2af6533257ee5b561eb7c231e35245c007f648b3a32b08dae37",
+  "lanes_revision": {
+    "base_commit": "948b010da6580de0341ccf3e05d56b3c1599661f",
+    "source": "docs/stage0-pilot/pre-lanes/assets/tiles/0/home.png",
+    "source_storage": "external archive; see docs/stage0-pilot/source-archive.json",
+    "source_sha256": "92555989e590a2af6533257ee5b561eb7c231e35245c007f648b3a32b08dae37",
+    "translation_y": 90,
+    "building_scale": 1,
+    "kerb_source": "assets/tiles/_slab/earth.png",
+    "steps": [
+      "docs/stage0-pilot/migrate-lanes.cjs",
+      "docs/stage0-pilot/kerb-edits/apply-kerbs.cjs"
+    ]
+  }
+}

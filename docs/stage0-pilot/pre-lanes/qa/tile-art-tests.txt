@@ -1,0 +1,12 @@
+✔ a spec v2 tile lands exactly on the board hex, animates its actors, and keeps emitters (113.209278ms)
+✔ a listed tile whose file is missing, and every unlisted tile, keep the atlas art (152.729022ms)
+✔ the shipped Stage 0 pilot loads all eight tiles, with later stages unchanged (1500.475843ms)
+✔ all Stage 0 tiles reuse exactly the same earth side pixels (256.70046ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2436.265969

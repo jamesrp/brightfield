@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> brightfield@0.11.0 art:fit
+> node tools/art/fit-tile.cjs docs/stage0-pilot/raw/home/candidate-1-decoded.png assets/tiles/0/home.png --sides assets/tiles/_slab/earth.png
+
+{"input":"docs/stage0-pilot/raw/home/candidate-1-decoded.png","output":"assets/tiles/0/home.png","scale":1,"dx":0,"dy":-15.3,"measured":{"bottom":1523,"slabWidth":960,"slabCx":512,"widestRow":984},"clippedPixels":768,"verdict":"ok"}
