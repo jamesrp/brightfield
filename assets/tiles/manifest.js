@@ -42,12 +42,12 @@ window.BF_TILE_ART = window.BF_TILE_ART || {
     'food:2': { src: '2/food.png' },
     'water:2': { src: '2/water.png' },
     'home:2': { src: '2/home.png' },
-    'make:2': { src: '2/make.png' },
+    'make:2': {"src":"2/make.png","actors":[{"sprite":"robot-arm","at":[630,1157],"sway":1.5,"period":7}]},
     'waste:2': { src: '2/waste.png' },
     'wild:2': { src: '2/wild.png' },
     'power:star': { src: 'star/power.png' },
     'move:star': { src: 'star/move.png' },
-    'food:star': { src: 'star/food.png' },
+    'food:star': {"src":"star/food.png","actors":[{"sprite":"lift-platform","at":[750,760],"bob":190,"period":12}]},
     'water:star': { src: 'star/water.png' },
     'home:star': { src: 'star/home.png' },
     'make:star': { src: 'star/make.png' },
@@ -58,7 +58,7 @@ window.BF_TILE_ART = window.BF_TILE_ART || {
     'food:leaf': { src: 'leaf/food.png' },
     'water:leaf': { src: 'leaf/water.png' },
     'home:leaf': { src: 'leaf/home.png' },
-    'make:leaf': { src: 'leaf/make.png' },
+    'make:leaf': {"src":"leaf/make.png","actors":[{"sprite":"repair-wheel","at":[845,1207],"spin":0.07}]},
     'waste:leaf': { src: 'leaf/waste.png' },
     'wild:leaf': { src: 'leaf/wild.png' },
     'power:magic': { src: 'magic/power.png' },
@@ -66,10 +66,46 @@ window.BF_TILE_ART = window.BF_TILE_ART || {
     'food:magic': { src: 'magic/food.png' },
     'water:magic': { src: 'magic/water.png' },
     'home:magic': { src: 'magic/home.png' },
-    'make:magic': { src: 'magic/make.png' },
-    'waste:magic': { src: 'magic/waste.png' },
+    'make:magic': {"src":"magic/make.png","actors":[{"sprite":"forge-flame","at":[596,1102],"pulse":0.22,"period":3.6}]},
+    'waste:magic': {"src":"magic/waste.png","actors":[{"sprite":"transmutation-orb","at":[522,944],"spin":0.025,"bob":3,"period":8}]},
     'wild:magic': { src: 'magic/wild.png' },
   },
-  sprites: {},
+  sprites: {
+    "robot-arm": {
+      "src": "actors/robot-arm.png",
+      "anchor": [
+        58,
+        191
+      ]
+    },
+    "repair-wheel": {
+      "src": "actors/repair-wheel.png",
+      "anchor": [
+        63,
+        63
+      ]
+    },
+    "lift-platform": {
+      "src": "actors/lift-platform.png",
+      "anchor": [
+        49,
+        24
+      ]
+    },
+    "forge-flame": {
+      "src": "actors/forge-flame.png",
+      "anchor": [
+        62,
+        78
+      ]
+    },
+    "transmutation-orb": {
+      "src": "actors/transmutation-orb.png",
+      "anchor": [
+        82,
+        83
+      ]
+    }
+  },
   travellers: {},
 };

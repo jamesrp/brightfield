@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "location": "Private external archive; no raw PNGs in git",
+  "files": [
+    {
+      "file": "raw/robot-arm.png",
+      "bytes": 779047,
+      "sha256": "aa0d2838de6ec679b84c8a05f8a29130c82f9f7ab73aff02a422f1a147fdbd74"
+    },
+    {
+      "file": "raw/repair-wheel.png",
+      "bytes": 1451962,
+      "sha256": "513453ca7291ed8aa4a23951f11308fe0d3013b59c5349ac6cc8413ab11d0085"
+    },
+    {
+      "file": "raw/lift-platform.png",
+      "bytes": 652250,
+      "sha256": "230e4880964239afc1a46f9260a0716dd0fa4c8f9ece7dd5f937bc151ff1e5bf"
+    },
+    {
+      "file": "raw/forge-flame.png",
+      "bytes": 512576,
+      "sha256": "3cc714f9cb3ae0c51343e0694647fe232d3268fa4c8b74c16d9021b9ce3c6daa"
+    },
+    {
+      "file": "raw/transmutation-orb.png",
+      "bytes": 1017031,
+      "sha256": "900ba45bfcf765c02f212c5475a1ed4f216de8bf90629a252010482e4d49d7a7"
+    },
+    {
+      "file": "metadata.json",
+      "bytes": 3374,
+      "sha256": "f711319c98087b431c0f2a31240d9cda3186579e3b6da4a13f5299036e5bd2c7"
+    },
+    {
+      "file": "prompts.json",
+      "bytes": 5740,
+      "sha256": "36a45eb7bc545a267ece146ef9a0626519a837980515a0201ab6f6c4c3fe7c3c"
+    },
+    {
+      "file": "rebuild.cjs",
+      "bytes": 1572,
+      "sha256": "f0a8fabbdb32e7b45361945cf98709a4a2313e3d57d57d596956f1f5a2bf2da2"
+    },
+    {
+      "file": "manifest-proposal.json",
+      "bytes": 1913,
+      "sha256": "910e576d09ac98e2139b21759db6131bb55aee9a71fc0ed7f61db27e2eff45eb"
+    },
+    {
+      "file": "final-hashes.json",
+      "bytes": 1202,
+      "sha256": "514c2ded315c4f1a8b76235a0e6f5fe8f9c38a0ce856a890e5bb759dd05d2185"
+    }
+  ]
+}
