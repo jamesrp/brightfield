@@ -1,0 +1,47 @@
+{
+  "result": "pass",
+  "verifiedSourceHashes": true,
+  "byteIdenticalTiles": 8,
+  "tiles": [
+    {
+      "file": "assets/tiles/magic/power.png",
+      "sha256": "a8ef0d854ca490bbfb62b614a007f6a4f88d8d428c19d9636e12f340d1ed27ee",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/magic/move.png",
+      "sha256": "179b98ee5d6ad7f2072f31b23b852a3a81ac6e1d3c92bbeb02f4625eb6df3e42",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/magic/food.png",
+      "sha256": "d8c79856f56596fe4aab8bbe39acb99f3398fc5eb803406c4d5404961c3552e2",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/magic/water.png",
+      "sha256": "1421511c1347ba4775ac5b768e66825f73bcc6f3dd5712b12623e8e847ba23be",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/magic/home.png",
+      "sha256": "d250c001bae7687895d6421ca9ad64d2ac4bdbb3f503bc419c6321a8a4e75c45",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/magic/make.png",
+      "sha256": "6a2d2e3ad0c6ed2fbab9b785287e3561cac9fc3594a9fe97ec7db4d65a4ffdf1",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/magic/waste.png",
+      "sha256": "66768d85e50b230735da97d28cce1e64471f65aa323f0ccdf31ea534b3428c0b",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/magic/wild.png",
+      "sha256": "48f0a3887b01bf221e53f8f25a25fff070b7be66c80d8fa99b1075d32973ac4a",
+      "matches": true
+    }
+  ]
+}
