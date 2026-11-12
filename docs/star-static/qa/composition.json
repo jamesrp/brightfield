@@ -1,0 +1,122 @@
+[
+  {
+    "key": "power:star",
+    "source": "star-power.png",
+    "file": "assets/tiles/star/power.png",
+    "fit": {
+      "scale": 0.9959,
+      "dx": 2.1,
+      "dy": 37.7,
+      "clippedPixels": 1479,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 676,
+    "sharedKerbPixels": 36286,
+    "sha256": "5b16f30deeeb8e772bfb18f7f9d2463992c7434c9784e3108bdbfa3c8d8c6620"
+  },
+  {
+    "key": "move:star",
+    "source": "star-move-v2.png",
+    "file": "assets/tiles/star/move.png",
+    "fit": {
+      "scale": 0.999,
+      "dx": 1,
+      "dy": 0.1,
+      "clippedPixels": 858,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 5818,
+    "sharedKerbPixels": 36286,
+    "sha256": "34b2c0e967486fc70713a4c82e0d394281f4841bbd24a24646f6c6538a5c7e3e"
+  },
+  {
+    "key": "food:star",
+    "source": "star-food.png",
+    "file": "assets/tiles/star/food.png",
+    "fit": {
+      "scale": 0.9979,
+      "dx": 1.1,
+      "dy": 2.7,
+      "clippedPixels": 1541,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 806,
+    "sharedKerbPixels": 36286,
+    "sha256": "bbb592ddd5a6aa608eb701ca0c81e00cd14c46df4b6f9a7090d984ce0a8094c7"
+  },
+  {
+    "key": "water:star",
+    "source": "star-water.png",
+    "file": "assets/tiles/star/water.png",
+    "fit": {
+      "scale": 0.9979,
+      "dx": 1.1,
+      "dy": 3.7,
+      "clippedPixels": 2192,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 247,
+    "sharedKerbPixels": 36286,
+    "sha256": "1ddb4690f05e91953c567f1e16b0fe1d402ab75bc50e779b31094a7c5df57852"
+  },
+  {
+    "key": "home:star",
+    "source": "star-home-v2.png",
+    "file": "assets/tiles/star/home.png",
+    "fit": {
+      "scale": 0.9959,
+      "dx": 2.1,
+      "dy": 37.7,
+      "clippedPixels": 931,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 2384,
+    "sharedKerbPixels": 36286,
+    "sha256": "1e1ae4c311b84e1963de0b2e64507c88823311e6616d4bbd40fca1dd80c0f6e8"
+  },
+  {
+    "key": "make:star",
+    "source": "star-make-v3.png",
+    "file": "assets/tiles/star/make.png",
+    "fit": {
+      "scale": 1,
+      "dx": 0,
+      "dy": 1.5,
+      "clippedPixels": 1581,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 409,
+    "sharedKerbPixels": 36286,
+    "sha256": "ff02a3a8b3f8c89b809c9c62892c2b6383545dc0250ee8049f0bfd55f1859653"
+  },
+  {
+    "key": "waste:star",
+    "source": "star-waste.png",
+    "file": "assets/tiles/star/waste.png",
+    "fit": {
+      "scale": 1,
+      "dx": 0,
+      "dy": 1.5,
+      "clippedPixels": 843,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 881,
+    "sharedKerbPixels": 36286,
+    "sha256": "dd9a69b5e3fe709211a316788cf83540a973b1bd3517f148106b37754d7215f0"
+  },
+  {
+    "key": "wild:star",
+    "source": "star-wild.png",
+    "file": "assets/tiles/star/wild.png",
+    "fit": {
+      "scale": 1,
+      "dx": 0,
+      "dy": 1.5,
+      "clippedPixels": 1185,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 1237,
+    "sharedKerbPixels": 36286,
+    "sha256": "109575f8a47eebb9303164f884016911d49f302a58c4476106546e3fa139ea53"
+  }
+]

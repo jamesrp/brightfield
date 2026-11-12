@@ -1,0 +1,276 @@
+{
+  "date": "2026-11-12",
+  "storage": "External private archive; set BRIGHTFIELD_ART_ARCHIVE to rebuild. Raw images and intermediates are not committed.",
+  "files": [
+    {
+      "file": "star-food-fitted.png",
+      "bytes": 2154321,
+      "sha256": "9c43955acc7a192c078260fda60cfec00204723ab4809aea849f3dd4d86a0465"
+    },
+    {
+      "file": "star-food.png",
+      "bytes": 2767312,
+      "sha256": "cc8597066d9d24ffd960662d49c3b29f633e77636e34b60a85303492fe4bf039"
+    },
+    {
+      "file": "star-food.prompt.txt",
+      "bytes": 3170,
+      "sha256": "e50010dc4349c71b852e21b67a1cd4ef9c1c06b74d466e0b70f21917905ae420"
+    },
+    {
+      "file": "star-home-final-geometry-review.png",
+      "bytes": 1669640,
+      "sha256": "492a5760090d406ca41dcdcb78d101bd1d95ed1d09029c97365dbf460b6ab545"
+    },
+    {
+      "file": "star-home-final-opaque-review.png",
+      "bytes": 1663810,
+      "sha256": "be5482065af01a01fafa4249e4e0d8541629ffbdff0fef3a817beba4fb41cf3d"
+    },
+    {
+      "file": "star-home-fitted.png",
+      "bytes": 1816132,
+      "sha256": "266d52fee9dd2d4b1effe25aa8a4f47236bc3dfa141ab9de3ec13007f6b77342"
+    },
+    {
+      "file": "star-home-geometry-review.png",
+      "bytes": 1669640,
+      "sha256": "492a5760090d406ca41dcdcb78d101bd1d95ed1d09029c97365dbf460b6ab545"
+    },
+    {
+      "file": "star-home-opaque-review.png",
+      "bytes": 1663810,
+      "sha256": "be5482065af01a01fafa4249e4e0d8541629ffbdff0fef3a817beba4fb41cf3d"
+    },
+    {
+      "file": "star-home-v2-fitted.png",
+      "bytes": 1715186,
+      "sha256": "33b74bd1601a09ab717f530868e65e4f1ea8b5db38f59926449d2075376e16a9"
+    },
+    {
+      "file": "star-home-v2.png",
+      "bytes": 2390066,
+      "sha256": "886d8563ec817d414499d642d07e25a1f9585aba3e8fbdcc4c582b58ae372b61"
+    },
+    {
+      "file": "star-home-v2.prompt.txt",
+      "bytes": 3454,
+      "sha256": "3356e6d023c0fd9f058be8330be02ad95d2106da0c361c3b8ac73bc7735e94f0"
+    },
+    {
+      "file": "star-home.png",
+      "bytes": 2565793,
+      "sha256": "7b056bff28b9ef68f56ed7e633d746987cadbd86696a061fbb6729526ee40b8e"
+    },
+    {
+      "file": "star-home.prompt.txt",
+      "bytes": 2646,
+      "sha256": "637be2ef37d7a751bf4ed0badbb46857fc52df4c5cd03964cf69045317ed468f"
+    },
+    {
+      "file": "star-infrastructure-final-review.png",
+      "bytes": 2086104,
+      "sha256": "1fc606c75969067cafcd7af557138773a5ba8241c1b634d4431e8329c2348e7e"
+    },
+    {
+      "file": "star-infrastructure-review.png",
+      "bytes": 1594031,
+      "sha256": "8b50fb632254d826d22cf61eb4614853cf437f25ac1d59d6bc5b5d7657be27d7"
+    },
+    {
+      "file": "star-make-edit-target-v2.png",
+      "bytes": 1405463,
+      "sha256": "49da4f71374d1f7ede723a80996c1bc5af17f0dbaa684f07e149fb819a22bd10"
+    },
+    {
+      "file": "star-make-edit-target-v3.png",
+      "bytes": 1300062,
+      "sha256": "5485acc59e9f5ed80750c874e55641ff60d3933362163b10597c1d95a3b07da9"
+    },
+    {
+      "file": "star-make-final-geometry-review.png",
+      "bytes": 1240615,
+      "sha256": "fd0ab668a7977c62b07d963dad9be9358930389127e38fb6ed1afb5ac1e7e245"
+    },
+    {
+      "file": "star-make-final-opaque-review.png",
+      "bytes": 1234494,
+      "sha256": "4f876befa74e4dbeff89b74ebf43ab1cc816077f046c3b073224234936101efb"
+    },
+    {
+      "file": "star-make-fitted.png",
+      "bytes": 1405263,
+      "sha256": "fe321f6b128fbc83ebc3fa212e7b1741932774729dc6b3c397d2a6ff08b41017"
+    },
+    {
+      "file": "star-make-geometry-review.png",
+      "bytes": 1285284,
+      "sha256": "eb16b078ea0acd216cdd8603c36b3d757f9c569c57b194055c9b5794616b083e"
+    },
+    {
+      "file": "star-make-opaque-review.png",
+      "bytes": 1276934,
+      "sha256": "870f543f493309f03f35c93b2ac5aa917cc6a2a887edc14f58c1db4bcf6b6020"
+    },
+    {
+      "file": "star-make-v2-fitted.png",
+      "bytes": 1299866,
+      "sha256": "8bd75a01206514bdc18fb74398c6bc7de083ed3206420490d4fd34d721eefd3a"
+    },
+    {
+      "file": "star-make-v2.png",
+      "bytes": 1958228,
+      "sha256": "85d82f9bbd157faff591a4e921e5563ed28fc620a0f44e97b36ba399eb8b3637"
+    },
+    {
+      "file": "star-make-v2.prompt.txt",
+      "bytes": 1545,
+      "sha256": "a2e8fa4f859de12d9c3fecdc957e6f1d08a6ad490e40f5c5d0618d55ac3df5e4"
+    },
+    {
+      "file": "star-make-v3-fitted.png",
+      "bytes": 1259002,
+      "sha256": "44c001a261324c677b42aaa795af1d018885dec27da9978e58e7e4ac554831b4"
+    },
+    {
+      "file": "star-make-v3.png",
+      "bytes": 1892725,
+      "sha256": "93aeb6364053ef0cd9803d4684c588e5b3e5f15ee3267ecaa323918b554ae4c1"
+    },
+    {
+      "file": "star-make-v3.prompt.txt",
+      "bytes": 1451,
+      "sha256": "35426a22d227f3999b490b0cb9072c012bc6df528f4d507ee41e5dce08773f3a"
+    },
+    {
+      "file": "star-make.png",
+      "bytes": 2123209,
+      "sha256": "ae027daea113f64d464a303824e3e8919c7ef2cf5de7623fbdf74865bd33a56f"
+    },
+    {
+      "file": "star-make.prompt.txt",
+      "bytes": 2951,
+      "sha256": "9c1bc37c0d933869782e75b010e30dfc40c22cfd1b1f050287f0c43dc688aef2"
+    },
+    {
+      "file": "star-move-fitted.png",
+      "bytes": 1798629,
+      "sha256": "45fa0dcb7a4cc98b064393e40b7152772880fbaa19c38297d65039866372d6ca"
+    },
+    {
+      "file": "star-move-v2-fitted.png",
+      "bytes": 1682222,
+      "sha256": "04d337c33c138ff5f8dc80ab4374291b30416fbb57347b97f0dbe4b0ff92cda2"
+    },
+    {
+      "file": "star-move-v2.png",
+      "bytes": 2274748,
+      "sha256": "6fbf4a4cf9cd4fc40e59c90d63a091d7e99cff93a44004977df11585078483e0"
+    },
+    {
+      "file": "star-move-v2.prompt.txt",
+      "bytes": 1805,
+      "sha256": "30f62edf791faf02baa8c6456b0f6f769ad3c44ede6a06fc304fbf4f66a59fab"
+    },
+    {
+      "file": "star-move.png",
+      "bytes": 2439574,
+      "sha256": "0405d3faeee6fa93500c39c62adc7320eafef541eaea137703f19bff8499bf4b"
+    },
+    {
+      "file": "star-move.prompt.txt",
+      "bytes": 3022,
+      "sha256": "a4004ca0b7704b08e636882d627ddc8adee76e1622a1196b2252f40a5cd875a3"
+    },
+    {
+      "file": "star-power-fitted.png",
+      "bytes": 1883589,
+      "sha256": "b31587a416daaaab0dae6d60001ba7d40eacb0e640f7ca5c8a5d262103b0ff53"
+    },
+    {
+      "file": "star-power.png",
+      "bytes": 2527358,
+      "sha256": "924a41e5f68a94a658df1c2e9619f9295173f85e4608dcd0a47f9b7a0f6b7478"
+    },
+    {
+      "file": "star-power.prompt.txt",
+      "bytes": 2757,
+      "sha256": "f6b843b30257a2d4ffdfd2c189e6b860ec664d1c1a4169913446297de3a16700"
+    },
+    {
+      "file": "star-waste-final-geometry-review.png",
+      "bytes": 1328233,
+      "sha256": "c27efd5ad96a21fe8533fd413b92ab6eb449fb53eab58e33cb0162900fe4319c"
+    },
+    {
+      "file": "star-waste-final-opaque-review.png",
+      "bytes": 1321460,
+      "sha256": "49237adef6f4fff5bc8de8f0cb89653d5a77060b5ef9129b64f2c90a91b9fdb4"
+    },
+    {
+      "file": "star-waste-fitted.png",
+      "bytes": 1356920,
+      "sha256": "3fd328465d0efcedc0f09c954ab98991fe1a1cb8728b6154196401d0a078b938"
+    },
+    {
+      "file": "star-waste-geometry-review.png",
+      "bytes": 1328233,
+      "sha256": "c27efd5ad96a21fe8533fd413b92ab6eb449fb53eab58e33cb0162900fe4319c"
+    },
+    {
+      "file": "star-waste-opaque-review.png",
+      "bytes": 1321460,
+      "sha256": "49237adef6f4fff5bc8de8f0cb89653d5a77060b5ef9129b64f2c90a91b9fdb4"
+    },
+    {
+      "file": "star-waste.png",
+      "bytes": 2015020,
+      "sha256": "4fac1afe4419bff97837d1a5797a36e3ef96859f895f3403c6c35dec94d6b4e9"
+    },
+    {
+      "file": "star-waste.prompt.txt",
+      "bytes": 3437,
+      "sha256": "70322ca383f0c3daa093f3dd464524f7e4e9dea619137a34990bde1a9d396b8f"
+    },
+    {
+      "file": "star-water-fitted.png",
+      "bytes": 1880440,
+      "sha256": "9c41ab4c046fa6c436ee6a47bf9ec844b3bc1cc86641f7bff2f821581a8a116f"
+    },
+    {
+      "file": "star-water.png",
+      "bytes": 2530183,
+      "sha256": "23d6ec1c832e98715893b95c844c67c6a3d30295e3a0bc1bf82675a964543251"
+    },
+    {
+      "file": "star-water.prompt.txt",
+      "bytes": 3211,
+      "sha256": "194971cebad53c957067e18710b875d9cfd1af08436f147c0c508065aa0402b5"
+    },
+    {
+      "file": "star-wild-final-geometry-review.png",
+      "bytes": 1445108,
+      "sha256": "d5c22937db1ba8633e6e81f75ca4f1abded1d82ca12cfc73cb400f0741738b0e"
+    },
+    {
+      "file": "star-wild-final-opaque-review.png",
+      "bytes": 1439930,
+      "sha256": "2e06f4e9b819b63351bf1a4dd4cff2f00865950171003852dc51c818768986f9"
+    },
+    {
+      "file": "star-wild-fitted.png",
+      "bytes": 1471065,
+      "sha256": "444da2ba3695a4b835dc200ab0de07cee50dd30159efb38790607b6c929a3fcd"
+    },
+    {
+      "file": "star-wild.png",
+      "bytes": 2083170,
+      "sha256": "f3e0184a24a946728658677744839c77a26b6c47c273c9c03f2ac09c69a0a1c9"
+    },
+    {
+      "file": "star-wild.prompt.txt",
+      "bytes": 3513,
+      "sha256": "2b84b7871d38d6dd86d3695ee6c30056240aea154d552582a0644bd8e48d287b"
+    }
+  ]
+}

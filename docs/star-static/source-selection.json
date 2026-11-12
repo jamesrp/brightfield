@@ -1,0 +1,34 @@
+[
+  {
+    "key": "power:star",
+    "source": "star-power.png"
+  },
+  {
+    "key": "move:star",
+    "source": "star-move-v2.png"
+  },
+  {
+    "key": "food:star",
+    "source": "star-food.png"
+  },
+  {
+    "key": "water:star",
+    "source": "star-water.png"
+  },
+  {
+    "key": "home:star",
+    "source": "star-home-v2.png"
+  },
+  {
+    "key": "make:star",
+    "source": "star-make-v3.png"
+  },
+  {
+    "key": "waste:star",
+    "source": "star-waste.png"
+  },
+  {
+    "key": "wild:star",
+    "source": "star-wild.png"
+  }
+]
