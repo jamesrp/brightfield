@@ -1,0 +1,331 @@
+{
+  "date": "2026-11-12",
+  "storage": "External private archive; set BRIGHTFIELD_ART_ARCHIVE to rebuild. Raw images and intermediates are not committed.",
+  "files": [
+    {
+      "file": "1-food.png",
+      "bytes": 2362283,
+      "sha256": "a7c0870466dcad39137b1d6f2ddaaa9876a68bd36781a800777f3889b1164317"
+    },
+    {
+      "file": "1-food.prompt.txt",
+      "bytes": 1371,
+      "sha256": "c50a6694805905a9c8563a284ca69d2a114309c733226386dd7a81a22c758661"
+    },
+    {
+      "file": "1-home.png",
+      "bytes": 2295603,
+      "sha256": "ac641702b37382b11423a40dececd36939c23bbd6d0359dfffe1992fb9782d43"
+    },
+    {
+      "file": "1-home.prompt.txt",
+      "bytes": 1331,
+      "sha256": "f66cffae188480933ee232d113b6a290545a58568d174ecd630322f96015e86a"
+    },
+    {
+      "file": "1-make-aligned-completed.png",
+      "bytes": 1833252,
+      "sha256": "9b51f30bb230a9efefe5afa8834983167d282eb09ac9731ef2e31dc9b2cc456a"
+    },
+    {
+      "file": "1-make-aligned.png",
+      "bytes": 1835130,
+      "sha256": "cee66d391a507f03a0ddfe2cb01a0cc732544090e5a86583427de4f0ed43734d"
+    },
+    {
+      "file": "1-make-noalign.png",
+      "bytes": 1885392,
+      "sha256": "ff246ad536d008f0124521279b0cc503a45fab326f849a3a014a4d0c608e56c9"
+    },
+    {
+      "file": "1-make.png",
+      "bytes": 2467903,
+      "sha256": "9e41c03569ec1793e21dd023f48a82db073af6ae96363a839ee57ae357a7f10e"
+    },
+    {
+      "file": "1-make.prompt.txt",
+      "bytes": 1341,
+      "sha256": "4b075b719f888de65f43bc099a4b290feeb8f5ffa10be9c2cf5070477795b89e"
+    },
+    {
+      "file": "1-move.png",
+      "bytes": 2391157,
+      "sha256": "86347535650287777402fd11a4bcbabcfcc971b4a0e2115ed171ddb107429ba5"
+    },
+    {
+      "file": "1-move.prompt.txt",
+      "bytes": 1352,
+      "sha256": "ccaf17673375def86db408ddd728ee0be18ebe676993af16bfe3af7977abc3bf"
+    },
+    {
+      "file": "1-power-fitted.png",
+      "bytes": 1399469,
+      "sha256": "0b3d671bf5a55c1d21adbd3dcebefee3f4fc5aae775a88e6ccd1722d5dffa364"
+    },
+    {
+      "file": "1-power.png",
+      "bytes": 2085892,
+      "sha256": "b6c009a2108efdc44f5445f240ab85cae8169ad97bb249200ffd13d31a42c0eb"
+    },
+    {
+      "file": "1-power.prompt.txt",
+      "bytes": 1501,
+      "sha256": "8fd36627076e6ecb01c5bf9fc95a5ef37e3c8ada19e56f6cc031efbd707571c7"
+    },
+    {
+      "file": "1-waste-aligned-completed.png",
+      "bytes": 1620844,
+      "sha256": "6bf296cc32aca4e9e7ca0316ae6917d18be7c83b721fd10c7d16a27404fc8b13"
+    },
+    {
+      "file": "1-waste-aligned.png",
+      "bytes": 1621645,
+      "sha256": "a2c7ee81f61aa2a4ef7e54f4604b4a36d1aa83febeabf7509e1c78754721ff89"
+    },
+    {
+      "file": "1-waste-noalign.png",
+      "bytes": 1712499,
+      "sha256": "ffc2903c1ec9dcedd56ad4dd1a13f902a089d481af74944ba455e95bf7866f4e"
+    },
+    {
+      "file": "1-waste.png",
+      "bytes": 2352264,
+      "sha256": "122004d2712f2c4f7dcb8b40f8d7d9d02be7ddb9912d7cf959139d4214f0d44a"
+    },
+    {
+      "file": "1-waste.prompt.txt",
+      "bytes": 1372,
+      "sha256": "9c97c30bd41b017e059839d0dc1af3bb0d659c944934ff80ce10b1c56f4c6dec"
+    },
+    {
+      "file": "1-water-fixed-fitted.png",
+      "bytes": 1970572,
+      "sha256": "0ead3aa9eb1a726f1d2f2e6d22768c360ad7c87dd0e4ae66060bea1acde5f4db"
+    },
+    {
+      "file": "1-water-fixed.png",
+      "bytes": 2645974,
+      "sha256": "ae85c9ec8a81007f3f1b721312d43c2204107f7be53b56a4c7fb206110a31c8c"
+    },
+    {
+      "file": "1-water-fixed.prompt.txt",
+      "bytes": 1325,
+      "sha256": "d69fbb51b832defbc25424859981841ddfb5a42f3dc6f40081cd4817e0569dd2"
+    },
+    {
+      "file": "1-water-noalign.png",
+      "bytes": 2049725,
+      "sha256": "cfe165f0b4e5a11409c9cf8e70fb66617a1e6545c6dde39d75fb6bc7702a0f5f"
+    },
+    {
+      "file": "1-water.png",
+      "bytes": 2586915,
+      "sha256": "87c44060e38fcc6ae3dd0568c0a1225503b3fee2796a59822ee43ccedd9b61c6"
+    },
+    {
+      "file": "1-water.prompt.txt",
+      "bytes": 1334,
+      "sha256": "435d1cc3992f5313cbd9ca0938aa1ced343194ea2bc475837f811e04d363524d"
+    },
+    {
+      "file": "1-wild.png",
+      "bytes": 2779601,
+      "sha256": "cca20ae9c69cd8728eeca8f9fadfd8d1a252e27cf9aadebe20e05a36b95d1f71"
+    },
+    {
+      "file": "1-wild.prompt.txt",
+      "bytes": 1377,
+      "sha256": "51c7f1e1192f316ea7e2e066ce0bb7ffc4d199ce35984b544e7534ab15ab44c0"
+    },
+    {
+      "file": "2-food-aligned-completed.png",
+      "bytes": 1490936,
+      "sha256": "095d457e467d143d85ba970a3358b0f6ca03ce94c16158f2d31197e935aa626d"
+    },
+    {
+      "file": "2-food-aligned.png",
+      "bytes": 1490115,
+      "sha256": "bdc50b3b3d680a6ace315a1c79816e363dc433a9e1de76600c0234fd91d079f7"
+    },
+    {
+      "file": "2-food-fitted.png",
+      "bytes": 1525604,
+      "sha256": "2734b9750dee0ea5f8240587042d20a54ecad6cb10d672f3ea5cd0172fb86ba9"
+    },
+    {
+      "file": "2-food-fixed.png",
+      "bytes": 2161882,
+      "sha256": "a90c74c13a52697facd8ded5575fdb20cd156ab2a669994a0b412e4811fde31f"
+    },
+    {
+      "file": "2-food-fixed.prompt.txt",
+      "bytes": 683,
+      "sha256": "6cec1f6b79c8f09db33ff6f1eb2f6325148a9fd1519e45ca8eef2832c0b61bab"
+    },
+    {
+      "file": "2-food.png",
+      "bytes": 2285133,
+      "sha256": "7585655c367ff5104d044a4081b3de0a967ea40ad10928149acfb27b6e2e4d39"
+    },
+    {
+      "file": "2-food.prompt.txt",
+      "bytes": 1287,
+      "sha256": "e4a6ea03f4ea70293bfff8ca825281b9db4ab6813b5dc5138a6d2adc4a533631"
+    },
+    {
+      "file": "2-home-fitted.png",
+      "bytes": 1724021,
+      "sha256": "e8c1f2928d658caa473d4c7c00cf4a49b8b8a8be725269e6583eefa4411d058e"
+    },
+    {
+      "file": "2-home.png",
+      "bytes": 2289745,
+      "sha256": "afada6c4f75d786430c0065acc9a51c38eba726f716c838534733fa6f1b27707"
+    },
+    {
+      "file": "2-home.prompt.txt",
+      "bytes": 1287,
+      "sha256": "1752b2abd08cc0a643a44e8185f821f29f2068614c8bad9a35346bd3c512a851"
+    },
+    {
+      "file": "2-make-before-modern.png",
+      "bytes": 1904204,
+      "sha256": "6a10373b36c3e1a073de7a80d5782492b1834cf8d3601d682e19edbc2533eea5"
+    },
+    {
+      "file": "2-make-corners.png",
+      "bytes": 2425625,
+      "sha256": "11f04f87315801c251508f7c423f92c5e1924a4c75d39555a7f62360d937c843"
+    },
+    {
+      "file": "2-make-corners.prompt.txt",
+      "bytes": 789,
+      "sha256": "b99fecb032fcf1546e17addbe70726400249891328a8cb99d5361d3b23190058"
+    },
+    {
+      "file": "2-make-fitted.png",
+      "bytes": 1904711,
+      "sha256": "78da598a12da8f0be22e77f34595a590e7b8a7e77cdf2e4c27c7319d5fdb3cb1"
+    },
+    {
+      "file": "2-make-fixed.png",
+      "bytes": 2461936,
+      "sha256": "ee34417251f18abf628a644be2f6f49a82cba3bd55277bf5993624032570a63d"
+    },
+    {
+      "file": "2-make-fixed.prompt.txt",
+      "bytes": 692,
+      "sha256": "a3989d36f0428ac5cfa942c081f123f53de4747449ba3febe8e4bca32907d39d"
+    },
+    {
+      "file": "2-make-modern-fitted.png",
+      "bytes": 1470172,
+      "sha256": "6509af7590d0b5deb02848c0f1cf99fcc2684e756d84324a95fd8cb1b0af5e54"
+    },
+    {
+      "file": "2-make-modern.png",
+      "bytes": 2110945,
+      "sha256": "126afacec07bd802bd6cb91731d9c7df61b333acb71dfeba72366cee073b62d3"
+    },
+    {
+      "file": "2-make-modern.prompt.txt",
+      "bytes": 1563,
+      "sha256": "146a0f2705811cdac7025739e97388229fd3f797f2772ecab8d4cc359248728c"
+    },
+    {
+      "file": "2-make.png",
+      "bytes": 2542077,
+      "sha256": "8f1c14f5ed8071b43d8ddeb85f3b8322a55e6da5ef66bc256fffc869c92fdb3d"
+    },
+    {
+      "file": "2-make.prompt.txt",
+      "bytes": 1387,
+      "sha256": "0cfeb3add4fc0e7fafc119f66aa38b204e092661ba5ed31a3ccc30838fd3fd39"
+    },
+    {
+      "file": "2-move-fitted.png",
+      "bytes": 1617897,
+      "sha256": "4252cd6ca8faa561d1d4d7171699cdd2261e67823661ebe1642595a8fd83a94a"
+    },
+    {
+      "file": "2-move.png",
+      "bytes": 2256659,
+      "sha256": "a2b492c41150971ed7870ccb7c793062f441125e3e8e6d87b85ff9f3f430283e"
+    },
+    {
+      "file": "2-move.prompt.txt",
+      "bytes": 1336,
+      "sha256": "9542d31e5043a514f22f3ef18878b89fec5aa1e01595bed472a7d87b63d8ec31"
+    },
+    {
+      "file": "2-power-fitted.png",
+      "bytes": 1412020,
+      "sha256": "a7311f02d74738da55d598761ae9a886bf504906367605bdd8d4925f2c2e2b5c"
+    },
+    {
+      "file": "2-power.png",
+      "bytes": 2125765,
+      "sha256": "ff2d352e10536c73e7c88797603ada8f5b8d045ee0df9e0b484c8d8cc31b9834"
+    },
+    {
+      "file": "2-power.prompt.txt",
+      "bytes": 1415,
+      "sha256": "259b0258ac484b7ca17c363cc63fadbe6f085f737dd5b336025f4861c89536b4"
+    },
+    {
+      "file": "2-waste-fitted.png",
+      "bytes": 1646372,
+      "sha256": "de6e3a30c8f0697d836cd58a336fe366ef307f3c79cd8d5f50bb1e0666b03fa7"
+    },
+    {
+      "file": "2-waste.png",
+      "bytes": 2274388,
+      "sha256": "1acb07b3a1c5cc9180f528dfb12bce1fb30e3708d2161bea51c4f7ab4080701e"
+    },
+    {
+      "file": "2-waste.prompt.txt",
+      "bytes": 1327,
+      "sha256": "4d08ed6cee3298b51f79b04aad6cb6c86861c003a73a2311e838cf05445617cd"
+    },
+    {
+      "file": "2-water-fitted.png",
+      "bytes": 1816336,
+      "sha256": "8d030a5b3951ee73188d83b705cdf42a5bef737e02e4388ce2882760ca16164d"
+    },
+    {
+      "file": "2-water.png",
+      "bytes": 2382974,
+      "sha256": "348e9b00d063d11ad909f07f64e0a239a5e3d2807ed230bb8d5edf7f237477b9"
+    },
+    {
+      "file": "2-water.prompt.txt",
+      "bytes": 1279,
+      "sha256": "0a812bae5d00a0bafb1f1f3ddf75f56e29e1b52dff75003b51cc1b82077dcfa8"
+    },
+    {
+      "file": "2-wild-fitted.png",
+      "bytes": 2709224,
+      "sha256": "ed63e1278ff23019ba8b5a73ad819c41a92c8ed6875fc46fcdb95d5224fca4c7"
+    },
+    {
+      "file": "2-wild-fixed.png",
+      "bytes": 3210501,
+      "sha256": "fdd2c1933c3735bf8f0cf681a7c2afb647a5dcd5d80d31e082c002231535d700"
+    },
+    {
+      "file": "2-wild-fixed.prompt.txt",
+      "bytes": 521,
+      "sha256": "13e79c9787859a38996a7b7f9b0090004fe487f1f1dfe7eda1c4ebb4ad44be2e"
+    },
+    {
+      "file": "2-wild.png",
+      "bytes": 3393949,
+      "sha256": "06ad4fbe0e96242d056278fa83e2f2215a096fbb11245f0f701d8d9c3626fa7f"
+    },
+    {
+      "file": "2-wild.prompt.txt",
+      "bytes": 1322,
+      "sha256": "410c43951712c4db7acfdc6c6d496dfa8433116615cd478ca4044645f7b15dc3"
+    }
+  ]
+}
