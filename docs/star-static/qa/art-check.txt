@@ -1,0 +1,38 @@
+
+> brightfield@0.12.0 art:check
+> node tools/art/check-tiles.cjs
+
+PASS power:0 (0/power.png)
+  top y=449, slab 100.0% solid, edges within 0.5 px
+PASS move:0 (0/move.png)
+  top y=597, slab 100.0% solid, edges within 0.5 px
+PASS food:0 (0/food.png)
+  top y=745, slab 100.0% solid, edges within 0.5 px
+PASS water:0 (0/water.png)
+  top y=493, slab 100.0% solid, edges within 0.5 px
+PASS home:0 (0/home.png)
+  top y=581, slab 100.0% solid, edges within 0.5 px
+PASS make:0 (0/make.png)
+  top y=574, slab 100.0% solid, edges within 0.5 px
+PASS waste:0 (0/waste.png)
+  top y=774, slab 100.0% solid, edges within 0.5 px
+PASS wild:0 (0/wild.png)
+  top y=477, slab 100.0% solid, edges within 0.5 px
+PASS power:star (star/power.png)
+  top y=289, slab 100.0% solid, edges within 0.5 px
+PASS move:star (star/move.png)
+  top y=241, slab 100.0% solid, edges within 0.5 px
+PASS food:star (star/food.png)
+  top y=72, slab 100.0% solid, edges within 0.5 px
+PASS water:star (star/water.png)
+  top y=180, slab 100.0% solid, edges within 0.5 px
+PASS home:star (star/home.png)
+  top y=305, slab 100.0% solid, edges within 0.5 px
+PASS make:star (star/make.png)
+  top y=245, slab 100.0% solid, edges within 0.5 px
+PASS waste:star (star/waste.png)
+  top y=647, slab 100.0% solid, edges within 0.5 px
+PASS wild:star (star/wild.png)
+  top y=582, slab 100.0% solid, edges within 0.5 px
+16 tiles listed; 32 of 48 standard tiles still on the old atlas art.
+all checks pass

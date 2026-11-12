@@ -31,3 +31,6 @@ After rebasing onto main at `29b4cb29` and count-agnostic test cleanup, all 87 t
 ## Stages 1–2 static tiles (2026-11-12)
 
 The next 16 individual tiles follow the [four-PR plan for issue #2](https://github.com/jamesrp/brightfield/issues/2#issuecomment-6815889758). All reuse the unchanged earth kerb. Built-in imagegen supplies the paintings; exact-geometry fitting and narrowly bounded compositing of the existing painted earth slab complete small ground-edge gaps. Moving parts remain out of the static bases. See [batch review and reproduction](stages-1-2/README.md), `stages-1-2/source-archive.json` for externally retained source hashes, and the `tile_spec_v2_stages_1_2` entry in `art-provenance.json` for every prompt, selected source and final checksum. Only the final assets and two town close-ups are added as images in git. Actors, future-stage tiles and deployment are separate work.
+## Star full-hex static tiles
+
+The [Star batch](star-static/README.md) records eight separate built-in imagegen tiles, exact shared alloy kerb compositing, source/final checksums and reproducible geometry completion. Raw and intermediate images remain in an external private archive; only the final tiles and one real-renderer town close-up are committed. Exact prompts are in `art-provenance.json`, and `star-static/source-archive.json` records the archived sources.
