@@ -1144,5 +1144,247 @@
         "process": "docs/magic-static/rebuild.cjs"
       }
     ]
+  },
+  "tile_spec_v2_round_2_details": {
+    "date": "2026-11-12",
+    "base_commit": "38f6cee23ae608066b91e356e2bb134da3f9282a",
+    "method": "Built-in imagegen; deterministic source crop and resize",
+    "prompts": {
+      "robot-arm": "Use case: stylized-concept. Create a separate transparent actor sprite of the missing robot arm for the pictured Brightfield modern factory miniature. Reference image is style, camera, materials, light, and installation context only; do not output the factory or the existing large pedestal. Subject: one compact friendly industrial robot arm, muted sage-green painted metal panels, brushed steel round joints, two articulated links bent in a clear inverted elbow shape, tiny simple two-finger gripper reaching slightly right. A short circular attachment at its base sits directly on the large empty round pedestal already in the reference. No pedestal, floor, ground shadow, scenery, text or UI. Match the reference's warm highly detailed painterly toy-miniature 3D look, soft upper-left light and 40-degree elevated isometric view. Show its metal top surfaces in that camera. Entire robot silhouette isolated on genuine transparent alpha with generous empty padding; no checkerboard painted. It will be downscaled to roughly 150 pixels wide by 185 tall in the tile, so keep readable chunky parts and restrained fine details. Keep the gripper safely within its compact silhouette. Only the one missing movable robot arm.",
+      "repair-wheel": "Use case: stylized-concept. Create a separate transparent actor sprite of one bicycle wheel for the pictured Brightfield Nature Repair Guild miniature. Reference image is style, camera, materials and fitting context only; do not output the cottage, bicycle frame or stand. Subject: exactly one complete classic bicycle wheel, soft dark charcoal rubber tire, warm silvery thin rim, evenly spaced thin silver spokes and a tiny brass central hub, similar to a charming refurbished garden bicycle. The wheel is upright; clear near-circular face with a very slight three-quarter view, almost face-on to allow the sprite to spin naturally around its exact centre. No axle extending out, no frame, fork, pedestal, stand, ground shadow or props. Match reference's warm detailed painterly toy-miniature look and light from upper left, soft surfaces, no sharp vector outlines. Transparent holes between spokes, genuine alpha all around with generous padding. It will be about 118 pixels in diameter at tile scale, so spokes must remain visible but delicate. Only one missing front wheel for the wheel-free bicycle frame; no more than one wheel.",
+      "lift-platform": "Use case: stylized-concept. Create a separate transparent actor sprite of the missing small cargo lift platform for the pictured Brightfield futuristic vertical food-stack miniature. Reference image is style, camera, materials and the existing right-hand narrow empty lift shaft only. Do not output the building, shaft, rails or structural supports. Subject: one shallow elegant rectangular pearl-white and warm gold cargo lift platform, shown in the same 40-degree elevated isometric view, its long front edge gently slopes down-right, with a tiny teal light strip inset into its front fascia. Small gold edge lip, no railings, no upright frame and no crops or cargo. It should fit inside the pictured narrow shaft, about 88 pixels wide by 35 pixels high at native tile scale. A clear visible pale top plane and a shallow cream-gold front edge, cosy detailed softly painterly toy-miniature materials, soft upper-left light. Isolate this single platform on genuine transparent alpha with generous padding, no ground shadow, no text, no logo, no other objects.",
+      "forge-flame": "Use case: stylized-concept. Create a separate transparent actor sprite of the missing forge fire for the pictured Brightfield magic workshop miniature. Reference image is style, light, camera and placement context only; do not output any building, fireplace, bricks, hearth or floor. Subject: a small low cluster of warm golden magical flames with amber-orange edges and buttery yellow-white centre, softly painted tongues of fire rising from a compact glowing ember core. The fire will fit completely within the empty brick forge aperture in the reference at about 115 pixels wide by 85 pixels high, so keep it compact, not tall. No smoke, no flying sparks outside its silhouette, no logs, no new supports or structures. Match the cosy richly colored painterly miniatures, not photoreal fire and not flat vector art. Gentle localized orange light within the sprite itself; preserve actual transparent alpha outside the fire, including soft translucent edge glow. Entire single flame cluster isolated with generous empty padding; no checkerboard painted, text or UI.",
+      "transmutation-orb": "Use case: stylized-concept. Create a separate transparent actor sprite of the missing floating transmutation orb for the pictured Brightfield magical recycling miniature. Reference image is style, lighting and placement context only; do not output its existing golden three-pronged cradle, stand, scenery, or plot. Subject: one round luminous violet-and-lilac glass magical orb with softly swirling pale lavender light inside, tiny warm gold glints and a few subtle curving translucent internal bands. A complete clean circular silhouette, rich purple shaded lower right and soft upper-left pearly highlight. No external rings, spikes, rays, starbursts, particles, supports or shadow. Keep internal glints restrained so this little orb can slowly rotate and gently bob in the existing golden cradle. It will be about 150 pixels in diameter at native tile scale. Match the cosy detailed painterly toy-miniature look of the image, gently luminous and dimensional, not realistic gemstone photography or flat vector. Genuine transparent alpha with generous padding and only a very close soft halo around the sphere. Only the orb, no duplicate stand."
+    },
+    "metadata": {
+      "version": 1,
+      "date": "2026-11-12",
+      "method": "Built-in image_gen; deterministic Canvas crop/resize only",
+      "sourceRoot": "raw",
+      "dependencies": {
+        "@napi-rs/canvas": "0.1.100"
+      },
+      "assets": [
+        {
+          "name": "robot-arm",
+          "raw": "raw/robot-arm.png",
+          "rawSHA256": "aa0d2838de6ec679b84c8a05f8a29130c82f9f7ab73aff02a422f1a147fdbd74",
+          "crop": [
+            208,
+            220,
+            837,
+            975
+          ],
+          "paintSize": [
+            167,
+            195
+          ],
+          "padding": 4,
+          "anchor": [
+            58,
+            191
+          ],
+          "tile": "make:2",
+          "actor": {
+            "sprite": "robot-arm",
+            "at": [
+              630,
+              1157
+            ],
+            "sway": 1.5,
+            "period": 7
+          },
+          "qaCrop": [
+            460,
+            920,
+            360,
+            330
+          ]
+        },
+        {
+          "name": "repair-wheel",
+          "raw": "raw/repair-wheel.png",
+          "rawSHA256": "513453ca7291ed8aa4a23951f11308fe0d3013b59c5349ac6cc8413ab11d0085",
+          "crop": [
+            110,
+            84,
+            1029,
+            1086
+          ],
+          "paintSize": [
+            118,
+            118
+          ],
+          "padding": 4,
+          "anchor": [
+            63,
+            63
+          ],
+          "tile": "make:leaf",
+          "actor": {
+            "sprite": "repair-wheel",
+            "at": [
+              845,
+              1207
+            ],
+            "spin": 0.07
+          },
+          "qaCrop": [
+            610,
+            1070,
+            350,
+            310
+          ]
+        },
+        {
+          "name": "lift-platform",
+          "raw": "raw/lift-platform.png",
+          "rawSHA256": "230e4880964239afc1a46f9260a0716dd0fa4c8f9ece7dd5f937bc151ff1e5bf",
+          "crop": [
+            363,
+            154,
+            1184,
+            509
+          ],
+          "paintSize": [
+            90,
+            39
+          ],
+          "padding": 4,
+          "anchor": [
+            49,
+            24
+          ],
+          "tile": "food:star",
+          "actor": {
+            "sprite": "lift-platform",
+            "at": [
+              750,
+              760
+            ],
+            "bob": 190,
+            "period": 12
+          },
+          "qaCrop": [
+            640,
+            480,
+            230,
+            560
+          ]
+        },
+        {
+          "name": "forge-flame",
+          "raw": "raw/forge-flame.png",
+          "rawSHA256": "3cc714f9cb3ae0c51343e0694647fe232d3268fa4c8b74c16d9021b9ce3c6daa",
+          "crop": [
+            340,
+            324,
+            759,
+            530
+          ],
+          "paintSize": [
+            116,
+            81
+          ],
+          "padding": 4,
+          "anchor": [
+            62,
+            78
+          ],
+          "tile": "make:magic",
+          "actor": {
+            "sprite": "forge-flame",
+            "at": [
+              596,
+              1102
+            ],
+            "pulse": 0.22,
+            "period": 3.6
+          },
+          "qaCrop": [
+            470,
+            960,
+            260,
+            230
+          ]
+        },
+        {
+          "name": "transmutation-orb",
+          "raw": "raw/transmutation-orb.png",
+          "rawSHA256": "900ba45bfcf765c02f212c5475a1ed4f216de8bf90629a252010482e4d49d7a7",
+          "crop": [
+            193,
+            171,
+            862,
+            876
+          ],
+          "paintSize": [
+            156,
+            158
+          ],
+          "padding": 4,
+          "anchor": [
+            82,
+            83
+          ],
+          "tile": "waste:magic",
+          "actor": {
+            "sprite": "transmutation-orb",
+            "at": [
+              522,
+              944
+            ],
+            "spin": 0.025,
+            "bob": 3,
+            "period": 8
+          },
+          "qaCrop": [
+            360,
+            820,
+            330,
+            430
+          ]
+        }
+      ]
+    },
+    "finals": [
+      {
+        "name": "robot-arm",
+        "width": 175,
+        "height": 203,
+        "sha256": "aa3a008415453406744a439bb982ef7d5ee2fd83db566cb34fa8ddfbc14083bf",
+        "rawSHA256": "aa0d2838de6ec679b84c8a05f8a29130c82f9f7ab73aff02a422f1a147fdbd74"
+      },
+      {
+        "name": "repair-wheel",
+        "width": 126,
+        "height": 126,
+        "sha256": "34933a0ea1a7374493fb4b3ed9bb76a01f50c15111c76e2d431cb317555d27d4",
+        "rawSHA256": "513453ca7291ed8aa4a23951f11308fe0d3013b59c5349ac6cc8413ab11d0085"
+      },
+      {
+        "name": "lift-platform",
+        "width": 98,
+        "height": 47,
+        "sha256": "24ffc1369c1c18a367a6d39b1990fabc3e889c08701a5c1be579c7a4edd07cfc",
+        "rawSHA256": "230e4880964239afc1a46f9260a0716dd0fa4c8f9ece7dd5f937bc151ff1e5bf"
+      },
+      {
+        "name": "forge-flame",
+        "width": 124,
+        "height": 89,
+        "sha256": "a3d28b58228f851702ddcc97a6c8f9f395b7a4e77b15e0a7caf57cef9d47af40",
+        "rawSHA256": "3cc714f9cb3ae0c51343e0694647fe232d3268fa4c8b74c16d9021b9ce3c6daa"
+      },
+      {
+        "name": "transmutation-orb",
+        "width": 164,
+        "height": 166,
+        "sha256": "00b33632ec3ef46b1a5215c82e2b1cc0e808a6cd75c8be47590c93acb52554e4",
+        "rawSHA256": "900ba45bfcf765c02f212c5475a1ed4f216de8bf90629a252010482e4d49d7a7"
+      }
+    ],
+    "review": "docs/round-2-details/README.md",
+    "source_archive": "docs/round-2-details/source-archive.json"
   }
 }

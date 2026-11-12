@@ -1,0 +1,5 @@
+
+> brightfield@0.12.0 art:preview
+> node tools/art/preview.cjs
+
+wrote tools/art/out

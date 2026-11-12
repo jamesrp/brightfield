@@ -40,3 +40,7 @@ The [Leaf batch](leaf-static/README.md) records eight separate built-in imagegen
 ## Magic full-hex static tiles
 
 The [Magic batch](magic-static/README.md) records eight separate built-in imagegen tiles, exact shared arcane kerb compositing, source/final checksums and reproducible geometry completion. Raw and intermediate images remain in an external private archive; only the final tiles and one real-renderer town close-up are committed. Exact prompts are in `art-provenance.json`, and `magic-static/source-archive.json` records the archived sources.
+
+## Round 2 remaining moving parts
+
+The [detail actor batch](round-2-details/README.md) restores the five remaining reserved moving parts: foundry arm, Repair Guild wheel, food-stack lift, forge flame and transmutation orb. Each has a separately generated transparent sprite, exact placement and calm motion using the existing renderer. Source/final checksums, full prompts and portable source reconstruction are versioned; raw/intermediate PNGs remain outside git. All static bases are unchanged.
