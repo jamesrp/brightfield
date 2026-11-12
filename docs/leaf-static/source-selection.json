@@ -1,0 +1,34 @@
+[
+  {
+    "key": "power:leaf",
+    "source": "leaf-power.png"
+  },
+  {
+    "key": "move:leaf",
+    "source": "leaf-move-fixed.png"
+  },
+  {
+    "key": "food:leaf",
+    "source": "leaf-food-fixed.png"
+  },
+  {
+    "key": "water:leaf",
+    "source": "leaf-water-fixed2.png"
+  },
+  {
+    "key": "home:leaf",
+    "source": "leaf-home.png"
+  },
+  {
+    "key": "make:leaf",
+    "source": "leaf-make-clean-sky.png"
+  },
+  {
+    "key": "waste:leaf",
+    "source": "leaf-waste-fixed2.png"
+  },
+  {
+    "key": "wild:leaf",
+    "source": "leaf-wild-fixed2.png"
+  }
+]

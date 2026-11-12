@@ -1,0 +1,381 @@
+{
+  "date": "2026-11-12",
+  "storage": "External private archive; set BRIGHTFIELD_ART_ARCHIVE to rebuild. Raw images and intermediates are not committed.",
+  "files": [
+    {
+      "file": "leaf-food-first-final.png",
+      "bytes": 2458455,
+      "sha256": "23da7c30685d7ac14dda5210ddd1aa25800d235fe4b29dab28e67de22fa6ba25"
+    },
+    {
+      "file": "leaf-food-fitted.png",
+      "bytes": 2459565,
+      "sha256": "75438f6601547c32ca90602a23d1ff554d43d1d916e1de533efa2deb5d3ba5a4"
+    },
+    {
+      "file": "leaf-food-fixed-fitted.png",
+      "bytes": 2224060,
+      "sha256": "6bc3cda75b1900b40ed0cbd508461fb6bc0dd0622a17e012e99e1a81a0f222e5"
+    },
+    {
+      "file": "leaf-food-fixed-inspect.png",
+      "bytes": 2178126,
+      "sha256": "76695fa47f9d1333e9bbd49e4eedb122eb7bc1fd3065b516225cec1571dfe2cd"
+    },
+    {
+      "file": "leaf-food-fixed.png",
+      "bytes": 2737709,
+      "sha256": "65e3802d9aaca1ce04a56586e14332961e4dbc299beaa4fe13fcf1672a6df4ff"
+    },
+    {
+      "file": "leaf-food-fixed.prompt.txt",
+      "bytes": 1326,
+      "sha256": "60900d0d6a70216f646213fd8fb30c0f5d49b3d1b8a3a3fb2f3e45fc84723fa2"
+    },
+    {
+      "file": "leaf-food-inspect.png",
+      "bytes": 2360828,
+      "sha256": "2f66600d93f4c0c40aa0c512c3ddbe3b37e52b6ed27020a10bc91e73a3a904de"
+    },
+    {
+      "file": "leaf-food.png",
+      "bytes": 3083309,
+      "sha256": "14b3644bb6135f21acccdb24a1d6e10a82d2cd1fe5a91770d2eaeca53cfd6796"
+    },
+    {
+      "file": "leaf-food.prompt.txt",
+      "bytes": 2433,
+      "sha256": "72b791529e6d1d46a197d51709e8044da62d62bc5ed027c87d319ff04fd85631"
+    },
+    {
+      "file": "leaf-home-fitted.png",
+      "bytes": 2679595,
+      "sha256": "e9af1d231cd1b77c87aa19425d073b55b8032b5b76abb47daa8c8a19f40c6227"
+    },
+    {
+      "file": "leaf-home-fixed.png",
+      "bytes": 3033630,
+      "sha256": "576b0dbc4bda8393b1e07aa08852d51f8efdf484cb06cd66bc6a8d6cd45a7220"
+    },
+    {
+      "file": "leaf-home-fixed.prompt.txt",
+      "bytes": 1033,
+      "sha256": "4a1edb6a494f3fefd9d252a944298aa68ffec21886eb9c0f4ed1a143789b39e8"
+    },
+    {
+      "file": "leaf-home-neutral.png",
+      "bytes": 2570450,
+      "sha256": "53ef2bcc5737b5e4098e1bb9235738403b3cb96ed148e0cbe6ffdfede4f28b6b"
+    },
+    {
+      "file": "leaf-home.png",
+      "bytes": 3248649,
+      "sha256": "1df9acc1aebb45b9c6378181d72937a865e9ba46ba99c296319d46ded7b217c7"
+    },
+    {
+      "file": "leaf-home.prompt.txt",
+      "bytes": 2377,
+      "sha256": "27518fbc84ab337c716d1f3270a6f88791b573a343a3b5703b12c6bc12bff179"
+    },
+    {
+      "file": "leaf-make-before-sky-cleanup.png",
+      "bytes": 1800264,
+      "sha256": "48506cbdec07c097a33702998fbbcda611465e8faad415a6e4039f5398c6124a"
+    },
+    {
+      "file": "leaf-make-clean-sky-fitted.png",
+      "bytes": 1493357,
+      "sha256": "2c34126be8496c392baec3008f297e8e480074636191d64da6d12571248d2634"
+    },
+    {
+      "file": "leaf-make-clean-sky-neutral.png",
+      "bytes": 1468049,
+      "sha256": "c4d64d39fafa77750eb61f4139acdf7d6190138a575230e7af8abecdf960e453"
+    },
+    {
+      "file": "leaf-make-clean-sky.png",
+      "bytes": 2070899,
+      "sha256": "204a8b397d310122a3213c6ed264b04224ab6cd16a2f981b10823c6005c16fbb"
+    },
+    {
+      "file": "leaf-make-clean-sky.prompt.txt",
+      "bytes": 1018,
+      "sha256": "108f3506011cf85526f335ae8a380f1017a80d7ddb2a53be56bc39aea52ac3ca"
+    },
+    {
+      "file": "leaf-make-fitted.png",
+      "bytes": 1754450,
+      "sha256": "dcbc40c7a9c96416caf2b051926f2a56a21a6fa10445780f5d915aaa536855e5"
+    },
+    {
+      "file": "leaf-make-fixed-fitted.png",
+      "bytes": 1596839,
+      "sha256": "45b8de1980da1ddb9c99711882ca223bd523443eabff90f951b5279ed207910c"
+    },
+    {
+      "file": "leaf-make-fixed.png",
+      "bytes": 2241733,
+      "sha256": "a80097e11b31b9ae6f2151c890d18fe7ea053d594b41cc716e582b1589d587a6"
+    },
+    {
+      "file": "leaf-make-fixed.prompt.txt",
+      "bytes": 1349,
+      "sha256": "22447f10d70209cdb18c4fff098d2ba2b013152005e039037de71ec28547753a"
+    },
+    {
+      "file": "leaf-make-fixed2-fitted.png",
+      "bytes": 1798264,
+      "sha256": "f3acfb3ca16bfd8ed53a5d61ae1f2f46636e055f26281b189f46baa6b7e12bc8"
+    },
+    {
+      "file": "leaf-make-fixed2-neutral.png",
+      "bytes": 1644451,
+      "sha256": "11cd76ae197a70400a5fb836417354ca48bc9f4a485752cf1e4f15e37ca863fe"
+    },
+    {
+      "file": "leaf-make-fixed2.png",
+      "bytes": 2449522,
+      "sha256": "b7eee5f996030bcb2c98c5d34fe53bb6037b8c7b364a4d153cedcb7a41152a2a"
+    },
+    {
+      "file": "leaf-make-fixed2.prompt.txt",
+      "bytes": 1276,
+      "sha256": "1f6489d8bd9589f18219e86bed39155154708987ac5b8207c38f624420d5f3a2"
+    },
+    {
+      "file": "leaf-make-neutral.png",
+      "bytes": 1708049,
+      "sha256": "e27830e7ea95d06001ed83a121b7dc5026a7c5c5fbc4d9492e6eb61711d7a4f5"
+    },
+    {
+      "file": "leaf-make.png",
+      "bytes": 2374651,
+      "sha256": "70d55595275a8b2f074d646d7a324ea7175c18e3a383e3899f6de924dae1a3d3"
+    },
+    {
+      "file": "leaf-make.prompt.txt",
+      "bytes": 2340,
+      "sha256": "9d7fb35ea121f5c407481b49acb6286a28fdf616b2b23f6fc37280d6367fdd93"
+    },
+    {
+      "file": "leaf-move-fitted.png",
+      "bytes": 1812655,
+      "sha256": "a3023c3f585e5abe82a5b8b14101eecb31140e4addb6da38602cdfe190b3f9de"
+    },
+    {
+      "file": "leaf-move-fixed-fitted.png",
+      "bytes": 1748089,
+      "sha256": "89d41a144c9b8afe89da075f6089ae1a3dea256b8149b3e9d13c73b0bb761f03"
+    },
+    {
+      "file": "leaf-move-fixed.png",
+      "bytes": 2383868,
+      "sha256": "34f59f8f3061a108c00af514b798a70d0f927ab392010e5fe6f9948f665fa406"
+    },
+    {
+      "file": "leaf-move-fixed.prompt.txt",
+      "bytes": 1349,
+      "sha256": "f5386d23ee048275dbb0d7472fc6f9393edba30f5f030f5cd0e3dddab90fe2b4"
+    },
+    {
+      "file": "leaf-move-inspect.png",
+      "bytes": 1728456,
+      "sha256": "03eeaf7c29887216407571c766bf889ee5d4acce859d035643eeb085b244dccb"
+    },
+    {
+      "file": "leaf-move.png",
+      "bytes": 2536481,
+      "sha256": "daf3ad88d1b7ca5a1b16681c05782eb237a892c19fcca01716dae022921103c8"
+    },
+    {
+      "file": "leaf-move.prompt.txt",
+      "bytes": 2412,
+      "sha256": "cde6c42b5e24fa45844c8c9f40f13e07213d214a1110ca93d5bf058b79412e32"
+    },
+    {
+      "file": "leaf-power-fitted.png",
+      "bytes": 1963466,
+      "sha256": "be95e25a578d4d23e265f1176a487f5e9f8b8a6e35a4d7a71d999fcec3e5bdeb"
+    },
+    {
+      "file": "leaf-power-inspect.png",
+      "bytes": 1849000,
+      "sha256": "62a5d30177b1fe8b5c95d67c6b4de3b0a182e722e346037f48eafaf0706743a6"
+    },
+    {
+      "file": "leaf-power.png",
+      "bytes": 2671547,
+      "sha256": "8d705f04951da3abad02baaff1b4dbeeefd7783a0c33840addc1a02155b33b23"
+    },
+    {
+      "file": "leaf-power.prompt.txt",
+      "bytes": 2464,
+      "sha256": "8421affcde40a6bdb068545abc15ed154411819a537a68740ed1df69a82d492c"
+    },
+    {
+      "file": "leaf-waste-fitted.png",
+      "bytes": 1712498,
+      "sha256": "c2eac7ed332dc4617a0f4ef266d238e39f6349fb98135ca0ee74f2e282670977"
+    },
+    {
+      "file": "leaf-waste-fixed-fitted.png",
+      "bytes": 1658640,
+      "sha256": "5a2fc12d5de2c2514df42d113b07202554fdb95d9f9fc3cf06a2bda73f7738f9"
+    },
+    {
+      "file": "leaf-waste-fixed.png",
+      "bytes": 2371652,
+      "sha256": "52a42b662dbeb91b3c3be946afa9796d4873d9d05470f5f30122d7b5c378df76"
+    },
+    {
+      "file": "leaf-waste-fixed.prompt.txt",
+      "bytes": 1332,
+      "sha256": "afd4d4420ca296baa02aaa179f38ebc1ac512a2ae60021e3a30d801c29118c4b"
+    },
+    {
+      "file": "leaf-waste-fixed2-fitted.png",
+      "bytes": 1586419,
+      "sha256": "9c95f153b43d32152a2e64fdfac3bbabf44bb1995e177f4e662380a1b1529782"
+    },
+    {
+      "file": "leaf-waste-fixed2-neutral.png",
+      "bytes": 1562557,
+      "sha256": "a94e8a77e88129bd088668dc9789136e3f1c7815b6f7bb808f7a5e8cba1553a7"
+    },
+    {
+      "file": "leaf-waste-fixed2.png",
+      "bytes": 2193535,
+      "sha256": "cc9f4dd20cfc6e2b2b969678eb694257940a9824ecd8a373bd0440818c6310b4"
+    },
+    {
+      "file": "leaf-waste-fixed2.prompt.txt",
+      "bytes": 1142,
+      "sha256": "6c80a56ad088674c6360b01c1c9d1a386e3735b07b2c07f934ef29652f6cf564"
+    },
+    {
+      "file": "leaf-waste.png",
+      "bytes": 2361287,
+      "sha256": "d59794b424132dfa5b84d171a30064b94a7a8d171af3086c4b1fb86be3ca4a73"
+    },
+    {
+      "file": "leaf-waste.prompt.txt",
+      "bytes": 2415,
+      "sha256": "818237335bea096f7a26bbf481ce2e84eea4666562917ca60a7213176be2e439"
+    },
+    {
+      "file": "leaf-water-first-final.png",
+      "bytes": 1813579,
+      "sha256": "995f0e0c23202499f2dcc85793096d60f86331261d996fddff8df9c512f650ae"
+    },
+    {
+      "file": "leaf-water-fitted.png",
+      "bytes": 1815842,
+      "sha256": "a189a2fa549ce57ed978f18066f3ca1e31c8627050133cd32ee1df27a08849f3"
+    },
+    {
+      "file": "leaf-water-fixed-fitted.png",
+      "bytes": 1716316,
+      "sha256": "b04bd96791c9eb11717216017d0b0dc195a33dcd1d3ceacc31a0c6089bbc1747"
+    },
+    {
+      "file": "leaf-water-fixed-inspect.png",
+      "bytes": 1675763,
+      "sha256": "70b3c2ab3cbdee0fff6a4f4d380316a4dd7ce795d48d344ce783de7d066063c1"
+    },
+    {
+      "file": "leaf-water-fixed.png",
+      "bytes": 2327782,
+      "sha256": "e93af663209a58c7569262a5c0e655182aab6a42cf25ef297e64b56fc28a5cd7"
+    },
+    {
+      "file": "leaf-water-fixed.prompt.txt",
+      "bytes": 1484,
+      "sha256": "f429bc6cc5bf15e810a6016b7bffb012ce4a8593cfd4b8ad3ea60d98e852e440"
+    },
+    {
+      "file": "leaf-water-fixed2-fitted.png",
+      "bytes": 1650831,
+      "sha256": "2fc30403041207b9a72e9c619060dc80d9a78b61aa09ca6a63e463d11affac31"
+    },
+    {
+      "file": "leaf-water-fixed2-inspect.png",
+      "bytes": 1615069,
+      "sha256": "cdbcb3240d16e53be400ab851430d785de099d895d7db3183c14d2743e228551"
+    },
+    {
+      "file": "leaf-water-fixed2.png",
+      "bytes": 2213355,
+      "sha256": "5c8547d236b9b2896f55c49bb250b6273e5063a47d4675aaf586f5158b8face0"
+    },
+    {
+      "file": "leaf-water-fixed2.prompt.txt",
+      "bytes": 1665,
+      "sha256": "b430790248b4d377ba0eb3282d50d1839b699be0d3d1b7acef1a52ab770b1ac0"
+    },
+    {
+      "file": "leaf-water-inspect.png",
+      "bytes": 1743429,
+      "sha256": "a41e04dac794a93e77466f91eeee749f6eebf7d0ff56500f21516d9deed09275"
+    },
+    {
+      "file": "leaf-water.png",
+      "bytes": 2422481,
+      "sha256": "8fe76a048e4c789077fed6fd41b7101fe8334f5e33770605d97b8de3bdd3452a"
+    },
+    {
+      "file": "leaf-water.prompt.txt",
+      "bytes": 2434,
+      "sha256": "ad0f1e1c36930e49d510449aee20eaff40a61f9c6c2b5a0e6b7eaf1222e19109"
+    },
+    {
+      "file": "leaf-wild-fixed-fitted.png",
+      "bytes": 1725402,
+      "sha256": "574f86eccedee2508632fa8de4d70c47abd1edd815f10430d72441c74b8812f1"
+    },
+    {
+      "file": "leaf-wild-fixed.png",
+      "bytes": 2327209,
+      "sha256": "038e0c5004733509bbd6556ac9c6784061c5393d0bb005ceeb1f1892abdcf50b"
+    },
+    {
+      "file": "leaf-wild-fixed.prompt.txt",
+      "bytes": 1321,
+      "sha256": "324fed5a1dd9478366034e1e84b4bef565e918d00b803d084d75fe5d49c12f42"
+    },
+    {
+      "file": "leaf-wild-fixed2-fitted.png",
+      "bytes": 1607303,
+      "sha256": "be47cff6b1766378fe3a6bc9b1831cde4b6beb409f054975d37ec19a50ce1fac"
+    },
+    {
+      "file": "leaf-wild-fixed2-neutral.png",
+      "bytes": 1569598,
+      "sha256": "42579ff6c6bc3f9948bfa6b3230460668d1a739bcc3cbb4ce34a7d72749b2c12"
+    },
+    {
+      "file": "leaf-wild-fixed2.png",
+      "bytes": 2171947,
+      "sha256": "43e1a5761e4dc3382273f2745c75fbb59132eea8a8dddf4beb0472499f4f3dc9"
+    },
+    {
+      "file": "leaf-wild-fixed2.prompt.txt",
+      "bytes": 1294,
+      "sha256": "20a4832697b64f0350efae51bb809e0c21595bdffb29ffb3a6fe6ff682091a8a"
+    },
+    {
+      "file": "leaf-wild-missing-guide.png",
+      "bytes": 1699436,
+      "sha256": "b3f43685757533e23801d3d488f7db94235b55e242d69714ea18294b1934cec8"
+    },
+    {
+      "file": "leaf-wild.png",
+      "bytes": 2360484,
+      "sha256": "9c3d7440316412406e1e742fea30b6270d414e9b1e983f58b86f5bcb5df83ae9"
+    },
+    {
+      "file": "leaf-wild.prompt.txt",
+      "bytes": 2357,
+      "sha256": "ced9eab79953d872619cb32bfa97eb83e684a31e330d3da93029382b2ef4a15f"
+    }
+  ]
+}

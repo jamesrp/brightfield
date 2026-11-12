@@ -1,5 +1,9 @@
-node_modules/
+node_modules
 tools/art/out/
 # Keep generated source/intermediate images outside git; retain final review sheets.
 docs/stage0-pilot/**/*.png
 !docs/stage0-pilot/review/*.png
+
+# Leaf source/intermediate images belong in the external art archive.
+docs/leaf-static/**/*.png
+!docs/leaf-static/review/*.png
