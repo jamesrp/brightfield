@@ -18,3 +18,7 @@ docs/leaf-static/**/*.png
 # Magic source/intermediate images belong in the external art archive.
 docs/magic-static/**/*.png
 !docs/magic-static/review/*.png
+
+# Round 2 raw sources and intermediate composites stay in the external archive.
+docs/round-2-actors/**/*.png
+!docs/round-2-actors/review/*.png

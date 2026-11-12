@@ -1,0 +1,436 @@
+{
+  "version": 1,
+  "archive": "External private Round 2 source archive; not committed",
+  "files": [
+    {
+      "file": "mechanical/coal-first-fit.png",
+      "bytes": 1580293,
+      "sha256": "011975a21d59850c87dd7300601c9d826c9f0715c031a6925513b2d2cfa4aef5"
+    },
+    {
+      "file": "mechanical/coal-wagon-raw.png",
+      "bytes": 1903519,
+      "sha256": "b4e85712961b135266f78140d20f42efce6da2e2fb7b6d416d00c6b95d8f95d9"
+    },
+    {
+      "file": "mechanical/detail-sweeps-and-provenance.cjs",
+      "bytes": 3280,
+      "sha256": "2bda5439e70265f13e5137732c7d12c13bcc2478eaf2c65012cb95d06ec130c1"
+    },
+    {
+      "file": "mechanical/food-0-composite.png",
+      "bytes": 1282493,
+      "sha256": "1cc4536f834ac17cbe644508879ace36c5f4ac1c88ce9f8d939bd9a5865acc5e"
+    },
+    {
+      "file": "mechanical/food-0-detail-sweep.png",
+      "bytes": 1043206,
+      "sha256": "11014bb29c8f0d5091b0e195d0d80c6e5818eda4166b14e6e165650a9a0e3b76"
+    },
+    {
+      "file": "mechanical/food-0-sweep.png",
+      "bytes": 304940,
+      "sha256": "d30c3f8a4cb0391e559ae8bb10f08bb256729c8040e6327e63f4e2b99f2ff96c"
+    },
+    {
+      "file": "mechanical/initial-fit.cjs",
+      "bytes": 1715,
+      "sha256": "e31e2165811359dec9ca7e55a7c79aed9c3aabaec7a9d82e15bdcf9d297add6a"
+    },
+    {
+      "file": "mechanical/make-0-composite.png",
+      "bytes": 1493745,
+      "sha256": "de6ff1d87dd09bd8e808d5daa9b1e89809dc36b48eb195b40116d39c5ff21777"
+    },
+    {
+      "file": "mechanical/make-0-detail-sweep.png",
+      "bytes": 2381672,
+      "sha256": "2f59cfe9e2be0832dde9a476b2a13f95ff51e128c97beab27a4716cb6f0c4673"
+    },
+    {
+      "file": "mechanical/make-0-sweep.png",
+      "bytes": 398214,
+      "sha256": "40d73e7144b63581b4f040259a03334698ff9281026434ba3487fc0afb3c7603"
+    },
+    {
+      "file": "mechanical/mill-waterwheel-raw.png",
+      "bytes": 1978260,
+      "sha256": "427100331f3e37e24dcf2f21590d4fb5e616571c76aab6e45bc708c75edec06f"
+    },
+    {
+      "file": "mechanical/mill-wheel-mount-raw.png",
+      "bytes": 1262861,
+      "sha256": "e4c4407adbe3b8e60618ef0b65ecab8455339b9e91bb1268b962d41ef9365537"
+    },
+    {
+      "file": "mechanical/motion-check.json",
+      "bytes": 2826,
+      "sha256": "6228af08658fe231da89901ebf5d003b9f56fa7c3953552f097e92c4b14bd34c"
+    },
+    {
+      "file": "mechanical/mount-prompt.txt",
+      "bytes": 1650,
+      "sha256": "99ea2b84082ba403937ef9ad2e9f51d0d3f8f3cce7b331487362389adb459ec6"
+    },
+    {
+      "file": "mechanical/normalization.json",
+      "bytes": 1874,
+      "sha256": "65c3ada5dc066ee91d7dfb4c0e70d0b1c305345e4a4e401795764d3f5f303f73"
+    },
+    {
+      "file": "mechanical/power-0-composite.png",
+      "bytes": 1581726,
+      "sha256": "77bf4037e90b8fb96881366a7ca70bc079be1e4b30c0f6a8dc98374d305d9487"
+    },
+    {
+      "file": "mechanical/power-0-detail-sweep.png",
+      "bytes": 1118907,
+      "sha256": "eac8192cd74f94cea9249027ee84c72ea0e421db78188fa86f21aca6adeaf870"
+    },
+    {
+      "file": "mechanical/power-0-sweep.png",
+      "bytes": 404623,
+      "sha256": "7f47cf1792292f52c45672a4e56e2c406070d76e12ed2b584a736e5e94d18a16"
+    },
+    {
+      "file": "mechanical/power-2-composite.png",
+      "bytes": 1427167,
+      "sha256": "315befdee5127a0caf48552103135fe7a4d0bcfc2307169891229e4c1011a19b"
+    },
+    {
+      "file": "mechanical/power-2-detail-sweep.png",
+      "bytes": 412793,
+      "sha256": "71cbbac010bdb1a28da20fc26862f46b6b5a6bb857fead125332fb3e0d5642c1"
+    },
+    {
+      "file": "mechanical/power-2-sweep.png",
+      "bytes": 387284,
+      "sha256": "b50fa3b38491b0d072383570f9a531a45661b9658aba45fcb97ef5b31d8a7c33"
+    },
+    {
+      "file": "mechanical/preview-and-check.cjs",
+      "bytes": 1995,
+      "sha256": "6b89b4f6a159ba29b92f85343bb1458cab0d1391ca8288fa1b854c92d272ef58"
+    },
+    {
+      "file": "mechanical/prompts.json",
+      "bytes": 5281,
+      "sha256": "8ec072c6caaa1356a6840895cc50ee76e70783d9f1e3904ec3961b08591f9427"
+    },
+    {
+      "file": "mechanical/proposal.json",
+      "bytes": 2130,
+      "sha256": "5befc5713da3108e9cd19730039b338e9336c93fb2c0b96715dcd2f92678e0a0"
+    },
+    {
+      "file": "mechanical/provenance.json",
+      "bytes": 4092,
+      "sha256": "2f5c0bd59706968d58cd5362f5d0c5deed2d4d620dedf0fa9d681ece03491058"
+    },
+    {
+      "file": "mechanical/rebuild-check.json",
+      "bytes": 1492,
+      "sha256": "742c0e741bf3fec8c9975cfc7b3418905bac05d0376377844b0d93e68ea1486d"
+    },
+    {
+      "file": "mechanical/rebuild.cjs",
+      "bytes": 1310,
+      "sha256": "473c9704bd7bab8e4a79b3c545e6b81a6112b217aa7d991af09791aded0a7de8"
+    },
+    {
+      "file": "mechanical/rotors-first-fit.png",
+      "bytes": 1427171,
+      "sha256": "67dd41f2eb0d3ab7460fa2284e04e68f9c11fc25330b49f9170f7041bed6daf2"
+    },
+    {
+      "file": "mechanical/tractor-first-fit.png",
+      "bytes": 1282324,
+      "sha256": "1a7965c84713795783fbfe4bae3ff8a6da80728839dd060c67622c3b74e04e58"
+    },
+    {
+      "file": "mechanical/tractor-raw.png",
+      "bytes": 2137294,
+      "sha256": "4c2de1a332465f9b42def70245515503971bbe337e19616dae093e280cb4ae0e"
+    },
+    {
+      "file": "mechanical/turbine-rotor-raw.png",
+      "bytes": 371483,
+      "sha256": "2ae6a174faa1d22120f7a28997f5ab71eac8a9b2a76052478386f63a243731dc"
+    },
+    {
+      "file": "mechanical/vehicles-first-fit.cjs",
+      "bytes": 1456,
+      "sha256": "8805507339ec9912641b1e0458fbd1b9be63d57d7dfd421c805b6f4a7545268d"
+    },
+    {
+      "file": "mechanical/wheel-first-fit.png",
+      "bytes": 1486709,
+      "sha256": "7840c4548151a87f207fd2bbb19fe639583b682e590eb4e12edf0b5baf20988a"
+    },
+    {
+      "file": "earth-travellers/QA.md",
+      "bytes": 2603,
+      "sha256": "79f6e3d6f284ed60f79ae635f45206acdaac0e3e85bb6c161fc61d61cbfdf1eb"
+    },
+    {
+      "file": "earth-travellers/composite-0.png",
+      "bytes": 906340,
+      "sha256": "d51abc042407e6ab4496d1b02643357f96c51d71a3f8081dcc4ec4cd5e2306aa"
+    },
+    {
+      "file": "earth-travellers/composite-1.png",
+      "bytes": 1116243,
+      "sha256": "02b734570d57f075d1d231415bc9bfd3290697ccfa24b55892ffde5b68363d46"
+    },
+    {
+      "file": "earth-travellers/composite-2.png",
+      "bytes": 981299,
+      "sha256": "10d2cd12c0ca2a35a3a461ce5d5e49263cf385a7e906d089f3b34391239e0545"
+    },
+    {
+      "file": "earth-travellers/electric-car-raw-v1.png",
+      "bytes": 1639409,
+      "sha256": "b8c79c25dbbc86695da5f81a58c665ce835b47f7ecb28938c5943e90ba039425"
+    },
+    {
+      "file": "earth-travellers/electric-car-raw-v2.png",
+      "bytes": 1030064,
+      "sha256": "ac52c37093c09b67227536324f17107155ad5bfa162f313a87739ed1cb652e4b"
+    },
+    {
+      "file": "earth-travellers/generation-plan.json",
+      "bytes": 5721,
+      "sha256": "6436f89b9626a7e76fb1c923db957bd74118457421b5169cd476774b2ac7c8e6"
+    },
+    {
+      "file": "earth-travellers/horse-cart-raw-v1.png",
+      "bytes": 1502862,
+      "sha256": "bd5a47ff904176d48a041f5e41232065af5990bceb7a42f94de480e63b0d55ec"
+    },
+    {
+      "file": "earth-travellers/manifest-proposal.json",
+      "bytes": 1551,
+      "sha256": "7262cbe6d649303e05a6429575cf1535b01c90cdccb12c47c05b61e72b09086d"
+    },
+    {
+      "file": "earth-travellers/motion-check.json",
+      "bytes": 1276,
+      "sha256": "67468831ad222eda8e2fb1a372464c5f8afb8237990316a03958ae558a37dd8f"
+    },
+    {
+      "file": "earth-travellers/motor-car-raw-v1.png",
+      "bytes": 2049531,
+      "sha256": "05fa120899e5954e0ff405f72068288dee35b495b305fc7b521266a6cc0300ea"
+    },
+    {
+      "file": "earth-travellers/normalized-metadata.json",
+      "bytes": 2103,
+      "sha256": "319b12832f4207ae72d5da3f9415e33596db4e143a04566daf4f220aa909d057"
+    },
+    {
+      "file": "earth-travellers/rebuild.cjs",
+      "bytes": 2207,
+      "sha256": "94182260585230a883007473cc34459f63d3fdd403e676c4974ca23f63fa2ff1"
+    },
+    {
+      "file": "earth-travellers/review.cjs",
+      "bytes": 2756,
+      "sha256": "f5cbc1926d7c432bf8f5929a7d98b127acd5cf236fac2a7a82f03909f6ec7af8"
+    },
+    {
+      "file": "earth-travellers/road-sweep-0.png",
+      "bytes": 578671,
+      "sha256": "df48f7f315b605f178c432f7f6ce364ea932f62e57f09afb3eb507141c76d9d3"
+    },
+    {
+      "file": "earth-travellers/road-sweep-1.png",
+      "bytes": 585960,
+      "sha256": "46ad3dc1af6248b44063cd42f8d0bc3352374ca39aa164587c02adeb309ac1e3"
+    },
+    {
+      "file": "earth-travellers/road-sweep-2.png",
+      "bytes": 582378,
+      "sha256": "3ce0ad89783b1a2b55e539dc7a8c9b53d5e47cc098e24e65442a6102a6b5e091"
+    },
+    {
+      "file": "earth-travellers/travellers-both-directions.png",
+      "bytes": 160019,
+      "sha256": "cb1aadd91c140a1f0107738365e7e5fee7ad22d82ba396127e64abcfcb91cc78"
+    },
+    {
+      "file": "garden/garden-bike-raw.png",
+      "bytes": 1940755,
+      "sha256": "8f6fc72d0f095a2dc750876b2f4507d19ba39dfcd1d28d619fcfa17a19cf965b"
+    },
+    {
+      "file": "garden/garden-sweep.png",
+      "bytes": 1215710,
+      "sha256": "d21361bfd69481b296c640a6cd10d0acb4f6fde2425f66de07dfb738f5c7e463"
+    },
+    {
+      "file": "garden/garden-tram-fixed-raw.png",
+      "bytes": 2158544,
+      "sha256": "a4de16c304f0eec923ca9a8b89390dc08072cadb1da805e0917f2137006a24a5"
+    },
+    {
+      "file": "garden/garden-tram-raw.png",
+      "bytes": 2215445,
+      "sha256": "ea02bd49f41b1d343f2d2a9594abef4e2f604aa400c54c9fd16d58eda1c500b4"
+    },
+    {
+      "file": "garden/motion-report.json",
+      "bytes": 1774,
+      "sha256": "2ea2d4302d118e10d85284e6f563e440ec890adfdcb7012743a7101cfbc360e0"
+    },
+    {
+      "file": "garden/move-t0.png",
+      "bytes": 1771270,
+      "sha256": "8e535c27c871f8e7209434b80469343460a464f48a81ac22ee698747cf353ecf"
+    },
+    {
+      "file": "garden/move-t2_5.png",
+      "bytes": 1759744,
+      "sha256": "f4dd17cba4cf742cf03cefde9822ba37e7c8b8eeee4d67337303f4683d6d71d0"
+    },
+    {
+      "file": "garden/move-t5.png",
+      "bytes": 1777770,
+      "sha256": "4c63afe0287f91d7109ba4b835b205ac54ce36af869bda0487695adbb81f2ab1"
+    },
+    {
+      "file": "garden/move-t7_5.png",
+      "bytes": 1759744,
+      "sha256": "f4dd17cba4cf742cf03cefde9822ba37e7c8b8eeee4d67337303f4683d6d71d0"
+    },
+    {
+      "file": "garden/normalization.json",
+      "bytes": 2501,
+      "sha256": "2574323c3c0c23127f4bc4f2675f35c8efb88f8b06fa61655f3d4aa111955530"
+    },
+    {
+      "file": "garden/power-t0.png",
+      "bytes": 1963745,
+      "sha256": "e80c7b56d882b92583ef1ffaaf594dfb7843cb191050887dd05cd23f89734f74"
+    },
+    {
+      "file": "garden/power-t2_5.png",
+      "bytes": 1957454,
+      "sha256": "1af1cbf8005d647acb0c26bc0710e68a3e138f3b0987ece29b76022f768f9d0a"
+    },
+    {
+      "file": "garden/power-t5.png",
+      "bytes": 1959712,
+      "sha256": "a925381c6d9b3e968425160f95327293a83f71ed48c67aba831ffd2c30dfcd53"
+    },
+    {
+      "file": "garden/power-t7_5.png",
+      "bytes": 1957313,
+      "sha256": "39bf3422d7bcde3ff5e033fce68dd1b9f2d47ec49ee0d155e0840ed395e41f80"
+    },
+    {
+      "file": "garden/prompts.json",
+      "bytes": 4779,
+      "sha256": "fb26851360ac97ada1acc2cdba4e7676564c3224c1793d99c306bffcfd60b18d"
+    },
+    {
+      "file": "garden/proposal.json",
+      "bytes": 1585,
+      "sha256": "57be32ef26596e3af6bbe7fd3c4545df098e9a0417b234b23a53fd366fe0e3d9"
+    },
+    {
+      "file": "garden/provenance-and-qa.json",
+      "bytes": 2507,
+      "sha256": "9be8a75e634e6c4b39fcbfd2502d1e73dfd853ba90e90fe77d553b7d2952bbfd"
+    },
+    {
+      "file": "garden/qa.cjs",
+      "bytes": 1521,
+      "sha256": "944e498d61609ba2fff73f227202eb2775d17eea35e9d624d9038949170b5f89"
+    },
+    {
+      "file": "garden/rebuild-verification.json",
+      "bytes": 2501,
+      "sha256": "2574323c3c0c23127f4bc4f2675f35c8efb88f8b06fa61655f3d4aa111955530"
+    },
+    {
+      "file": "garden/rebuild.cjs",
+      "bytes": 1847,
+      "sha256": "29ba5d055010e769c14855ff1c70e5a18f991057b6c184849707f504773aef32"
+    },
+    {
+      "file": "garden/sun-mirror-raw.png",
+      "bytes": 1600406,
+      "sha256": "b6002cd77c7c1b98f29b406ed4f50130bea575c427f59ec5d39f05c35f8cc756"
+    },
+    {
+      "file": "future-travellers/lantern-wisp.prompt.txt",
+      "bytes": 1945,
+      "sha256": "2583e35799bf80b18fdc37fecf3c7cd5892672d74a55f59bc98f3b8d0865de3c"
+    },
+    {
+      "file": "future-travellers/lantern-wisp.raw.png",
+      "bytes": 734130,
+      "sha256": "e5e7b7a37c7adcba54734896a310b6ed48e2de34a2e4c16ca68f4db495c8f1c9"
+    },
+    {
+      "file": "future-travellers/magic-composite.png",
+      "bytes": 1464820,
+      "sha256": "a7afc87662a2e3f00e74bf7c47bdb9c51aad9a33037503d0ec1138286237d540"
+    },
+    {
+      "file": "future-travellers/magic-sweep.png",
+      "bytes": 688050,
+      "sha256": "75b3c0e28b511d033c230008033db3dead0ff3f965b4081c65fbd0b95f4dbf6d"
+    },
+    {
+      "file": "future-travellers/maglev-pod.prompt.txt",
+      "bytes": 1704,
+      "sha256": "ac5af9e0e0a95d7ad51eef97ac500ede53a755bdd8e5c977bb688b03e8f04fa3"
+    },
+    {
+      "file": "future-travellers/maglev-pod.raw.png",
+      "bytes": 1747175,
+      "sha256": "00cb44e0623207ce77a2bca8feb4c3cce5e230e058cb04638a386a16353f6896"
+    },
+    {
+      "file": "future-travellers/metadata.json",
+      "bytes": 755,
+      "sha256": "67f14049ecef620550a00d1afc3c8f588b7b7596bed8ae0889a2f227db1c8ef0"
+    },
+    {
+      "file": "future-travellers/motion-qa.json",
+      "bytes": 905,
+      "sha256": "96d90ad409399fbc455987b6020a340e020d993c3f52145436f7b9795433102e"
+    },
+    {
+      "file": "future-travellers/prepare.cjs",
+      "bytes": 3209,
+      "sha256": "74068e2ced43b6f4564dfcb9aa0eed506d4847793c62a75bef267840d856642f"
+    },
+    {
+      "file": "future-travellers/proposal.json",
+      "bytes": 1163,
+      "sha256": "c2631707c04a7bd9da30716d322c51df86fb94d249fd1b12eec2af6f125313af"
+    },
+    {
+      "file": "future-travellers/provenance.json",
+      "bytes": 6359,
+      "sha256": "c082d798c11522111f45081b67b9c848171b6e6c7af3987ab892ef90f9c9b98b"
+    },
+    {
+      "file": "future-travellers/rebuild.cjs",
+      "bytes": 1546,
+      "sha256": "b9d78b2874cb99eef1c925cff7fd6627ec597f91d383723c5bc296dfe9ca71eb"
+    },
+    {
+      "file": "future-travellers/star-composite.png",
+      "bytes": 1670898,
+      "sha256": "3df3fa2a3ed8372ff26a977851aaf5c9d4c23500ecc0385cf014d209d416e267"
+    },
+    {
+      "file": "future-travellers/star-sweep.png",
+      "bytes": 797822,
+      "sha256": "1d0fc19519c15b285ace9f6a0fc7b52906a2a2566a7f605f02cebb6c22e9a582"
+    }
+  ]
+}

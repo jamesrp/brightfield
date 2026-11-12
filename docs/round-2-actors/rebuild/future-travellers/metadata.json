@@ -1,0 +1,40 @@
+[
+  {
+    "name": "maglev-pod",
+    "crop": [
+      138,
+      162,
+      1260,
+      710
+    ],
+    "paintW": 166,
+    "w": 172,
+    "h": 100,
+    "anchor": [
+      87,
+      82
+    ],
+    "bytes": 28787,
+    "sha256": "dabfc418a23918ec5d0934bacbcf088e1096e5036d6d8feadd54d2836e8c1cad",
+    "rawSha256": "00cb44e0623207ce77a2bca8feb4c3cce5e230e058cb04638a386a16353f6896"
+  },
+  {
+    "name": "lantern-wisp",
+    "crop": [
+      139,
+      181,
+      1291,
+      617
+    ],
+    "paintW": 140,
+    "w": 146,
+    "h": 96,
+    "anchor": [
+      112,
+      90
+    ],
+    "bytes": 13021,
+    "sha256": "045c1c10d2f970068ac6e6ea4348484e223e8776a0540263b12ea3cab5f8b1f9",
+    "rawSha256": "e5e7b7a37c7adcba54734896a310b6ed48e2de34a2e4c16ca68f4db495c8f1c9"
+  }
+]
