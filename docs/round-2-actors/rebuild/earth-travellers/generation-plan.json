@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "tool": "built-in image_gen.imagegen",
+  "generatedAt": "2026-11-12",
+  "coordinateSpace": "tile pixels",
+  "sources": [
+    {
+      "name": "horse-cart",
+      "raw": "horse-cart-raw-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: one production game actor sprite on genuine transparent background. Paint a single gentle chestnut horse pulling a compact two-wheel timber cart with a little golden hay. Horse at the RIGHT, cart at the LEFT, travelling RIGHT. Full entire rig with clean readable silhouette, no driver. Cosy richly hand-painted isometric town miniature, soft detailed painterly texture, warm honey-coloured wood, gentle brown horse, small dark iron-rimmed wooden wheels, restrained cream highlights. Camera at 40 degrees elevation with a three-quarter view, enough top surfaces visible to sit on an isometric ground plane, long axis almost horizontal, horse nose points screen-right and slightly upward. Warm upper-left light, soft lower-right shading. Must match a charming timber stable with olive-green tiled roof and warm ochre dirt road. Compact calm resting/walking pose, no dramatic action. Entire rig will be downscaled to about 176 pixels long, therefore strong leg/wheel silhouettes and simple details. Isolated actor only, tightly grouped, comfortable transparent margin on all sides. No land, no hex tile, no building, no background, no horizon, no frame, no text, no logo, no detached shadow, no extra props. Actual transparent RGBA, not a checkerboard drawing. One horse, one cart, facing right.",
+      "bodyWidth": 176,
+      "anchorSource": [
+        880,
+        836
+      ],
+      "rawSha256": "bd5a47ff904176d48a041f5e41232065af5990bceb7a42f94de480e63b0d55ec"
+    },
+    {
+      "name": "motor-car",
+      "raw": "motor-car-raw-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: one production game actor sprite, genuinely transparent background. Paint a compact early-midcentury motor car, about 1940s–1950s, a small rounded sage-green two-door saloon with cream roof, warm chrome bumper, round headlights, small dark rubber wheels. The FRONT and headlights are at the RIGHT, the rear at the LEFT, travelling RIGHT. Isometric three-quarter view at 40 degrees elevation: see roof, front/right nose and near side, long axis goes almost horizontally screen-right with a subtle up-right angle. Cosy richly hand-painted town miniature, softly textured brushwork, gentle rounded forms, warm upper-left sunlight, darker lower-right shading, restrained rich soft colours. Must suit a warm brick and terracotta-roof village motor garage with cobbled driveway. Entire car will be downscaled to about 156 pixels long, so a clean instantly readable silhouette and simple highlights. One car only, no people. Isolated on full genuine transparency with comfortable clear margin around all parts. No land, no building, no hex tile, no ground patch, no background, no detached shadow, no frame, no text, no badges, no logos, no checkerboard drawing. Facing right.",
+      "bodyWidth": 156,
+      "anchorSource": [
+        650,
+        878
+      ],
+      "rawSha256": "05fa120899e5954e0ff405f72068288dee35b495b305fc7b521266a6cc0300ea"
+    },
+    {
+      "name": "electric-car",
+      "raw": "electric-car-raw-v2.png",
+      "initialRaw": "electric-car-raw-v1.png",
+      "initialPrompt": "Use case: stylized-concept. Asset type: one production game actor sprite on a genuine transparent background. Paint one compact modern electric hatchback, soft ivory-white body with a sage/teal lower trim, simple warm dark-blue windows, small graphite wheels, clean closed front grille, modest warm headlight marks. FRONT at the RIGHT, rear at the LEFT, travelling RIGHT. Isometric three-quarter view at 40 degrees elevation, visible roof, near side and front, its long axis almost horizontal toward screen-right with only a slight up-right angle. Cosy richly hand-painted village miniature, gentle rounded forms, subtle brush texture, warm upper-left sunlight and shaded lower-right surfaces. Same style as a warm terracotta-roof solar charging hub, stone columns and flower beds. Entire car will be downscaled to about 160 pixels long, therefore simple readable silhouette and restrained highlights, not photorealistic product gloss. One car only, no people, no cable. Full object with comfortable transparent margin. Absolutely no painted backdrop or glow haze: every pixel outside the vehicle must be fully alpha-transparent. No ground, no shadow patch, no land, no building, no hex tile, no road, no frame, no text, no badge, no logos. Not a scene. Transparent cutout actor only.",
+      "prompt": "Use case: precise-object-edit. This image is the edit target. Preserve this exact cosy painted ivory and sage compact electric hatchback, its shape, right-facing direction, 40-degree isometric camera, details and warm upper-left lighting. Change ONLY its framing and the clipped very bottom of its front tire: show the entire whole vehicle, completing the round bottom edge of that tire naturally. Reduce the vehicle within the canvas so every part has at least 10% fully transparent clear margin to all four image edges. All car parts, especially BOTH wheels, must be completely visible and not clipped. Remove tiny floating speckles outside the car. Genuine alpha-transparent background only, with no ground, no glow haze, no shadow patch, no scenery, no new objects, no text.",
+      "bodyWidth": 160,
+      "anchorSource": [
+        790,
+        760
+      ],
+      "rawSha256": "ac52c37093c09b67227536324f17107155ad5bfa162f313a87739ed1cb652e4b",
+      "initialRawSha256": "b8c79c25dbbc86695da5f81a58c665ce835b47f7ecb28938c5943e90ba039425"
+    }
+  ]
+}

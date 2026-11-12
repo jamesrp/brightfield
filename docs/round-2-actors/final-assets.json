@@ -1,0 +1,128 @@
+[
+  {
+    "name": "turbine-rotor",
+    "file": "assets/tiles/actors/turbine-rotor.png",
+    "anchor": [
+      260,
+      260
+    ],
+    "sha256": "d71f516353cd782c3054de80a2953f07ca8879d00c54e65ce7c3196d86d8d179"
+  },
+  {
+    "name": "turbine-rotor-small",
+    "file": "assets/tiles/actors/turbine-rotor-small.png",
+    "anchor": [
+      168,
+      168
+    ],
+    "sha256": "45055deec5abbe8086e32cfccb1fad90886c2058ed22e1099845076b89d40972"
+  },
+  {
+    "name": "mill-waterwheel",
+    "file": "assets/tiles/actors/mill-waterwheel.png",
+    "anchor": [
+      128,
+      128
+    ],
+    "sha256": "58da66b49921a29c8144c7e72b00e56dadc3c0b95c85a62d0d684743059fd269"
+  },
+  {
+    "name": "mill-wheel-mount",
+    "file": "assets/tiles/actors/mill-wheel-mount.png",
+    "anchor": [
+      120,
+      62
+    ],
+    "sha256": "b84052c1fea6d6b198d3e05cfdaa8fe5ef9bc8e4db32500bce68915e8e5821d9"
+  },
+  {
+    "name": "tractor",
+    "file": "assets/tiles/actors/tractor.png",
+    "anchor": [
+      96,
+      135
+    ],
+    "sha256": "f4022e598632ded90f86e1d1aadb8c445bdb6ce8ce7fb10d7c306fb7f78b80a8"
+  },
+  {
+    "name": "coal-wagon",
+    "file": "assets/tiles/actors/coal-wagon.png",
+    "anchor": [
+      152,
+      200
+    ],
+    "sha256": "c74b4c9bcf19df730b6d2076f3b9c52ae68ef0ddea151748402e86c2d9e06a31"
+  },
+  {
+    "name": "horse-cart",
+    "file": "assets/tiles/actors/horse-cart.png",
+    "anchor": [
+      92,
+      94
+    ],
+    "sha256": "6726256702058f0d4ff5b8d61da3f8630111f7a3d7a9ab237de5db4ff8297e1a"
+  },
+  {
+    "name": "motor-car",
+    "file": "assets/tiles/actors/motor-car.png",
+    "anchor": [
+      69,
+      95
+    ],
+    "sha256": "48d0d3ba5799b5aa2c1e4d04a766e9f6df773d8eb9a80075028c7c684633a24a"
+  },
+  {
+    "name": "electric-car",
+    "file": "assets/tiles/actors/electric-car.png",
+    "anchor": [
+      71,
+      95
+    ],
+    "sha256": "d8d5273fac33aa90b6c42d737133618ecc685e840ba2b32d623c0de55c975271"
+  },
+  {
+    "name": "sun-mirror",
+    "file": "assets/tiles/actors/sun-mirror.png",
+    "anchor": [
+      72,
+      57
+    ],
+    "sha256": "bd9c11641cc19da56276b66d6f1b77765567b66ffd17fdda34413954e70f7ed2"
+  },
+  {
+    "name": "garden-tram",
+    "file": "assets/tiles/actors/garden-tram.png",
+    "anchor": [
+      116,
+      163
+    ],
+    "sha256": "e234ca164fdda4fe0302f2933a4df33c2a79e71afb816b5b88aa68e1401592d9"
+  },
+  {
+    "name": "garden-bike",
+    "file": "assets/tiles/actors/garden-bike.png",
+    "anchor": [
+      82,
+      168
+    ],
+    "sha256": "2fec1fede81dec1c786411431ff985ad86ac7afa31c77af86429cec971e54d31"
+  },
+  {
+    "name": "maglev-pod",
+    "file": "assets/tiles/actors/maglev-pod.png",
+    "anchor": [
+      87,
+      82
+    ],
+    "sha256": "dabfc418a23918ec5d0934bacbcf088e1096e5036d6d8feadd54d2836e8c1cad"
+  },
+  {
+    "name": "lantern-wisp",
+    "file": "assets/tiles/actors/lantern-wisp.png",
+    "anchor": [
+      112,
+      90
+    ],
+    "sha256": "045c1c10d2f970068ac6e6ea4348484e223e8776a0540263b12ea3cab5f8b1f9"
+  }
+]
