@@ -1,0 +1,66 @@
+[
+  {
+    "key": "power:1",
+    "source": "1-power.png"
+  },
+  {
+    "key": "move:1",
+    "source": "1-move.png"
+  },
+  {
+    "key": "food:1",
+    "source": "1-food.png"
+  },
+  {
+    "key": "water:1",
+    "source": "1-water-fixed.png"
+  },
+  {
+    "key": "home:1",
+    "source": "1-home.png"
+  },
+  {
+    "key": "make:1",
+    "source": "1-make.png"
+  },
+  {
+    "key": "waste:1",
+    "source": "1-waste.png"
+  },
+  {
+    "key": "wild:1",
+    "source": "1-wild.png"
+  },
+  {
+    "key": "power:2",
+    "source": "2-power.png"
+  },
+  {
+    "key": "move:2",
+    "source": "2-move.png"
+  },
+  {
+    "key": "food:2",
+    "source": "2-food-fixed.png"
+  },
+  {
+    "key": "water:2",
+    "source": "2-water.png"
+  },
+  {
+    "key": "home:2",
+    "source": "2-home.png"
+  },
+  {
+    "key": "make:2",
+    "source": "2-make-modern.png"
+  },
+  {
+    "key": "waste:2",
+    "source": "2-waste.png"
+  },
+  {
+    "key": "wild:2",
+    "source": "2-wild-fixed.png"
+  }
+]

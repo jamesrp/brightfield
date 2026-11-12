@@ -3,3 +3,6 @@ tools/art/out/
 # Keep generated source/intermediate images outside git; retain final review sheets.
 docs/stage0-pilot/**/*.png
 !docs/stage0-pilot/review/*.png
+# Stages 1–2 source/intermediate images belong in the external art archive.
+docs/stages-1-2/**/*.png
+!docs/stages-1-2/review/*.png

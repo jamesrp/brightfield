@@ -1,0 +1,242 @@
+[
+  {
+    "key": "power:1",
+    "source": "1-power.png",
+    "file": "assets/tiles/1/power.png",
+    "fit": {
+      "scale": 0.9979,
+      "dx": 1.1,
+      "dy": 4.7,
+      "clippedPixels": 1059,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 1100,
+    "sharedKerbPixels": 36286,
+    "sha256": "dc1f4c4381ada60a60ca91e7b4aaaeee9a6bab53308b821c0f5a4aa590b2ac7c"
+  },
+  {
+    "key": "move:1",
+    "source": "1-move.png",
+    "file": "assets/tiles/1/move.png",
+    "fit": {
+      "scale": 0.9979,
+      "dx": 1.1,
+      "dy": 4.7,
+      "clippedPixels": 611,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 910,
+    "sharedKerbPixels": 36286,
+    "sha256": "b446635bcc269af45c2e2af8fcb8b10bc945fa898ad4484efcb179ea67b2b268"
+  },
+  {
+    "key": "food:1",
+    "source": "1-food.png",
+    "file": "assets/tiles/1/food.png",
+    "fit": {
+      "scale": 1,
+      "dx": 0,
+      "dy": 1.5,
+      "clippedPixels": 1517,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 865,
+    "sharedKerbPixels": 36286,
+    "sha256": "3c2c867b02e8667017174474808e82686cf9c25469f1e22ab33077985888469f"
+  },
+  {
+    "key": "water:1",
+    "source": "1-water-fixed.png",
+    "file": "assets/tiles/1/water.png",
+    "fit": {
+      "scale": 0.9959,
+      "dx": 2.1,
+      "dy": 7.8,
+      "clippedPixels": 747,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 878,
+    "sharedKerbPixels": 36286,
+    "sha256": "112d99bfad37d724c7bfff236a5457178c7a307dc73bfcd19113f13348021242"
+  },
+  {
+    "key": "home:1",
+    "source": "1-home.png",
+    "file": "assets/tiles/1/home.png",
+    "fit": {
+      "scale": 1.001,
+      "dx": 0,
+      "dy": -0.1,
+      "clippedPixels": 1361,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 386,
+    "sharedKerbPixels": 36286,
+    "sha256": "e6218077406e40a6f4c865a4cccef8508b3ee5a454c4395574243aa9b0b30dfb"
+  },
+  {
+    "key": "make:1",
+    "source": "1-make.png",
+    "file": "assets/tiles/1/make.png",
+    "fit": {
+      "scale": 0.9938,
+      "dx": 3.2,
+      "dy": 10.9,
+      "clippedPixels": 1329,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 972,
+    "sharedKerbPixels": 36286,
+    "sha256": "9b51f30bb230a9efefe5afa8834983167d282eb09ac9731ef2e31dc9b2cc456a"
+  },
+  {
+    "key": "waste:1",
+    "source": "1-waste.png",
+    "file": "assets/tiles/1/waste.png",
+    "fit": {
+      "scale": 0.9677,
+      "dx": 16.5,
+      "dy": 48.6,
+      "clippedPixels": 2229,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 3092,
+    "sharedKerbPixels": 36286,
+    "sha256": "6bf296cc32aca4e9e7ca0316ae6917d18be7c83b721fd10c7d16a27404fc8b13"
+  },
+  {
+    "key": "wild:1",
+    "source": "1-wild.png",
+    "file": "assets/tiles/1/wild.png",
+    "fit": {
+      "scale": 1.0021,
+      "dx": -1.1,
+      "dy": 30.4,
+      "clippedPixels": 1314,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 1205,
+    "sharedKerbPixels": 36286,
+    "sha256": "c2abc234a05b285b2ace41217178c84735bcc6b99d419f4305b350c716649214"
+  },
+  {
+    "key": "power:2",
+    "source": "2-power.png",
+    "file": "assets/tiles/2/power.png",
+    "fit": {
+      "scale": 0.9979,
+      "dx": 1.1,
+      "dy": 3.7,
+      "clippedPixels": 993,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 4337,
+    "sharedKerbPixels": 36286,
+    "sha256": "fb5dd262356f43e0563ff2ce860c0ef66e9c315a5cf026eca72f0f0a3ce0943c"
+  },
+  {
+    "key": "move:2",
+    "source": "2-move.png",
+    "file": "assets/tiles/2/move.png",
+    "fit": {
+      "scale": 0.9897,
+      "dx": 5.3,
+      "dy": 16.2,
+      "clippedPixels": 1634,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 971,
+    "sharedKerbPixels": 36286,
+    "sha256": "cf3c45ef5707903b771927c1daaccff0e418a94efcdc11ce05fc7ada37a90550"
+  },
+  {
+    "key": "food:2",
+    "source": "2-food-fixed.png",
+    "file": "assets/tiles/2/food.png",
+    "fit": {
+      "scale": 0.9897,
+      "dx": 5.3,
+      "dy": 14.2,
+      "clippedPixels": 1385,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 1440,
+    "sharedKerbPixels": 36286,
+    "sha256": "095d457e467d143d85ba970a3358b0f6ca03ce94c16158f2d31197e935aa626d"
+  },
+  {
+    "key": "water:2",
+    "source": "2-water.png",
+    "file": "assets/tiles/2/water.png",
+    "fit": {
+      "scale": 0.999,
+      "dx": 1,
+      "dy": 2.1,
+      "clippedPixels": 1073,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 1687,
+    "sharedKerbPixels": 36286,
+    "sha256": "a79435ab398f2532b1bd837b4b6b6a39d6cdaddd643da56aa0b5d85d164f3a7e"
+  },
+  {
+    "key": "home:2",
+    "source": "2-home.png",
+    "file": "assets/tiles/2/home.png",
+    "fit": {
+      "scale": 0.9979,
+      "dx": 1.1,
+      "dy": 2.7,
+      "clippedPixels": 1913,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 1015,
+    "sharedKerbPixels": 36286,
+    "sha256": "f0d2f95bf4a6885f866f353daf24f3136682b64f50a2982d6bd548a717f983d9"
+  },
+  {
+    "key": "make:2",
+    "source": "2-make-modern.png",
+    "file": "assets/tiles/2/make.png",
+    "fit": {
+      "scale": 0.9697,
+      "dx": 15.5,
+      "dy": 46.6,
+      "clippedPixels": 1365,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 3722,
+    "sharedKerbPixels": 36286,
+    "sha256": "77e19b56e01b27b8fe32f8fe5c59e5615d835de6e2695c2426f05f73f7692cfa"
+  },
+  {
+    "key": "waste:2",
+    "source": "2-waste.png",
+    "file": "assets/tiles/2/waste.png",
+    "fit": {
+      "scale": 0.9948,
+      "dx": 2.2,
+      "dy": 40.2,
+      "clippedPixels": 2460,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 384,
+    "sharedKerbPixels": 36286,
+    "sha256": "9baaa512c22fdbec829143380c94e906fa0cfaac62f663142b047cf734fb4f32"
+  },
+  {
+    "key": "wild:2",
+    "source": "2-wild-fixed.png",
+    "file": "assets/tiles/2/wild.png",
+    "fit": {
+      "scale": 0.9979,
+      "dx": 1.1,
+      "dy": 3.7,
+      "clippedPixels": 2302,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 2216,
+    "sharedKerbPixels": 36286,
+    "sha256": "59bb84a1a542658fc51c1750f43abdaab36141f936771383df81b6d6da765717"
+  }
+]
