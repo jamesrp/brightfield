@@ -10,3 +10,7 @@ docs/stages-1-2/**/*.png
 # Star source/intermediate images belong in the external art archive.
 docs/star-static/**/*.png
 !docs/star-static/review/*.png
+
+# Leaf source/intermediate images belong in the external art archive.
+docs/leaf-static/**/*.png
+!docs/leaf-static/review/*.png

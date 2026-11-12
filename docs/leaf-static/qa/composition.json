@@ -1,0 +1,122 @@
+[
+  {
+    "key": "power:leaf",
+    "source": "leaf-power.png",
+    "file": "assets/tiles/leaf/power.png",
+    "fit": {
+      "scale": 0.9887,
+      "dx": 6.3,
+      "dy": 20.7,
+      "clippedPixels": 3949,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 1821,
+    "sharedKerbPixels": 36286,
+    "sha256": "e8e6709a7cbcf60eddcd04700a7003834ebde6e3d61968f859a5b9d87f00e824"
+  },
+  {
+    "key": "move:leaf",
+    "source": "leaf-move-fixed.png",
+    "file": "assets/tiles/leaf/move.png",
+    "fit": {
+      "scale": 0.9979,
+      "dx": 1.1,
+      "dy": 3.7,
+      "clippedPixels": 1053,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 3285,
+    "sharedKerbPixels": 36286,
+    "sha256": "b1a2e5f03ef329ccd7e8933f1c5319b2d98c02d91a340b06c36b6c794fb0724a"
+  },
+  {
+    "key": "food:leaf",
+    "source": "leaf-food-fixed.png",
+    "file": "assets/tiles/leaf/food.png",
+    "fit": {
+      "scale": 1.0021,
+      "dx": -1.1,
+      "dy": -0.7,
+      "clippedPixels": 2181,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 2273,
+    "sharedKerbPixels": 36286,
+    "sha256": "1f0e35d34cfa4f32be5846d2c4ff9cf731ad76d3f6314dc709d256506ec3bff9"
+  },
+  {
+    "key": "water:leaf",
+    "source": "leaf-water-fixed2.png",
+    "file": "assets/tiles/leaf/water.png",
+    "fit": {
+      "scale": 1.0021,
+      "dx": -1.1,
+      "dy": -2.7,
+      "clippedPixels": 2192,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 257,
+    "sharedKerbPixels": 36286,
+    "sha256": "b562804f2177c4009ae9041a3725b67f3f6362e9da1ca0f1db43a66c2dd19f47"
+  },
+  {
+    "key": "home:leaf",
+    "source": "leaf-home.png",
+    "file": "assets/tiles/leaf/home.png",
+    "fit": {
+      "scale": 1,
+      "dx": 0,
+      "dy": -0.5,
+      "clippedPixels": 441,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 1262,
+    "sharedKerbPixels": 36286,
+    "sha256": "0bc5d21212a4e7b6ae970deba81681ba412d3798377b348acdc0efed0d08fd2a"
+  },
+  {
+    "key": "make:leaf",
+    "source": "leaf-make-clean-sky.png",
+    "file": "assets/tiles/leaf/make.png",
+    "fit": {
+      "scale": 0.9969,
+      "dx": 1.1,
+      "dy": 4.2,
+      "clippedPixels": 1305,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 898,
+    "sharedKerbPixels": 36286,
+    "sha256": "fab8479431f6573bc902fddd451711249dd4e49ad87352448027c535fcb153ea"
+  },
+  {
+    "key": "waste:leaf",
+    "source": "leaf-waste-fixed2.png",
+    "file": "assets/tiles/leaf/waste.png",
+    "fit": {
+      "scale": 0.9959,
+      "dx": 2.1,
+      "dy": 19.8,
+      "clippedPixels": 214,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 709,
+    "sharedKerbPixels": 36286,
+    "sha256": "9ce013c65ff76f16e06fd10b6755de82b1a820ff2371c0138476c4d021c8e43c"
+  },
+  {
+    "key": "wild:leaf",
+    "source": "leaf-wild-fixed2.png",
+    "file": "assets/tiles/leaf/wild.png",
+    "fit": {
+      "scale": 1.0021,
+      "dx": -1.1,
+      "dy": -2.7,
+      "clippedPixels": 1887,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 71,
+    "sharedKerbPixels": 36286,
+    "sha256": "34ba2623b347f27a311fb2c870673fc3982c18e2802618e61b21405d2c5b246c"
+  }
+]

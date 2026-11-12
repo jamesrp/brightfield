@@ -34,3 +34,6 @@ The next 16 individual tiles follow the [four-PR plan for issue #2](https://gith
 ## Star full-hex static tiles
 
 The [Star batch](star-static/README.md) records eight separate built-in imagegen tiles, exact shared alloy kerb compositing, source/final checksums and reproducible geometry completion. Raw and intermediate images remain in an external private archive; only the final tiles and one real-renderer town close-up are committed. Exact prompts are in `art-provenance.json`, and `star-static/source-archive.json` records the archived sources.
+## Leaf full-hex static tiles
+
+The [Leaf batch](leaf-static/README.md) records eight separate built-in imagegen tiles, exact shared garden kerb compositing, source/final checksums and reproducible geometry completion. Raw and intermediate images remain in an external private archive; only the final tiles and one real-renderer town close-up are committed. Exact prompts are in `art-provenance.json`, and `leaf-static/source-archive.json` records the archived sources.

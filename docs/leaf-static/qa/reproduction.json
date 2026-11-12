@@ -1,0 +1,47 @@
+{
+  "result": "pass",
+  "verifiedSourceHashes": true,
+  "byteIdenticalTiles": 8,
+  "tiles": [
+    {
+      "file": "assets/tiles/leaf/power.png",
+      "sha256": "e8e6709a7cbcf60eddcd04700a7003834ebde6e3d61968f859a5b9d87f00e824",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/leaf/move.png",
+      "sha256": "b1a2e5f03ef329ccd7e8933f1c5319b2d98c02d91a340b06c36b6c794fb0724a",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/leaf/food.png",
+      "sha256": "1f0e35d34cfa4f32be5846d2c4ff9cf731ad76d3f6314dc709d256506ec3bff9",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/leaf/water.png",
+      "sha256": "b562804f2177c4009ae9041a3725b67f3f6362e9da1ca0f1db43a66c2dd19f47",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/leaf/home.png",
+      "sha256": "0bc5d21212a4e7b6ae970deba81681ba412d3798377b348acdc0efed0d08fd2a",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/leaf/make.png",
+      "sha256": "fab8479431f6573bc902fddd451711249dd4e49ad87352448027c535fcb153ea",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/leaf/waste.png",
+      "sha256": "9ce013c65ff76f16e06fd10b6755de82b1a820ff2371c0138476c4d021c8e43c",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/leaf/wild.png",
+      "sha256": "34ba2623b347f27a311fb2c870673fc3982c18e2802618e61b21405d2c5b246c",
+      "matches": true
+    }
+  ]
+}
