@@ -14,3 +14,7 @@ docs/star-static/**/*.png
 # Leaf source/intermediate images belong in the external art archive.
 docs/leaf-static/**/*.png
 !docs/leaf-static/review/*.png
+
+# Magic source/intermediate images belong in the external art archive.
+docs/magic-static/**/*.png
+!docs/magic-static/review/*.png

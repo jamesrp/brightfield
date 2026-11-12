@@ -1,0 +1,336 @@
+{
+  "date": "2026-11-12",
+  "storage": "External private archive; set BRIGHTFIELD_ART_ARCHIVE to rebuild. Raw images and intermediates are not committed.",
+  "files": [
+    {
+      "file": "magic-food-canopy-fitted.png",
+      "bytes": 2209042,
+      "sha256": "c15117fa14624ae6ac29effcea01db6c6de259a3699eee48c2002de9cf200d55"
+    },
+    {
+      "file": "magic-food-canopy.png",
+      "bytes": 2776769,
+      "sha256": "be6419a075cdccdbb21a30e3839e0dd7caa030cfd617c54bb1f2295997a58e8f"
+    },
+    {
+      "file": "magic-food-canopy.prompt.txt",
+      "bytes": 1027,
+      "sha256": "340cbc486542d78b9f9cbcc626e063694103d31c2ac4ff08a25c0c1f7ebf2ab4"
+    },
+    {
+      "file": "magic-food-final-neutral.png",
+      "bytes": 638516,
+      "sha256": "e8408bd89bec9bd7f87de7d9ed70ff8c750de067699e373e7065208e64acf963"
+    },
+    {
+      "file": "magic-food-fitted.png",
+      "bytes": 2469023,
+      "sha256": "d5a8a779982dee5ec7012bb60177fe95819b07b7fb1b6b33a2f988c90f2e3f16"
+    },
+    {
+      "file": "magic-food-neutral.png",
+      "bytes": 671001,
+      "sha256": "c0a7e7577d5091f0c12c4bfa6c17823d699b9457e2dede4c13bd7c5e99ccc223"
+    },
+    {
+      "file": "magic-food.png",
+      "bytes": 3079454,
+      "sha256": "21443cc80f1d8beae05acde0112d129369bdde0daf61259b5f1658a04d5d8708"
+    },
+    {
+      "file": "magic-food.prompt.txt",
+      "bytes": 1433,
+      "sha256": "fe9a8557e93f7d4182e5d47049a9322336149e12cf12b5a86d80e9b520489267"
+    },
+    {
+      "file": "magic-home-fitted.png",
+      "bytes": 1554670,
+      "sha256": "e278122a0e3b17ebccf72a22708b1cd43a4ad8f7addf7099b64bccce794cea13"
+    },
+    {
+      "file": "magic-home-neutral.png",
+      "bytes": 1506928,
+      "sha256": "4a79db9750d62ce6a78074a5963361d7ac99b894924bf886a4be339d94005b6d"
+    },
+    {
+      "file": "magic-home.png",
+      "bytes": 2258466,
+      "sha256": "dc86b3cfdbc1ad4c443b5c09ba558736d43fa08664e533a180052dff5fc78c50"
+    },
+    {
+      "file": "magic-home.prompt.txt",
+      "bytes": 2789,
+      "sha256": "a194c15af752fb27138b59782977a6a825472729e24b32438b10fa444897d6f8"
+    },
+    {
+      "file": "magic-make-fitted.png",
+      "bytes": 1598791,
+      "sha256": "09e9ed0e6ed914b0006cfd294c530e9c745c8fa4643c1dfc2da6b9bc0c882be8"
+    },
+    {
+      "file": "magic-make-neutral.png",
+      "bytes": 1554324,
+      "sha256": "b57780892dbd4784c3ed8c257e70b65ea03dda6b0f952800734b56c01ca4cd8f"
+    },
+    {
+      "file": "magic-make.png",
+      "bytes": 2309603,
+      "sha256": "ca89c9ccbb722a3796caa6625491cd30e3477db3210d716bd96869fb19b47411"
+    },
+    {
+      "file": "magic-make.prompt.txt",
+      "bytes": 3128,
+      "sha256": "498e30428441b00f1d1ead4e71546acc4cedf8bf3ac7c2588d39a8aaba964805"
+    },
+    {
+      "file": "magic-move-fitted.png",
+      "bytes": 1509998,
+      "sha256": "b96092543a5d4a7ea42e5efb9a2c4d159ce22c5d9d2dfc70e022af2cf6be7bb0"
+    },
+    {
+      "file": "magic-move-fixed-fitted.png",
+      "bytes": 1487446,
+      "sha256": "602cb72e7bf51021fce299a5fe55911bde3c422b9cb3a8d5f207caada17256df"
+    },
+    {
+      "file": "magic-move-fixed.png",
+      "bytes": 2151013,
+      "sha256": "5f6e7b89a00ed79e8869f6776427be98f0183bedd4e97603a1f36ecc7e19bc1d"
+    },
+    {
+      "file": "magic-move-fixed.prompt.txt",
+      "bytes": 1267,
+      "sha256": "956a90260a056c8da25848c20720f3adbe8099f94a5808d8874f792159777f25"
+    },
+    {
+      "file": "magic-move-ground-fitted.png",
+      "bytes": 1427411,
+      "sha256": "57a6ecf47ec5880cb80778f705003c601ba081344578c78f4d00d1511d688972"
+    },
+    {
+      "file": "magic-move-ground.png",
+      "bytes": 2064754,
+      "sha256": "e38db9f2f184ff3e0152b4cdb227a11260f09e5b50310806d07a683fcb6b4272"
+    },
+    {
+      "file": "magic-move-ground.prompt.txt",
+      "bytes": 1226,
+      "sha256": "7d3337a7576086c536bf5d18727abce5322378930ad3c144be34b7b9020853cc"
+    },
+    {
+      "file": "magic-move-missing-guide.png",
+      "bytes": 420323,
+      "sha256": "1c207aee2b45f381f4c790d82b212020f6de1e8a12ea947e8ac1f5484039a4d7"
+    },
+    {
+      "file": "magic-move-v4-fitted.png",
+      "bytes": 1477566,
+      "sha256": "871e42726b0732357292a4fffeeb1b4eee5fb36a3a27868cd9d842de0232270b"
+    },
+    {
+      "file": "magic-move-v4-missing-guide.png",
+      "bytes": 1443134,
+      "sha256": "c1e99dadea3c591244d7a360e0d277f3369ded18648a2e2906b0d5e0a46898a4"
+    },
+    {
+      "file": "magic-move-v4-neutral.png",
+      "bytes": 1446699,
+      "sha256": "f6e924c2381ece9021d6b25a9e04ee70670ce61911eb2ebbe1f1a77c1b129d8e"
+    },
+    {
+      "file": "magic-move-v4.png",
+      "bytes": 2091831,
+      "sha256": "bc54f67e70d7d69e3e8ee2b112b14796ca8d564b82b75c1300559bb9fa88af25"
+    },
+    {
+      "file": "magic-move-v4.prompt.txt",
+      "bytes": 2491,
+      "sha256": "6c9906e612b3d4a9d0d3baf49083df780b60d1d702ac644d0212eb6378b9c4e5"
+    },
+    {
+      "file": "magic-move-v5-fitted.png",
+      "bytes": 1479784,
+      "sha256": "7d6b9da8da7156ad97ed88f6e25964dd2b07bdb324a9a3d40adccdeec725c0e5"
+    },
+    {
+      "file": "magic-move-v5-neutral.png",
+      "bytes": 1460773,
+      "sha256": "0e981a59c0e4e00218c311533dc73c521c01175cfd38aa092da6b01463c9c344"
+    },
+    {
+      "file": "magic-move-v5.png",
+      "bytes": 2117407,
+      "sha256": "141ace4cb68ecebf51117a5f13ef34bd909445694ffe8eb8abc36beddaab2b82"
+    },
+    {
+      "file": "magic-move-v5.prompt.txt",
+      "bytes": 1436,
+      "sha256": "972e7332abd3f7dfd7968fa94df7a4958e8593bae59f33dafea772f94634856a"
+    },
+    {
+      "file": "magic-move.png",
+      "bytes": 2206458,
+      "sha256": "ed632e9304f02d0d48bfb854d15e84cb4a8e9c8e484dee80e0693fc5fd847251"
+    },
+    {
+      "file": "magic-move.prompt.txt",
+      "bytes": 1588,
+      "sha256": "239af7af96f58ebe0cb9c8a110b3441e08c2178587d10905a2e3a8b1cba997e6"
+    },
+    {
+      "file": "magic-power-fitted.png",
+      "bytes": 1370805,
+      "sha256": "05f7744f057bfa4c074c8be5ba26b208f6cba41d20213a75417ec2f6e6bb0a3e"
+    },
+    {
+      "file": "magic-power-neutral.png",
+      "bytes": 384056,
+      "sha256": "6bd93aa57bffce3675ace1f7c9309137e07a2de10be1d0e89c5588431cb44b56"
+    },
+    {
+      "file": "magic-power.png",
+      "bytes": 2045075,
+      "sha256": "60b817cc862469ab29ae621026e03e8d01f532257d04ac0356437eac62dd8e98"
+    },
+    {
+      "file": "magic-power.prompt.txt",
+      "bytes": 1661,
+      "sha256": "aaf3a517edb981685e1823d50a05afcccbc83282eda205b7841ea2b67769b76e"
+    },
+    {
+      "file": "magic-waste-fitted.png",
+      "bytes": 1606486,
+      "sha256": "438373ba1d589b6896cde60e164f44c9eee5ae926bbb8f7eff81578d2e3e6699"
+    },
+    {
+      "file": "magic-waste-fixed-fitted.png",
+      "bytes": 1501239,
+      "sha256": "529ab29be8d513924f2d71a253967dd783bcc0c1a3cdf1a81eff201986af2bdb"
+    },
+    {
+      "file": "magic-waste-fixed-neutral.png",
+      "bytes": 1477722,
+      "sha256": "27616cb947a25c8615c6a2f5b32f954b7a08e7d16dda62be98884a576d9d2c28"
+    },
+    {
+      "file": "magic-waste-fixed.png",
+      "bytes": 2260312,
+      "sha256": "5768044fc84b4c6ff522b3f6b417603ef793a32ed45c917741ba351430916c79"
+    },
+    {
+      "file": "magic-waste-fixed.prompt.txt",
+      "bytes": 1698,
+      "sha256": "628a338a38496f9c4184cab1226256b76914425215fcd947a803173983a7b22f"
+    },
+    {
+      "file": "magic-waste-neutral.png",
+      "bytes": 1557597,
+      "sha256": "08c48cc7b67482a873577e7932fcd095ef173cb7f5865185a784c2e7275ed6e4"
+    },
+    {
+      "file": "magic-waste.png",
+      "bytes": 2263633,
+      "sha256": "a4fd0ee51c55a79754034f55cea5a09a4abc1ac0786303d625d0ac4044973605"
+    },
+    {
+      "file": "magic-waste.prompt.txt",
+      "bytes": 3454,
+      "sha256": "aa259c49203f6669c2995c731e0b89a0750d99da03f3985cf80e6ee71756d9a8"
+    },
+    {
+      "file": "magic-water-final-neutral.png",
+      "bytes": 408680,
+      "sha256": "a0713312d309e3b5ef192d8a2565a068998cd3c3cd980b0155b8cc27bf8ea18b"
+    },
+    {
+      "file": "magic-water-fitted.png",
+      "bytes": 1516152,
+      "sha256": "8e9b119a3d8eba42792efaf1dc48767f432ebe48a1af31254b3901b6d1d08aca"
+    },
+    {
+      "file": "magic-water-neutral.png",
+      "bytes": 420544,
+      "sha256": "d255060c99ab8469961238ad6dd6c317775f63eca2bcd32ab67d7a195471964e"
+    },
+    {
+      "file": "magic-water-rear-fitted.png",
+      "bytes": 1397588,
+      "sha256": "a10723a7604922b2af2de7538e3c83030a16b7ea6b9323e14ba0f378a1f81ea7"
+    },
+    {
+      "file": "magic-water-rear-guide.png",
+      "bytes": 1460381,
+      "sha256": "ba78f2592268c4df5befb01ec5236b829c252c3e690eb0e18d4acff08aebdbff"
+    },
+    {
+      "file": "magic-water-rear-no-align-final.png",
+      "bytes": 1428012,
+      "sha256": "1421511c1347ba4775ac5b768e66825f73bcc6f3dd5712b12623e8e847ba23be"
+    },
+    {
+      "file": "magic-water-rear-no-align-fitted.png",
+      "bytes": 1419251,
+      "sha256": "73daf9e06bfd91746437017fbfb2bf163a65f6f3462a40bd3c621c0a2a17f35c"
+    },
+    {
+      "file": "magic-water-rear.png",
+      "bytes": 2048478,
+      "sha256": "2de5bebaeb48fb976aca378b8a17786cab2f9d78e989a47dd48ef0c8c70b1eb7"
+    },
+    {
+      "file": "magic-water-rear.prompt.txt",
+      "bytes": 969,
+      "sha256": "faa20420201c6b81e70badffe84722d4f7eea1e80c07e58a3ce6365e57a5d466"
+    },
+    {
+      "file": "magic-water.png",
+      "bytes": 2213200,
+      "sha256": "0040ddded43160a560b1705ce0c2aacec159f569cbfc433c3ad7741777b91a78"
+    },
+    {
+      "file": "magic-water.prompt.txt",
+      "bytes": 1463,
+      "sha256": "453af7fe7c5658a853084849208e27cfea1ab9be28f71bf9ec270cbd1b5e9372"
+    },
+    {
+      "file": "magic-wild-fitted-neutral.png",
+      "bytes": 1744718,
+      "sha256": "6d4016161588b17032508cb314e2f933556959e82e7f62c16e86390fc3319828"
+    },
+    {
+      "file": "magic-wild-fitted.png",
+      "bytes": 1811428,
+      "sha256": "b4ee547a02d708625b7366003cd2429dc21aedd76f182105673bd2b8ee36ef6d"
+    },
+    {
+      "file": "magic-wild-fixed-fitted.png",
+      "bytes": 1800266,
+      "sha256": "d44693085fb2a92ed3214baccb803d0c1c0d67e27fab142f66dcb6a51e8865d2"
+    },
+    {
+      "file": "magic-wild-fixed-neutral.png",
+      "bytes": 1759471,
+      "sha256": "5a50774be3a72131942b06819f647fe3c92c41f154cdc277c213d50c2b02de8e"
+    },
+    {
+      "file": "magic-wild-fixed.png",
+      "bytes": 2445485,
+      "sha256": "176992e0052976cc9112b54b548824d7563fad4b5f64c6815c54a71908b6a439"
+    },
+    {
+      "file": "magic-wild-fixed.prompt.txt",
+      "bytes": 1522,
+      "sha256": "923c2bad54c17bda7574b3433c514e530054deb36c5be2ec49eebb4905fbdd53"
+    },
+    {
+      "file": "magic-wild.png",
+      "bytes": 2456020,
+      "sha256": "a159370c14818bbf76729d27d88e9fa4e19c7e4f56fcc9817a8dcafbde748d0b"
+    },
+    {
+      "file": "magic-wild.prompt.txt",
+      "bytes": 3570,
+      "sha256": "f9289c068a8b3a636e7b08b9b4ef3a2340a4542290b368b1e1c7e4b735f44df1"
+    }
+  ]
+}

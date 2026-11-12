@@ -1,0 +1,35 @@
+[
+  {
+    "key": "power:magic",
+    "source": "magic-power.png"
+  },
+  {
+    "key": "move:magic",
+    "source": "magic-move-v5.png"
+  },
+  {
+    "key": "food:magic",
+    "source": "magic-food-canopy.png"
+  },
+  {
+    "key": "water:magic",
+    "source": "magic-water-rear.png",
+    "noAlign": true
+  },
+  {
+    "key": "home:magic",
+    "source": "magic-home.png"
+  },
+  {
+    "key": "make:magic",
+    "source": "magic-make.png"
+  },
+  {
+    "key": "waste:magic",
+    "source": "magic-waste-fixed.png"
+  },
+  {
+    "key": "wild:magic",
+    "source": "magic-wild-fixed.png"
+  }
+]
