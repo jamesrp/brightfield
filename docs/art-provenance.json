@@ -348,5 +348,801 @@
         "process": "docs/stage0-pilot/README.md"
       }
     ]
+  },
+  "tile_spec_v2_stages_1_2": {
+    "date": "2026-11-12",
+    "issue": "https://github.com/jamesrp/brightfield/issues/2#issuecomment-6815889758",
+    "base_commit": "d201c7789b18c863377bd0addff628c0db723837",
+    "base_branch": "main",
+    "method": "built-in image_gen per-tile generation and targeted edits; art:fit; painted earth underlay for small incomplete ground edges; exact shared kerb pixels",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "scope": "16 static tiles, Stages 1 and 2; no actors, glows, Paragons or gameplay changes",
+    "source_archive_manifest": "docs/stages-1-2/source-archive.json",
+    "shared_kerb": {
+      "file": "assets/tiles/_slab/earth.png",
+      "sha256": "696c80de2b364636ee7ae5f7a759a97a4d8a743cc9487005a552202f70a55ead"
+    },
+    "outputs": [
+      {
+        "key": "power:1",
+        "file": "assets/tiles/1/power.png",
+        "sha256": "dc1f4c4381ada60a60ca91e7b4aaaeee9a6bab53308b821c0f5a4aa590b2ac7c",
+        "source": "1-power.png",
+        "source_sha256": "b6c009a2108efdc44f5445f240ab85cae8169ad97bb249200ffd13d31a42c0eb",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "1-power.prompt.txt",
+            "prompt": "Use case: stylized-concept. Asset: ONE production transparent 1024 x 1536 PNG static tile for Brightfield. Reference image 1 is the authoritative full-hex earth plot. Reference image 2 is style and building scale only. Paint a NATURAL-GAS TURBINE PLANT on the first image's plot: small mid-century cream and warm brick industrial walls, a single tall slender metal exhaust chimney, silver ducts, enclosed turbine machinery, tidy paved service areas with tufts of grass at the plot edge. Charming exquisite painterly 3D miniature, tactile detailed brick/metal/grass, rich soft colors, light from upper left, same 40-degree isometric perspective and crisp material detail as the cottage. Main structure fills the plot substantially, readable at 150px wide. Preserve the EXACT base shape and position: six-sided pointy-top full hex, centre (512,1130), top vertices (512,775),(992,953),(992,1307),(512,1485),(32,1307),(32,953), two front kerb faces 38px deep ending at (512,1523). Do not add another inner slab or plate, don't shrink the ground, and don't replace the point at front with a flat edge. Ground reaches all six plot edges. Small static service props can occupy the plot. Keep all details x32–992 and y24–1523, no overhanging objects or outside shadows. Transparent background exactly, no painted backdrop/checkerboard. No text, logos, people, vehicles, smoke, flame, motion effects, outer/perimeter roads. Single miniature only. Reuse the first reference's kerb and grassy lip unchanged."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "move:1",
+        "file": "assets/tiles/1/move.png",
+        "sha256": "b446635bcc269af45c2e2af8fcb8b10bc945fa898ad4484efcb179ea67b2b268",
+        "source": "1-move.png",
+        "source_sha256": "86347535650287777402fd11a4bcbabcfcc971b4a0e2115ed171ddb107429ba5",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "1-move.prompt.txt",
+            "prompt": "Use case: stylized-concept. Paint ONE production static building tile for Brightfield Stage 1. Image 1 is the exact plot geometry edit target; Image 2 is STYLE and building scale reference only. Preserve Image 1's full pointy-top hex footprint, size, position and grey-brown thin stone kerb, replacing its grass top content with the scene. Match Image 2's detailed warm charming painterly 3D miniature materials, substantial scale, rich warm colors and upper-left lighting, 40 degree elevation. Output exactly 1024x1536 RGBA PNG with true zero alpha outside silhouette. Full hex top face centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7); front kerb 37.8px, bottom tip (512,1522.5). Preserve the full plot, no extra smaller inner plate, no outer roads, no empty grass margin. Structures extend tall above back plot edge, with substantial matching scale. Keep all pixels within x32–992, y>=24 and above slab bottom outline. No people, no text, no logo, no animated moving components, no smoke, no background or shadow cloud or checkerboard. Scene: Cozy mid-century warm brick motor garage with red tiled roof, big EMPTY open garage bay, tools, neatly stacked tyres and a paved driveway leading to the plot edge. NO car, NO vehicle. Building fills plot generously, garden details and planted borders."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "food:1",
+        "file": "assets/tiles/1/food.png",
+        "sha256": "3c2c867b02e8667017174474808e82686cf9c25469f1e22ab33077985888469f",
+        "source": "1-food.png",
+        "source_sha256": "a7c0870466dcad39137b1d6f2ddaaa9876a68bd36781a800777f3889b1164317",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "1-food.prompt.txt",
+            "prompt": "Use case: stylized-concept. Paint ONE production static building tile for Brightfield Stage 1. Image 1 is the exact plot geometry edit target; Image 2 is STYLE and building scale reference only. Preserve Image 1's full pointy-top hex footprint, size, position and grey-brown thin stone kerb, replacing its grass top content with the scene. Match Image 2's detailed warm charming painterly 3D miniature materials, substantial scale, rich warm colors and upper-left lighting, 40 degree elevation. Output exactly 1024x1536 RGBA PNG with true zero alpha outside silhouette. Full hex top face centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7); front kerb 37.8px, bottom tip (512,1522.5). Preserve the full plot, no extra smaller inner plate, no outer roads, no empty grass margin. Structures extend tall above back plot edge, with substantial matching scale. Keep all pixels within x32–992, y>=24 and above slab bottom outline. No people, no text, no logo, no animated moving components, no smoke, no background or shadow cloud or checkerboard. Scene: Lush apple orchard filling the hex edge-to-edge, several large fruit-laden apple trees, red apples, wooden ladders and stationary apple baskets, planted grass and small garden paths. NO picker person, no vehicles. Large substantial tree canopies kept inside plot columns."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "water:1",
+        "file": "assets/tiles/1/water.png",
+        "sha256": "112d99bfad37d724c7bfff236a5457178c7a307dc73bfcd19113f13348021242",
+        "source": "1-water-fixed.png",
+        "source_sha256": "ae85c9ec8a81007f3f1b721312d43c2204107f7be53b56a4c7fb206110a31c8c",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "1-water-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Target image1 is Brightfield water-tower tile; image2 is the EXACT required earth plot. Keep image1's same charming blue cylindrical water tank, brick/metal tower, pipes, small pump cottage, flower gardens, warm detailed painterly rendering and upper-left light. REPLACE AND EXPAND ONLY THE GROUND FOOTPRINT to match image2 exactly: image1 front tip is roughly35px too high. The grass top face must be the full pointy-top hex with centre(512,1130), vertices(512,775),(992,953),(992,1307),(512,1485),(32,1307),(32,953). Front GRASS point must reach y1485, not1450. The ONLY kerb is38px deep BELOW that, terminating at y1523. No second inner kerb, no stacked plates, no old grey edge left inside grass. Keep back-left/right shoulders at y953, not lower. Reshape the plot under the existing tower to fill exact area from image2; extend front garden/path to new grass tip, retain opaque grass right to each edge. You may move the existing tower slightly down without scaling to leave at least40px transparent headroom, but don't crop or change its design. Preserve1024x1536 true transparent PNG, all x32..992, no outside shadows, no clouds, no text, no people, no flowing water, no moving actors. Exact template geometry is more important than reproducing the target's incorrect ground silhouette."
+          },
+          {
+            "file": "1-water.prompt.txt",
+            "prompt": "Use case: stylized-concept. Paint ONE production static building tile for Brightfield Stage 1. Image 1 is the exact plot geometry edit target; Image 2 is STYLE and building scale reference only. Preserve Image 1's full pointy-top hex footprint, size, position and grey-brown thin stone kerb, replacing its grass top content with the scene. Match Image 2's detailed warm charming painterly 3D miniature materials, substantial scale, rich warm colors and upper-left lighting, 40 degree elevation. Output exactly 1024x1536 RGBA PNG with true zero alpha outside silhouette. Full hex top face centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7); front kerb 37.8px, bottom tip (512,1522.5). Preserve the full plot, no extra smaller inner plate, no outer roads, no empty grass margin. Structures extend tall above back plot edge, with substantial matching scale. Keep all pixels within x32–992, y>=24 and above slab bottom outline. No people, no text, no logo, no animated moving components, no smoke, no background or shadow cloud or checkerboard. Scene: Blue cylindrical water tank atop elegant substantial brick-and-metal tower, sturdy supports, static pipes and ladder, warm brick pump shed, garden details and flower patches filling the full plot. NO flowing water, no animated stream."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "home:1",
+        "file": "assets/tiles/1/home.png",
+        "sha256": "e6218077406e40a6f4c865a4cccef8508b3ee5a454c4395574243aa9b0b30dfb",
+        "source": "1-home.png",
+        "source_sha256": "ac641702b37382b11423a40dececd36939c23bbd6d0359dfffe1992fb9782d43",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "1-home.prompt.txt",
+            "prompt": "Use case: stylized-concept. Paint ONE production static building tile for Brightfield Stage 1. Image 1 is the exact plot geometry edit target; Image 2 is STYLE and building scale reference only. Preserve Image 1's full pointy-top hex footprint, size, position and grey-brown thin stone kerb, replacing its grass top content with the scene. Match Image 2's detailed warm charming painterly 3D miniature materials, substantial scale, rich warm colors and upper-left lighting, 40 degree elevation. Output exactly 1024x1536 RGBA PNG with true zero alpha outside silhouette. Full hex top face centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7); front kerb 37.8px, bottom tip (512,1522.5). Preserve the full plot, no extra smaller inner plate, no outer roads, no empty grass margin. Structures extend tall above back plot edge, with substantial matching scale. Keep all pixels within x32–992, y>=24 and above slab bottom outline. No people, no text, no logo, no animated moving components, no smoke, no background or shadow cloud or checkerboard. Scene: Exactly THREE attached warm brick terrace houses with red tiled roofs, distinct doors, cozy windows, chimneys without smoke, tiny lush front gardens, flowers and paths. Connected terrace substantial in scale, filling the full plot."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "make:1",
+        "file": "assets/tiles/1/make.png",
+        "sha256": "9b51f30bb230a9efefe5afa8834983167d282eb09ac9731ef2e31dc9b2cc456a",
+        "source": "1-make.png",
+        "source_sha256": "9e41c03569ec1793e21dd023f48a82db073af6ae96363a839ee57ae357a7f10e",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "1-make.prompt.txt",
+            "prompt": "Use case: stylized-concept. Paint ONE production static building tile for Brightfield Stage 1. Image 1 is the exact plot geometry edit target; Image 2 is STYLE and building scale reference only. Preserve Image 1's full pointy-top hex footprint, size, position and grey-brown thin stone kerb, replacing its grass top content with the scene. Match Image 2's detailed warm charming painterly 3D miniature materials, substantial scale, rich warm colors and upper-left lighting, 40 degree elevation. Output exactly 1024x1536 RGBA PNG with true zero alpha outside silhouette. Full hex top face centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7); front kerb 37.8px, bottom tip (512,1522.5). Preserve the full plot, no extra smaller inner plate, no outer roads, no empty grass margin. Structures extend tall above back plot edge, with substantial matching scale. Keep all pixels within x32–992, y>=24 and above slab bottom outline. No people, no text, no logo, no animated moving components, no smoke, no background or shadow cloud or checkerboard. Scene: Artisan workshop of warm brick and timber, red tiled roof, visible tools and sturdy workbench, timber stock, crates, stationary hand tools, small flowers and planting. NO moving saw blade or machine blade. Large charming workshop fills plot."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "waste:1",
+        "file": "assets/tiles/1/waste.png",
+        "sha256": "6bf296cc32aca4e9e7ca0316ae6917d18be7c83b721fd10c7d16a27404fc8b13",
+        "source": "1-waste.png",
+        "source_sha256": "122004d2712f2c4f7dcb8b40f8d7d9d02be7ddb9912d7cf959139d4214f0d44a",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "1-waste.prompt.txt",
+            "prompt": "Use case: stylized-concept. Paint ONE production static building tile for Brightfield Stage 1. Image 1 is the exact plot geometry edit target; Image 2 is STYLE and building scale reference only. Preserve Image 1's full pointy-top hex footprint, size, position and grey-brown thin stone kerb, replacing its grass top content with the scene. Match Image 2's detailed warm charming painterly 3D miniature materials, substantial scale, rich warm colors and upper-left lighting, 40 degree elevation. Output exactly 1024x1536 RGBA PNG with true zero alpha outside silhouette. Full hex top face centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7); front kerb 37.8px, bottom tip (512,1522.5). Preserve the full plot, no extra smaller inner plate, no outer roads, no empty grass margin. Structures extend tall above back plot edge, with substantial matching scale. Keep all pixels within x32–992, y>=24 and above slab bottom outline. No people, no text, no logo, no animated moving components, no smoke, no background or shadow cloud or checkerboard. Scene: Tidy mid-century recycling depot with warm brick shelter and timber structure, neatly sorted glass, paper and metal bins, bundled paper, metal containers, garden border. No text or labels. NO moving conveyor parts, no people. Substantial buildings and bins fill full plot."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "wild:1",
+        "file": "assets/tiles/1/wild.png",
+        "sha256": "c2abc234a05b285b2ace41217178c84735bcc6b99d419f4305b350c716649214",
+        "source": "1-wild.png",
+        "source_sha256": "cca20ae9c69cd8728eeca8f9fadfd8d1a252e27cf9aadebe20e05a36b95d1f71",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "1-wild.prompt.txt",
+            "prompt": "Use case: stylized-concept. Paint ONE production static building tile for Brightfield Stage 1. Image 1 is the exact plot geometry edit target; Image 2 is STYLE and building scale reference only. Preserve Image 1's full pointy-top hex footprint, size, position and grey-brown thin stone kerb, replacing its grass top content with the scene. Match Image 2's detailed warm charming painterly 3D miniature materials, substantial scale, rich warm colors and upper-left lighting, 40 degree elevation. Output exactly 1024x1536 RGBA PNG with true zero alpha outside silhouette. Full hex top face centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7); front kerb 37.8px, bottom tip (512,1522.5). Preserve the full plot, no extra smaller inner plate, no outer roads, no empty grass margin. Structures extend tall above back plot edge, with substantial matching scale. Keep all pixels within x32–992, y>=24 and above slab bottom outline. No people, no text, no logo, no animated moving components, no smoke, no background or shadow cloud or checkerboard. Scene: Lush city park filling the entire full hex edge-to-edge, one large beautiful focal tree, smaller trees and shrubs, small clear pond, wooden bench, curved gravel paths and many bright flowers. No people, no animals, no animated water. Tall lush foliage kept inside plot columns."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "power:2",
+        "file": "assets/tiles/2/power.png",
+        "sha256": "fb5dd262356f43e0563ff2ce860c0ef66e9c315a5cf026eca72f0f0a3ce0943c",
+        "source": "2-power.png",
+        "source_sha256": "ff2d352e10536c73e7c88797603ada8f5b8d045ee0df9e0b484c8d8cc31b9834",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "2-power.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Stage2 static tile. Image1 exact GEOMETRY slab; image2 STYLE only, not subject. Match its substantial architectural scale, charming highly detailed painterly miniature, tactile materials, rich soft colors. Single 1024x1536 RGBA transparent PNG, NOT atlas. Preserve full 960px-wide pointy-top hex: centre(512,1130), vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Grass/ground fully fills face edge to edge. Two front grey-brown stone kerbs only37.8px deep; bottom point(512,1522.5). No additional inner plate, no deep slab. 40degree elevated camera, warm upper-left light, no shadow outside plot. Architecture rises above plot; everything inside x32..992 and y24..1522.5 and lower hex outline. Match Stage0 reference building scale; do not shrink subject. No text, logos, roads around plot, people, vehicles, animals, smoke, particles, moving parts, backdrop or checkerboard. Genuine alpha transparency outside silhouette. Subject: Two slender white wind turbine towers on a lush green meadow, one taller tower with bare nacelle hub near(330,470), one shorter near(690,650). WITHOUT ROTORS OR BLADES, bare round mounting hubs only. Keep empty room around hubs for future rotors inside image columns. Substantial tall smooth white towers, low green utility cabinet, grass and varied wildflowers, small maintenance path on the plot."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "move:2",
+        "file": "assets/tiles/2/move.png",
+        "sha256": "cf3c45ef5707903b771927c1daaccff0e418a94efcdc11ce05fc7ada37a90550",
+        "source": "2-move.png",
+        "source_sha256": "a2b492c41150971ed7870ccb7c793062f441125e3e8e6d87b85ff9f3f430283e",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "2-move.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Stage2 static tile. Image1 exact GEOMETRY slab; image2 STYLE only, not subject. Match its substantial architectural scale, charming highly detailed painterly miniature, tactile materials, rich soft colors. Single 1024x1536 RGBA transparent PNG, NOT atlas. Preserve full 960px-wide pointy-top hex: centre(512,1130), vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Grass/ground fully fills face edge to edge. Two front grey-brown stone kerbs only37.8px deep; bottom point(512,1522.5). No additional inner plate, no deep slab. 40degree elevated camera, warm upper-left light, no shadow outside plot. Architecture rises above plot; everything inside x32..992 and y24..1522.5 and lower hex outline. Match Stage0 reference building scale; do not shrink subject. No text, logos, roads around plot, people, vehicles, animals, smoke, particles, moving parts, backdrop or checkerboard. Genuine alpha transparency outside silhouette. Subject: Modern electric charging hub, substantial elegant canopy with solar-panel roof, cream masonry and timber details, charging posts and broad EMPTY vehicle bays with subtle painted parking lines. NO electric car or any vehicle. Charming landscaped planted corners and flowering shrubs, broad paved access path within plot."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "food:2",
+        "file": "assets/tiles/2/food.png",
+        "sha256": "095d457e467d143d85ba970a3358b0f6ca03ce94c16158f2d31197e935aa626d",
+        "source": "2-food-fixed.png",
+        "source_sha256": "a90c74c13a52697facd8ded5575fdb20cd156ab2a669994a0b412e4811fde31f",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "2-food-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Preserve this greenhouse miniature exactly, ONLY fix ground silhouette to exact geometric reference image2. Full six-sided ground face vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Front kerb only37.8px deep ending(512,1522.5). Straight vertical ground edges x32 and992 fromy953 to1307, and crisp diagonal front kerbs. Move only tiny protruding side flowers inward so absolutely no alpha extends outside x32..992. Keep greenhouse scale, materials, greenhouse geometry, plants, light and colors identical. No extra inner slab. Fill the whole ground face edge-to-edge fully opaque. Exact1024x1536 true transparent PNG."
+          },
+          {
+            "file": "2-food.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Stage2 static tile. Image1 exact GEOMETRY slab; image2 STYLE only, not subject. Match its substantial architectural scale, charming highly detailed painterly miniature, tactile materials, rich soft colors. Single 1024x1536 RGBA transparent PNG, NOT atlas. Preserve full 960px-wide pointy-top hex: centre(512,1130), vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Grass/ground fully fills face edge to edge. Two front grey-brown stone kerbs only37.8px deep; bottom point(512,1522.5). No additional inner plate, no deep slab. 40degree elevated camera, warm upper-left light, no shadow outside plot. Architecture rises above plot; everything inside x32..992 and y24..1522.5 and lower hex outline. Match Stage0 reference building scale; do not shrink subject. No text, logos, roads around plot, people, vehicles, animals, smoke, particles, moving parts, backdrop or checkerboard. Genuine alpha transparency outside silhouette. Subject: Elegant substantial glass greenhouse filled with vegetables and warm growing beds, cream-and-sage metal glazing frame, translucent blue-green glass, richly readable rows of tomatoes and leafy crops, garden pots and small outside beds. No moving sprinkler or water spray."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "water:2",
+        "file": "assets/tiles/2/water.png",
+        "sha256": "a79435ab398f2532b1bd837b4b6b6a39d6cdaddd643da56aa0b5d85d164f3a7e",
+        "source": "2-water.png",
+        "source_sha256": "348e9b00d063d11ad909f07f64e0a239a5e3d2807ed230bb8d5edf7f237477b9",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "2-water.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Stage2 static tile. Image1 exact GEOMETRY slab; image2 STYLE only, not subject. Match its substantial architectural scale, charming highly detailed painterly miniature, tactile materials, rich soft colors. Single 1024x1536 RGBA transparent PNG, NOT atlas. Preserve full 960px-wide pointy-top hex: centre(512,1130), vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Grass/ground fully fills face edge to edge. Two front grey-brown stone kerbs only37.8px deep; bottom point(512,1522.5). No additional inner plate, no deep slab. 40degree elevated camera, warm upper-left light, no shadow outside plot. Architecture rises above plot; everything inside x32..992 and y24..1522.5 and lower hex outline. Match Stage0 reference building scale; do not shrink subject. No text, logos, roads around plot, people, vehicles, animals, smoke, particles, moving parts, backdrop or checkerboard. Genuine alpha transparency outside silhouette. Subject: Beautiful rain garden with shallow clear blue pond, reeds, rich flowering beds and little stone drainage channels, stepping-stone path and rounded rocks. Lush layered vegetation fills full hex, clear pond focal point. No moving water spray, critters or fountain."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "home:2",
+        "file": "assets/tiles/2/home.png",
+        "sha256": "f0d2f95bf4a6885f866f353daf24f3136682b64f50a2982d6bd548a717f983d9",
+        "source": "2-home.png",
+        "source_sha256": "afada6c4f75d786430c0065acc9a51c38eba726f716c838534733fa6f1b27707",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "2-home.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Stage2 static tile. Image1 exact GEOMETRY slab; image2 STYLE only, not subject. Match its substantial architectural scale, charming highly detailed painterly miniature, tactile materials, rich soft colors. Single 1024x1536 RGBA transparent PNG, NOT atlas. Preserve full 960px-wide pointy-top hex: centre(512,1130), vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Grass/ground fully fills face edge to edge. Two front grey-brown stone kerbs only37.8px deep; bottom point(512,1522.5). No additional inner plate, no deep slab. 40degree elevated camera, warm upper-left light, no shadow outside plot. Architecture rises above plot; everything inside x32..992 and y24..1522.5 and lower hex outline. Match Stage0 reference building scale; do not shrink subject. No text, logos, roads around plot, people, vehicles, animals, smoke, particles, moving parts, backdrop or checkerboard. Genuine alpha transparency outside silhouette. Subject: Attractive substantial low-rise modern apartment building with living green roof and lush garden balconies, warm pale plaster and timber trim, large windows, welcoming entrance and tiny flowering gardens. Full building comparable in scale to cottage reference. No smoke."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "make:2",
+        "file": "assets/tiles/2/make.png",
+        "sha256": "77e19b56e01b27b8fe32f8fe5c59e5615d835de6e2695c2426f05f73f7692cfa",
+        "source": "2-make-modern.png",
+        "source_sha256": "126afacec07bd802bd6cb91731d9c7df61b333acb71dfeba72366cee073b62d3",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "2-make-corners.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Fix ONLY the two tiny missing grassy corners of this miniature's hex ground. At rear-left ground corner near pixel(32,953), extend the grass leftwards: pixels x32 through60 at y953 through975 must be solid grass, not transparent or a soft edge. At rear-right corner near(992,953), similarly fill x970 through991 at y953 through975 with solid grass. These are small triangular corner extensions needed to reach the exact slab reference image2. Keep the straight left/right plot borders at x32 and992 from y953 to1307. Keep every building pixel, foreground, flower, empty robot-arm pedestal, lighting, canvas1024x1536 and front kerb unchanged. No global resizing or moving. Transparent background outside the true physical hex and building. Preserve miniature."
+          },
+          {
+            "file": "2-make-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Preserve this robot foundry miniature exactly, ONLY fix ground silhouette to exact geometric reference image2. Full six-sided ground face vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Front kerb only37.8px deep ending(512,1522.5). Straight vertical ground edges x32 and992 fromy953 to1307, and crisp diagonal front kerbs. Move only tiny protruding side flowers inward so absolutely no alpha extends outside x32..992. Keep building scale, materials, empty robot-arm pedestal, light and colors identical. No moving arm, no extra inner slab. Fill whole ground face edge-to-edge fully opaque. Exact1024x1536 true transparent PNG."
+          },
+          {
+            "file": "2-make-modern.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Edit this Brightfield transparent 1024x1536 game tile. Preserve EXACT full pointy-hex plot geometry, grass lip and kerb positions, substantial building scale, camera elevation, upper-left warm light, charming tactile detailed painterly miniature rendering and transparent background. Change the ARCHITECTURE so this unmistakably reads as a MODERN ROBOT FOUNDRY rather than a Victorian artisan workshop. Replace ornate gables, brick bell tower, wooden decorative braces, gear emblem and lanterns with a clean low-rise industrial hall: cream concrete and tasteful brick, broad steel-framed glass glazing, flat/low sawtooth skylight roof, restrained green roof section and a few rooftop solar panels. Show a spacious open fabrication bay with a LARGE EMPTY circular robot mounting pedestal, surrounding static yellow/black safety floor markings, a visible modern control console with blank dark screen and simple status lights, steel cabinets, a few clean metal components. NO robot arms because moving arms will be separate sprites, NO people, vehicles, smoke, flames, text or logos. Keep restrained planted borders and flowers at edges, but the factory must dominate. The entire plot remains solid and reaches the exact six outer edges, with left/right vertical ground edges at x32 and992 spanning y953..1307; bottom top-face point(512,1485) and kerb bottom(512,1523). No extra plate, no outer roads or shadows. Nothing outside x32..992 or above y24. This is modern Stage2 clean technology, not fantasy, not medieval, not Victorian."
+          },
+          {
+            "file": "2-make.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Stage2 static tile. Image1 exact GEOMETRY slab; image2 STYLE only, not subject. Match its substantial architectural scale, charming highly detailed painterly miniature, tactile materials, rich soft colors. Single 1024x1536 RGBA transparent PNG, NOT atlas. Preserve full 960px-wide pointy-top hex: centre(512,1130), vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Grass/ground fully fills face edge to edge. Two front grey-brown stone kerbs only37.8px deep; bottom point(512,1522.5). No additional inner plate, no deep slab. 40degree elevated camera, warm upper-left light, no shadow outside plot. Architecture rises above plot; everything inside x32..992 and y24..1522.5 and lower hex outline. Match Stage0 reference building scale; do not shrink subject. No text, logos, roads around plot, people, vehicles, animals, smoke, particles, moving parts, backdrop or checkerboard. Genuine alpha transparency outside silhouette. Subject: Friendly clean robot foundry, substantial cream-and-brick modern workshop with sage metal roof and large windows, tidy static assembly workbenches visible through windows. Leave conspicuous empty robot-arm mounting pedestal visible in open front workshop bay for later actor. NO ROBOT ARMS, no moving machinery, no smoke. Crates and parts neatly organized, planted edge."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "waste:2",
+        "file": "assets/tiles/2/waste.png",
+        "sha256": "9baaa512c22fdbec829143380c94e906fa0cfaac62f663142b047cf734fb4f32",
+        "source": "2-waste.png",
+        "source_sha256": "1acb07b3a1c5cc9180f528dfb12bce1fb30e3708d2161bea51c4f7ab4080701e",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "2-waste.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Stage2 static tile. Image1 exact GEOMETRY slab; image2 STYLE only, not subject. Match its substantial architectural scale, charming highly detailed painterly miniature, tactile materials, rich soft colors. Single 1024x1536 RGBA transparent PNG, NOT atlas. Preserve full 960px-wide pointy-top hex: centre(512,1130), vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Grass/ground fully fills face edge to edge. Two front grey-brown stone kerbs only37.8px deep; bottom point(512,1522.5). No additional inner plate, no deep slab. 40degree elevated camera, warm upper-left light, no shadow outside plot. Architecture rises above plot; everything inside x32..992 and y24..1522.5 and lower hex outline. Match Stage0 reference building scale; do not shrink subject. No text, logos, roads around plot, people, vehicles, animals, smoke, particles, moving parts, backdrop or checkerboard. Genuine alpha transparency outside silhouette. Subject: Tidy compost yard with three substantial timber compost bays holding dark compost and leaf heaps, modest timber potting shelter, sacks, garden tools and abundant young plants in pots. Rich wooden structure and garden detail, full-hex grass and compacted earth paths. NO STEAM, smoke, animals or moving objects."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      },
+      {
+        "key": "wild:2",
+        "file": "assets/tiles/2/wild.png",
+        "sha256": "59bb84a1a542658fc51c1750f43abdaab36141f936771383df81b6d6da765717",
+        "source": "2-wild-fixed.png",
+        "source_sha256": "fdd2c1933c3735bf8f0cf681a7c2afb647a5dcd5d80d31e082c002231535d700",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "2-wild-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Keep this beautiful old-growth woodland miniature and EXACT full-hex ground geometry unchanged. ONLY shorten the tallest crown and upper trunk slightly so the highest leaf begins at y65 instead of y10. Leave all foliage within x40..984 with clean transparent margins. Do not scale or move the ground or kerb, bottom point remains(512,1522.5), full plot x32..992. Preserve detailed painterly style and all static plants and roots. No animals. 1024x1536 RGBA with true transparent background."
+          },
+          {
+            "file": "2-wild.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Stage2 static tile. Image1 exact GEOMETRY slab; image2 STYLE only, not subject. Match its substantial architectural scale, charming highly detailed painterly miniature, tactile materials, rich soft colors. Single 1024x1536 RGBA transparent PNG, NOT atlas. Preserve full 960px-wide pointy-top hex: centre(512,1130), vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Grass/ground fully fills face edge to edge. Two front grey-brown stone kerbs only37.8px deep; bottom point(512,1522.5). No additional inner plate, no deep slab. 40degree elevated camera, warm upper-left light, no shadow outside plot. Architecture rises above plot; everything inside x32..992 and y24..1522.5 and lower hex outline. Match Stage0 reference building scale; do not shrink subject. No text, logos, roads around plot, people, vehicles, animals, smoke, particles, moving parts, backdrop or checkerboard. Genuine alpha transparency outside silhouette. Subject: Majestic old-growth woodland with layered tall leafy trees, mossy gnarled trunks and ferns, lush undergrowth, mossy rocks and narrow woodland path. Strong large central mature tree focal silhouette. All foliage stays strictly inside x32..992; grow taller rather than wider. No animals or moving particles."
+          }
+        ],
+        "process": "docs/stages-1-2/rebuild.cjs"
+      }
+    ]
+  },
+  "tile_spec_v2_star": {
+    "date": "2026-11-12",
+    "issue": "https://github.com/jamesrp/brightfield/issues/2#issuecomment-6815889758",
+    "base_commit": "d201c7789b18c863377bd0addff628c0db723837",
+    "base_branch": "main",
+    "method": "built-in image_gen per-tile generation and targeted edits; art:fit; painted alloy-family underlay for small incomplete ground edges; exact shared kerb pixels",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "scope": "8 static Star tiles; no actors, glows, Paragons or gameplay changes",
+    "source_archive_manifest": "docs/star-static/source-archive.json",
+    "shared_kerb": {
+      "file": "assets/tiles/_slab/alloy.png",
+      "sha256": "098aa1f165e6675293f24d1ddd6791ad1fb6d2fa8b520d0b23ab5026cbebf423"
+    },
+    "outputs": [
+      {
+        "key": "power:star",
+        "file": "assets/tiles/star/power.png",
+        "sha256": "5b16f30deeeb8e772bfb18f7f9d2463992c7434c9784e3108bdbfa3c8d8c6620",
+        "source": "star-power.png",
+        "source_sha256": "924a41e5f68a94a658df1c2e9619f9295173f85e4608dcd0a47f9b7a0f6b7478",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "star-power.prompt.txt",
+            "prompt": "Use case: stylized-concept. Asset type: a SINGLE production static tile for Brightfield, a cozy isometric hex-town game. Generate a 1024 x 1536 RGBA PNG with genuinely transparent background.\nInput image 1 is the EXACT approved full-hex alloy plot: use its silhouette, location, scale, camera and pearl/teal/gold kerb. Do not shrink, crop, reshape, relocate or rotate it. Input image 2 is STYLE ONLY: match its warm, intricately detailed painterly miniature materials, substantial building size and crisp readable silhouette, but NOT its cottage, grass or stone kerb.\nPaint one richly detailed optimistic future miniature directly onto the approved alloy plot, with no second base under it. Main structure should occupy most of the plot width and rise substantially into the transparent upper part, leaving the entire top 64 pixels and x<40/x>984 empty for tall content. Clear 40-degree elevated isometric perspective, warm light from upper left, soft shadows contained on the plot. Ivory white and pearl ceramic, luminous but solid teal glass, brushed warm gold fittings, restrained fresh greenery in integrated planters. Rich hand-painted details, cozy tangible materials, not flat icons or a sterile CAD render.\nEXACT GROUND GEOMETRY: top face is pointy-top hex, centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Full top surface reaches all six edges. Two FRONT kerb faces extend vertically only 37.8 px, bottom front point (512,1522.5). Side vertical edges x32 and x992. Preserve this reference plot edge position exactly, with thin shared white-pearl kerb and teal line and gold trim. No deeper slab, pedestal, additional plate, external road border or ground underneath.\nSTATIC ROUND: no people, animals, vehicles, animated actors, floating objects, smoke, steam, bubbles, spray, particles, sparks, volumetric glow or cast shadow outside the plot. Static light fixtures and colored cores may be painted as solid material; separate glow effects come later. No text, letters, numerals, logos, frame, visible guide lines or checkerboard. The canvas outside the plot and architecture must have alpha zero.\nSUBJECT: Fusion Reactor. A friendly clean-energy station, a large white ceramic central reactor building with a visible STATIC turquoise circular core behind glass, robust stationary gold structural ribs, and two tall turquoise glass side towers. Elegant layered ceramic fins, precise piping and ventilation details, small gold service fittings, integrated planted pockets that make the scientific building welcoming. No orbiting ring actor and no detached ring; stationary rings anchored into the architecture are fine. Substantial main building, detailed future technology, no industrial smoke."
+          }
+        ],
+        "process": "docs/star-static/rebuild.cjs"
+      },
+      {
+        "key": "move:star",
+        "file": "assets/tiles/star/move.png",
+        "sha256": "34b2c0e967486fc70713a4c82e0d394281f4841bbd24a24646f6c6538a5c7e3e",
+        "source": "star-move-v2.png",
+        "source_sha256": "6fbf4a4cf9cd4fc40e59c90d63a091d7e99cff93a44004977df11585078483e0",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "star-move-v2.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Edit image 3, the existing Brightfield Maglev Express static station tile. Image 1 is the exact approved alloy plot geometry, image 2 is the painterly style reference. Preserve the station architecture, empty magnetic guideway, all glass roofs, gold trim, planters, lighting, subject scale and exact 1024x1536 layout of image 3. Correct ONLY the oversized pale ground plot behind/alongside the station.\nThe current pale plot reaches too far UP behind the station: its left/right rear outer corners are around y820. They MUST instead be at (32,952.7) and (992,952.7), as image 1. The rear tip of the top face must be (512,775.3), normally hidden behind the station. Remove the incorrectly elevated rear flat ground patches above the diagonal lines connecting (32,952.7) to (512,775.3) to (992,952.7). These outside-hex areas must become genuinely transparent wherever there is not actual station architecture. Do not turn the pale ground into a vertical wall. This is a single flat hex ground plot, no raised surrounding walls, second plate or oversized rear plane. Architecture, glass roofs and foliage ARE allowed above these diagonal lines, but the exposed flat GROUND is NOT. Keep the buildings in place while removing only their incorrect background ground patches.\nDo not move the lower corners or bottom: approved full pointy-top hex top face vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7), centre512,1130. Thin front kerb depth37.8, bottom front point512,1522.5, white-pearl with a teal line and gold trim. Everything outside the plot and architecture truly transparent, no haze or glow outside. No train, pod, person, animal, particle, text or cast shadow outside the plot. This is a geometry correction of image 3, not a redesign."
+          },
+          {
+            "file": "star-move.prompt.txt",
+            "prompt": "Use case: stylized-concept. Asset type: a SINGLE production static tile for Brightfield, a cozy isometric hex-town game. Generate a 1024 x 1536 RGBA PNG with genuinely transparent background.\nInput image 1 is the EXACT approved full-hex alloy plot: use its silhouette, location, scale, camera and pearl/teal/gold kerb. Do not shrink, crop, reshape, relocate or rotate it. Input image 2 is STYLE ONLY: match its warm, intricately detailed painterly miniature materials, substantial building size and crisp readable silhouette, but NOT its cottage, grass or stone kerb.\nPaint one richly detailed optimistic future miniature directly onto the approved alloy plot, with no second base under it. Main structure should occupy most of the plot width and rise substantially into the transparent upper part, leaving the entire top 64 pixels and x<40/x>984 empty for tall content. Clear 40-degree elevated isometric perspective, warm light from upper left, soft shadows contained on the plot. Ivory white and pearl ceramic, luminous but solid teal glass, brushed warm gold fittings, restrained fresh greenery in integrated planters. Rich hand-painted details, cozy tangible materials, not flat icons or a sterile CAD render.\nEXACT GROUND GEOMETRY: top face is pointy-top hex, centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Full top surface reaches all six edges. Two FRONT kerb faces extend vertically only 37.8 px, bottom front point (512,1522.5). Side vertical edges x32 and x992. Preserve this reference plot edge position exactly, with thin shared white-pearl kerb and teal line and gold trim. No deeper slab, pedestal, additional plate, external road border or ground underneath.\nSTATIC ROUND: no people, animals, vehicles, animated actors, floating objects, smoke, steam, bubbles, spray, particles, sparks, volumetric glow or cast shadow outside the plot. Static light fixtures and colored cores may be painted as solid material; separate glow effects come later. No text, letters, numerals, logos, frame, visible guide lines or checkerboard. The canvas outside the plot and architecture must have alpha zero.\nSUBJECT: Maglev Express. An elegant large white ceramic and teal-glass station pavilion with a soaring curved canopy, warm gold structural ribs, layered translucent turquoise windows and planted terrace pockets. A SHORT EMPTY elevated magnetic guideway passes through an unmistakably empty central station arch and continues across the plot on a few slim ceramic columns, then ends at the plot edge. Make the guideway clear and legible for a later separate moving pod sprite; absolutely no train, pod, carriage, vehicle or people anywhere. Warm amber inset lamps are static fixtures. Substantial welcoming future station architecture occupies the center/back of the plot; precise track rails and structural beams, clean inviting pavement details and small integrated greenery. The track must not be a loop surrounding the entire plot. Avoid any text or signage."
+          }
+        ],
+        "process": "docs/star-static/rebuild.cjs"
+      },
+      {
+        "key": "food:star",
+        "file": "assets/tiles/star/food.png",
+        "sha256": "bbb592ddd5a6aa608eb701ca0c81e00cd14c46df4b6f9a7090d984ce0a8094c7",
+        "source": "star-food.png",
+        "source_sha256": "cc8597066d9d24ffd960662d49c3b29f633e77636e34b60a85303492fe4bf039",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "star-food.prompt.txt",
+            "prompt": "Use case: stylized-concept. Asset type: a SINGLE production static tile for Brightfield, a cozy isometric hex-town game. Generate a 1024 x 1536 RGBA PNG with genuinely transparent background.\nInput image 1 is the EXACT approved full-hex alloy plot: use its silhouette, location, scale, camera and pearl/teal/gold kerb. Do not shrink, crop, reshape, relocate or rotate it. Input image 2 is STYLE ONLY: match its warm, intricately detailed painterly miniature materials, substantial building size and crisp readable silhouette, but NOT its cottage, grass or stone kerb.\nPaint one richly detailed optimistic future miniature directly onto the approved alloy plot, with no second base under it. Main structure should occupy most of the plot width and rise substantially into the transparent upper part, leaving the entire top 64 pixels and x<40/x>984 empty for tall content. Clear 40-degree elevated isometric perspective, warm light from upper left, soft shadows contained on the plot. Ivory white and pearl ceramic, luminous but solid teal glass, brushed warm gold fittings, restrained fresh greenery in integrated planters. Rich hand-painted details, cozy tangible materials, not flat icons or a sterile CAD render.\nEXACT GROUND GEOMETRY: top face is pointy-top hex, centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Full top surface reaches all six edges. Two FRONT kerb faces extend vertically only 37.8 px, bottom front point (512,1522.5). Side vertical edges x32 and x992. Preserve this reference plot edge position exactly, with thin shared white-pearl kerb and teal line and gold trim. No deeper slab, pedestal, additional plate, external road border or ground underneath.\nSTATIC ROUND: no people, animals, vehicles, animated actors, floating objects, smoke, steam, bubbles, spray, particles, sparks, volumetric glow or cast shadow outside the plot. Static light fixtures and colored cores may be painted as solid material; separate glow effects come later. No text, letters, numerals, logos, frame, visible guide lines or checkerboard. The canvas outside the plot and architecture must have alpha zero.\nSUBJECT: Aeroponic Stack. A tall, generously sized transparent multilevel vertical farm tower with five or six beautifully readable stacked growing floors. Clear teal glass panels reveal dense rows of leafy green vegetables and small salad crops, dangling fine roots in planting channels, organized white ceramic troughs, precision mist-delivery PIPES and static violet grow-light bars tucked under each floor. There is NO visible mist, fog, steam or airborne spray. Ivory structural columns, warm gold connectors and turquoise service windows; welcoming lush productivity. Show an EMPTY vertical lift shaft or open lift bay on one side for a future moving platform, but no platform, cart or robot. At base, small static service equipment and a few integrated crop planters, all on one full approved alloy plot. Tower substantial and tall but with its highest detail no higher than y100; absolutely no detached elements. No people, animals, machines in motion, glowing particles or decorative floating lights."
+          }
+        ],
+        "process": "docs/star-static/rebuild.cjs"
+      },
+      {
+        "key": "water:star",
+        "file": "assets/tiles/star/water.png",
+        "sha256": "1ddb4690f05e91953c567f1e16b0fe1d402ab75bc50e779b31094a7c5df57852",
+        "source": "star-water.png",
+        "source_sha256": "23d6ec1c832e98715893b95c844c67c6a3d30295e3a0bc1bf82675a964543251",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "star-water.prompt.txt",
+            "prompt": "Use case: stylized-concept. Asset type: a SINGLE production static tile for Brightfield, a cozy isometric hex-town game. Generate a 1024 x 1536 RGBA PNG with genuinely transparent background.\nInput image 1 is the EXACT approved full-hex alloy plot: use its silhouette, location, scale, camera and pearl/teal/gold kerb. Do not shrink, crop, reshape, relocate or rotate it. Input image 2 is STYLE ONLY: match its warm, intricately detailed painterly miniature materials, substantial building size and crisp readable silhouette, but NOT its cottage, grass or stone kerb.\nPaint one richly detailed optimistic future miniature directly onto the approved alloy plot, with no second base under it. Main structure should occupy most of the plot width and rise substantially into the transparent upper part, leaving the entire top 64 pixels and x<40/x>984 empty for tall content. Clear 40-degree elevated isometric perspective, warm light from upper left, soft shadows contained on the plot. Ivory white and pearl ceramic, luminous but solid teal glass, brushed warm gold fittings, restrained fresh greenery in integrated planters. Rich hand-painted details, cozy tangible materials, not flat icons or a sterile CAD render.\nEXACT GROUND GEOMETRY: top face is pointy-top hex, centre (512,1130), vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Full top surface reaches all six edges. Two FRONT kerb faces extend vertically only 37.8 px, bottom front point (512,1522.5). Side vertical edges x32 and x992. Preserve this reference plot edge position exactly, with thin shared white-pearl kerb and teal line and gold trim. No deeper slab, pedestal, additional plate, external road border or ground underneath.\nSTATIC ROUND: no people, animals, vehicles, animated actors, floating objects, smoke, steam, bubbles, spray, particles, sparks, volumetric glow or cast shadow outside the plot. Static light fixtures and colored cores may be painted as solid material; separate glow effects come later. No text, letters, numerals, logos, frame, visible guide lines or checkerboard. The canvas outside the plot and architecture must have alpha zero.\nSUBJECT: Kelp Bioreactors. THREE large transparent turquoise cylindrical seaweed tanks, staggered in a handsome triangular cluster, one central rear tank taller and two side/front tanks slightly shorter. White pearl ceramic bases and domed cap structures, delicate warm gold reinforcing bands, precise connected pipework, mechanical filters and small quiet static service fittings. Through the clear glass and still turquoise water, show rich emerald GREEN KELP fronds with recognizably long flowing seaweed blades anchored at the tank bottoms. Tank interiors contain kelp and water only: NO BUBBLES, floating dots, foam, suspended particles, fish, creatures, bubbles in pipes or sprays. Seaweed must read clearly at small size. Integrated leafy planter accents beside the tanks, a couple of neat service access hatches on the open pearl top face, no text or screens with marks. The THREE tanks collectively form a substantial central building-sized composition, with visible depth and warm upper-left highlights. No ocean backdrop or external water."
+          }
+        ],
+        "process": "docs/star-static/rebuild.cjs"
+      },
+      {
+        "key": "home:star",
+        "file": "assets/tiles/star/home.png",
+        "sha256": "1e1ae4c311b84e1963de0b2e64507c88823311e6616d4bbd40fca1dd80c0f6e8",
+        "source": "star-home-v2.png",
+        "source_sha256": "886d8563ec817d414499d642d07e25a1f9585aba3e8fbdcc4c582b58ae372b61",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "star-home-v2.prompt.txt",
+            "prompt": "Use case: stylized-concept.\nAsset: one standalone production static building tile for Brightfield, a gentle child's hex town game, NOT an atlas. Generate exactly 1024 x 1536 pixels RGBA with genuinely transparent background.\nInput image 1 (alloy.png): STRICT GEOMETRY AND KERB REFERENCE. Preserve its exact full-size six-corner pointy-top footprint, position, thin front kerbs, pearl edge and fine teal light line. Paint architecture and a rich furnished plot on its top face.\nInput image 2 (home.png): STYLE ONLY reference: same warm, highly detailed painterly videogame miniature, hand-painted texture, crisp charming materials, rich soft colours, upper-left sunlight and softly shaded lower-right surfaces. Do not copy the cottage, roof, fence, flowers, or earth kerb.\nFuture family: optimistic sophisticated white/pearl ceramic architecture, luminous teal glass, brushed warm gold, fresh greenery. Match the established miniature's substantial scale and rich craftsmanship, not a flat icon, not a sterile CAD model.\nArcology Spire: a graceful tall white city tower bringing homes and gardens together, spiral planted garden balconies, teal glass windows and a small glass rooftop dome. A clear elegant tall central silhouette, richly detailed white structural ribs, warm gold trim and lush balcony foliage. Landscaped pearl-paved ground with modest planting beds and quiet seating.\nGeometry and composition: exact pointy-top hex top-face centre (512,1130); vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Vertical left/right sides; sharp point at top and bottom. Fill this entire top face, all the way to ALL six edges with pale pearl paving, integrated planting and tiny static furnishings. The exact supplied slab is the entire plot, never add a smaller inset slab, circular island, broad road border or a second plate. Only two thin front kerbs, 37.8px deep, with bottom point (512,1522.5), no deep rock plinth. Camera matches reference, about 40 degrees elevation. Main subject fills the plot and much of the upper canvas but all tall content stays within x40..984 and y64 or below, leaving transparent headroom. Use the full footprint rather than shrink it to make margins.\nRound 1 STATIC ART only: no people, animals, vehicles, moving robot arms, rotating/orbiting parts, floating fragments, smoke, steam, mist clouds, bubbles, particles or sparkles. Static coloured core and light fixtures may be painted, but no halo or glow outside the silhouette. No cast shadow outside the plot. No text, logos, labels, UI, frame, backdrop or checkerboard. Outside the complete tile silhouette alpha must be zero.\nCritical refinement: The structure is unmistakably MODERN TECHNOFUTURIST CITY ARCHITECTURE, smooth rounded rectangular teal glazing, broad curving pearl-white residential floor plates with garden terraces spiralling upward, numerous apartment windows. Contemporary clean white engineering, not gothic or medieval fantasy. NO pointed arches, no ornamental filigree, no gold spire finial. A small simple hemispherical glass rooftop conservatory. Preserve warm painterly style but not the reference cottage's old-world architecture. All transparency must be completely clean: no surrounding colour haze, no golden aura, no soft background gradients. Objects have solid opaque interiors with only a narrow antialiased silhouette edge. Ground flat on the exact reference slab; the slab edge reaches x32 and x992."
+          },
+          {
+            "file": "star-home.prompt.txt",
+            "prompt": "Use case: stylized-concept.\nAsset: one standalone production static building tile for Brightfield, a gentle child's hex town game, NOT an atlas. Generate exactly 1024 x 1536 pixels RGBA with genuinely transparent background.\nInput image 1 (alloy.png): STRICT GEOMETRY AND KERB REFERENCE. Preserve its exact full-size six-corner pointy-top footprint, position, thin front kerbs, pearl edge and fine teal light line. Paint architecture and a rich furnished plot on its top face.\nInput image 2 (home.png): STYLE ONLY reference: same warm, highly detailed painterly videogame miniature, hand-painted texture, crisp charming materials, rich soft colours, upper-left sunlight and softly shaded lower-right surfaces. Do not copy the cottage, roof, fence, flowers, or earth kerb.\nFuture family: optimistic sophisticated white/pearl ceramic architecture, luminous teal glass, brushed warm gold, fresh greenery. Match the established miniature's substantial scale and rich craftsmanship, not a flat icon, not a sterile CAD model.\nArcology Spire: a graceful tall white city tower bringing homes and gardens together, spiral planted garden balconies, teal glass windows and a small glass rooftop dome. A clear elegant tall central silhouette, richly detailed white structural ribs, warm gold trim and lush balcony foliage. Landscaped pearl-paved ground with modest planting beds and quiet seating.\nGeometry and composition: exact pointy-top hex top-face centre (512,1130); vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Vertical left/right sides; sharp point at top and bottom. Fill this entire top face, all the way to ALL six edges with pale pearl paving, integrated planting and tiny static furnishings. The exact supplied slab is the entire plot, never add a smaller inset slab, circular island, broad road border or a second plate. Only two thin front kerbs, 37.8px deep, with bottom point (512,1522.5), no deep rock plinth. Camera matches reference, about 40 degrees elevation. Main subject fills the plot and much of the upper canvas but all tall content stays within x40..984 and y64 or below, leaving transparent headroom. Use the full footprint rather than shrink it to make margins.\nRound 1 STATIC ART only: no people, animals, vehicles, moving robot arms, rotating/orbiting parts, floating fragments, smoke, steam, mist clouds, bubbles, particles or sparkles. Static coloured core and light fixtures may be painted, but no halo or glow outside the silhouette. No cast shadow outside the plot. No text, logos, labels, UI, frame, backdrop or checkerboard. Outside the complete tile silhouette alpha must be zero."
+          }
+        ],
+        "process": "docs/star-static/rebuild.cjs"
+      },
+      {
+        "key": "make:star",
+        "file": "assets/tiles/star/make.png",
+        "sha256": "ff02a3a8b3f8c89b809c9c62892c2b6383545dc0250ee8049f0bfd55f1859653",
+        "source": "star-make-v3.png",
+        "source_sha256": "93aeb6364053ef0cd9803d4684c588e5b3e5f15ee3267ecaa323918b554ae4c1",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "star-make-v2.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Fix only the ground footprint of the third reference image (Nanofab Spire). Keep the tall futuristic fabrication building, its material, lighting and all its structural details unchanged.\nImage 1 is the exact correct full hex footprint at the correct position and is authoritative for geometry. Image 2 is painterly style reference only. Image 3 is the edit target.\nOutput exactly 1024x1536 RGBA with transparent background.\nThe Nanofab tile's rear ground currently extends about 45 pixels too high. Correct the rear ground edge to match image 1 exactly, with the left rear corner (32,952.7), rear tip (512,775.3), right rear corner (992,952.7). Preserve the front footprint vertices (32,1307.4),(512,1484.7),(992,1307.4), thin front kerb depth37.8 and bottom point(512,1522.5). No ground may exist above these two rear diagonal edge lines: only tall architecture and foliage may rise above them. Do not shrink the overall tile, move the building, shift the slab, or change the perspective; keep front edge and the tall building as in image 3. Remove the extra 45-pixel strip of rear ground and paint its corrected thin gold perimeter along the exact rear edges.\nStatic round one art: no people, vehicles, robots, motion, floating or orbiting objects, particles or smoke. White/pearl, teal glass, warm gold, greenery. No added slab or plate, no road border, no deep plinth. NO surrounding colour haze or aura, no cast shadow outside the plot, no text or backdrop. Retain the clear single central fabrication tower."
+          },
+          {
+            "file": "star-make-v3.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Correct only the exposed rear ground edge of the Nanofab Spire in image 3. Image 1 is the exact alloy slab geometry. Image 2 is style-only. Image 3 is the transparent artwork edit target. Image 4 is a temporary diagnostic image with a thin RED LINE showing exactly where the correct back edge of the hex must be. Its grey background and red line are NOT artwork.\nThe current gold rear edge is about 20 pixels ABOVE the red diagonal guides. Remove only those two extra thin strips of bare ground above the red line, so the new fine gold ground perimeter coincides with the red guides. In the final output there must be no red line and no grey background. Preserve leaves, planters and tower architecture that rise in front of this line. Keep EVERYTHING ELSE in image3 unchanged, including front edge, tower position, all materials and exact canvas size.\nOutput1024x1536 transparent RGBA. The exact rear outline is (32,952.7)→(512,775.3)→(992,952.7); front corners remain (32,1307.4),(512,1484.7),(992,1307.4), thin front kerb bottom point(512,1522.5). Do not resize, shift or reposition the sprite. Architecture above the rear line stays intact; only the bare extra floor strips disappear. Modern optimistic white/pearl, teal glass and warm gold miniature with upper-left light. No text, people, animals, moving parts, particles, halo, smoke or external shadow. This is a surgical geometry correction, not a redesign."
+          },
+          {
+            "file": "star-make.prompt.txt",
+            "prompt": "Use case: stylized-concept.\nAsset: one standalone production static building tile for Brightfield, a gentle child's hex town game, NOT an atlas. Generate exactly 1024 x 1536 pixels RGBA with genuinely transparent background.\nInput image 1 (alloy.png): STRICT GEOMETRY AND KERB REFERENCE. Preserve its exact full-size six-corner pointy-top footprint, position, thin front kerbs, pearl edge and fine teal light line. Paint architecture and a rich furnished plot on its top face.\nInput image 2 (home.png): STYLE ONLY reference: same warm, highly detailed painterly videogame miniature, hand-painted texture, crisp charming materials, rich soft colours, upper-left sunlight and softly shaded lower-right surfaces. Do not copy the cottage, roof, fence, flowers, or earth kerb.\nFuture family: optimistic sophisticated white/pearl ceramic architecture, luminous teal glass, brushed warm gold, fresh greenery. Match the established miniature's substantial scale and rich craftsmanship, not a flat icon, not a sterile CAD model.\nNanofab Spire: an elegant slender fabrication tower with a cyan central glass chamber, pearl ceramic structural ribs and warm gold fittings. A clearly taller-than-wide main tower, small STATIC enclosed machinery and supply cabinets around its grounded base, clean fabrication entrance and small greenery beds. No robots or arms.\nGeometry and composition: exact pointy-top hex top-face centre (512,1130); vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Vertical left/right sides; sharp point at top and bottom. Fill this entire top face, all the way to ALL six edges with pale pearl paving, integrated planting and tiny static furnishings. The exact supplied slab is the entire plot, never add a smaller inset slab, circular island, broad road border or a second plate. Only two thin front kerbs, 37.8px deep, with bottom point (512,1522.5), no deep rock plinth. Camera matches reference, about 40 degrees elevation. Main subject fills the plot and much of the upper canvas but all tall content stays within x40..984 and y64 or below, leaving transparent headroom. Use the full footprint rather than shrink it to make margins.\nRound 1 STATIC ART only: no people, animals, vehicles, moving robot arms, rotating/orbiting parts, floating fragments, smoke, steam, mist clouds, bubbles, particles or sparkles. Static coloured core and light fixtures may be painted, but no halo or glow outside the silhouette. No cast shadow outside the plot. No text, logos, labels, UI, frame, backdrop or checkerboard. Outside the complete tile silhouette alpha must be zero.\nDistinctly modern techno-futurist design, smooth ceramic engineering and contemporary glazing, not gothic or fantasy architecture. Avoid pointed arches and decorative medieval filigree. Clean cutout transparency: no aura, surrounding colour haze or background gradient; objects solidly painted with only a narrow antialiased silhouette edge."
+          }
+        ],
+        "process": "docs/star-static/rebuild.cjs"
+      },
+      {
+        "key": "waste:star",
+        "file": "assets/tiles/star/waste.png",
+        "sha256": "dd9a69b5e3fe709211a316788cf83540a973b1bd3517f148106b37754d7215f0",
+        "source": "star-waste.png",
+        "source_sha256": "4fac1afe4419bff97837d1a5797a36e3ef96859f895f3403c6c35dec94d6b4e9",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "star-waste.prompt.txt",
+            "prompt": "Use case: stylized-concept.\nAsset: one standalone production static building tile for Brightfield, a gentle child's hex town game, NOT an atlas. Generate exactly 1024 x 1536 pixels RGBA with genuinely transparent background.\nInput image 1 (alloy.png): STRICT GEOMETRY AND KERB REFERENCE. Preserve its exact full-size six-corner pointy-top footprint, position, thin front kerbs, pearl edge and fine teal light line. Paint architecture and a rich furnished plot on its top face.\nInput image 2 (home.png): STYLE ONLY reference: same warm, highly detailed painterly videogame miniature, hand-painted texture, crisp charming materials, rich soft colours, upper-left sunlight and softly shaded lower-right surfaces. Do not copy the cottage, roof, fence, flowers, or earth kerb.\nFuture family: optimistic sophisticated white/pearl ceramic architecture, luminous teal glass, brushed warm gold, fresh greenery. Match the established miniature's substantial scale and rich craftsmanship, not a flat icon, not a sterile CAD model.\nMatter Reclaimer: a friendly circular recycling machine with a turquoise glass chamber inside a substantial stationary white and warm-gold ring housing. Make the machine large and inviting, with carefully painted mechanical fittings and fixed pipes, clean sorted-material bins and foliage around it. All parts firmly attached and motionless. No orbiting rings or floating objects.\nGeometry and composition: exact pointy-top hex top-face centre (512,1130); vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Vertical left/right sides; sharp point at top and bottom. Fill this entire top face, all the way to ALL six edges with pale pearl paving, integrated planting and tiny static furnishings. The exact supplied slab is the entire plot, never add a smaller inset slab, circular island, broad road border or a second plate. Only two thin front kerbs, 37.8px deep, with bottom point (512,1522.5), no deep rock plinth. Camera matches reference, about 40 degrees elevation. Main subject fills the plot and much of the upper canvas but all tall content stays within x40..984 and y64 or below, leaving transparent headroom. Use the full footprint rather than shrink it to make margins.\nRound 1 STATIC ART only: no people, animals, vehicles, moving robot arms, rotating/orbiting parts, floating fragments, smoke, steam, mist clouds, bubbles, particles or sparkles. Static coloured core and light fixtures may be painted, but no halo or glow outside the silhouette. No cast shadow outside the plot. No text, logos, labels, UI, frame, backdrop or checkerboard. Outside the complete tile silhouette alpha must be zero.\nDistinctly modern techno-futurist design, smooth ceramic engineering and contemporary glazing, not gothic or fantasy architecture. Avoid pointed arches and decorative medieval filigree. Clean cutout transparency: no aura, surrounding colour haze or background gradient; objects solidly painted with only a narrow antialiased silhouette edge.\nDo not move the supplied plot upward: its left and right REAR corners must remain at y953, its rear tip y775, FRONT side corners y1307 and lower kerb tip y1522. These exact positions are crucial. The rear exposed paving is limited to the two diagonals (32,953)→(512,775)→(992,953), not a taller rear ground plane. Build architecture UP from this fixed plot; the whole picture must not be rescaled to vertically centre the object."
+          }
+        ],
+        "process": "docs/star-static/rebuild.cjs"
+      },
+      {
+        "key": "wild:star",
+        "file": "assets/tiles/star/wild.png",
+        "sha256": "109575f8a47eebb9303164f884016911d49f302a58c4476106546e3fa139ea53",
+        "source": "star-wild.png",
+        "source_sha256": "f3e0184a24a946728658677744839c77a26b6c47c273c9c03f2ac09c69a0a1c9",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "star-wild.prompt.txt",
+            "prompt": "Use case: stylized-concept.\nAsset: one standalone production static building tile for Brightfield, a gentle child's hex town game, NOT an atlas. Generate exactly 1024 x 1536 pixels RGBA with genuinely transparent background.\nInput image 1 (alloy.png): STRICT GEOMETRY AND KERB REFERENCE. Preserve its exact full-size six-corner pointy-top footprint, position, thin front kerbs, pearl edge and fine teal light line. Paint architecture and a rich furnished plot on its top face.\nInput image 2 (home.png): STYLE ONLY reference: same warm, highly detailed painterly videogame miniature, hand-painted texture, crisp charming materials, rich soft colours, upper-left sunlight and softly shaded lower-right surfaces. Do not copy the cottage, roof, fence, flowers, or earth kerb.\nFuture family: optimistic sophisticated white/pearl ceramic architecture, luminous teal glass, brushed warm gold, fresh greenery. Match the established miniature's substantial scale and rich craftsmanship, not a flat icon, not a sterile CAD model.\nBiosphere Dome: a large beautifully detailed geodesic teal-tinted glass dome sheltering lush varied trees, an enclosed tiny still waterfall/stream and flowering plants. Clear readable fine pearl-white and warm-gold geodesic ribs, glass transparent enough to see the vibrant miniature garden inside. Dome substantial in size, pearl threshold and small flowering beds on the surrounding full hex plot. No animals, birds, insects, water splashes or particles.\nGeometry and composition: exact pointy-top hex top-face centre (512,1130); vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Vertical left/right sides; sharp point at top and bottom. Fill this entire top face, all the way to ALL six edges with pale pearl paving, integrated planting and tiny static furnishings. The exact supplied slab is the entire plot, never add a smaller inset slab, circular island, broad road border or a second plate. Only two thin front kerbs, 37.8px deep, with bottom point (512,1522.5), no deep rock plinth. Camera matches reference, about 40 degrees elevation. Main subject fills the plot and much of the upper canvas but all tall content stays within x40..984 and y64 or below, leaving transparent headroom. Use the full footprint rather than shrink it to make margins.\nRound 1 STATIC ART only: no people, animals, vehicles, moving robot arms, rotating/orbiting parts, floating fragments, smoke, steam, mist clouds, bubbles, particles or sparkles. Static coloured core and light fixtures may be painted, but no halo or glow outside the silhouette. No cast shadow outside the plot. No text, logos, labels, UI, frame, backdrop or checkerboard. Outside the complete tile silhouette alpha must be zero.\nDistinctly modern techno-futurist design, smooth ceramic engineering and contemporary glazing, not gothic or fantasy architecture. Avoid pointed arches and decorative medieval filigree. Clean cutout transparency: no aura, surrounding colour haze or background gradient; objects solidly painted with only a narrow antialiased silhouette edge.\nDo not move the supplied plot upward: its left and right REAR corners must remain at y953, its rear tip y775, FRONT side corners y1307 and lower kerb tip y1522. These exact positions are crucial. The rear exposed paving is limited to the two diagonals (32,953)→(512,775)→(992,953), not a taller rear ground plane. Build architecture UP from this fixed plot; the whole picture must not be rescaled to vertically centre the object."
+          }
+        ],
+        "process": "docs/star-static/rebuild.cjs"
+      }
+    ]
+  },
+  "tile_spec_v2_leaf": {
+    "date": "2026-11-12",
+    "issue": "https://github.com/jamesrp/brightfield/issues/2#issuecomment-6815889758",
+    "base_commit": "d201c7789b18c863377bd0addff628c0db723837",
+    "base_branch": "main",
+    "method": "built-in image_gen per-tile generation and targeted edits; art:fit; painted garden underlay for small incomplete ground edges; exact shared kerb pixels",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "scope": "8 static Leaf tiles; no actors, glows, Paragons or gameplay changes",
+    "source_archive_manifest": "docs/leaf-static/source-archive.json",
+    "shared_kerb": {
+      "file": "assets/tiles/_slab/garden.png",
+      "sha256": "aa8fab6f2a4fe1d3241928348559460344c7689013239f11ab120e481f853361"
+    },
+    "outputs": [
+      {
+        "key": "power:leaf",
+        "file": "assets/tiles/leaf/power.png",
+        "sha256": "e8e6709a7cbcf60eddcd04700a7003834ebde6e3d61968f859a5b9d87f00e824",
+        "source": "leaf-power.png",
+        "source_sha256": "8d705f04951da3abad02baaff1b4dbeeefd7783a0c33840addc1a02155b33b23",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "leaf-power.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production static Brightfield LEAF nature-future game tile, ONE exquisitely detailed warm painterly isometric miniature. Image 1 is the exact-geometry GARDEN plot reference: build directly upon its full grass face. Image 2 is STYLE ONLY: match its highly detailed cozy toy-miniature materials, crisp readable focal structure, rich soft colors and warm upper-left daylight, but use living wood, lush green gardens, moss, clean water and soft gold for Leaf. Do not copy the cottage.\nCanvas exactly 1024x1536 RGBA, genuine transparent background. Camera about 40 degrees elevation. Preserve the full pointy-top six-sided hex plot of image 1 exactly: top face centre (512,1130), corners (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). True vertical left and right edges. Two FRONT kerb faces descend only 37.8px to bottom point (512,1522.5); low mossy log edging, not a deep soil block. Ground must cover the complete top face edge to edge, not a smaller island or second plate. Large central content at the same generous scale as the cottage reference, with smaller garden props filling the surrounding ground. Keep every leaf and structure inside x40..984 and below y64, let trees grow taller rather than wider. Only the ground reaches the reference perimeter. Nothing below the sloped lower slab outline. Absolutely no roads around the plot, extra base, flat front, octagon, external cast shadow, backdrop, checkerboard, text, labels, logos, people, animals, insects, vehicles, moving parts, smoke, steam, particles, floating glow or haze. One tile, not atlas.\nSubject: SUN MIRROR TOWER, an optimistic solarpunk sunlight collector. A substantial but slender sunlight receiver tower rises from the middle-rear, warm timber and pale stone supports entwined with climbing greenery, a finely crafted gold-brass receiver cap. A clear strong tower silhouette. Arrange THREE small golden fixed mirror-support pedestals with EMPTY open U-shaped cradles around its garden, ready for future mirror actors. These three cradles are visibly EMPTY: absolutely NO reflective panels, discs, mirror faces, dishes, collector plates or moving mirrors baked into this static image. Stepping-stone maintenance paths, ferns, dense flowers, modest planting beds and small fixed copper conduits tie the scene together. Soft golden highlights, no light rays or glow outside objects. Keep the foreground path and empty cradles readable."
+          }
+        ],
+        "process": "docs/leaf-static/rebuild.cjs"
+      },
+      {
+        "key": "move:leaf",
+        "file": "assets/tiles/leaf/move.png",
+        "sha256": "b1a2e5f03ef329ccd7e8933f1c5319b2d98c02d91a340b06c36b6c794fb0724a",
+        "source": "leaf-move-fixed.png",
+        "source_sha256": "34f59f8f3061a108c00af514b798a70d0f927ab392010e5fe6f9948f665fa406",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "leaf-move-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image 1 is the edit target, Brightfield LEAF Garden Tram static tile. Image 2 is exact plot geometry reference. Make ONE narrow correction only: complete the missing opaque garden ground BEHIND THE OPEN RIGHT-CENTER ARCH of the pavilion. In the target, the arch opening around x590..720,y800..950 has a transparent hole where the rear garden plot should show through. Wherever this opening lies inside the reference hex top face, replace its transparent/hazy area with fully opaque painted lush grass, ferns and garden plants that naturally continue the surrounding ground, seen beyond the arch. At x650 the rear plot edge is near y826, so ground below that edge must be fully painted. Preserve every part of the pavilion, roof, columns, bench, flowers, EMPTY tram track, scale, positions, warm painterly style and lighting. Preserve 1024x1536 RGBA canvas, full pointy-top hex footprint and low moss-log kerb. Do not add any vehicle, person, animal, text, backdrop, extra slab or external glow. Keep actual alpha=0 outside the outer tile/architecture silhouette, not a colored background. The entire hex ground face must be opaque, including ground seen through architectural openings. Rear plot corners (512,775.3),(992,952.7),(32,952.7); vertical sides to y1307.4; front point512,1484.7; thin kerb bottom512,1522.5."
+          },
+          {
+            "file": "leaf-move.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production static Brightfield LEAF nature-future game tile, ONE exquisitely detailed warm painterly isometric miniature. Image 1 is the exact-geometry GARDEN plot reference: build directly upon its full grass face. Image 2 is STYLE ONLY: match its highly detailed cozy toy-miniature materials, crisp readable focal structure, rich soft colors and warm upper-left daylight, but use living wood, lush green gardens, moss, clean water and soft gold for Leaf. Do not copy the cottage.\nCanvas exactly 1024x1536 RGBA, genuine transparent background. Camera about 40 degrees elevation. Preserve the full pointy-top six-sided hex plot of image 1 exactly: top face centre (512,1130), corners (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). True vertical left and right edges. Two FRONT kerb faces descend only 37.8px to bottom point (512,1522.5); low mossy log edging, not a deep soil block. Ground must cover the complete top face edge to edge, not a smaller island or second plate. Large central content at the same generous scale as the cottage reference, with smaller garden props filling the surrounding ground. Keep every leaf and structure inside x40..984 and below y64, let trees grow taller rather than wider. Only the ground reaches the reference perimeter. Nothing below the sloped lower slab outline. Absolutely no roads around the plot, extra base, flat front, octagon, external cast shadow, backdrop, checkerboard, text, labels, logos, people, animals, insects, vehicles, moving parts, smoke, steam, particles, floating glow or haze. One tile, not atlas.\nSubject: GARDEN TRAM, a cozy substantial timber tram pavilion in the rear middle with a lush planted green roof, carved wood beams, warm honey-colored wood, small empty waiting bench and welcoming open platform. Vines and flowering plants climb the supports. An EMPTY short double-rail tram track curves gently across the foreground and into the pavilion bay, with clear open space for a future tram actor. The track belongs inside this one garden plot, and may meet a plot edge without forming a road around it. Rich flower beds and ferns fill the grass around the pavilion. No tram, streetcar, carriage, bikes or any vehicle whatsoever. No people, hanging swinging lanterns, smoke or particles. Make the pavilion large, dimensional, richly detailed and readable like the cottage style reference."
+          }
+        ],
+        "process": "docs/leaf-static/rebuild.cjs"
+      },
+      {
+        "key": "food:leaf",
+        "file": "assets/tiles/leaf/food.png",
+        "sha256": "1f0e35d34cfa4f32be5846d2c4ff9cf731ad76d3f6314dc709d256506ec3bff9",
+        "source": "leaf-food-fixed.png",
+        "source_sha256": "65e3802d9aaca1ce04a56586e14332961e4dbc299beaa4fe13fcf1672a6df4ff",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "leaf-food-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image 1 is the target Brightfield Food Forest static tile; image 2 is the exact geometry garden slab reference. Make ONLY ONE extremely narrow visual correction. At the FAR LEFT of the food forest, around x32 to100 and y660 to775, a few chestnut tree leaf tips are cut by the x32 crop boundary. Retract and gently curl these particular protruding leaf clusters INWARD so their complete pointed leaf tips are visible, with minimum x50 and preferably x60. Restore true alpha=0 between these completed tips and x32. Do not clip or flatten the leaf tips. Preserve the tree trunks, all other branches/canopies, fruit, nuts, shrubs, baskets, paths, every part of the grass plot, kerb, image scale, lighting, palette and all positions. Do not shift or shrink the entire tile or any whole tree. Only locally redraw the protruding left tips at y660..775, keeping their natural painted texture. Preserve exact1024x1536 RGBA canvas, ground x32..992, pointy hex centre512,1130, rear512,775.3, upper side corners32/992,952.7, lower corners32/992,1307.4, front512,1484.7, thin37.8px moss-log kerb bottom512,1522.5. Full opaque ground, genuine alpha=0 outside artwork. No added content, backdrop, glow, animals, insects, particles or text. Same warm detailed miniature style. Output one image, not comparison."
+          },
+          {
+            "file": "leaf-food.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production static Brightfield LEAF nature-future game tile, ONE exquisitely detailed warm painterly isometric miniature. Image 1 is the exact-geometry GARDEN plot reference: build directly upon its full grass face. Image 2 is STYLE ONLY: match its highly detailed cozy toy-miniature materials, crisp readable focal structure, rich soft colors and warm upper-left daylight, but use living wood, lush green gardens, moss, clean water and soft gold for Leaf. Do not copy the cottage.\nCanvas exactly 1024x1536 RGBA, genuine transparent background. Camera about 40 degrees elevation. Preserve the full pointy-top six-sided hex plot of image 1 exactly: top face centre (512,1130), corners (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). True vertical left and right edges. Two FRONT kerb faces descend only 37.8px to bottom point (512,1522.5); low mossy log edging, not a deep soil block. Ground must cover the complete top face edge to edge, not a smaller island or second plate. Large central content at the same generous scale as the cottage reference, with smaller garden props filling the surrounding ground. Keep every leaf and structure inside x40..984 and below y64, let trees grow taller rather than wider. Only the ground reaches the reference perimeter. Nothing below the sloped lower slab outline. Absolutely no roads around the plot, extra base, flat front, octagon, external cast shadow, backdrop, checkerboard, text, labels, logos, people, animals, insects, vehicles, moving parts, smoke, steam, particles, floating glow or haze. One tile, not atlas.\nSubject: FOOD FOREST, an abundant layered solarpunk edible garden. Several tall elegantly compact fruit and nut trees form a strong central leafy canopy, detailed red apples, golden pears and clusters of nuts among richly varied foliage. Lower berry bushes, currants, strawberries, rosemary, leafy herbs and edible planting beds fill the ground in beautiful layers, with narrow curving garden paths and a few static woven harvest baskets. Keep trees taller rather than broad; every leaf stays comfortably inside the side columns. Let the tallest central trees rise above the plot while preserving generous transparent headroom. Entire plot lush and productive, naturally varied and clearly readable at small size, no building needed. No bees, birds, insects, animals, people, butterflies, floating petals or particles."
+          }
+        ],
+        "process": "docs/leaf-static/rebuild.cjs"
+      },
+      {
+        "key": "water:leaf",
+        "file": "assets/tiles/leaf/water.png",
+        "sha256": "b562804f2177c4009ae9041a3725b67f3f6362e9da1ca0f1db43a66c2dd19f47",
+        "source": "leaf-water-fixed2.png",
+        "source_sha256": "5c8547d236b9b2896f55c49bb250b6273e5063a47d4675aaf586f5158b8face0",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "leaf-water-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image 1 is the target Brightfield Living Wetland static tile; image 2 is the mandatory exact garden plot geometry. Make ONLY ONE narrow correction to the EXPOSED REAR GRASS OUTLINE in image1. The ground currently reaches a little too high: exposed rear grassy peak is near y750 rather than775.3, and rear grass side corners are near y935 rather than952.7. Correct these exposed bare-grass silhouettes to follow exactly image2: rear tip(512,775.3); rear left edge to(32,952.7); rear right edge to(992,952.7). In exposed grass regions above those two diagonal edges, erase only the surplus ground to actual alpha=0. Keep lush grass meeting the correct edges with its same fine texture; no second rim or plate. DO NOT erase or move any willow branch, leaf, reed, iris, fern, rock, flower or other tall plant whose silhouette naturally rises above the ground. Preserve all vegetation in place, the pond, water lilies, walkway, reeds, paths, foreground, side vertical outlines, front edges and existing low mossy log kerb pixel-for-pixel wherever possible. Do not rescale, move, crop or redraw the whole scene. Preserve exact1024x1536 RGBA canvas and full pointy-top hex centre512,1130, vertical sidesx32/992 fromy952.7 to1307.4, front tip512,1484.7,37.8px kerb ending512,1522.5. Full opaque ground inside corrected face. Actual transparency outside art, no background, no external glow, no added animals, people, particles or text. One corrected tile only."
+          },
+          {
+            "file": "leaf-water-fixed2.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Correct ONLY the REAR BARE-GRASS SILHOUETTE of image1, a 1024x1536 transparent Brightfield wetland miniature; image2 is the exact garden ground reference. Previous correction was too small. The exposed green ground at rear-left and rear-right still extends 14 PIXELS TOO HIGH. Physically REMOVE a 14px-high strip of the thin exposed plain-grass slope along BOTH rear diagonal outline edges, converting it to exact alpha=0, so the solid ground edge is lower. Especially correct these precise sample points: x40 solid grass must begin y950 (not936); x80 begin y935 (not921); x96 begin y929 (not915); x928 begin y929 (not915); x960 begin y941 (not928); x984 begin y950 (not937). Correct the narrow bare-grass hump near x528 from currenty761 down to at least781, if not hidden by an actual plant. The only permitted unplanted rear ground outline is line from(32,952.7) to(512,775.3) to(992,952.7). Remove surplus grass ABOVE these diagonal lines. Preserve tall plants crossing the lines: willow, saplings, leaves, irises, reeds, rocks, flowers and all their detailed silhouettes remain EXACTLY where they are. Do not reinterpret the surplus bare grass strip as more raised hedge. No new bushes to hide the issue. Do not change any foreground grass, pond, lilies, timber walkway or front mossy kerb. Do not move, scale, sharpen or redesign the scene. Preserve original full1024x1536 RGBA canvas and x32..992 width, front tip512,1484.7,37.8px low kerb bottom512,1522.5. Genuine transparent background, no glow, text or animals. A tiny local silhouette trim only, maintaining natural clean grass texture at the newly correct edge. ONE tile."
+          },
+          {
+            "file": "leaf-water.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production static Brightfield LEAF nature-future game tile, ONE exquisitely detailed warm painterly isometric miniature. Image 1 is the exact-geometry GARDEN plot reference: build directly upon its full grass face. Image 2 is STYLE ONLY: match its highly detailed cozy toy-miniature materials, crisp readable focal structure, rich soft colors and warm upper-left daylight, but use living wood, lush green gardens, moss, clean water and soft gold for Leaf. Do not copy the cottage.\nCanvas exactly 1024x1536 RGBA, genuine transparent background. Camera about 40 degrees elevation. Preserve the full pointy-top six-sided hex plot of image 1 exactly: top face centre (512,1130), corners (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). True vertical left and right edges. Two FRONT kerb faces descend only 37.8px to bottom point (512,1522.5); low mossy log edging, not a deep soil block. Ground must cover the complete top face edge to edge, not a smaller island or second plate. Large central content at the same generous scale as the cottage reference, with smaller garden props filling the surrounding ground. Keep every leaf and structure inside x40..984 and below y64, let trees grow taller rather than wider. Only the ground reaches the reference perimeter. Nothing below the sloped lower slab outline. Absolutely no roads around the plot, extra base, flat front, octagon, external cast shadow, backdrop, checkerboard, text, labels, logos, people, animals, insects, vehicles, moving parts, smoke, steam, particles, floating glow or haze. One tile, not atlas.\nSubject: LIVING WETLAND, a beautiful clean deep-blue pond as the large central focal feature, naturally edged by tall reeds, water irises, sedges and lush marsh plants. Several static water lilies with round leaves and pink-white flowers rest on the clear water, subtly visible stones under its shallow edges. A tiny rustic wooden walkway on short timber supports reaches from the garden bank over one side of the pond, entirely inside the plot. Mossy stones, ferns and small colorful waterside flowers fill the remaining terrain to all six edges. A rich miniature habitat with blue water clearly readable at small scale. NO heron, ducks, birds, frogs, fish, insects or any animals, no people, no fountain, no flowing waterfall or splashes, no floating particles. Warm upper-left light and soft still-water reflections."
+          }
+        ],
+        "process": "docs/leaf-static/rebuild.cjs"
+      },
+      {
+        "key": "home:leaf",
+        "file": "assets/tiles/leaf/home.png",
+        "sha256": "0bc5d21212a4e7b6ae970deba81681ba412d3798377b348acdc0efed0d08fd2a",
+        "source": "leaf-home.png",
+        "source_sha256": "1df9acc1aebb45b9c6378181d72937a865e9ba46ba99c296319d46ded7b217c7",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "leaf-home-fixed.prompt.txt",
+            "prompt": "Use case: background-extraction. Edit target is this ONE Brightfield Canopy Village tile. Change ONLY the background/transparency: remove all remaining olive yellow-grey backdrop haze, especially all enclosed gaps between the upper branches, rope bridges and treehouses. Every empty gap between leaves, branches and buildings above the garden ground must be genuine transparent alpha0, not olive grey or yellow paint. Clean away stray detached specks above the tree crown. All actual painted tree leaves, trunk, architecture, bridges, stairs, plants and full pointy-top ground plot are solid clean detailed cutout art and must remain exactly at the same positions and same size. Preserve the complete plot geometry and its thin mossy log kerb, exact 1024x1536 RGBA canvas. Do not add, move or redraw anything. No glow, no shadow cloud, no new background. Keep the delicate leaf silhouette naturally antialiased, without a bright halo. Preserve the original beautiful warm painterly detail and every building. Transparent background."
+          },
+          {
+            "file": "leaf-home.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield LEAF static game tile, ONE miniature only, not an atlas. Output a 1024x1536 RGBA PNG with true transparent background. Image 1 is mandatory EXACT plot geometry, shape, size and position reference; preserve it. Image 2 is STYLE ONLY: match its warm richly detailed painterly toy-miniature materials, soft rich colors, crisp beautiful small-scale readability and upper-left daylight. For Leaf use living timber, moss green, lush gardens and soft golden accents. Common camera about 40 degrees elevation.\nGEOMETRY IS MANDATORY: build directly on the complete full-size pointy-top six-sided plot in image 1, never a smaller inset island or second plate. Top face centre (512,1130); vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Ground covers that ENTIRE polygon opaquely to every edge, including rear triangle behind structures. Left and right edges vertical; pointed rear and pointed front. Thin moss-covered log kerb only on two front sides, depth 37.8 px, bottom point (512,1522.5). Do NOT move or resize this plot. All subject content including foliage stays inside x40..984 and below y64, above plot bottom outline; trees grow taller rather than wider. At plot edges grass may reach x32..992 but nothing spills out. Keep full plot on canvas.\nNo text, numbers, logos, frame, labels, UI, background, checkerboard, shadow outside plot, roads around plot edges, extra slab, people, animals, insects, butterflies, vehicles, smoke, steam, sparks, particles or moving elements. Static art only. Exactly one scene on one full hex plot.\nSUBJECT: Canopy Village. A substantial tall leafy tree with three warm inviting timber treehouses nestled around its trunk at different heights, linked by sturdy rope bridges, charming wooden balconies and winding stairs. Distinct readable central dwelling cluster with shingled living-green roofs, wood grain, small window flower boxes, sculpted bark and warm doors. A rich green tall canopy arches above; keep crown narrow enough to fit with safe side margins, never cut off leaves. Rope bridge lanterns are empty static lantern housings with NO flame or glow. Full plot densely gardened with moss, ferns, tiny flowers and a small curving path reaching front edge. No other buildings, no hanging animated objects. Cheerful solarpunk home among living trees."
+          }
+        ],
+        "process": "docs/leaf-static/rebuild.cjs"
+      },
+      {
+        "key": "make:leaf",
+        "file": "assets/tiles/leaf/make.png",
+        "sha256": "fab8479431f6573bc902fddd451711249dd4e49ad87352448027c535fcb153ea",
+        "source": "leaf-make-clean-sky.png",
+        "source_sha256": "204a8b397d310122a3213c6ed264b04224ab6cd16a2f981b10823c6005c16fbb",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "leaf-make-clean-sky.prompt.txt",
+            "prompt": "Use case: background-extraction. Edit ONLY the faint unwanted pale cloud/haze in the empty sky above and left of the workshop chimney in this Brightfield Repair Guild tile. The real highest architecture is the chimney top at about y583. Every pixel above y580 must be truly transparent alpha0. Remove the pale semi-transparent cloud currently around x172..665, y373..428 and all empty-sky haze around it. There is NO smoke, fog, steam, glow, backdrop or cloud in this asset. Preserve EVERY actual workshop, chimney, roof flower, wall, tool, empty wheel-free bicycle frame, plant, path, exact rear ground footprint and thin mossy-log kerb pixel at its current size and position. Do not repaint or relocate the scene. Preserve the entire existing silhouette below the chimney top, with natural fine antialiasing around real objects. Keep the exact 1024x1536 RGBA canvas, true transparent empty sky outside all real art. No new objects or colors, no new background. This is only an empty-sky alpha cleanup, not a redraw."
+          },
+          {
+            "file": "leaf-make-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image 1 is the Repair Guild tile to correct; image 2 is the mandatory exact ground footprint reference. Change ONLY the ground plane in image 1. Its rear grassy triangle currently wrongly rises behind the roof, like an enormous green wall. REMOVE that erroneous high rear triangle and any vertical green wall behind the workshop, exposing transparent sky directly behind the actual workshop roof and chimney. Preserve the building, roof plants, flowers, tools, bench, wheel-free bicycle frame and foreground garden at their same sizes, positions and painterly quality.\nGround must instead occupy EXACTLY image 2's low full six-sided pointy-top plot: rear tip (512,775.3), upper side corners (32,952.7),(992,952.7), lower side corners (32,1307.4),(992,1307.4), front tip (512,1484.7). Thin moss-log front kerb bottom (512,1522.5). Left/right sides vertical only from y952.7 to1307.4. The rear tip must be at y775.3, never at y580. Any grass or ground above the two rear sloping lines is removed to transparent alpha0, apart from actual roof's living plants. No hill or hedge wall behind the house. Match camera about40deg. Ground fills the full correct plot below structure, without shrinking or adding a second plate. Keep canvas 1024x1536 transparent RGBA. Do not change subject or add anything. No text or backdrop."
+          },
+          {
+            "file": "leaf-make-fixed2.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image 1 is the Repair Guild tile, image 2 is the EXACT required plot footprint. Preserve every building, roof, tool, plant, bike frame and foreground pixel of image 1. Its new transparent sky behind the roof is correct. Fix ONLY the missing rear SIDE CORNERS of the grassy ground: extend the existing ground up and outward to the left corner at (32,952.7) and right corner at (992,952.7). Left vertical ground boundary must run x32 from y952.7 all the way down to y1307.4; right boundary x992 same y952.7..1307.4. Fill the missing small triangular wedges of grass/low flowers under the roof eaves on both outer sides, between those exact side corners and the existing ground. The full rear grass edge rises diagonally to (512,775.3), mostly hidden behind the building. Do NOT extend ground above those rear diagonal lines. NO tall triangular grass wall behind the roof. Preserve the roof's independent living plants and chimney silhouette with transparent sky behind. Full exact same 1024x1536 RGBA transparent canvas and one pointy-top hex plot with front tip512,1484.7 and bottom mossy kerb512,1522.5. Add ONLY the missing corner garden grass necessary to fill image2's full footprint. No rescaling, no moving, no second plate, no background."
+          },
+          {
+            "file": "leaf-make.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield LEAF static game tile, ONE miniature only, not an atlas. Output a 1024x1536 RGBA PNG with true transparent background. Image 1 is mandatory EXACT plot geometry, shape, size and position reference; preserve it. Image 2 is STYLE ONLY: match its warm richly detailed painterly toy-miniature materials, soft rich colors, crisp beautiful small-scale readability and upper-left daylight. For Leaf use living timber, moss green, lush gardens and soft golden accents. Common camera about 40 degrees elevation.\nGEOMETRY IS MANDATORY: build directly on the complete full-size pointy-top six-sided plot in image 1, never a smaller inset island or second plate. Top face centre (512,1130); vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Ground covers that ENTIRE polygon opaquely to every edge, including rear triangle behind structures. Left and right edges vertical; pointed rear and pointed front. Thin moss-covered log kerb only on two front sides, depth 37.8 px, bottom point (512,1522.5). Do NOT move or resize this plot. All subject content including foliage stays inside x40..984 and below y64, above plot bottom outline; trees grow taller rather than wider. At plot edges grass may reach x32..992 but nothing spills out. Keep full plot on canvas.\nNo text, numbers, logos, frame, labels, UI, background, checkerboard, shadow outside plot, roads around plot edges, extra slab, people, animals, insects, butterflies, vehicles, smoke, steam, sparks, particles or moving elements. Static art only. Exactly one scene on one full hex plot.\nSUBJECT: Repair Guild. One substantial inviting timber-and-stone repair workshop with a flowered living green roof, sunny moss green trim, broad open work bay, lovely carved warm wood beams, stone foundation, finely painted tools on wall and workbench, organized salvaged metal parts and timber crates. Beside the workshop leave a clear empty bicycle repair stand holding a static bicycle frame WITHOUT ANY WHEELS: wheels will be separate actors later. Do not paint circular bicycle wheels anywhere. Rich flowers and ferns surround a small internal stepping-stone garden path; grass and gardens cover full plot to every edge. No smoke or fire, no people. Strong cozy workshop silhouette at same scale as reference cottage."
+          }
+        ],
+        "process": "docs/leaf-static/rebuild.cjs"
+      },
+      {
+        "key": "waste:leaf",
+        "file": "assets/tiles/leaf/waste.png",
+        "sha256": "9ce013c65ff76f16e06fd10b6755de82b1a820ff2371c0138476c4d021c8e43c",
+        "source": "leaf-waste-fixed2.png",
+        "source_sha256": "cc9f4dd20cfc6e2b2b969678eb694257940a9824ecd8a373bd0440818c6310b4",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "leaf-waste-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image 1 is the Mycelium Grid tile to correct; image 2 is the mandatory EXACT ground geometry reference. Change ONLY the ground footprint in image1. Currently its rear garden stretches far too high, with a grassy pointed rear at y580. Remove that high rear green triangle and fit all the garden contents onto the lower correct plot from image2. Correct rear ground tip is (512,775.3), upper left/right ground corners (32,952.7),(992,952.7), lower left/right corners (32,1307.4),(992,1307.4), front point (512,1484.7). Thin mossy-log kerb ends at (512,1522.5). Keep left/right ground sides vertical from y952.7 to1307.4. Low ground itself must not appear above the rear diagonals of this exact polygon. Full opaque ground reaches ALL six edges, including both corners at y952.7. No smaller inset island, no second plate. The mushrooms, compost bays, baskets, logs, flowers and grasses may naturally rise ABOVE their correct footprint, with transparent sky behind their separate silhouettes, never a flat green wall behind them. Preserve the beautiful mushroom focal cluster, composting-garden identity, warm painterly materials and intricate details. Same scale and camera about40degrees. Static non-glowing mushrooms, no particles, animals, people, text or backdrop. 1024x1536 RGBA transparent canvas."
+          },
+          {
+            "file": "leaf-waste-fixed2.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Correct only the rear silhouette of the Mycelium Grid garden. The flat triangular grassy backdrop behind the mushrooms is wrong. Remove this high flat green triangle so the separate mushroom caps, compost bays, ferns, baskets and grasses have natural individual outlines against transparent sky. Keep the central mushrooms and every compost garden prop, same position and same size, preserve all foreground details. Ground behind the mushrooms must stop at the low plot rear point (512,775.3) and sloping edges to (32,952.7),(992,952.7). Grass/low flowers must still fill the complete correct ground footprint below those diagonal lines. Side edges x32/x992 from y952.7 to1307.4; front point512,1484.7; bottom thin mossy-log kerb512,1522.5. Do not shrink the plot or create another slab. Main mushrooms may rise above that ground with genuinely transparent sky behind them. No flat green wall or triangular terrain rising behind caps. Do not invent new garden furniture. Exact 1024x1536 RGBA, genuine transparent background, same warm painterly detail and lighting. No text, animals, people, glow or particles."
+          },
+          {
+            "file": "leaf-waste.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield LEAF static game tile, ONE miniature only, not an atlas. Output a 1024x1536 RGBA PNG with true transparent background. Image 1 is mandatory EXACT plot geometry, shape, size and position reference; preserve it. Image 2 is STYLE ONLY: match its warm richly detailed painterly toy-miniature materials, soft rich colors, crisp beautiful small-scale readability and upper-left daylight. For Leaf use living timber, moss green, lush gardens and soft golden accents. Common camera about 40 degrees elevation.\nGEOMETRY IS MANDATORY: build directly on the complete full-size pointy-top six-sided plot in image 1, never a smaller inset island or second plate. Top face centre (512,1130); vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Ground covers that ENTIRE polygon opaquely to every edge, including rear triangle behind structures. Left and right edges vertical; pointed rear and pointed front. Thin moss-covered log kerb only on two front sides, depth 37.8 px, bottom point (512,1522.5). Do NOT move or resize this plot. All subject content including foliage stays inside x40..984 and below y64, above plot bottom outline; trees grow taller rather than wider. At plot edges grass may reach x32..992 but nothing spills out. Keep full plot on canvas.\nNo text, numbers, logos, frame, labels, UI, background, checkerboard, shadow outside plot, roads around plot edges, extra slab, people, animals, insects, butterflies, vehicles, smoke, steam, sparks, particles or moving elements. Static art only. Exactly one scene on one full hex plot.\nSUBJECT: Mycelium Grid. A charming elaborate mushroom compost-and-recycling garden. Central focal cluster of large varied sculptural mushrooms, warm cream and honey amber caps, some delicate rust-red small caps, planted around mossy composting logs. Several tidy small living-wood compost bays and baskets of organic garden material create an orderly purposeful reuse garden. Mossy logs and compost beds connected by subtle pale static branching mycelium root-like network hints on the garden surface. All mushrooms and network hints are NON-GLOWING; no pulsing light or particles, no magic effects. Dense moss, ferns, tiny flowers and leaf litter cover complete plot edge to edge, with small quiet paths between beds. Readable focal mushroom cluster, not a scattered pile, no house or giant roof."
+          }
+        ],
+        "process": "docs/leaf-static/rebuild.cjs"
+      },
+      {
+        "key": "wild:leaf",
+        "file": "assets/tiles/leaf/wild.png",
+        "sha256": "34ba2623b347f27a311fb2c870673fc3982c18e2802618e61b21405d2c5b246c",
+        "source": "leaf-wild-fixed2.png",
+        "source_sha256": "43e1a5761e4dc3382273f2745c75fbb59132eea8a8dddf4beb0472499f4f3dc9",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "leaf-wild-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image1 is the Wildflower Expanse tile; image2 is the required ground geometry. REMOVE ONLY the erroneous flat triangular green wall BEHIND the flowers in image1. Its huge straight triangular top at y580 is not correct. Behind the tall sunflower, cone flowers, lupins and grasses there must be transparent sky, with a delicate natural silhouette of separate petals, leaves and stems and transparent gaps between them, NOT a sharp green triangular backdrop. Keep all the flowers, their height, color and detailed painterly form. Preserve the foreground meadow and winding path.\nThe actual ground must remain a low horizontal pointy-top hex at precisely image2's footprint: rear tip512,775.3 (mostly hidden by flowers); back side corners32,952.7 and992,952.7; front side corners32,1307.4 and992,1307.4; front tip512,1484.7 and thin moss-log kerb bottom512,1522.5. Ground fully covers this polygon including both back side corners at y952.7. Only flower stalks, petals and individual grass blades may rise above the rear ground edges. No flat green terrain plane above this geometry, no green wall. Do not shrink the plot or create another plate. Keep the same 1024x1536 RGBA transparent canvas, warm light and flower detail. No insects, animals, people, new objects, text, glow or background."
+          },
+          {
+            "file": "leaf-wild-fixed2.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image1 is the exact Wildflower tile to repair. Image2 is a DIAGNOSTIC GUIDE ONLY: bright magenta marks missing ground inside the cyan full-hex outline. Image3 is the approved garden grass material and exact plot footprint. Repair ONLY those small magenta-marked gaps: paint opaque mossy green meadow ground behind the existing flower stems and petals in those locations, so the complete polygon inside the cyan guide is fully opaque garden. Do not paint magenta or cyan in the final. Do not change any flower, leaf, stem, path, kerb or foreground. Preserve ALL actual art from image1 exactly in place.\nOutside the cyan outline, preserve transparent sky between the tall flowers and their natural delicate irregular silhouette. Do not reintroduce a high flat green triangle behind the flowers. The rear ground tip is512,775.3 and side corners32,952.7/992,952.7; those are the upper boundaries of the fill. Fill the gaps between petals ONLY BELOW these rear ground edges, not above them. This is a minimal background-ground repair within the exact hex, not a redesigned meadow. Keep complete 1024x1536 transparent RGBA canvas and exact same positions, camera, rich warm painterly textures. No extra plates, no backdrop, no lines, no text, no animals, no particles."
+          },
+          {
+            "file": "leaf-wild.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield LEAF static game tile, ONE miniature only, not an atlas. Output a 1024x1536 RGBA PNG with true transparent background. Image 1 is mandatory EXACT plot geometry, shape, size and position reference; preserve it. Image 2 is STYLE ONLY: match its warm richly detailed painterly toy-miniature materials, soft rich colors, crisp beautiful small-scale readability and upper-left daylight. For Leaf use living timber, moss green, lush gardens and soft golden accents. Common camera about 40 degrees elevation.\nGEOMETRY IS MANDATORY: build directly on the complete full-size pointy-top six-sided plot in image 1, never a smaller inset island or second plate. Top face centre (512,1130); vertices (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Ground covers that ENTIRE polygon opaquely to every edge, including rear triangle behind structures. Left and right edges vertical; pointed rear and pointed front. Thin moss-covered log kerb only on two front sides, depth 37.8 px, bottom point (512,1522.5). Do NOT move or resize this plot. All subject content including foliage stays inside x40..984 and below y64, above plot bottom outline; trees grow taller rather than wider. At plot edges grass may reach x32..992 but nothing spills out. Keep full plot on canvas.\nNo text, numbers, logos, frame, labels, UI, background, checkerboard, shadow outside plot, roads around plot edges, extra slab, people, animals, insects, butterflies, vehicles, smoke, steam, sparks, particles or moving elements. Static art only. Exactly one scene on one full hex plot.\nSUBJECT: Wildflower Expanse. A dense beautiful meadow filling the entire full hex edge to edge with diverse pollinator flowers and varied grasses. One prominent beautiful central-to-rear cluster of tall golden rudbeckia/sunflowers and pink echinacea is the focal point, with layers of blue-purple lupins, lavender, white daisies, delicate red poppies, small pink cosmos and lush grasses around it. Rich petal detail and botanical variety, flowers tall rather than broad beyond margins. A small natural garden footpath curves through the front meadow and meets the front plot edge. No buildings, no tree, no garden furniture, no butterflies, birds, bees or animals. Clear lush colourful meadow silhouette at small size, cheerful not sparse."
+          }
+        ],
+        "process": "docs/leaf-static/rebuild.cjs"
+      }
+    ]
+  },
+  "tile_spec_v2_magic": {
+    "date": "2026-11-12",
+    "issue": "https://github.com/jamesrp/brightfield/issues/2#issuecomment-6815889758",
+    "base_commit": "d201c7789b18c863377bd0addff628c0db723837",
+    "base_branch": "main",
+    "method": "built-in image_gen per-tile generation and targeted edits; art:fit; painted arcane-family underlay for small incomplete ground edges; exact shared kerb pixels",
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "scope": "8 static Magic tiles; no actors, glows, Paragons or gameplay changes",
+    "source_archive_manifest": "docs/magic-static/source-archive.json",
+    "shared_kerb": {
+      "file": "assets/tiles/_slab/arcane.png",
+      "sha256": "3cbc9d24b067d1a68dcf77cae21dd07405272f4931e2c3f5bd91f4f3b0958687"
+    },
+    "outputs": [
+      {
+        "key": "power:magic",
+        "file": "assets/tiles/magic/power.png",
+        "sha256": "a8ef0d854ca490bbfb62b614a007f6a4f88d8d428c19d9636e12f340d1ed27ee",
+        "source": "magic-power.png",
+        "source_sha256": "60b817cc862469ab29ae621026e03e8d01f532257d04ac0356437eac62dd8e98",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "magic-power.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Magic static game tile, one transparent 1024x1536 RGBA PNG, not an atlas. Image1 is exact GEOMETRY and purple stone/gold kerb reference. Image2 is PAINTERLY QUALITY and substantial miniature scale only, not the building subject or orange colours. Create Crystal Beacon: a welcoming substantial violet-stone sanctuary with a tall faceted amethyst power crystal held upright in a fixed elegant brass cradle, small purple/gold architectural buttresses, low arched windows, tiny friendly lavender gardens and crystal planters. Lavender, amethyst purple, warm gold, warm windows; cheerful magical town for a child, not dark or sinister. No floating or rotating rune rings, no particles, no animals/people, no smoke, no separate halo. The fixed crystal can have luminous coloured facets but no light outside the silhouette. Full ground plot fills the EXACT pointy-top hex edge to edge: centre(512,1130), vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Purple ground matching reference extends fully to all edges, no inset plate. Only TWO thin front kerb faces, depth37.8, bottom point(512,1522.5). Preserve this footprint, not a diamond or flat-front slab. Tall architecture grows upward within x40..984 and starts no higher than y64. Entire silhouette below y64 and above lower hex outline; no cropping. Cozy intricate painterly miniature, tactile stone/gold and jewel facets, camera about40degree elevation, warm upper-left light, soft shadow only on plot. No edge roads, text, logos, backdrop, checkerboard or cast shadow outside tile. True transparent alpha outside silhouette."
+          }
+        ],
+        "process": "docs/magic-static/rebuild.cjs"
+      },
+      {
+        "key": "move:magic",
+        "file": "assets/tiles/magic/move.png",
+        "sha256": "179b98ee5d6ad7f2072f31b23b852a3a81ac6e1d3c92bbeb02f4625eb6df3e42",
+        "source": "magic-move-v5.png",
+        "source_sha256": "141ace4cb68ecebf51117a5f13ef34bd909445694ffe8eb8abc36beddaab2b82",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "magic-move-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. EDIT IMAGE1 Portal Pavilion. Image2 supplies the EXACT purple ground slab geometry. Preserve the beautiful pavilion, both empty gateway arches, gardens, benches, purple/gold style and all architecture at their current pixel positions. Change ONLY the ground footprint and its kerb to match image2 exactly. Current ground is too high at rear and too short at front. The purple stone TOP FACE must be solid everywhere inside the six-vertex polygon (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7), centre(512,1130). Rear ground point is y775.3, not y690. Remove exposed flat purple ground above those rear boundary lines, preserving architecture/flowers which naturally rise above it. Extend the FRONT purple ground fully down to point(512,1484.7); front side faces then descend37.8px to kerb bottom(512,1522.5), NOT1490. Straight vertical side boundaries x32 and992 fromy952.7toy1307.4. Exactly ONE full hex plot with no inner plate. Ground must be opaque and complete, not transparent at back corners or arch thresholds below the face boundary. Keep arch opening transparency above the ground, no portal swirls. No changes to subject, no added actors, no backdrop or outer glow. Transparent1024x1536RGBA output."
+          },
+          {
+            "file": "magic-move-ground.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image1 is the EDIT TARGET, a 1024x1536 transparent Portal Pavilion. Image2 is a HALF-SIZE diagnostic guide of the SAME image: bright RED marks missing ground inside the required full hex plot. Image3 is the existing purple ground material reference. CHANGE ONLY the areas marked RED in the guide: fill them with OPAQUE purple stone paving continuous with the existing ground, with matching painterly texture and perspective. In particular the LOWER parts of both arch openings must show the purple plot FLOOR, not transparent background. Fill the missing rear-left and rear-right ground wedges too. Preserve genuine transparency ABOVE the red areas and around the upper arches. Do not put glass or a portal swirl in the arch. No red should remain in output. Preserve every building, roof, lantern, flower, bench, path, front kerb and all existing painted pixels outside those missing patches. Keep image1 exact dimensions and pixel positions: no scaling or moving anything. Full polygon is(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7), front kerb bottom(512,1522.5). Preserve this geometry. No new objects, no glow outside silhouette. Output transparent1024x1536RGBA."
+          },
+          {
+            "file": "magic-move-v4.prompt.txt",
+            "prompt": "Use case: precise-object-edit.\nAsset type: finished static isometric Portal Pavilion tile for the cosy Brightfield town-builder.\nInput image 1 is the edit target: preserve this purple-and-gold Portal Pavilion, two grand portal arches, central small roofed pavilion, benches, paths, flowers and gardens. Input image 2 is the exact geometry of its one ground slab; preserve that slab's full six-sided opaque footprint.\nRepair the alpha/transparency, do not change the charming art style. BOTH arch interiors must now contain completely solid OPAQUE amethyst/violet magical doorway panels, like smooth polished violet glass inset in the arch. These are static solid panels, NOT transparent windows. Completely fill each arch's entire opening from the curved top down to its stone threshold with matte amethyst purple. No swirl, no wisps, no sparkles, no moving effects. Keep the portals readable, with a very gentle opaque violet gradient only, no bright glow.\nCrucial: the entire hexagonal courtyard's ground must be fully painted and OPAQUE, including the rear left and rear right wedges behind the arches and flowers, and beneath all portal thresholds. There must be NO transparent holes anywhere inside the six-sided ground polygon. At every point inside the following ground polygon, the pixel must show solid purple stone, a path, planted garden or architecture. The ONLY transparent pixels are outside the object silhouette.\nCanvas exactly 1024 x 1536 RGBA, fully transparent outside the object, no backdrop, no haze, no shadow or glow outside the silhouette.\nExact geometry: FULL pointy-top six-sided hex top-face polygon at (512,775.3), (992,952.7), (992,1307.4), (512,1484.7), (32,1307.4), (32,952.7). The two side edges are vertical. Ground reaches every edge. Only the two FRONT faces form a thin 37.8px purple-and-gold kerb, bottom tip (512,1522.5). Copy reference 2 footprint exactly, no extra floating plate, no ground above the two rear diagonal edges. Tall architecture can naturally rise above the ground within x40..984 and y>=64.\nKeep the existing miniature isometric camera, warm upper-left lighting, detailed softly painted materials, purple stone, violet roof and gold trim, lush compact gardens. No people, animals, text, UI, runes floating in air, flying objects or particles. No new structures or additional props.\nThe result should otherwise look exactly like input image 1, now with solid purple portal door surfaces and a fully filled hexagonal purple ground slab."
+          },
+          {
+            "file": "magic-move-v5.prompt.txt",
+            "prompt": "Use case: precise-object-edit.\nImage 1 is the transparent Portal Pavilion tile to edit. Image 2 is a neutral diagnostic of the SAME tile with the exact missing-ground regions colored bright RED. Those red patches are not part of the intended art; they show where you must extend the opaque purple stone courtyard. Fill ALL red-marked regions with fully opaque purple stone and/or planted gardens that match the existing courtyard, behind the flowering vines and arch columns. In particular, fill the LEFT rear wedge from x32 to around x100, y930 through1130, and RIGHT rear wedge from x950 to992, y940 through1130. These are missing pieces of the existing hexagonal slab, not background.\nLeave the gorgeous two portals with their smooth opaque purple interior panels, pavilion, goldwork, roofs, gardens, benches, front paths and all other art unchanged. Keep the exact canvas1024x1536 and exact positions and proportions. Preserve the slab's original six-sided footprint, including straight vertical sides at x32 andx992 from y952.7 to1307.4. The full hex top is opaque to all six edges and contains no transparent holes.\nThe output must have a genuinely transparent background outside the tile. Do NOT copy the grey diagnostic background or any red markings. No external glow/haze, no added effects, text or people. The only edit is completing these two rear side wedges of the purple courtyard so the whole six-sided plot is present."
+          },
+          {
+            "file": "magic-move.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Magic static game tile, one transparent 1024x1536 RGBA PNG, not atlas. Image1 exact GEOMETRY and purple stone/gold kerb. Image2 painterly quality and substantial miniature scale only, not cottage architecture or orange colours. Subject Portal Pavilion: two welcoming tall violet-stone gateway arches, one larger and one smaller, gold inlay and fixed amethyst keystones, linked by an ornate low purple-roof pavilion with warm windows and a curved garden walkway. Portal openings are EMPTY so animated swirling portals can be separate actors later. Show clear empty arch interiors, no swirl, wisps, floating orbs, sparks or moving vehicles. Small lavender plants, decorative gold lantern housings, tiny benches enrich plot. Friendly childlike wonder, not sinister. Lavender, purple, amethyst, warm gold. Full purple stone ground fills EXACT pointy-top hex edge to edge: centre(512,1130), vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Only two thin front kerb faces37.8px deep, bottompoint(512,1522.5), no inner plate or deep slab. Buildings and gardens occupy plot generously. Architecture rises upward, all content within x40..984 and y64..1522.5 plus lower hex outline. About40degree elevated camera, cozy detailed painterly miniature, tactile stone/timber/gold, warm upper-left light, soft shadows only on plot. No text, logos, roads along outside edges, people, animals, smoke, particles, halo, backdrop or checkerboard. True transparent alpha outside silhouette and through arch gaps above ground."
+          }
+        ],
+        "process": "docs/magic-static/rebuild.cjs"
+      },
+      {
+        "key": "food:magic",
+        "file": "assets/tiles/magic/food.png",
+        "sha256": "d8c79856f56596fe4aab8bbe39acb99f3398fc5eb803406c4d5404961c3552e2",
+        "source": "magic-food-canopy.png",
+        "source_sha256": "be6419a075cdccdbb21a30e3839e0dd7caa030cfd617c54bb1f2295997a58e8f",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "magic-food-canopy.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Keep this Enchanted Orchard tile's EXACT ground, paths, kerb, roots, trunks, flowers, baskets and central tall tree unchanged. Change ONLY the purple leaf canopies of the TWO SMALL foreground trees. Make their lateral reach slightly narrower, pulling the left small tree's far-left leaf tips rightwards about40px and the right small tree's far-right leaf tips leftwards about35px. Redraw those small canopy contours naturally so EVERY leaf is completely inside x64..960, with clear transparent space between foliage and vertical outer columns x32/x992. Do not just crop the leaves. Do not change tree trunk positions or scale the whole image. The central tall canopy is already inside the margins and must stay unchanged. Preserve the exact bottom point(512,1522.5), the1024x1536canvas and fullhex purple ground. Preserve rich purple leaves, gold fruit, detailed painterly style and warm light. No new elements, no animals, no backdrop. Genuine transparent alpha around the corrected leaf edges."
+          },
+          {
+            "file": "magic-food.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Magic static tile. One transparent1024x1536RGBA PNG, not atlas. Image1 exact purple stone/gold kerb GEOMETRY. Image2 painterly material detail and miniature scale only, not cottage subject or orange colours. Subject Enchanted Orchard: three abundantly fruiting magical trees with purple and lavender leaves, gold and rose fruit, warm gnarled trunks, inviting violet-stone garden paths, baskets of golden fruit and small herb/flower beds. Layered trees rise vertically rather than spread beyond sides. Cheerful cosy magical orchard for a child, tactile bark and rich foliage, gold/amethyst accents. No fairies, birds, bees, floating fruit, sparkles or moving objects. Fruit can be vividly coloured but no outer light haze. Exact full pointy-top plot: centre(512,1130), top ground vertices(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Purple ground fully fills this polygon, matching image1 exactly, with only two front kerbs37.8px deep tobottom(512,1522.5). No flat ground outside the rear boundary or higher than y775.3; only trees/buildings can rise above ground. No inset plate, no deeper slab. All foliage inside x40..984, highest leaf no higher than y64. Camera40degree elevation, upper-left warm light, soft shadows only on plot. No text, logos, outside roads, people, animals, background or checkerboard; true transparent alpha outside silhouette."
+          }
+        ],
+        "process": "docs/magic-static/rebuild.cjs"
+      },
+      {
+        "key": "water:magic",
+        "file": "assets/tiles/magic/water.png",
+        "sha256": "1421511c1347ba4775ac5b768e66825f73bcc6f3dd5712b12623e8e847ba23be",
+        "source": "magic-water-rear.png",
+        "source_sha256": "2de5bebaeb48fb976aca378b8a17786cab2f9d78e989a47dd48ef0c8c70b1eb7",
+        "noAlign": true,
+        "prompts": [
+          {
+            "file": "magic-water-rear.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image1 is the Moonwell EDIT TARGET. Image2 is a diagnostic copy with a RED V showing the exact rear ground boundary. Preserve all architecture, crescent moon, arch, well, water, plants, benches, steps, lighting, front ground and front kerb exactly. Make ONE tiny correction: erase the thin EXPOSED FLAT PURPLE FLOOR strip ABOVE the red V in image2. The central rear floor peak must move down about17px to exact(512,775.3), with rear floor edges through(32,952.7) and(992,952.7). At x480 flatfloor begins at y787, not770; atx600 y808, not793. This is a ground-footprint trim only. Keep all upright plants, gold arch and pillars above the red line; they are allowed to rise above ground. Do not add or retain red lines. Keep the exact1024x1536canvas and every other pixel position, front bottompoint(512,1522.5) unchanged. True transparent alpha where that tiny flat-ground overhang was removed. No new objects, no backdrop, no extra halo."
+          },
+          {
+            "file": "magic-water.prompt.txt",
+            "prompt": "Use case: stylized-concept. Production Brightfield Magic static tile, one transparent1024x1536RGBA PNG. Image1 exact purple stone/gold kerb GEOMETRY, image2 painterly material/detail/miniature scale only. Subject Moonwell: an inviting violet-blue circular stone well and fountain pool, pale-gold crescent moon fixed in a decorative tall arched support behind the well, amethyst details, gentle still blue water, small curved stairs, lavender garden beds, warm lantern housings and tiny benches. The moon is mounted on a fixed structure, not floating. No animated water spray, sparkles, floating lights, animals, people, particles or exterior bloom. Warm magical beauty, purple/lavender/amethyst with warm gold, uplifting for a child. Full purple stone ground fills exact pointy-top polygon(512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7), centre(512,1130). Preserve geometry of image1: exposed rear ground tip isy775.3, side cornersy952.7; no flat ground above rear boundary. Only architecture or plants may rise above. TWO frontkerbs37.8px deep to bottompoint(512,1522.5); no inner plate or deep slab. Generous focal well architecture and gardens, everything inside x40..984 and above lower hexoutline, highestparty64 or below. About40degree elevation, warm upper-left light, tactile highly detailed painterly game miniature. No roads around edges, labels, logos, background or checkerboard. Genuine transparent alpha outside silhouette."
+          }
+        ],
+        "process": "docs/magic-static/rebuild.cjs"
+      },
+      {
+        "key": "home:magic",
+        "file": "assets/tiles/magic/home.png",
+        "sha256": "d250c001bae7687895d6421ca9ad64d2ac4bdbb3f503bc419c6321a8a4e75c45",
+        "source": "magic-home.png",
+        "source_sha256": "dc86b3cfdbc1ad4c443b5c09ba558736d43fa08664e533a180052dff5fc78c50",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "magic-home.prompt.txt",
+            "prompt": "Use case: stylized-concept. ONE production static Magic base tile for Brightfield, a friendly cozy town game for a child. Canvas EXACTLY 1024x1536 RGBA with genuinely transparent background. Input image 1 (arcane.png) is the EXACT ground silhouette, scale and position reference: preserve its entire wide full-hex ground plane and thin kerb unchanged in shape; build the requested scene DIRECTLY ON IT. Input image 2 (home.png) is STYLE ONLY: match its lovely detailed painterly miniature texture and warm tactile material quality, NOT its house or colours. About40-degree isometric camera, warm upper-left illumination, rich but soft lavender, violet stone, amethyst and gold, welcoming warm amber windows, cheerful enchanted beauty. No dark evil cues. Precise top-face polygon (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7), centre512,1130. Pointy rear and front, six corners, vertical left/right sides. Ground covers full polygon edge to edge. Thin front kerbs ONLY37.8px deep, bottom point(512,1522.5), violet stone blocks with fine gold band. Exposed rear flat ground must NEVER extend above the rear polygon edges; only upright architecture or plants may rise above. Do not enlarge or raise ground toward top of canvas. No inner plate, deep slab, roads around edge, raised circular stage or additional floor. Tall structure can rise inside x40..984, highest point y64 or below. All props rest on the single ground plane, remain inside plot; plant canopy edges entirely within margins. Genuine zero alpha outside silhouette, no external cast shadows, backdrop, hazy halo, outer bloom or cloud. No text, labels, lettering, symbols resembling text, logo, UI, people, animals, vehicles, floating items, particles, smoke, fire or animated elements. Static crystals and windows may have vivid solid colours but no separate glow aura. Exactly one tile, not a sheet.\nSUBJECT: Starlight Village. A small close-knit group of three cozy grounded wizard homes, one taller central round lavender-stone home with a charming purple tiled conical roof and two lower cottage turrets clustered beside it. Gold metal roof tips and roof trim, chunky welcoming golden-lit windows, curved wooden doors, small flower boxes. One little fixed stone-and-wood arched bridge links two low front stoops across a tiny dry garden dip, entirely grounded. Small purple-leaf shrubs, amethyst garden crystals and varied colourful flowers carefully fill remaining full-hex violet stone courtyard. Make a clear picturesque central architectural silhouette with densely detailed roof tiles, masonry and cozy domestic craft. NO floating homes, no lantern actors, no crescent moon in sky. Preserve the exact exposed rear edge of the supplied full hex, don't create any additional garden behind it."
+          }
+        ],
+        "process": "docs/magic-static/rebuild.cjs"
+      },
+      {
+        "key": "make:magic",
+        "file": "assets/tiles/magic/make.png",
+        "sha256": "6a2d2e3ad0c6ed2fbab9b785287e3561cac9fc3594a9fe97ec7db4d65a4ffdf1",
+        "source": "magic-make.png",
+        "source_sha256": "ca89c9ccbb722a3796caa6625491cd30e3477db3210d716bd96869fb19b47411",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "magic-make.prompt.txt",
+            "prompt": "Use case: stylized-concept. ONE production static Magic base tile for Brightfield, a friendly cozy town game for a child. Canvas EXACTLY 1024x1536 RGBA with genuinely transparent background. Input image 1 (arcane.png) is the EXACT ground silhouette, scale and position reference: preserve its entire wide full-hex ground plane and thin kerb unchanged in shape; build the requested scene DIRECTLY ON IT. Input image 2 (home.png) is STYLE ONLY: match its lovely detailed painterly miniature texture and warm tactile material quality, NOT its house or colours. About40-degree isometric camera, warm upper-left illumination, rich but soft lavender, violet stone, amethyst and gold, welcoming warm amber windows, cheerful enchanted beauty. No dark evil cues. Precise top-face polygon (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7), centre512,1130. Pointy rear and front, six corners, vertical left/right sides. Ground covers full polygon edge to edge. Thin front kerbs ONLY37.8px deep, bottom point(512,1522.5), violet stone blocks with fine gold band. Exposed rear flat ground must NEVER extend above the rear polygon edges; only upright architecture or plants may rise above. Do not enlarge or raise ground toward top of canvas. No inner plate, deep slab, roads around edge, raised circular stage or additional floor. Tall structure can rise inside x40..984, highest point y64 or below. All props rest on the single ground plane, remain inside plot; plant canopy edges entirely within margins. Genuine zero alpha outside silhouette, no external cast shadows, backdrop, hazy halo, outer bloom or cloud. No text, labels, lettering, symbols resembling text, logo, UI, people, animals, vehicles, floating items, particles, smoke, fire or animated elements. Static crystals and windows may have vivid solid colours but no separate glow aura. Exactly one tile, not a sheet.\nSUBJECT: Spellforge, an inviting friendly enchanted artisan workshop in lavender stone and warm carved timber. One substantial central building, asymmetrical purple tiled roof with gold edging, a narrow little rear roof turret, chunky golden-lit arched windows. Open workshop bay faces front-right with an EMPTY unlit kiln alcove where a later fire actor will be placed: absolutely no flames, smoke or burning light. Broad anchored crystal workbench before the opening, a couple of amethyst chunks resting on the bench and firmly mounted tools. Hammer, tongs and other static tools neatly hang on a rack or rest on the bench; nothing floats. Wooden storage drawers, gold-accented solid anvil, neat crates of craft materials and a small flower bed fill the courtyard without crowding. A short violet paving path crosses the single full-hex stone ground. Cozy safe village artisan craftsmanship, not an ominous industrial forge. Strong readable workshop silhouette, exquisitely painted roof shingles, stone joints, brass and wood detail. No floating tools, no people, no smoke, no fire, no hanging or floating animated objects. Preserve the exact exposed rear edge of the supplied full hex; do not create a garden or extra floor behind it."
+          }
+        ],
+        "process": "docs/magic-static/rebuild.cjs"
+      },
+      {
+        "key": "waste:magic",
+        "file": "assets/tiles/magic/waste.png",
+        "sha256": "66768d85e50b230735da97d28cce1e64471f65aa323f0ccdf31ea534b3428c0b",
+        "source": "magic-waste-fixed.png",
+        "source_sha256": "5768044fc84b4c6ff522b3f6b417603ef793a32ed45c917741ba351430916c79",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "magic-waste-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Correct only the ground geometry of image1, the Transmutation Garden game tile. Preserve its lovely detailed painterly purple/gold bins, sorted materials, plants, static tools and central EMPTY orb cradle. Same 1024x1536 RGBA transparent canvas. Image2 arcane slab is the mandatory exact ground geometry; image3 cottage is only painterly quality reference. THE SINGLE NARROW CORRECTION: image1 has an incorrect rear ground point at about(512,625), which is150px too high. Remove that entire extra purple floor triangle and all thin rear-border strips above the correct rear boundary. The actual ground top face MUST be exactly the image2 polygon: (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). Thus no purple flat ground or rear raised rim is allowed above the two segments from(32,952.7) to(512,775.3) to(992,952.7). Make those wrong ground pixels TRANSPARENT AIR. Upright individual leaves, bushes and bin sides may rise above this boundary, but their feet must rest INSIDE the corrected polygon. If necessary lower the rear-left bush and rear flowerbed slightly so their roots sit inside the correct polygon, while retaining their natural canopy silhouettes. Do not introduce a high rear wall, extra terrace or second platform. Keep the middle/front composition and EMPTY three-finger orb cradle unchanged. Front sides only37.8px deep, bottom(512,1522.5). No orb, no people or animals, no fire, smoke, particles, haze, light halos, floating objects, text, labels or logos. No backdrop or outside shadows. Zero-alpha transparent background, opaque painted ground/props, no RGB glow haze. Warm upper-left light, cozy handcrafted materials."
+          },
+          {
+            "file": "magic-waste.prompt.txt",
+            "prompt": "Use case: stylized-concept. ONE production static Magic base tile for Brightfield, a friendly cozy town game for a child. Canvas EXACTLY 1024x1536 RGBA with genuinely transparent background. Input image 1 (arcane.png) is the EXACT ground silhouette, scale and position reference: preserve its entire wide full-hex ground plane and thin kerb unchanged in shape; build the requested scene DIRECTLY ON IT. Input image 2 (home.png) is STYLE ONLY: match its lovely detailed painterly miniature texture and warm tactile material quality, NOT its house or colours. About40-degree isometric camera, warm upper-left illumination, rich but soft lavender, violet stone, amethyst and gold, welcoming warm amber windows, cheerful enchanted beauty. No dark evil cues. Precise top-face polygon (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7), centre512,1130. Pointy rear and front, six corners, vertical left/right sides. Ground covers full polygon edge to edge. Thin front kerbs ONLY37.8px deep, bottom point(512,1522.5), violet stone blocks with fine gold band. Exposed rear flat ground must NEVER extend above the rear polygon edges; only upright architecture or plants may rise above. Do not enlarge or raise ground toward top of canvas. No inner plate, deep slab, roads around edge, raised circular stage or additional floor. Tall structure can rise inside x40..984, highest point y64 or below. All props rest on the single ground plane, remain inside plot; plant canopy edges entirely within margins. Genuine zero alpha outside silhouette, no external cast shadows, backdrop, hazy halo, outer bloom or cloud. No text, labels, lettering, symbols resembling text, logo, UI, people, animals, vehicles, floating items, particles, smoke, fire or animated elements. Static crystals and windows may have vivid solid colours but no separate glow aura. Exactly one tile, not a sheet.\nSUBJECT: Transmutation Garden, a charming fantastical repair/recycling garden. Central focal piece is an EMPTY gold-and-violet stone orb pedestal with a shallow cradle cup and three small gold curved fingers ready to support a future separate orb actor. There is absolutely NO orb, sphere, glowing ball or floating item in or above the cradle; the empty cup must be clearly visible. The pedestal is modestly raised as an object, not a second ground platform. Arrange three handsome open-top purple and gold recycling/sorting bins around the rear-left and rear-right, containing clearly sorted mundane salvaged objects: short timber pieces, metal offcuts and broken pale pottery. Bins have decorative simple panels with no text, numbers or recycling symbols. A low artisan sorting bench with repaired pottery and neat reclaimed gold-brass pieces, small tidy baskets of recovered material. Fill the single full-hex violet stone ground with lush varied plants, fern tufts, small pink/gold/white flowers, one small purple-leaf shrub, crystals planted like garden rocks. Keep a clean central path toward the empty cradle, the tile should read as an orderly whimsical recycling garden, not a garbage dump or a power generator. Warm fine painterly materials, careful clutter, friendly magical reuse. No buildings necessary. No particles, spells, moving transformation beams, smoke or fire. No floating orb. Preserve precisely the supplied full-hex rear ground edge; show transparent air above it between the upright bins and shrubs, never add a larger rear garden mound."
+          }
+        ],
+        "process": "docs/magic-static/rebuild.cjs"
+      },
+      {
+        "key": "wild:magic",
+        "file": "assets/tiles/magic/wild.png",
+        "sha256": "48f0a3887b01bf221e53f8f25a25fff070b7be66c80d8fa99b1075d32973ac4a",
+        "source": "magic-wild-fixed.png",
+        "source_sha256": "176992e0052976cc9112b54b548824d7563fad4b5f64c6815c54a71908b6a439",
+        "noAlign": false,
+        "prompts": [
+          {
+            "file": "magic-wild-fixed.prompt.txt",
+            "prompt": "Use case: precise-object-edit. Image1 is the Luminous Grove production game tile to refine. Image2 (arcane slab) is exact ground geometry. Image3 cottage is only painterly material quality. Preserve the image1 tree, branches, purple canopy, roots, flowers, mushrooms and grounded crystal lamps EXACTLY. Change ONLY the single flat violet stone ground: extend its slightly short REAR TWO EDGES fully to the exact polygon boundary of image2, about10-20px outward/upward at rear corners. It must be a completely opaque full-hex stone face with no transparent gaps, no semitransparent missing patches, and all ground between the tree and the six outline edges filled. Exact top-face vertices: (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7). The rear left corner must reach (32,952.7) and rear right corner (992,952.7), not y970. Rear diagonal edges go exactly up to (512,775.3), never higher. Canvas1024x1536 RGBA transparent, front kerb37.8px deep with bottom(512,1522.5); preserve this exact silhouette. Do not introduce an inner plate, border wall, raised rear terrace, additional platform or deep slab. Do not change scale or position of the existing trees, tree canopy edges or props. No new elements. No fireflies, motes, animals, people, smoke, particles, fire, text or logos. No light haze or glow around the art; background must remain truly transparent. Same rich warm hand-painted miniature quality, upper-left warm light, tactile purple/amethyst stone, golden wood and pink-purple leaves."
+          },
+          {
+            "file": "magic-wild.prompt.txt",
+            "prompt": "Use case: stylized-concept. ONE production static Magic base tile for Brightfield, a friendly cozy town game for a child. Canvas EXACTLY 1024x1536 RGBA with genuinely transparent background. Input image 1 (arcane.png) is the EXACT ground silhouette, scale and position reference: preserve its entire wide full-hex ground plane and thin kerb unchanged in shape; build the requested scene DIRECTLY ON IT. Input image 2 (home.png) is STYLE ONLY: match its lovely detailed painterly miniature texture and warm tactile material quality, NOT its house or colours. About40-degree isometric camera, warm upper-left illumination, rich but soft lavender, violet stone, amethyst and gold, welcoming warm amber windows, cheerful enchanted beauty. No dark evil cues. Precise top-face polygon (512,775.3),(992,952.7),(992,1307.4),(512,1484.7),(32,1307.4),(32,952.7), centre512,1130. Pointy rear and front, six corners, vertical left/right sides. Ground covers full polygon edge to edge. Thin front kerbs ONLY37.8px deep, bottom point(512,1522.5), violet stone blocks with fine gold band. Exposed rear flat ground must NEVER extend above the rear polygon edges; only upright architecture or plants may rise above. Do not enlarge or raise ground toward top of canvas. No inner plate, deep slab, roads around edge, raised circular stage or additional floor. Tall structure can rise inside x40..984, highest point y64 or below. All props rest on the single ground plane, remain inside plot; plant canopy edges entirely within margins. Genuine zero alpha outside silhouette, no external cast shadows, backdrop, hazy halo, outer bloom or cloud. No text, labels, lettering, symbols resembling text, logo, UI, people, animals, vehicles, floating items, particles, smoke, fire or animated elements. Static crystals and windows may have vivid solid colours but no separate glow aura. Exactly one tile, not a sheet.\nSUBJECT: Luminous Grove. One beautiful large central woodland tree with a warm sculptural twisting trunk and rich lavender-purple leaves in naturally layered rounded canopy clumps, a smaller young purple-leaf tree beside it, and a small garden of amethyst and rose-coloured magical mushrooms underneath. Fine leafy woodland texture and warm soft hand-painted bark, exquisitely tactile cozy miniature. The main canopy must stay within x80..944, with clear margins; no branches or leaves beyond plot sides. Let the tree rise tall rather than spread excessively wide. The forest floor is still the SAME FLAT FULL-HEX violet stone ground of image1 with small moss/grass tufts, ferns, clustered tiny pink/gold/white woodland flowers, a handful of crystal-rock clusters and painted roots directly on it. Natural mushrooms can have brightly coloured solid cap/gill details but absolutely no haze, outer glows, rays, luminous clouds or light particles. Include a couple of small fixed coloured crystal garden fixtures on short anchored posts, not hanging lanterns or floating lights. Strong clear focal-tree silhouette, readable at small game size. No animals, birds, butterflies, insects, fireflies, motes, people or buildings. Avoid a continuous bushy hedge around the rear boundary; keep its geometry readable with patches of exposed violet stone at the edges. The REAR TIP of the exposed flat ground is EXACTLY(512,775.3), no ground above the two diagonal lines to(32,952.7) and(992,952.7). Only tree canopy/trunk or individual upright plants can rise above those lines; no raised rear garden hill, mound, rim, wall or extra platform. Fully opaque painted art, transparent empty air."
+          }
+        ],
+        "process": "docs/magic-static/rebuild.cjs"
+      }
+    ]
   }
 }

@@ -1,0 +1,38 @@
+
+> brightfield@0.12.0 art:check
+> node tools/art/check-tiles.cjs
+
+PASS power:0 (0/power.png)
+  top y=449, slab 100.0% solid, edges within 0.5 px
+PASS move:0 (0/move.png)
+  top y=597, slab 100.0% solid, edges within 0.5 px
+PASS food:0 (0/food.png)
+  top y=745, slab 100.0% solid, edges within 0.5 px
+PASS water:0 (0/water.png)
+  top y=493, slab 100.0% solid, edges within 0.5 px
+PASS home:0 (0/home.png)
+  top y=581, slab 100.0% solid, edges within 0.5 px
+PASS make:0 (0/make.png)
+  top y=574, slab 100.0% solid, edges within 0.5 px
+PASS waste:0 (0/waste.png)
+  top y=774, slab 100.0% solid, edges within 0.5 px
+PASS wild:0 (0/wild.png)
+  top y=477, slab 100.0% solid, edges within 0.5 px
+PASS power:leaf (leaf/power.png)
+  top y=106, slab 100.0% solid, edges within 0.5 px
+PASS move:leaf (leaf/move.png)
+  top y=460, slab 100.0% solid, edges within 0.5 px
+PASS food:leaf (leaf/food.png)
+  top y=183, slab 100.0% solid, edges within 0.5 px
+PASS water:leaf (leaf/water.png)
+  top y=487, slab 100.0% solid, edges within 0.5 px
+PASS home:leaf (leaf/home.png)
+  top y=31, slab 100.0% solid, edges within 0.5 px
+PASS make:leaf (leaf/make.png)
+  top y=582, slab 100.0% solid, edges within 0.5 px
+PASS waste:leaf (leaf/waste.png)
+  top y=658, slab 100.0% solid, edges within 0.5 px
+PASS wild:leaf (leaf/wild.png)
+  top y=611, slab 100.0% solid, edges within 0.5 px
+16 tiles listed; 32 of 48 standard tiles still on the old atlas art.
+all checks pass

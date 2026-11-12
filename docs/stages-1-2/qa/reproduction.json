@@ -1,0 +1,87 @@
+{
+  "result": "pass",
+  "verifiedSourceHashes": true,
+  "byteIdenticalTiles": 16,
+  "tiles": [
+    {
+      "file": "assets/tiles/1/power.png",
+      "sha256": "dc1f4c4381ada60a60ca91e7b4aaaeee9a6bab53308b821c0f5a4aa590b2ac7c",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/1/move.png",
+      "sha256": "b446635bcc269af45c2e2af8fcb8b10bc945fa898ad4484efcb179ea67b2b268",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/1/food.png",
+      "sha256": "3c2c867b02e8667017174474808e82686cf9c25469f1e22ab33077985888469f",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/1/water.png",
+      "sha256": "112d99bfad37d724c7bfff236a5457178c7a307dc73bfcd19113f13348021242",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/1/home.png",
+      "sha256": "e6218077406e40a6f4c865a4cccef8508b3ee5a454c4395574243aa9b0b30dfb",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/1/make.png",
+      "sha256": "9b51f30bb230a9efefe5afa8834983167d282eb09ac9731ef2e31dc9b2cc456a",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/1/waste.png",
+      "sha256": "6bf296cc32aca4e9e7ca0316ae6917d18be7c83b721fd10c7d16a27404fc8b13",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/1/wild.png",
+      "sha256": "c2abc234a05b285b2ace41217178c84735bcc6b99d419f4305b350c716649214",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/2/power.png",
+      "sha256": "fb5dd262356f43e0563ff2ce860c0ef66e9c315a5cf026eca72f0f0a3ce0943c",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/2/move.png",
+      "sha256": "cf3c45ef5707903b771927c1daaccff0e418a94efcdc11ce05fc7ada37a90550",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/2/food.png",
+      "sha256": "095d457e467d143d85ba970a3358b0f6ca03ce94c16158f2d31197e935aa626d",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/2/water.png",
+      "sha256": "a79435ab398f2532b1bd837b4b6b6a39d6cdaddd643da56aa0b5d85d164f3a7e",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/2/home.png",
+      "sha256": "f0d2f95bf4a6885f866f353daf24f3136682b64f50a2982d6bd548a717f983d9",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/2/make.png",
+      "sha256": "77e19b56e01b27b8fe32f8fe5c59e5615d835de6e2695c2426f05f73f7692cfa",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/2/waste.png",
+      "sha256": "9baaa512c22fdbec829143380c94e906fa0cfaac62f663142b047cf734fb4f32",
+      "matches": true
+    },
+    {
+      "file": "assets/tiles/2/wild.png",
+      "sha256": "59bb84a1a542658fc51c1750f43abdaab36141f936771383df81b6d6da765717",
+      "matches": true
+    }
+  ]
+}

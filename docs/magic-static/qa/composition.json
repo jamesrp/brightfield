@@ -1,0 +1,122 @@
+[
+  {
+    "key": "power:magic",
+    "source": "magic-power.png",
+    "file": "assets/tiles/magic/power.png",
+    "fit": {
+      "scale": 0.999,
+      "dx": 1,
+      "dy": 2.1,
+      "clippedPixels": 1406,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 350,
+    "sharedKerbPixels": 36286,
+    "sha256": "a8ef0d854ca490bbfb62b614a007f6a4f88d8d428c19d9636e12f340d1ed27ee"
+  },
+  {
+    "key": "move:magic",
+    "source": "magic-move-v5.png",
+    "file": "assets/tiles/magic/move.png",
+    "fit": {
+      "scale": 1,
+      "dx": 0,
+      "dy": 1.5,
+      "clippedPixels": 1870,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 165,
+    "sharedKerbPixels": 36286,
+    "sha256": "179b98ee5d6ad7f2072f31b23b852a3a81ac6e1d3c92bbeb02f4625eb6df3e42"
+  },
+  {
+    "key": "food:magic",
+    "source": "magic-food-canopy.png",
+    "file": "assets/tiles/magic/food.png",
+    "fit": {
+      "scale": 1,
+      "dx": 0,
+      "dy": 0.5,
+      "clippedPixels": 1680,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 676,
+    "sharedKerbPixels": 36286,
+    "sha256": "d8c79856f56596fe4aab8bbe39acb99f3398fc5eb803406c4d5404961c3552e2"
+  },
+  {
+    "key": "water:magic",
+    "source": "magic-water-rear.png",
+    "file": "assets/tiles/magic/water.png",
+    "fit": {
+      "scale": 1,
+      "dx": 0,
+      "dy": 0,
+      "clippedPixels": 820,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 5767,
+    "sharedKerbPixels": 36286,
+    "sha256": "1421511c1347ba4775ac5b768e66825f73bcc6f3dd5712b12623e8e847ba23be"
+  },
+  {
+    "key": "home:magic",
+    "source": "magic-home.png",
+    "file": "assets/tiles/magic/home.png",
+    "fit": {
+      "scale": 0.9938,
+      "dx": 3.2,
+      "dy": 10.9,
+      "clippedPixels": 1828,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 1141,
+    "sharedKerbPixels": 36286,
+    "sha256": "d250c001bae7687895d6421ca9ad64d2ac4bdbb3f503bc419c6321a8a4e75c45"
+  },
+  {
+    "key": "make:magic",
+    "source": "magic-make.png",
+    "file": "assets/tiles/magic/make.png",
+    "fit": {
+      "scale": 0.9887,
+      "dx": 4.3,
+      "dy": 18.7,
+      "clippedPixels": 2619,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 1016,
+    "sharedKerbPixels": 36286,
+    "sha256": "6a2d2e3ad0c6ed2fbab9b785287e3561cac9fc3594a9fe97ec7db4d65a4ffdf1"
+  },
+  {
+    "key": "waste:magic",
+    "source": "magic-waste-fixed.png",
+    "file": "assets/tiles/magic/waste.png",
+    "fit": {
+      "scale": 0.9938,
+      "dx": 3.2,
+      "dy": 7,
+      "clippedPixels": 693,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 2195,
+    "sharedKerbPixels": 36286,
+    "sha256": "66768d85e50b230735da97d28cce1e64471f65aa323f0ccdf31ea534b3428c0b"
+  },
+  {
+    "key": "wild:magic",
+    "source": "magic-wild-fixed.png",
+    "file": "assets/tiles/magic/wild.png",
+    "fit": {
+      "scale": 0.9979,
+      "dx": 1.1,
+      "dy": 4.7,
+      "clippedPixels": 1470,
+      "verdict": "ok"
+    },
+    "incompleteGroundPixels": 3648,
+    "sharedKerbPixels": 36286,
+    "sha256": "48f0a3887b01bf221e53f8f25a25fff070b7be66c80d8fa99b1075d32973ac4a"
+  }
+]
