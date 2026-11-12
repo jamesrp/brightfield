@@ -1,0 +1,210 @@
+[
+  {
+    "key": "power:star",
+    "group": "star",
+    "base": "assets/tiles/star/power.png",
+    "baseSha256": "5b16f30deeeb8e772bfb18f7f9d2463992c7434c9784e3108bdbfa3c8d8c6620",
+    "raw": "raw/power.png",
+    "rawSha256": "e86df961ec820f510a529dacff8f9a5a13d97c5453a4f7e84b109b2b91cf8fda",
+    "output": "assets/tiles/star/power-glow.png",
+    "sha256": "6ecf05c1747cc35fbce2379cfd56d911c9065f43544103c823ca220de534fe91"
+  },
+  {
+    "key": "move:star",
+    "group": "star",
+    "base": "assets/tiles/star/move.png",
+    "baseSha256": "34b2c0e967486fc70713a4c82e0d394281f4841bbd24a24646f6c6538a5c7e3e",
+    "raw": "raw/move.png",
+    "rawSha256": "d30503df92b22cfc866a1d5f21649776e149cb89ea7702e2c2a275c4851e06fa",
+    "output": "assets/tiles/star/move-glow.png",
+    "sha256": "ff1f9a75c2337791800818f5c7f5aa17bb6ba38d29fccaaa48883397296cda87"
+  },
+  {
+    "key": "food:star",
+    "group": "star",
+    "base": "assets/tiles/star/food.png",
+    "baseSha256": "bbb592ddd5a6aa608eb701ca0c81e00cd14c46df4b6f9a7090d984ce0a8094c7",
+    "raw": "raw/food.png",
+    "rawSha256": "5529a13ed6c3b6fa5acf06c581a0d734a260c8661cc46a056fa9b5d0acdb71e1",
+    "output": "assets/tiles/star/food-glow.png",
+    "sha256": "022be614a9e5d215df9a9deeab97e66ec0ce13b6cfaf32bea9dbfa8056ee3b9f"
+  },
+  {
+    "key": "water:star",
+    "group": "star",
+    "base": "assets/tiles/star/water.png",
+    "baseSha256": "1ddb4690f05e91953c567f1e16b0fe1d402ab75bc50e779b31094a7c5df57852",
+    "raw": "raw/water.png",
+    "rawSha256": "b04c03acbba1a09b75d8d7ac11a5c6783623621bf7b95feba31cdccfb2e770df",
+    "output": "assets/tiles/star/water-glow.png",
+    "sha256": "ce5ff575078a3695c4f158e8f7a6126b354a17065c5d0e2c9d1d625544e5fcbb"
+  },
+  {
+    "key": "home:star",
+    "group": "star",
+    "base": "assets/tiles/star/home.png",
+    "baseSha256": "1e1ae4c311b84e1963de0b2e64507c88823311e6616d4bbd40fca1dd80c0f6e8",
+    "raw": "raw/home.png",
+    "rawSha256": "492060948dec8a1eccc2cc457d7af2f4a45a24290f9eed7eb445d8867f164f54",
+    "output": "assets/tiles/star/home-glow.png",
+    "sha256": "72b9d3b24d416c28b1c8344ec33c02c0cc6aa932830fca09e7e5ac754209d33a"
+  },
+  {
+    "key": "make:star",
+    "group": "star",
+    "base": "assets/tiles/star/make.png",
+    "baseSha256": "ff02a3a8b3f8c89b809c9c62892c2b6383545dc0250ee8049f0bfd55f1859653",
+    "raw": "raw/make.png",
+    "rawSha256": "17f6a7beaa62220e62e07328fbacd53a668138fc3197081c0bcb76ff1639e02f",
+    "output": "assets/tiles/star/make-glow.png",
+    "sha256": "65e91cafbbe480d36210715d4c282f8f54b611a0d1a99b79ecec037bae0da8b7"
+  },
+  {
+    "key": "waste:star",
+    "group": "star",
+    "base": "assets/tiles/star/waste.png",
+    "baseSha256": "dd9a69b5e3fe709211a316788cf83540a973b1bd3517f148106b37754d7215f0",
+    "raw": "raw/waste.png",
+    "rawSha256": "28e3a1a6c0dc2fbdeccc061b1260336e5b5f6c3122c107db9457c1058e313169",
+    "output": "assets/tiles/star/waste-glow.png",
+    "sha256": "517f59bcb7d48b4d7d4f3f063c5186a0061e61ee4c3237ccf667c3aa33815f6f"
+  },
+  {
+    "key": "wild:star",
+    "group": "star",
+    "base": "assets/tiles/star/wild.png",
+    "baseSha256": "109575f8a47eebb9303164f884016911d49f302a58c4476106546e3fa139ea53",
+    "raw": "raw/wild.png",
+    "rawSha256": "d562fe918d01377f434e3c0720e28a657c7c4a0131ad63ce5a058aa1a80868f1",
+    "output": "assets/tiles/star/wild-glow.png",
+    "sha256": "19ba94b4cbb9e38ff832c4bbe78d5ce43c5790f7358329462fb547d83cb3876e"
+  },
+  {
+    "key": "power:magic",
+    "group": "magic",
+    "base": "assets/tiles/magic/power.png",
+    "baseSha256": "a8ef0d854ca490bbfb62b614a007f6a4f88d8d428c19d9636e12f340d1ed27ee",
+    "raw": "raw/power.png",
+    "rawSha256": "c92de0fc2134e53e65c50c5c3cdf73179515df6607ae599a28aa27bd894a3e21",
+    "output": "assets/tiles/magic/power-glow.png",
+    "sha256": "cbe11f87515ac4ac2646462dc07dcb05849674130bb07a308e47e572aa4b4001",
+    "reference": "reference/power.png"
+  },
+  {
+    "key": "move:magic",
+    "group": "magic",
+    "base": "assets/tiles/magic/move.png",
+    "baseSha256": "179b98ee5d6ad7f2072f31b23b852a3a81ac6e1d3c92bbeb02f4625eb6df3e42",
+    "raw": "raw/move.png",
+    "rawSha256": "51bc5ba702bdbba88c127e502e1f3e19eb93af26e0297256133299b29ee72bb5",
+    "output": "assets/tiles/magic/move-glow.png",
+    "sha256": "30e713770ec995e2d7c7575dc2d6da10c2e2ec1332502ade27f46ede5f4bbc2d",
+    "reference": "reference/move.png"
+  },
+  {
+    "key": "food:magic",
+    "group": "magic",
+    "base": "assets/tiles/magic/food.png",
+    "baseSha256": "d8c79856f56596fe4aab8bbe39acb99f3398fc5eb803406c4d5404961c3552e2",
+    "raw": "raw/food.png",
+    "rawSha256": "27554e1450a6748cb881f72c141782d151c3febc3db12e16030334cea2bd2be8",
+    "output": "assets/tiles/magic/food-glow.png",
+    "sha256": "ba040e5025d8d6e2234de698531d7f8f1a65456993f3640fd542e25453a7588f",
+    "reference": "reference/food.png"
+  },
+  {
+    "key": "water:magic",
+    "group": "magic",
+    "base": "assets/tiles/magic/water.png",
+    "baseSha256": "1421511c1347ba4775ac5b768e66825f73bcc6f3dd5712b12623e8e847ba23be",
+    "raw": "raw/water.png",
+    "rawSha256": "9acf701e4abdefc08b397d795e7fe830b590c3a16a114037ced01673bb4f2892",
+    "output": "assets/tiles/magic/water-glow.png",
+    "sha256": "63316b4c1f76ac7f82fb7392d3d1c64f4dcd839f8347158f3e68fb224926a0e1",
+    "reference": "reference/water.png"
+  },
+  {
+    "key": "home:magic",
+    "group": "magic",
+    "base": "assets/tiles/magic/home.png",
+    "baseSha256": "d250c001bae7687895d6421ca9ad64d2ac4bdbb3f503bc419c6321a8a4e75c45",
+    "raw": "raw/home.png",
+    "rawSha256": "b1df686256e27c77cacd1eff4f13add7877c2de01e58eafa6e5dae659bc0841e",
+    "output": "assets/tiles/magic/home-glow.png",
+    "sha256": "bc40fdd04ea20f42a88db855e54169f03a5cb8ef689609ce6f349229ddb7511a",
+    "reference": "reference/home.png"
+  },
+  {
+    "key": "make:magic",
+    "group": "magic",
+    "base": "assets/tiles/magic/make.png",
+    "baseSha256": "6a2d2e3ad0c6ed2fbab9b785287e3561cac9fc3594a9fe97ec7db4d65a4ffdf1",
+    "raw": "raw/make.png",
+    "rawSha256": "2724c6bc9667536cb6cc4696ad3daa0666696a7af4b43d977cc337e87353bb9e",
+    "output": "assets/tiles/magic/make-glow.png",
+    "sha256": "fc8b6d4823b483062c8a951761cc77bc8ff7a7ae31204bbe8e52180a453182e5",
+    "reference": "reference/make.png"
+  },
+  {
+    "key": "waste:magic",
+    "group": "magic",
+    "base": "assets/tiles/magic/waste.png",
+    "baseSha256": "66768d85e50b230735da97d28cce1e64471f65aa323f0ccdf31ea534b3428c0b",
+    "raw": "raw/waste.png",
+    "rawSha256": "663383e94bd3dbff5feeb513e3a04f970aecaa3d2f7c066b0a1b637025cc8742",
+    "output": "assets/tiles/magic/waste-glow.png",
+    "sha256": "d15e33cecadd764148064d50e22b70d7c6b1cb2565bde2e036c975be446dbc90",
+    "reference": "reference/waste.png"
+  },
+  {
+    "key": "wild:magic",
+    "group": "magic",
+    "base": "assets/tiles/magic/wild.png",
+    "baseSha256": "48f0a3887b01bf221e53f8f25a25fff070b7be66c80d8fa99b1075d32973ac4a",
+    "raw": "raw/wild.png",
+    "rawSha256": "a361baab75fb73692b42c030a3a3a8eb366096d5d455d392f0b418f03c85aba7",
+    "output": "assets/tiles/magic/wild-glow.png",
+    "sha256": "18e51c72ab4123e47b19507a1fe897959eca7948ed49e5387f02a03fce348cff",
+    "reference": "reference/wild.png"
+  },
+  {
+    "key": "home:0",
+    "group": "homes",
+    "base": "assets/tiles/0/home.png",
+    "baseSha256": "6cf061b1d22b0f911112b90cfffcc2b2dd421e85ee67db7d7a6071221d86f53c",
+    "raw": "raw/home-0-imagegen.png",
+    "rawSha256": "021dcb034daffe58438fd74dfda993449ff964b350f18be285bfefc8e81d48f5",
+    "output": "assets/tiles/0/home-glow.png",
+    "sha256": "b672024980e53473d2a55892fddc71618cef6689375f702067757ddb95a43e1b"
+  },
+  {
+    "key": "home:1",
+    "group": "homes",
+    "base": "assets/tiles/1/home.png",
+    "baseSha256": "e6218077406e40a6f4c865a4cccef8508b3ee5a454c4395574243aa9b0b30dfb",
+    "raw": "raw/home-1-imagegen.png",
+    "rawSha256": "55159f985573147d6655330e451d8e4bd72067fb775010fc08a81ea46257db17",
+    "output": "assets/tiles/1/home-glow.png",
+    "sha256": "f5b6d03cb267fed116404838b7dab105e21cf39bbd00416d879a3ddd134069e6"
+  },
+  {
+    "key": "home:2",
+    "group": "homes",
+    "base": "assets/tiles/2/home.png",
+    "baseSha256": "f0d2f95bf4a6885f866f353daf24f3136682b64f50a2982d6bd548a717f983d9",
+    "raw": "raw/home-2-imagegen.png",
+    "rawSha256": "292f46c3ee4443f9dc4551652d65d4230a457d9aabe1f23e026d0be13af62091",
+    "output": "assets/tiles/2/home-glow.png",
+    "sha256": "d81e6d2dc7585dbdbefcec642a51f8ba6f90e43ed8aa7d0b6323daa652b80226"
+  },
+  {
+    "key": "home:leaf",
+    "group": "homes",
+    "base": "assets/tiles/leaf/home.png",
+    "baseSha256": "0bc5d21212a4e7b6ae970deba81681ba412d3798377b348acdc0efed0d08fd2a",
+    "raw": "raw/home-leaf-imagegen.png",
+    "rawSha256": "c571f003e3f6ccb3ae9ce747cb047dbc3427cc538cf41068be2407707087313b",
+    "output": "assets/tiles/leaf/home-glow.png",
+    "sha256": "aebb307402af5b5467fa9a59e23c3aa37c4931c32617f40e8f7f3f644c613d42"
+  }
+]

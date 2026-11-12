@@ -18,3 +18,7 @@ docs/leaf-static/**/*.png
 # Magic source/intermediate images belong in the external art archive.
 docs/magic-static/**/*.png
 !docs/magic-static/review/*.png
+
+# Keep glow intermediates private; only compact review sheets are shipped.
+docs/round-2-glows/**/*.png
+!docs/round-2-glows/review/*.png
