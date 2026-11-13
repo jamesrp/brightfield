@@ -21,55 +21,189 @@
 window.BF_TILE_ART = window.BF_TILE_ART || {
   version: 2,
   tiles: {
-    'power:0': { src: '0/power.png', emitters: [[634, 466, 1.2], [773, 529, 1.0]] },
-    'move:0': { src: '0/move.png' },
-    'food:0': { src: '0/food.png' },
+    'power:0': {"src":"0/power.png","emitters":[[634,466,1.2],[773,529,1]],"actors":[{"sprite":"coal-wagon","path":[[455,1378],[668,1305]],"period":10,"face":"none"}]},
+    'move:0': {"src":"0/move.png","actors":[{"sprite":"horse-cart","path":[[300,1352],[540,1322],[760,1288]],"period":10}]},
+    'food:0': {"src":"0/food.png","actors":[{"sprite":"tractor","path":[[513,1406],[652,1340],[723,1265]],"period":12}]},
     'water:0': { src: '0/water.png' },
-    'home:0': { src: '0/home.png', emitters: [[353, 601, 0.6]] },
-    'make:0': { src: '0/make.png', emitters: [[312, 606, 0.9], [430, 592, 0.9]] },
+    'home:0': {"src":"0/home.png","emitters":[[353,601,0.6]],"glow":"0/home-glow.png","glowPeriod":7.2},
+    'make:0': {"src":"0/make.png","emitters":[[312,606,0.9],[430,592,0.9]],"actors":[{"sprite":"mill-wheel-mount","at":[218,1173]},{"sprite":"mill-waterwheel","at":[218,1173],"spin":0.055}]},
     'waste:0': { src: '0/waste.png' },
     'wild:0': { src: '0/wild.png' },
-    'power:1': { src: '1/power.png', emitters: [[742, 407, 0.25]] },
-    'move:1': { src: '1/move.png' },
+    'power:1': {"src":"1/power.png","emitters":[[742,407,0.25]]},
+    'move:1': {"src":"1/move.png","actors":[{"sprite":"motor-car","path":[[510,1400],[590,1325],[675,1245]],"period":8}]},
     'food:1': { src: '1/food.png' },
     'water:1': { src: '1/water.png' },
-    'home:1': { src: '1/home.png', emitters: [[270, 609, 0.2], [512, 566, 0.2], [758, 525, 0.2]] },
+    'home:1': {"src":"1/home.png","emitters":[[270,609,0.2],[512,566,0.2],[758,525,0.2]],"glow":"1/home-glow.png","glowPeriod":8.4},
     'make:1': { src: '1/make.png' },
     'waste:1': { src: '1/waste.png' },
     'wild:1': { src: '1/wild.png' },
-    'power:2': { src: '2/power.png' },
-    'move:2': { src: '2/move.png' },
+    'power:2': {"src":"2/power.png","actors":[{"sprite":"turbine-rotor","at":[320,366],"spin":0.08},{"sprite":"turbine-rotor-small","at":[653,613],"spin":0.1}]},
+    'move:2': {"src":"2/move.png","actors":[{"sprite":"electric-car","path":[[425,1355],[570,1277],[770,1190]],"period":9}]},
     'food:2': { src: '2/food.png' },
     'water:2': { src: '2/water.png' },
-    'home:2': { src: '2/home.png' },
-    'make:2': { src: '2/make.png' },
+    'home:2': {"src":"2/home.png","glow":"2/home-glow.png","glowPeriod":9.1},
+    'make:2': {"src":"2/make.png","actors":[{"sprite":"robot-arm","at":[630,1157],"sway":1.5,"period":7}]},
     'waste:2': { src: '2/waste.png' },
     'wild:2': { src: '2/wild.png' },
-    'power:star': { src: 'star/power.png' },
-    'move:star': { src: 'star/move.png' },
-    'food:star': { src: 'star/food.png' },
-    'water:star': { src: 'star/water.png' },
-    'home:star': { src: 'star/home.png' },
-    'make:star': { src: 'star/make.png' },
-    'waste:star': { src: 'star/waste.png' },
-    'wild:star': { src: 'star/wild.png' },
-    'power:leaf': { src: 'leaf/power.png' },
-    'move:leaf': { src: 'leaf/move.png' },
+    'power:star': {"src":"star/power.png","glow":"star/power-glow.png","glowPeriod":5.8},
+    'move:star': {"src":"star/move.png","actors":[{"sprite":"maglev-pod","path":[[160,1110],[540,981]],"period":10,"face":"none"}],"glow":"star/move-glow.png","glowPeriod":6.5},
+    'food:star': {"src":"star/food.png","actors":[{"sprite":"lift-platform","at":[750,760],"bob":190,"period":12}],"glow":"star/food-glow.png","glowPeriod":6.8},
+    'water:star': {"src":"star/water.png","glow":"star/water-glow.png","glowPeriod":7.6},
+    'home:star': {"src":"star/home.png","glow":"star/home-glow.png","glowPeriod":8.2},
+    'make:star': {"src":"star/make.png","glow":"star/make-glow.png","glowPeriod":5.2},
+    'waste:star': {"src":"star/waste.png","glow":"star/waste-glow.png","glowPeriod":6.2},
+    'wild:star': {"src":"star/wild.png","glow":"star/wild-glow.png","glowPeriod":8.8},
+    'power:leaf': {"src":"leaf/power.png","actors":[{"sprite":"sun-mirror","at":[165,898],"sway":1.5,"period":12},{"sprite":"sun-mirror","at":[500,1095],"sway":1.4,"period":11},{"sprite":"sun-mirror","at":[873,940],"sway":1.3,"period":10}]},
+    'move:leaf': {"src":"leaf/move.png","actors":[{"sprite":"garden-tram","path":[[340,1320],[410,1280],[465,1225],[500,1165],[555,1117]],"period":10,"face":"none"}]},
     'food:leaf': { src: 'leaf/food.png' },
     'water:leaf': { src: 'leaf/water.png' },
-    'home:leaf': { src: 'leaf/home.png' },
-    'make:leaf': { src: 'leaf/make.png' },
+    'home:leaf': {"src":"leaf/home.png","glow":"leaf/home-glow.png","glowPeriod":8.8},
+    'make:leaf': {"src":"leaf/make.png","actors":[{"sprite":"repair-wheel","at":[845,1207],"spin":0.07}]},
     'waste:leaf': { src: 'leaf/waste.png' },
     'wild:leaf': { src: 'leaf/wild.png' },
-    'power:magic': { src: 'magic/power.png' },
-    'move:magic': { src: 'magic/move.png' },
-    'food:magic': { src: 'magic/food.png' },
-    'water:magic': { src: 'magic/water.png' },
-    'home:magic': { src: 'magic/home.png' },
-    'make:magic': { src: 'magic/make.png' },
-    'waste:magic': { src: 'magic/waste.png' },
-    'wild:magic': { src: 'magic/wild.png' },
+    'power:magic': {"src":"magic/power.png","glow":"magic/power-glow.png","glowPeriod":5},
+    'move:magic': {"src":"magic/move.png","actors":[{"sprite":"lantern-wisp","path":[[345,1170],[300,1220],[307,1270],[368,1336]],"period":12,"bob":6,"bobPeriod":4}],"glow":"magic/move-glow.png","glowPeriod":6},
+    'food:magic': {"src":"magic/food.png","glow":"magic/food-glow.png","glowPeriod":7},
+    'water:magic': {"src":"magic/water.png","glow":"magic/water-glow.png","glowPeriod":6},
+    'home:magic': {"src":"magic/home.png","glow":"magic/home-glow.png","glowPeriod":6},
+    'make:magic': {"src":"magic/make.png","actors":[{"sprite":"forge-flame","at":[596,1102],"pulse":0.22,"period":3.6}],"glow":"magic/make-glow.png","glowPeriod":5},
+    'waste:magic': {"src":"magic/waste.png","actors":[{"sprite":"transmutation-orb","at":[522,944],"spin":0.025,"bob":3,"period":8}],"glow":"magic/waste-glow.png","glowPeriod":7},
+    'wild:magic': {"src":"magic/wild.png","glow":"magic/wild-glow.png","glowPeriod":7},
   },
-  sprites: {},
-  travellers: {},
+  sprites: {
+    "turbine-rotor": {
+      "src": "actors/turbine-rotor.png",
+      "anchor": [
+        260,
+        260
+      ]
+    },
+    "turbine-rotor-small": {
+      "src": "actors/turbine-rotor-small.png",
+      "anchor": [
+        168,
+        168
+      ]
+    },
+    "mill-waterwheel": {
+      "src": "actors/mill-waterwheel.png",
+      "anchor": [
+        128,
+        128
+      ]
+    },
+    "mill-wheel-mount": {
+      "src": "actors/mill-wheel-mount.png",
+      "anchor": [
+        120,
+        62
+      ]
+    },
+    "tractor": {
+      "src": "actors/tractor.png",
+      "anchor": [
+        96,
+        135
+      ]
+    },
+    "coal-wagon": {
+      "src": "actors/coal-wagon.png",
+      "anchor": [
+        152,
+        200
+      ]
+    },
+    "horse-cart": {
+      "src": "actors/horse-cart.png",
+      "anchor": [
+        92,
+        94
+      ]
+    },
+    "motor-car": {
+      "src": "actors/motor-car.png",
+      "anchor": [
+        69,
+        95
+      ]
+    },
+    "electric-car": {
+      "src": "actors/electric-car.png",
+      "anchor": [
+        71,
+        95
+      ]
+    },
+    "sun-mirror": {
+      "src": "actors/sun-mirror.png",
+      "anchor": [
+        72,
+        57
+      ]
+    },
+    "garden-tram": {
+      "src": "actors/garden-tram.png",
+      "anchor": [
+        116,
+        163
+      ]
+    },
+    "garden-bike": {
+      "src": "actors/garden-bike.png",
+      "anchor": [
+        82,
+        168
+      ]
+    },
+    "maglev-pod": {
+      "src": "actors/maglev-pod.png",
+      "anchor": [
+        87,
+        82
+      ]
+    },
+    "lantern-wisp": {
+      "src": "actors/lantern-wisp.png",
+      "anchor": [
+        112,
+        90
+      ]
+    },
+    "robot-arm": {
+      "src": "actors/robot-arm.png",
+      "anchor": [
+        58,
+        191
+      ]
+    },
+    "repair-wheel": {
+      "src": "actors/repair-wheel.png",
+      "anchor": [
+        63,
+        63
+      ]
+    },
+    "lift-platform": {
+      "src": "actors/lift-platform.png",
+      "anchor": [
+        49,
+        24
+      ]
+    },
+    "forge-flame": {
+      "src": "actors/forge-flame.png",
+      "anchor": [
+        62,
+        78
+      ]
+    },
+    "transmutation-orb": {
+      "src": "actors/transmutation-orb.png",
+      "anchor": [
+        82,
+        83
+      ]
+    }
+  },
+  travellers: {"0":"horse-cart","1":"motor-car","2":"electric-car","leaf":"garden-bike","star":"maglev-pod","magic":"lantern-wisp"},
 };

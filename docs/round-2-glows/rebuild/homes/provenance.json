@@ -1,0 +1,2186 @@
+{
+  "schema": 1,
+  "generated": "2026-11-12",
+  "results": [
+    {
+      "tile": "home:0",
+      "final": "assets/tiles/0/home-glow.png",
+      "manifest": {
+        "glow": "0/home-glow.png",
+        "glowPeriod": 7.2
+      },
+      "sourceBase": "assets/tiles/0/home.png",
+      "sourceBaseSha256": "6cf061b1d22b0f911112b90cfffcc2b2dd421e85ee67db7d7a6071221d86f53c",
+      "raw": "raw/home-0-imagegen.png",
+      "rawSha256": "021dcb034daffe58438fd74dfda993449ff964b350f18be285bfefc8e81d48f5",
+      "finalSha256": "b672024980e53473d2a55892fddc71618cef6689375f702067757ddb95a43e1b",
+      "rawDimensions": [
+        1024,
+        1536
+      ],
+      "outputDimensions": [
+        1024,
+        1536
+      ],
+      "rawStats": {
+        "nonzero": 52271,
+        "maxAlpha": 253,
+        "meanNonzeroAlpha": 82.32262631286947,
+        "bbox": [
+          105,
+          103,
+          847,
+          1421
+        ],
+        "offKeep": 0
+      },
+      "finalStats": {
+        "nonzero": 7527,
+        "maxAlpha": 46,
+        "meanNonzeroAlpha": 31.08901288694035,
+        "bbox": [
+          277,
+          816,
+          699,
+          1170
+        ],
+        "offKeep": 0
+      },
+      "additiveQA": {
+        "formula": "Canvas globalCompositeOperation=lighter; globalAlpha=0.35 or 1.0; base unmodified as in src/tile-art.js",
+        "changedPixels": 7527,
+        "newWhitePixels": 0,
+        "maxAddedChannel": 43
+      },
+      "normalization": {
+        "globalTransform": "identity; no resizing or cropping of the tile canvas",
+        "method": "Preserve generated RGB and alpha, crop/register each existing emitter only, multiply alpha by antialiased painted-glass mask, warm-glass source-base selection (not recoloring), and gentle opacity. No generated replacement artwork.",
+        "whiteProtection": "Alpha additionally capped by max(0,235-baseBlue)*255/rawBlue; generated RGB unchanged",
+        "windowSelection": "smoothstep(165,220,R) * smoothstep(105,170,G) * smoothstep(8,38,R-G) * (1-smoothstep(.72,.98,B/G)); derived only from existing painted glass",
+        "regions": [
+          {
+            "name": "upper-front-window",
+            "sourceBox": [
+              289,
+              917,
+              349,
+              981
+            ],
+            "targetBox": [
+              289,
+              909,
+              349,
+              979
+            ],
+            "paintedEmitterPolygon": [
+              [
+                291,
+                910
+              ],
+              [
+                346,
+                920
+              ],
+              [
+                345,
+                975
+              ],
+              [
+                290,
+                971
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.18,
+            "keptPixels": 2077
+          },
+          {
+            "name": "lower-front-window",
+            "sourceBox": [
+              278,
+              1078,
+              355,
+              1178
+            ],
+            "targetBox": [
+              276,
+              1077,
+              355,
+              1178
+            ],
+            "paintedEmitterPolygon": [
+              [
+                278,
+                1079
+              ],
+              [
+                352,
+                1092
+              ],
+              [
+                351,
+                1174
+              ],
+              [
+                277,
+                1162
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.18,
+            "keptPixels": 3490
+          },
+          {
+            "name": "dormer-window",
+            "sourceBox": [
+              656,
+              822,
+              710,
+              897
+            ],
+            "targetBox": [
+              657,
+              813,
+              705,
+              883
+            ],
+            "paintedEmitterPolygon": [
+              [
+                661,
+                821
+              ],
+              [
+                700,
+                813
+              ],
+              [
+                699,
+                874
+              ],
+              [
+                659,
+                882
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.18,
+            "keptPixels": 1237
+          },
+          {
+            "name": "door-lantern",
+            "sourceBox": [
+              531,
+              1095,
+              575,
+              1139
+            ],
+            "targetBox": [
+              534,
+              1093,
+              574,
+              1137
+            ],
+            "paintedEmitterPolygon": [
+              [
+                538,
+                1098
+              ],
+              [
+                550,
+                1100
+              ],
+              [
+                550,
+                1129
+              ],
+              [
+                539,
+                1125
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.18,
+            "keptPixels": 320
+          },
+          {
+            "name": "door-lantern-right",
+            "sourceBox": [
+              531,
+              1095,
+              575,
+              1139
+            ],
+            "targetBox": [
+              534,
+              1093,
+              574,
+              1137
+            ],
+            "paintedEmitterPolygon": [
+              [
+                555,
+                1100
+              ],
+              [
+                569,
+                1096
+              ],
+              [
+                568,
+                1125
+              ],
+              [
+                555,
+                1130
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.18,
+            "keptPixels": 403
+          }
+        ]
+      },
+      "prompt": "Use case: lighting-weather.\nAsset type: exact-registration transparent emissive light overlay for a cosy isometric town-building game. Input image is the sole edit target and coordinate reference.\nPrimary request: Create ONLY the soft warm light emitted by the EXISTING window glass and existing tiny lantern glass of this house, on a genuinely transparent RGBA background. Do NOT reproduce the house, window frames, foliage, furniture, lantern metal, roof, ground, hex plot, or any other opaque objects. The output is a glow-only layer, not a relit scene.\nComposition: output 1024x1536 pixels, identical canvas, framing, positions, scale and perspective as the reference. Preserve all the empty headroom. Each luminous patch must coincide pixel-for-pixel with its glass in the input. This is not a rearranged collection of lights. Copy the painted pane divisions as transparent gaps, never glowing wooden frames. Keep all glass occlusions and plants as transparent holes.\nLight and medium: hand-painted gentle amber/honey warm light, softly translucent, restrained luminosity and very small localized halo. No white-hot centers. Existing color and detailed brush texture must remain readable after additive lighter blending. Daytime alpha breathes 35%-100% and night uses 100%, so this layer must be faint, with low partial alpha, not opaque orange or white panels.\nConstraints: All pixels other than light from existing glass must be fully transparent. No new lights; no stars or sparkles, no scene shading, no global bloom, no background color or checkerboard, no roof glow or ground lights, no silhouette, text, frame or shadow. No emissive paint outside x32..992 or above y24.\nSource-specific registration: The exact existing lights are the two rectangular windows on the left front facade (upper around x320 y949, lower x312 y1130), the dormer window on the right roof around x681 y845, and the single small wall lantern beside the front door around x554 y1112. Preserve the frames and flower-box occlusions as transparent.",
+      "generator": "image_gen built-in"
+    },
+    {
+      "tile": "home:1",
+      "final": "assets/tiles/1/home-glow.png",
+      "manifest": {
+        "glow": "1/home-glow.png",
+        "glowPeriod": 8.4
+      },
+      "sourceBase": "assets/tiles/1/home.png",
+      "sourceBaseSha256": "e6218077406e40a6f4c865a4cccef8508b3ee5a454c4395574243aa9b0b30dfb",
+      "raw": "raw/home-1-imagegen.png",
+      "rawSha256": "55159f985573147d6655330e451d8e4bd72067fb775010fc08a81ea46257db17",
+      "finalSha256": "f5b6d03cb267fed116404838b7dab105e21cf39bbd00416d879a3ddd134069e6",
+      "rawDimensions": [
+        1024,
+        1536
+      ],
+      "outputDimensions": [
+        1024,
+        1536
+      ],
+      "rawStats": {
+        "nonzero": 228826,
+        "maxAlpha": 252,
+        "meanNonzeroAlpha": 58.33532902729585,
+        "bbox": [
+          0,
+          31,
+          1014,
+          1535
+        ],
+        "offKeep": 174
+      },
+      "finalStats": {
+        "nonzero": 16167,
+        "maxAlpha": 38,
+        "meanNonzeroAlpha": 26.973773736623986,
+        "bbox": [
+          191,
+          755,
+          908,
+          1171
+        ],
+        "offKeep": 0
+      },
+      "additiveQA": {
+        "formula": "Canvas globalCompositeOperation=lighter; globalAlpha=0.35 or 1.0; base unmodified as in src/tile-art.js",
+        "changedPixels": 16167,
+        "newWhitePixels": 0,
+        "maxAddedChannel": 36
+      },
+      "normalization": {
+        "globalTransform": "identity; no resizing or cropping of the tile canvas",
+        "method": "Preserve generated RGB and alpha, crop/register each existing emitter only, multiply alpha by antialiased painted-glass mask, warm-glass source-base selection (not recoloring), and gentle opacity. No generated replacement artwork.",
+        "whiteProtection": "Alpha additionally capped by max(0,235-baseBlue)*255/rawBlue; generated RGB unchanged",
+        "windowSelection": "smoothstep(165,220,R) * smoothstep(105,170,G) * smoothstep(8,38,R-G) * (1-smoothstep(.72,.98,B/G)); derived only from existing painted glass",
+        "regions": [
+          {
+            "name": "left-dormer",
+            "sourceBox": [
+              348,
+              814,
+              393,
+              864
+            ],
+            "targetBox": [
+              350,
+              811,
+              397,
+              864
+            ],
+            "paintedEmitterPolygon": [
+              [
+                354,
+                819
+              ],
+              [
+                391,
+                812
+              ],
+              [
+                390,
+                856
+              ],
+              [
+                353,
+                864
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 868
+          },
+          {
+            "name": "middle-dormer",
+            "sourceBox": [
+              562,
+              789,
+              612,
+              843
+            ],
+            "targetBox": [
+              560,
+              785,
+              612,
+              846
+            ],
+            "paintedEmitterPolygon": [
+              [
+                564,
+                795
+              ],
+              [
+                607,
+                787
+              ],
+              [
+                606,
+                837
+              ],
+              [
+                563,
+                847
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 1251
+          },
+          {
+            "name": "right-dormer",
+            "sourceBox": [
+              793,
+              751,
+              838,
+              805
+            ],
+            "targetBox": [
+              790,
+              750,
+              838,
+              808
+            ],
+            "paintedEmitterPolygon": [
+              [
+                795,
+                759
+              ],
+              [
+                833,
+                752
+              ],
+              [
+                832,
+                799
+              ],
+              [
+                793,
+                807
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 973
+          },
+          {
+            "name": "left-gable",
+            "sourceBox": [
+              187,
+              926,
+              241,
+              987
+            ],
+            "targetBox": [
+              186,
+              924,
+              242,
+              991
+            ],
+            "paintedEmitterPolygon": [
+              [
+                191,
+                928
+              ],
+              [
+                235,
+                936
+              ],
+              [
+                236,
+                988
+              ],
+              [
+                190,
+                980
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 1528
+          },
+          {
+            "name": "middle-left",
+            "sourceBox": [
+              374,
+              971,
+              427,
+              1028
+            ],
+            "targetBox": [
+              370,
+              965,
+              428,
+              1029
+            ],
+            "paintedEmitterPolygon": [
+              [
+                376,
+                978
+              ],
+              [
+                424,
+                969
+              ],
+              [
+                422,
+                1023
+              ],
+              [
+                375,
+                1031
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 1518
+          },
+          {
+            "name": "middle-center",
+            "sourceBox": [
+              587,
+              944,
+              642,
+              1002
+            ],
+            "targetBox": [
+              584,
+              940,
+              644,
+              1007
+            ],
+            "paintedEmitterPolygon": [
+              [
+                589,
+                950
+              ],
+              [
+                640,
+                942
+              ],
+              [
+                639,
+                998
+              ],
+              [
+                588,
+                1008
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 1491
+          },
+          {
+            "name": "middle-right",
+            "sourceBox": [
+              812,
+              912,
+              865,
+              970
+            ],
+            "targetBox": [
+              809,
+              907,
+              868,
+              975
+            ],
+            "paintedEmitterPolygon": [
+              [
+                815,
+                919
+              ],
+              [
+                861,
+                911
+              ],
+              [
+                862,
+                966
+              ],
+              [
+                812,
+                975
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 1434
+          },
+          {
+            "name": "lower-left",
+            "sourceBox": [
+              278,
+              1093,
+              331,
+              1171
+            ],
+            "targetBox": [
+              275,
+              1091,
+              333,
+              1177
+            ],
+            "paintedEmitterPolygon": [
+              [
+                280,
+                1094
+              ],
+              [
+                328,
+                1094
+              ],
+              [
+                329,
+                1168
+              ],
+              [
+                279,
+                1171
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 2126
+          },
+          {
+            "name": "lower-center",
+            "sourceBox": [
+              584,
+              1091,
+              643,
+              1174
+            ],
+            "targetBox": [
+              581,
+              1090,
+              645,
+              1178
+            ],
+            "paintedEmitterPolygon": [
+              [
+                586,
+                1099
+              ],
+              [
+                639,
+                1090
+              ],
+              [
+                639,
+                1165
+              ],
+              [
+                586,
+                1175
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 2507
+          },
+          {
+            "name": "lower-right",
+            "sourceBox": [
+              865,
+              1065,
+              913,
+              1120
+            ],
+            "targetBox": [
+              864,
+              1062,
+              914,
+              1141
+            ],
+            "paintedEmitterPolygon": [
+              [
+                869,
+                1070
+              ],
+              [
+                910,
+                1063
+              ],
+              [
+                909,
+                1133
+              ],
+              [
+                866,
+                1141
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 1620
+          },
+          {
+            "name": "lantern-left",
+            "sourceBox": [
+              210,
+              1115,
+              239,
+              1150
+            ],
+            "targetBox": [
+              209,
+              1115,
+              238,
+              1150
+            ],
+            "paintedEmitterPolygon": [
+              [
+                214,
+                1125
+              ],
+              [
+                221,
+                1126
+              ],
+              [
+                221,
+                1144
+              ],
+              [
+                214,
+                1141
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 121
+          },
+          {
+            "name": "lantern-left-side",
+            "sourceBox": [
+              210,
+              1115,
+              239,
+              1150
+            ],
+            "targetBox": [
+              209,
+              1115,
+              238,
+              1150
+            ],
+            "paintedEmitterPolygon": [
+              [
+                225,
+                1126
+              ],
+              [
+                234,
+                1123
+              ],
+              [
+                232,
+                1143
+              ],
+              [
+                225,
+                1146
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 170
+          },
+          {
+            "name": "lantern-center",
+            "sourceBox": [
+              510,
+              1131,
+              539,
+              1165
+            ],
+            "targetBox": [
+              510,
+              1130,
+              541,
+              1167
+            ],
+            "paintedEmitterPolygon": [
+              [
+                516,
+                1140
+              ],
+              [
+                523,
+                1142
+              ],
+              [
+                523,
+                1160
+              ],
+              [
+                516,
+                1156
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 120
+          },
+          {
+            "name": "lantern-center-side",
+            "sourceBox": [
+              510,
+              1131,
+              539,
+              1165
+            ],
+            "targetBox": [
+              510,
+              1130,
+              541,
+              1167
+            ],
+            "paintedEmitterPolygon": [
+              [
+                526,
+                1142
+              ],
+              [
+                536,
+                1139
+              ],
+              [
+                534,
+                1158
+              ],
+              [
+                527,
+                1163
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 191
+          },
+          {
+            "name": "lantern-right",
+            "sourceBox": [
+              828,
+              1107,
+              855,
+              1139
+            ],
+            "targetBox": [
+              828,
+              1104,
+              857,
+              1140
+            ],
+            "paintedEmitterPolygon": [
+              [
+                834,
+                1116
+              ],
+              [
+                841,
+                1118
+              ],
+              [
+                840,
+                1134
+              ],
+              [
+                834,
+                1131
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 113
+          },
+          {
+            "name": "lantern-right-side",
+            "sourceBox": [
+              828,
+              1107,
+              855,
+              1139
+            ],
+            "targetBox": [
+              828,
+              1104,
+              857,
+              1140
+            ],
+            "paintedEmitterPolygon": [
+              [
+                844,
+                1118
+              ],
+              [
+                853,
+                1114
+              ],
+              [
+                850,
+                1132
+              ],
+              [
+                844,
+                1135
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.15,
+            "keptPixels": 136
+          }
+        ]
+      },
+      "prompt": "Use case: lighting-weather.\nAsset type: exact-registration transparent emissive light overlay for a cosy isometric town-building game. Input image is the sole edit target and coordinate reference.\nPrimary request: Create ONLY the soft warm light emitted by the EXISTING window glass and existing tiny lantern glass of this house, on a genuinely transparent RGBA background. Do NOT reproduce the house, window frames, foliage, furniture, lantern metal, roof, ground, hex plot, or any other opaque objects. The output is a glow-only layer, not a relit scene.\nComposition: output 1024x1536 pixels, identical canvas, framing, positions, scale and perspective as the reference. Preserve all the empty headroom. Each luminous patch must coincide pixel-for-pixel with its glass in the input. This is not a rearranged collection of lights. Copy the painted pane divisions as transparent gaps, never glowing wooden frames. Keep all glass occlusions and plants as transparent holes.\nLight and medium: hand-painted gentle amber/honey warm light, softly translucent, restrained luminosity and very small localized halo. No white-hot centers. Existing color and detailed brush texture must remain readable after additive lighter blending. Daytime alpha breathes 35%-100% and night uses 100%, so this layer must be faint, with low partial alpha, not opaque orange or white panels.\nConstraints: All pixels other than light from existing glass must be fully transparent. No new lights; no stars or sparkles, no scene shading, no global bloom, no background color or checkerboard, no roof glow or ground lights, no silhouette, text, frame or shadow. No emissive paint outside x32..992 or above y24.\nSource-specific registration: The exact existing lights are the three roof dormer windows, the four visible middle-floor windows including the far-left gable, the three lower-floor windows, and the three small wall lanterns beside the three doors. Keep all red/green/blue window shutters, brown frames, flower boxes, foliage and wood divisions transparent. No light on the opaque doors.",
+      "generator": "image_gen built-in"
+    },
+    {
+      "tile": "home:2",
+      "final": "assets/tiles/2/home-glow.png",
+      "manifest": {
+        "glow": "2/home-glow.png",
+        "glowPeriod": 9.1
+      },
+      "sourceBase": "assets/tiles/2/home.png",
+      "sourceBaseSha256": "f0d2f95bf4a6885f866f353daf24f3136682b64f50a2982d6bd548a717f983d9",
+      "raw": "raw/home-2-imagegen.png",
+      "rawSha256": "292f46c3ee4443f9dc4551652d65d4230a457d9aabe1f23e026d0be13af62091",
+      "finalSha256": "d81e6d2dc7585dbdbefcec642a51f8ba6f90e43ed8aa7d0b6323daa652b80226",
+      "rawDimensions": [
+        1024,
+        1536
+      ],
+      "outputDimensions": [
+        1024,
+        1536
+      ],
+      "rawStats": {
+        "nonzero": 202450,
+        "maxAlpha": 254,
+        "meanNonzeroAlpha": 154.70583353914546,
+        "bbox": [
+          0,
+          55,
+          1007,
+          1519
+        ],
+        "offKeep": 99
+      },
+      "finalStats": {
+        "nonzero": 45178,
+        "maxAlpha": 33,
+        "meanNonzeroAlpha": 21.798818008765327,
+        "bbox": [
+          110,
+          619,
+          880,
+          1247
+        ],
+        "offKeep": 0
+      },
+      "additiveQA": {
+        "formula": "Canvas globalCompositeOperation=lighter; globalAlpha=0.35 or 1.0; base unmodified as in src/tile-art.js",
+        "changedPixels": 45178,
+        "newWhitePixels": 0,
+        "maxAddedChannel": 32
+      },
+      "normalization": {
+        "globalTransform": "identity; no resizing or cropping of the tile canvas",
+        "method": "Preserve generated RGB and alpha, crop/register each existing emitter only, multiply alpha by antialiased painted-glass mask, warm-glass source-base selection (not recoloring), and gentle opacity. No generated replacement artwork.",
+        "whiteProtection": "Alpha additionally capped by max(0,235-baseBlue)*255/rawBlue; generated RGB unchanged",
+        "windowSelection": "smoothstep(165,220,R) * smoothstep(105,170,G) * smoothstep(8,38,R-G) * (1-smoothstep(.72,.98,B/G)); derived only from existing painted glass",
+        "regions": [
+          {
+            "name": "central-skylight",
+            "sourceBox": [
+              510,
+              606,
+              662,
+              679
+            ],
+            "targetBox": [
+              506,
+              603,
+              662,
+              680
+            ],
+            "paintedEmitterPolygon": [
+              [
+                555,
+                632
+              ],
+              [
+                591,
+                619
+              ],
+              [
+                614,
+                650
+              ],
+              [
+                579,
+                665
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 1059
+          },
+          {
+            "name": "left-side-upper",
+            "sourceBox": [
+              104,
+              841,
+              144,
+              930
+            ],
+            "targetBox": [
+              105,
+              840,
+              143,
+              933
+            ],
+            "paintedEmitterPolygon": [
+              [
+                110,
+                849
+              ],
+              [
+                136,
+                860
+              ],
+              [
+                136,
+                924
+              ],
+              [
+                109,
+                914
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 1099
+          },
+          {
+            "name": "left-side-middle",
+            "sourceBox": [
+              104,
+              969,
+              143,
+              1056
+            ],
+            "targetBox": [
+              104,
+              972,
+              141,
+              1058
+            ],
+            "paintedEmitterPolygon": [
+              [
+                109,
+                981
+              ],
+              [
+                136,
+                993
+              ],
+              [
+                135,
+                1048
+              ],
+              [
+                109,
+                1036
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 863
+          },
+          {
+            "name": "left-side-lower",
+            "sourceBox": [
+              105,
+              1103,
+              144,
+              1195
+            ],
+            "targetBox": [
+              105,
+              1110,
+              142,
+              1199
+            ],
+            "paintedEmitterPolygon": [
+              [
+                110,
+                1119
+              ],
+              [
+                136,
+                1129
+              ],
+              [
+                136,
+                1183
+              ],
+              [
+                110,
+                1172
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 699
+          },
+          {
+            "name": "left-upper",
+            "sourceBox": [
+              221,
+              791,
+              338,
+              910
+            ],
+            "targetBox": [
+              224,
+              797,
+              340,
+              918
+            ],
+            "paintedEmitterPolygon": [
+              [
+                231,
+                807
+              ],
+              [
+                331,
+                830
+              ],
+              [
+                331,
+                901
+              ],
+              [
+                232,
+                877
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 2935
+          },
+          {
+            "name": "left-middle",
+            "sourceBox": [
+              222,
+              939,
+              338,
+              1055
+            ],
+            "targetBox": [
+              220,
+              943,
+              339,
+              1060
+            ],
+            "paintedEmitterPolygon": [
+              [
+                230,
+                956
+              ],
+              [
+                331,
+                981
+              ],
+              [
+                331,
+                1047
+              ],
+              [
+                230,
+                1022
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 2445
+          },
+          {
+            "name": "left-lower",
+            "sourceBox": [
+              222,
+              1091,
+              338,
+              1221
+            ],
+            "targetBox": [
+              220,
+              1097,
+              339,
+              1226
+            ],
+            "paintedEmitterPolygon": [
+              [
+                231,
+                1110
+              ],
+              [
+                330,
+                1133
+              ],
+              [
+                330,
+                1210
+              ],
+              [
+                231,
+                1187
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 3310
+          },
+          {
+            "name": "narrow-upper",
+            "sourceBox": [
+              414,
+              830,
+              476,
+              922
+            ],
+            "targetBox": [
+              415,
+              832,
+              477,
+              924
+            ],
+            "paintedEmitterPolygon": [
+              [
+                421,
+                845
+              ],
+              [
+                469,
+                837
+              ],
+              [
+                469,
+                912
+              ],
+              [
+                420,
+                920
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 1718
+          },
+          {
+            "name": "narrow-middle",
+            "sourceBox": [
+              414,
+              963,
+              476,
+              1056
+            ],
+            "targetBox": [
+              415,
+              964,
+              477,
+              1058
+            ],
+            "paintedEmitterPolygon": [
+              [
+                421,
+                975
+              ],
+              [
+                469,
+                969
+              ],
+              [
+                469,
+                1044
+              ],
+              [
+                421,
+                1052
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 2135
+          },
+          {
+            "name": "arched-center-upper",
+            "sourceBox": [
+              559,
+              798,
+              703,
+              935
+            ],
+            "targetBox": [
+              558,
+              798,
+              703,
+              936
+            ],
+            "paintedEmitterPolygon": [
+              [
+                566,
+                828
+              ],
+              [
+                586,
+                816
+              ],
+              [
+                620,
+                806
+              ],
+              [
+                649,
+                807
+              ],
+              [
+                691,
+                817
+              ],
+              [
+                694,
+                915
+              ],
+              [
+                565,
+                931
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 8390
+          },
+          {
+            "name": "center-middle",
+            "sourceBox": [
+              559,
+              941,
+              702,
+              1073
+            ],
+            "targetBox": [
+              558,
+              940,
+              703,
+              1074
+            ],
+            "paintedEmitterPolygon": [
+              [
+                566,
+                962
+              ],
+              [
+                695,
+                948
+              ],
+              [
+                693,
+                1054
+              ],
+              [
+                564,
+                1069
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 7137
+          },
+          {
+            "name": "right-upper",
+            "sourceBox": [
+              783,
+              761,
+              886,
+              866
+            ],
+            "targetBox": [
+              784,
+              763,
+              887,
+              869
+            ],
+            "paintedEmitterPolygon": [
+              [
+                791,
+                790
+              ],
+              [
+                878,
+                775
+              ],
+              [
+                878,
+                847
+              ],
+              [
+                790,
+                865
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 2445
+          },
+          {
+            "name": "right-middle",
+            "sourceBox": [
+              782,
+              909,
+              889,
+              1011
+            ],
+            "targetBox": [
+              783,
+              914,
+              889,
+              1014
+            ],
+            "paintedEmitterPolygon": [
+              [
+                791,
+                937
+              ],
+              [
+                881,
+                923
+              ],
+              [
+                881,
+                993
+              ],
+              [
+                791,
+                1010
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 2927
+          },
+          {
+            "name": "right-lower",
+            "sourceBox": [
+              782,
+              1059,
+              890,
+              1175
+            ],
+            "targetBox": [
+              783,
+              1063,
+              890,
+              1175
+            ],
+            "paintedEmitterPolygon": [
+              [
+                792,
+                1087
+              ],
+              [
+                882,
+                1070
+              ],
+              [
+                883,
+                1151
+              ],
+              [
+                791,
+                1170
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 3198
+          },
+          {
+            "name": "entry-transom",
+            "sourceBox": [
+              558,
+              1121,
+              674,
+              1287
+            ],
+            "targetBox": [
+              559,
+              1120,
+              675,
+              1284
+            ],
+            "paintedEmitterPolygon": [
+              [
+                571,
+                1152
+              ],
+              [
+                582,
+                1142
+              ],
+              [
+                595,
+                1136
+              ],
+              [
+                612,
+                1131
+              ],
+              [
+                629,
+                1130
+              ],
+              [
+                646,
+                1136
+              ],
+              [
+                658,
+                1147
+              ],
+              [
+                658,
+                1151
+              ],
+              [
+                571,
+                1161
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 1120
+          },
+          {
+            "name": "entry-left-glass",
+            "sourceBox": [
+              558,
+              1121,
+              674,
+              1287
+            ],
+            "targetBox": [
+              559,
+              1120,
+              675,
+              1284
+            ],
+            "paintedEmitterPolygon": [
+              [
+                575,
+                1174
+              ],
+              [
+                610,
+                1170
+              ],
+              [
+                610,
+                1244
+              ],
+              [
+                575,
+                1248
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 1628
+          },
+          {
+            "name": "entry-right-glass",
+            "sourceBox": [
+              558,
+              1121,
+              674,
+              1287
+            ],
+            "targetBox": [
+              559,
+              1120,
+              675,
+              1284
+            ],
+            "paintedEmitterPolygon": [
+              [
+                625,
+                1169
+              ],
+              [
+                657,
+                1164
+              ],
+              [
+                658,
+                1238
+              ],
+              [
+                625,
+                1242
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 1523
+          },
+          {
+            "name": "entry-lantern-left",
+            "sourceBox": [
+              485,
+              1173,
+              518,
+              1210
+            ],
+            "targetBox": [
+              485,
+              1173,
+              518,
+              1210
+            ],
+            "paintedEmitterPolygon": [
+              [
+                492,
+                1185
+              ],
+              [
+                499,
+                1187
+              ],
+              [
+                499,
+                1203
+              ],
+              [
+                492,
+                1200
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 107
+          },
+          {
+            "name": "entry-lantern-left-side",
+            "sourceBox": [
+              485,
+              1173,
+              518,
+              1210
+            ],
+            "targetBox": [
+              485,
+              1173,
+              518,
+              1210
+            ],
+            "paintedEmitterPolygon": [
+              [
+                503,
+                1187
+              ],
+              [
+                513,
+                1183
+              ],
+              [
+                511,
+                1201
+              ],
+              [
+                504,
+                1206
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 177
+          },
+          {
+            "name": "entry-lantern-right",
+            "sourceBox": [
+              732,
+              1145,
+              764,
+              1180
+            ],
+            "targetBox": [
+              732,
+              1144,
+              764,
+              1180
+            ],
+            "paintedEmitterPolygon": [
+              [
+                739,
+                1156
+              ],
+              [
+                746,
+                1159
+              ],
+              [
+                746,
+                1175
+              ],
+              [
+                739,
+                1172
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 108
+          },
+          {
+            "name": "entry-lantern-right-side",
+            "sourceBox": [
+              732,
+              1145,
+              764,
+              1180
+            ],
+            "targetBox": [
+              732,
+              1144,
+              764,
+              1180
+            ],
+            "paintedEmitterPolygon": [
+              [
+                750,
+                1158
+              ],
+              [
+                759,
+                1155
+              ],
+              [
+                757,
+                1173
+              ],
+              [
+                751,
+                1176
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.13,
+            "keptPixels": 155
+          }
+        ]
+      },
+      "prompt": "Use case: lighting-weather.\nAsset type: exact-registration transparent emissive light overlay for a cosy isometric town-building game. Input image is the sole edit target and coordinate reference.\nPrimary request: Create ONLY the soft warm light emitted by the EXISTING window glass and existing tiny lantern glass of this house, on a genuinely transparent RGBA background. Do NOT reproduce the house, window frames, foliage, furniture, lantern metal, roof, ground, hex plot, or any other opaque objects. The output is a glow-only layer, not a relit scene.\nComposition: output 1024x1536 pixels, identical canvas, framing, positions, scale and perspective as the reference. Preserve all the empty headroom. Each luminous patch must coincide pixel-for-pixel with its glass in the input. This is not a rearranged collection of lights. Copy the painted pane divisions as transparent gaps, never glowing wooden frames. Keep all glass occlusions and plants as transparent holes.\nLight and medium: hand-painted gentle amber/honey warm light, softly translucent, restrained luminosity and very small localized halo. No white-hot centers. Existing color and detailed brush texture must remain readable after additive lighter blending. Daytime alpha breathes 35%-100% and night uses 100%, so this layer must be faint, with low partial alpha, not opaque orange or white panels.\nConstraints: All pixels other than light from existing glass must be fully transparent. No new lights; no stars or sparkles, no scene shading, no global bloom, no background color or checkerboard, no roof glow or ground lights, no silhouette, text, frame or shadow. No emissive paint outside x32..992 or above y24.\nSource-specific registration: The exact existing lights are the panes of the visible apartment windows, the existing small glass entry-door panes and arched transom, the warm central roof skylight pane, and the two small entry lanterns. This has large glass panels, so render much fainter than a normal glowing window to preserve the room plants, curtains and warm lamp detail beneath additive blending. Keep all dark mullions, plants, frames and balcony rails transparent.",
+      "generator": "image_gen built-in"
+    },
+    {
+      "tile": "home:leaf",
+      "final": "assets/tiles/leaf/home-glow.png",
+      "manifest": {
+        "glow": "leaf/home-glow.png",
+        "glowPeriod": 8.8
+      },
+      "sourceBase": "assets/tiles/leaf/home.png",
+      "sourceBaseSha256": "0bc5d21212a4e7b6ae970deba81681ba412d3798377b348acdc0efed0d08fd2a",
+      "raw": "raw/home-leaf-imagegen.png",
+      "rawSha256": "c571f003e3f6ccb3ae9ce747cb047dbc3427cc538cf41068be2407707087313b",
+      "finalSha256": "aebb307402af5b5467fa9a59e23c3aa37c4931c32617f40e8f7f3f644c613d42",
+      "rawDimensions": [
+        1024,
+        1536
+      ],
+      "outputDimensions": [
+        1024,
+        1536
+      ],
+      "rawStats": {
+        "nonzero": 97836,
+        "maxAlpha": 254,
+        "meanNonzeroAlpha": 56.798908377284434,
+        "bbox": [
+          41,
+          133,
+          979,
+          1431
+        ],
+        "offKeep": 1
+      },
+      "finalStats": {
+        "nonzero": 5626,
+        "maxAlpha": 80,
+        "meanNonzeroAlpha": 35.29825808745112,
+        "bbox": [
+          195,
+          391,
+          826,
+          999
+        ],
+        "offKeep": 0
+      },
+      "additiveQA": {
+        "formula": "Canvas globalCompositeOperation=lighter; globalAlpha=0.35 or 1.0; base unmodified as in src/tile-art.js",
+        "changedPixels": 5626,
+        "newWhitePixels": 0,
+        "maxAddedChannel": 79
+      },
+      "normalization": {
+        "globalTransform": "identity; no resizing or cropping of the tile canvas",
+        "method": "Preserve generated RGB and alpha, crop/register each existing emitter only, multiply alpha by antialiased painted-glass mask, warm-glass source-base selection (not recoloring), and gentle opacity. No generated replacement artwork.",
+        "whiteProtection": "Alpha additionally capped by max(0,235-baseBlue)*255/rawBlue; generated RGB unchanged",
+        "windowSelection": "smoothstep(165,220,R) * smoothstep(105,170,G) * smoothstep(8,38,R-G) * (1-smoothstep(.72,.98,B/G)); derived only from existing painted glass",
+        "regions": [
+          {
+            "name": "upper-arched-window",
+            "sourceBox": [
+              710,
+              382,
+              777,
+              443
+            ],
+            "targetBox": [
+              710,
+              384,
+              778,
+              445
+            ],
+            "paintedEmitterPolygon": [
+              [
+                718,
+                431
+              ],
+              [
+                718,
+                405
+              ],
+              [
+                725,
+                395
+              ],
+              [
+                739,
+                390
+              ],
+              [
+                750,
+                392
+              ],
+              [
+                761,
+                398
+              ],
+              [
+                766,
+                412
+              ],
+              [
+                767,
+                432
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.17,
+            "keptPixels": 1040
+          },
+          {
+            "name": "middle-main-window",
+            "sourceBox": [
+              281,
+              669,
+              332,
+              723
+            ],
+            "targetBox": [
+              281,
+              672,
+              333,
+              727
+            ],
+            "paintedEmitterPolygon": [
+              [
+                287,
+                679
+              ],
+              [
+                327,
+                679
+              ],
+              [
+                327,
+                720
+              ],
+              [
+                287,
+                722
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.17,
+            "keptPixels": 978
+          },
+          {
+            "name": "middle-side-window",
+            "sourceBox": [
+              181,
+              685,
+              216,
+              725
+            ],
+            "targetBox": [
+              185,
+              685,
+              218,
+              728
+            ],
+            "paintedEmitterPolygon": [
+              [
+                191,
+                692
+              ],
+              [
+                212,
+                695
+              ],
+              [
+                213,
+                722
+              ],
+              [
+                191,
+                721
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.17,
+            "keptPixels": 293
+          },
+          {
+            "name": "lower-arched-window",
+            "sourceBox": [
+              527,
+              932,
+              608,
+              1001
+            ],
+            "targetBox": [
+              526,
+              935,
+              608,
+              1009
+            ],
+            "paintedEmitterPolygon": [
+              [
+                536,
+                998
+              ],
+              [
+                536,
+                963
+              ],
+              [
+                543,
+                950
+              ],
+              [
+                556,
+                943
+              ],
+              [
+                570,
+                942
+              ],
+              [
+                585,
+                948
+              ],
+              [
+                599,
+                960
+              ],
+              [
+                599,
+                1000
+              ]
+            ],
+            "kind": "window",
+            "alphaMultiplier": 0.17,
+            "keptPixels": 2202
+          },
+          {
+            "name": "upper-lantern-left",
+            "sourceBox": [
+              558,
+              409,
+              591,
+              449
+            ],
+            "targetBox": [
+              557,
+              414,
+              593,
+              451
+            ],
+            "paintedEmitterPolygon": [
+              [
+                563,
+                424
+              ],
+              [
+                571,
+                423
+              ],
+              [
+                571,
+                443
+              ],
+              [
+                563,
+                441
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.32,
+            "keptPixels": 156
+          },
+          {
+            "name": "upper-lantern-right",
+            "sourceBox": [
+              558,
+              409,
+              591,
+              449
+            ],
+            "targetBox": [
+              557,
+              414,
+              593,
+              451
+            ],
+            "paintedEmitterPolygon": [
+              [
+                577,
+                423
+              ],
+              [
+                586,
+                426
+              ],
+              [
+                586,
+                443
+              ],
+              [
+                577,
+                443
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.32,
+            "keptPixels": 171
+          },
+          {
+            "name": "middle-lantern-left",
+            "sourceBox": [
+              406,
+              692,
+              440,
+              735
+            ],
+            "targetBox": [
+              406,
+              692,
+              441,
+              735
+            ],
+            "paintedEmitterPolygon": [
+              [
+                411,
+                704
+              ],
+              [
+                421,
+                705
+              ],
+              [
+                421,
+                726
+              ],
+              [
+                411,
+                725
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.32,
+            "keptPixels": 220
+          },
+          {
+            "name": "middle-lantern-right",
+            "sourceBox": [
+              406,
+              692,
+              440,
+              735
+            ],
+            "targetBox": [
+              406,
+              692,
+              441,
+              735
+            ],
+            "paintedEmitterPolygon": [
+              [
+                427,
+                705
+              ],
+              [
+                436,
+                704
+              ],
+              [
+                435,
+                725
+              ],
+              [
+                427,
+                726
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.32,
+            "keptPixels": 197
+          },
+          {
+            "name": "lower-lantern-left",
+            "sourceBox": [
+              797,
+              918,
+              832,
+              961
+            ],
+            "targetBox": [
+              797,
+              924,
+              833,
+              966
+            ],
+            "paintedEmitterPolygon": [
+              [
+                803,
+                935
+              ],
+              [
+                812,
+                938
+              ],
+              [
+                812,
+                956
+              ],
+              [
+                804,
+                953
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.32,
+            "keptPixels": 170
+          },
+          {
+            "name": "lower-lantern-right",
+            "sourceBox": [
+              797,
+              918,
+              832,
+              961
+            ],
+            "targetBox": [
+              797,
+              924,
+              833,
+              966
+            ],
+            "paintedEmitterPolygon": [
+              [
+                818,
+                938
+              ],
+              [
+                827,
+                934
+              ],
+              [
+                826,
+                956
+              ],
+              [
+                819,
+                958
+              ]
+            ],
+            "kind": "lantern",
+            "alphaMultiplier": 0.32,
+            "keptPixels": 199
+          }
+        ]
+      },
+      "prompt": "Use case: lighting-weather.\nAsset type: exact-registration transparent emissive light overlay for a cosy isometric town-building game. Input image is the sole edit target and coordinate reference.\nPrimary request: Create ONLY the soft warm light emitted by the EXISTING window glass and existing tiny lantern glass of this house, on a genuinely transparent RGBA background. Do NOT reproduce the house, window frames, foliage, furniture, lantern metal, roof, ground, hex plot, or any other opaque objects. The output is a glow-only layer, not a relit scene.\nComposition: output 1024x1536 pixels, identical canvas, framing, positions, scale and perspective as the reference. Preserve all the empty headroom. Each luminous patch must coincide pixel-for-pixel with its glass in the input. This is not a rearranged collection of lights. Copy the painted pane divisions as transparent gaps, never glowing wooden frames. Keep all glass occlusions and plants as transparent holes.\nLight and medium: hand-painted gentle amber/honey warm light, softly translucent, restrained luminosity and very small localized halo. No white-hot centers. Existing color and detailed brush texture must remain readable after additive lighter blending. Daytime alpha breathes 35%-100% and night uses 100%, so this layer must be faint, with low partial alpha, not opaque orange or white panels.\nConstraints: All pixels other than light from existing glass must be fully transparent. No new lights; no stars or sparkles, no scene shading, no global bloom, no background color or checkerboard, no roof glow or ground lights, no silhouette, text, frame or shadow. No emissive paint outside x32..992 or above y24.\nSource-specific registration: The exact existing lights are the upper treehouse arched window around x744 y414, the middle treehouse main window around x309 y701 and its little side window around x201 y708, the lower treehouse arched window around x567 y972, plus three tiny hanging lantern glass interiors around x574 y433, x424 y713 and x816 y944. The lanterns currently look dim; show only gentle honey light inside the existing glass. Keep foliage, trunks, rope bridges, balconies, doors, flowers and lantern frames fully transparent.",
+      "generator": "image_gen built-in"
+    }
+  ]
+}

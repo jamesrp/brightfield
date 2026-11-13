@@ -1,0 +1,20 @@
+{
+  "baseCommit": "38f6cee23ae608066b91e356e2bb134da3f9282a",
+  "coreCommit": "756631d380d90d52896d86d79013061dada4a1dc",
+  "branches": [
+    "art/round-2-actors",
+    "art/round-2-details",
+    "art/round-2-glows"
+  ],
+  "method": "Private local combined snapshot only; no merge commit or main change. Manifest preserves tile actor and glow fields, sprite records and six traveller mappings.",
+  "tests": {
+    "passed": 112,
+    "failed": 0
+  },
+  "staticTilesPassed": 48,
+  "actorInstancesPassed": 20,
+  "glowLayersPassed": 20,
+  "spriteCount": 19,
+  "travellerCount": 6,
+  "note": "Glow-cycle pixel comparisons isolate light from independent actor motion, so night brightness tests do not incorrectly require moving actors to freeze."
+}
