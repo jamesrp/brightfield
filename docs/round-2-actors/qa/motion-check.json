@@ -1,0 +1,368 @@
+{
+  "passed": true,
+  "failures": [],
+  "sprites": {
+    "turbine-rotor": {
+      "width": 520,
+      "height": 520,
+      "anchor": [
+        260,
+        260
+      ],
+      "paintedPixels": 22589
+    },
+    "turbine-rotor-small": {
+      "width": 336,
+      "height": 336,
+      "anchor": [
+        168,
+        168
+      ],
+      "paintedPixels": 8818
+    },
+    "mill-waterwheel": {
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        128,
+        128
+      ],
+      "paintedPixels": 29931
+    },
+    "mill-wheel-mount": {
+      "width": 248,
+      "height": 240,
+      "anchor": [
+        120,
+        62
+      ],
+      "paintedPixels": 19692
+    },
+    "tractor": {
+      "width": 200,
+      "height": 152,
+      "anchor": [
+        96,
+        135
+      ],
+      "paintedPixels": 13910
+    },
+    "coal-wagon": {
+      "width": 304,
+      "height": 240,
+      "anchor": [
+        152,
+        200
+      ],
+      "paintedPixels": 27154
+    },
+    "horse-cart": {
+      "width": 184,
+      "height": 100,
+      "anchor": [
+        92,
+        94
+      ],
+      "paintedPixels": 7840
+    },
+    "motor-car": {
+      "width": 164,
+      "height": 107,
+      "anchor": [
+        69,
+        95
+      ],
+      "paintedPixels": 9654
+    },
+    "electric-car": {
+      "width": 168,
+      "height": 105,
+      "anchor": [
+        71,
+        95
+      ],
+      "paintedPixels": 10752
+    },
+    "sun-mirror": {
+      "width": 144,
+      "height": 115,
+      "anchor": [
+        72,
+        57
+      ],
+      "paintedPixels": 9645
+    },
+    "garden-tram": {
+      "width": 188,
+      "height": 192,
+      "anchor": [
+        116,
+        163
+      ],
+      "paintedPixels": 21882
+    },
+    "garden-bike": {
+      "width": 164,
+      "height": 181,
+      "anchor": [
+        82,
+        168
+      ],
+      "paintedPixels": 12256
+    },
+    "maglev-pod": {
+      "width": 172,
+      "height": 100,
+      "anchor": [
+        87,
+        82
+      ],
+      "paintedPixels": 9645
+    },
+    "lantern-wisp": {
+      "width": 146,
+      "height": 96,
+      "anchor": [
+        112,
+        90
+      ],
+      "paintedPixels": 4173
+    }
+  },
+  "actors": [
+    {
+      "tile": "power:0",
+      "sprite": "coal-wagon",
+      "samples": 131,
+      "duration": 10,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        325.5,
+        1136.5,
+        771.5,
+        1397.5
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "move:0",
+      "sprite": "horse-cart",
+      "samples": 131,
+      "duration": 10,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        212.5,
+        1199.5,
+        847.5,
+        1353.5
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "food:0",
+      "sprite": "tractor",
+      "samples": 131,
+      "duration": 12,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        422.5,
+        1144.5,
+        813.5,
+        1412.5
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "make:0",
+      "sprite": "mill-wheel-mount",
+      "samples": 131,
+      "duration": 6,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        116.5,
+        1114.5,
+        327.5,
+        1327.5
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "make:0",
+      "sprite": "mill-waterwheel",
+      "samples": 131,
+      "duration": 18.181818181818183,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        99.7,
+        1054.7,
+        336.3,
+        1291.3
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "move:1",
+      "sprite": "motor-car",
+      "samples": 131,
+      "duration": 8,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        420.5,
+        1154.5,
+        764.5,
+        1407.5
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "power:2",
+      "sprite": "turbine-rotor",
+      "samples": 131,
+      "duration": 12.5,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        78.2,
+        124.2,
+        561.8,
+        607.8
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "power:2",
+      "sprite": "turbine-rotor-small",
+      "samples": 131,
+      "duration": 10,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        502.1,
+        462.1,
+        803.9,
+        763.9
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "move:2",
+      "sprite": "electric-car",
+      "samples": 131,
+      "duration": 9,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        333.5,
+        1100.5,
+        861.5,
+        1359.5
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "move:star",
+      "sprite": "maglev-pod",
+      "samples": 131,
+      "duration": 10,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        77.5,
+        903.5,
+        620.5,
+        1122.5
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "power:leaf",
+      "sprite": "sun-mirror",
+      "samples": 131,
+      "duration": 12,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        98.5,
+        846.3,
+        231.5,
+        950.7
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "power:leaf",
+      "sprite": "sun-mirror",
+      "samples": 131,
+      "duration": 11,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        433.5,
+        1043.3,
+        566.5,
+        1147.6
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "power:leaf",
+      "sprite": "sun-mirror",
+      "samples": 131,
+      "duration": 10,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        806.5,
+        888.3,
+        939.5,
+        992.6
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "move:leaf",
+      "sprite": "garden-tram",
+      "samples": 131,
+      "duration": 10,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        229.5,
+        960.5,
+        620.5,
+        1343.5
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "move:magic",
+      "sprite": "lantern-wisp",
+      "samples": 216,
+      "duration": 12,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        193.5,
+        1079.5,
+        474.5,
+        1318.5
+      ],
+      "outside": 0,
+      "crossings": []
+    }
+  ],
+  "glows": [],
+  "travellers": {
+    "0": "horse-cart",
+    "1": "motor-car",
+    "2": "electric-car",
+    "leaf": "garden-bike",
+    "star": "maglev-pod",
+    "magic": "lantern-wisp"
+  }
+}

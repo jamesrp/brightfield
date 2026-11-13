@@ -40,3 +40,7 @@ The [Leaf batch](leaf-static/README.md) records eight separate built-in imagegen
 ## Magic full-hex static tiles
 
 The [Magic batch](magic-static/README.md) records eight separate built-in imagegen tiles, exact shared arcane kerb compositing, source/final checksums and reproducible geometry completion. Raw and intermediate images remain in an external private archive; only the final tiles and one real-renderer town close-up are committed. Exact prompts are in `art-provenance.json`, and `magic-static/source-archive.json` records the archived sources.
+
+## Round 2 core actors and travellers
+
+The [core actor batch](round-2-actors/README.md) adds 14 painted sprite files, six age-specific travellers and 15 actor instances across 11 tiles. The missing wind turbine blades, Sun Mirror panels and mill waterwheel now move independently of the unchanged static bases. The mill wheel includes a stationary axle and trough backing. Rail vehicles reverse without mirroring their diagonal painting. Exact prompts, transformations, source/final hashes, portable rebuilding and actual-renderer review sheets are recorded with the batch. Raw generations and intermediate images remain outside git.
