@@ -2070,5 +2070,20 @@
     ],
     "review": "docs/round-2-details/README.md",
     "source_archive": "docs/round-2-details/source-archive.json"
+  },
+  "tile_spec_v2_round_2_glows": {
+    "base_commit": "38f6cee23ae608066b91e356e2bb134da3f9282a",
+    "generator": "Built-in image_gen.imagegen",
+    "generated_date": "2026-11-12",
+    "description": "20 registered emissive overlays: eight Star, eight Magic, four home windows. Existing emitter texture only; no new light sources or painted base changes.",
+    "final_assets": "docs/round-2-glows/final-assets.json",
+    "recipes": "docs/round-2-glows/rebuild.cjs",
+    "full_prompts": [
+      "docs/round-2-glows/rebuild/star/prompts.json",
+      "docs/round-2-glows/rebuild/magic/metadata.json",
+      "docs/round-2-glows/rebuild/homes/prompts.json"
+    ],
+    "review": "docs/round-2-glows/README.md",
+    "source_archive": "docs/round-2-glows/source-archive.json"
   }
 }

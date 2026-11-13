@@ -25,3 +25,6 @@ docs/round-2-actors/**/*.png
 # Round 2 detail source/intermediate images remain in the external archive.
 docs/round-2-details/**/*.png
 !docs/round-2-details/review/*.png
+# Keep glow intermediates private; only compact review sheets are shipped.
+docs/round-2-glows/**/*.png
+!docs/round-2-glows/review/*.png

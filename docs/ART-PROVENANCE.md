@@ -47,3 +47,6 @@ The [core actor batch](round-2-actors/README.md) adds 14 painted sprite files, s
 ## Round 2 remaining moving parts
 
 The [detail actor batch](round-2-details/README.md) restores the five remaining reserved moving parts: foundry arm, Repair Guild wheel, food-stack lift, forge flame and transmutation orb. Each has a separately generated transparent sprite, exact placement and calm motion using the existing renderer. Source/final checksums, full prompts and portable source reconstruction are versioned; raw/intermediate PNGs remain outside git. All static bases are unchanged.
+## Round 2 emissive layers
+
+The 20 generated glow overlays are documented in [the Round 2 glow archive](round-2-glows/README.md), including full prompts, raw/base/final hashes, deterministic registration and alpha normalization, production-renderer day/night reviews and reproduction checks. All existing base art is unchanged. Raw sources and large diagnostic images remain outside git.
