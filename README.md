@@ -1,6 +1,16 @@
-# BRIGHTFIELD · v0.12.0
+# BRIGHTFIELD · v1.0.0
 
 A gentle, offline town-builder for mouse or touch. Open `index.html` in a browser. No build step, account, download at play time, or external service is needed.
+
+## New in v1.0: the painted town
+
+Every building now has its own painted tile, and the town comes alive.
+
+- **Full-hex plots and lanes.** Each building stands on its own hex plot, with lanes between the plots. The lane surface follows the travel tech: cart track, cobbles, tarmac, garden path, guideway, moonstone.
+- **All 48 buildings repainted** for every age and all three futures, each future with its own kerb: brick earth, garden green, pearl-and-teal alloy and violet-and-gold arcane.
+- **Moving parts.** Turbine blades spin, sun mirrors track, the mill's waterwheel turns, and tractors, wagons, trams and pods run on their tiles.
+- **Painted travellers** drive the lanes between buildings: horse and cart, motor car, electric car, garden bike, maglev pod and lantern wisp.
+- **Night lights.** Windows, crystals and Future cores glow softly, brightest at night.
 
 ## New in v0.12: Paragons
 
