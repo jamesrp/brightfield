@@ -1,0 +1,253 @@
+{
+  "generator": "built-in image_gen",
+  "generatedOn": "2026-11-12",
+  "method": "Generated glow RGB and alpha, identity canvas; source-emitter color masks and registered ROI crops, 2 px triangular feather, attenuated alpha. No procedural RGB or base repaint.",
+  "scriptSha256": "99f667bb21ea5e2fd7cef8708a37efbd9402da35e9c13e01c82b5ab1c994db83",
+  "configSha256": "5672b744ec0306d8d62e4f0dac7fe42b0f8c88d32a4dfa99fb71256c1b0d0285",
+  "rebuild": "node rebuild-star.cjs REPOSITORY ARCHIVE [OUTPUT_DIRECTORY]",
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "tiles": [
+    {
+      "type": "power",
+      "base": "assets/tiles/star/power.png",
+      "source": "raw/power.png",
+      "output": "assets/tiles/star/power-glow.png",
+      "baseSha256": "5b16f30deeeb8e772bfb18f7f9d2463992c7434c9784e3108bdbfa3c8d8c6620",
+      "sourceSha256": "e86df961ec820f510a529dacff8f9a5a13d97c5453a4f7e84b109b2b91cf8fda",
+      "outputSha256": "6ecf05c1747cc35fbce2379cfd56d911c9065f43544103c823ca220de534fe91",
+      "prompt": "Use case: background-extraction.\nAsset type: registered emissive overlay for a cosy painted isometric game tile, not a replacement tile.\nInput image 1 is the exact edit target. Output a separate glow-only layer with true transparent alpha, same 1024 x 1536 portrait canvas and pixel registration as image 1. Keep the existing image framing, scale and positions absolutely fixed. Do not center, resize, recrop or rearrange any feature. Do not paint the building, slab, plants, pipes, metallic frames or ground: all those surfaces must become fully transparent. Preserve only a very small, soft, low-intensity halo at the EXISTING painted light locations described below. The layer will be added using canvas lighter blend on top of the unchanged base; it must be gentle, not a neon redraw or bright white wash. Use soft dim teal/cyan and small warm lamp glow where the source already contains it. Black/transparent everywhere else, no opaque black background, no particles or stars, no new lights or objects, no geometry, no outlines, no text. Keep all illumination within x=32..992, y>=24 and above the original tile outline; leave the kerb and surrounding background transparent.\nSpecific allowed emitters: The central round reactor core and its two narrow side reactor columns, plus the small teal windows above and below the central circle. Main brightest area is only the small inner turquoise reactor orb, not the whole circular housing. Two small already-existing amber entry wall lamps can glow softly.",
+      "glowPeriod": 5.8,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "rawAlphaRange": [
+        0,
+        252
+      ],
+      "nontransparentPixels": 112456,
+      "maxAlpha": 74,
+      "meanAlpha": 14.576323184178701,
+      "maxAdditiveChannel": 71.68,
+      "bounds": [
+        117,
+        433,
+        907,
+        1250
+      ],
+      "clippedPixels": 96
+    },
+    {
+      "type": "move",
+      "base": "assets/tiles/star/move.png",
+      "source": "raw/move.png",
+      "output": "assets/tiles/star/move-glow.png",
+      "baseSha256": "34b2c0e967486fc70713a4c82e0d394281f4841bbd24a24646f6c6538a5c7e3e",
+      "sourceSha256": "d30503df92b22cfc866a1d5f21649776e149cb89ea7702e2c2a275c4851e06fa",
+      "outputSha256": "ff1f9a75c2337791800818f5c7f5aa17bb6ba38d29fccaaa48883397296cda87",
+      "prompt": "Use case: background-extraction.\nAsset type: registered emissive overlay for a cosy painted isometric game tile, not a replacement tile.\nInput image 1 is the exact edit target. Output a separate glow-only layer with true transparent alpha, same 1024 x 1536 portrait canvas and pixel registration as image 1. Keep the existing image framing, scale and positions absolutely fixed. Do not center, resize, recrop or rearrange any feature. Do not paint the building, slab, plants, pipes, metallic frames or ground: all those surfaces must become fully transparent. Preserve only a very small, soft, low-intensity halo at the EXISTING painted light locations described below. The layer will be added using canvas lighter blend on top of the unchanged base; it must be gentle, not a neon redraw or bright white wash. Use soft dim teal/cyan and small warm lamp glow where the source already contains it. Black/transparent everywhere else, no opaque black background, no particles or stars, no new lights or objects, no geometry, no outlines, no text. Keep all illumination within x=32..992, y>=24 and above the original tile outline; leave the kerb and surrounding background transparent.\nSpecific allowed emitters: The existing teal glass around the arch and high central turret, very gently, and only the existing small amber lamps mounted on the arch, under the station roof, and on track-support columns. Keep the track guideway empty.",
+      "glowPeriod": 6.5,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "rawAlphaRange": [
+        0,
+        253
+      ],
+      "nontransparentPixels": 102395,
+      "maxAlpha": 81,
+      "meanAlpha": 18.40819375946091,
+      "maxAdditiveChannel": 80.68,
+      "bounds": [
+        76,
+        341,
+        967,
+        1275
+      ],
+      "clippedPixels": 164
+    },
+    {
+      "type": "food",
+      "base": "assets/tiles/star/food.png",
+      "source": "raw/food.png",
+      "output": "assets/tiles/star/food-glow.png",
+      "baseSha256": "bbb592ddd5a6aa608eb701ca0c81e00cd14c46df4b6f9a7090d984ce0a8094c7",
+      "sourceSha256": "5529a13ed6c3b6fa5acf06c581a0d734a260c8661cc46a056fa9b5d0acdb71e1",
+      "outputSha256": "022be614a9e5d215df9a9deeab97e66ec0ce13b6cfaf32bea9dbfa8056ee3b9f",
+      "prompt": "Use case: background-extraction.\nAsset type: registered emissive overlay for a cosy painted isometric game tile, not a replacement tile.\nInput image 1 is the exact edit target. Output a separate glow-only layer with true transparent alpha, same 1024 x 1536 portrait canvas and pixel registration as image 1. Keep the existing image framing, scale and positions absolutely fixed. Do not center, resize, recrop or rearrange any feature. Do not paint the building, slab, plants, pipes, metallic frames or ground: all those surfaces must become fully transparent. Preserve only a very small, soft, low-intensity halo at the EXISTING painted light locations described below. The layer will be added using canvas lighter blend on top of the unchanged base; it must be gentle, not a neon redraw or bright white wash. Use soft dim teal/cyan and small warm lamp glow where the source already contains it. Black/transparent everywhere else, no opaque black background, no particles or stars, no new lights or objects, no geometry, no outlines, no text. Keep all illumination within x=32..992, y>=24 and above the original tile outline; leave the kerb and surrounding background transparent.\nSpecific allowed emitters: The existing narrow teal vertical light slots on the right lift shaft and the ten existing violet grow-light bars behind the five stacked farm windows. These violet bars stay violet, the teal slots stay teal. Small glass glints are faint; plants themselves must not emit light. No new lift platform.",
+      "glowPeriod": 6.8,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "rawAlphaRange": [
+        0,
+        250
+      ],
+      "nontransparentPixels": 37973,
+      "maxAlpha": 70,
+      "meanAlpha": 30.130619124114503,
+      "maxAdditiveChannel": 67.38,
+      "bounds": [
+        283,
+        334,
+        830,
+        1085
+      ],
+      "clippedPixels": 0
+    },
+    {
+      "type": "water",
+      "base": "assets/tiles/star/water.png",
+      "source": "raw/water.png",
+      "output": "assets/tiles/star/water-glow.png",
+      "baseSha256": "1ddb4690f05e91953c567f1e16b0fe1d402ab75bc50e779b31094a7c5df57852",
+      "sourceSha256": "b04c03acbba1a09b75d8d7ac11a5c6783623621bf7b95feba31cdccfb2e770df",
+      "outputSha256": "ce5ff575078a3695c4f158e8f7a6126b354a17065c5d0e2c9d1d625544e5fcbb",
+      "prompt": "Use case: background-extraction.\nAsset type: registered emissive overlay for a cosy painted isometric game tile, not a replacement tile.\nInput image 1 is the exact edit target. Output a separate glow-only layer with true transparent alpha, same 1024 x 1536 portrait canvas and pixel registration as image 1. Keep the existing image framing, scale and positions absolutely fixed. Do not center, resize, recrop or rearrange any feature. Do not paint the building, slab, plants, pipes, metallic frames or ground: all those surfaces must become fully transparent. Preserve only a very small, soft, low-intensity halo at the EXISTING painted light locations described below. The layer will be added using canvas lighter blend on top of the unchanged base; it must be gentle, not a neon redraw or bright white wash. Use soft dim teal/cyan and small warm lamp glow where the source already contains it. Black/transparent everywhere else, no opaque black background, no particles or stars, no new lights or objects, no geometry, no outlines, no text. Keep all illumination within x=32..992, y>=24 and above the original tile outline; leave the kerb and surrounding background transparent.\nSpecific allowed emitters: Only the existing faint turquoise glass/rim highlights of the three algae water tanks and the narrow teal slots of the little front control vessel. Very restrained illumination around tank upper rims; do not glow the algae leaves or all of the tanks uniformly.\nCritical: Keep halos small, no fog or broad aura. Limit glow extent to 3 to 8 pixels beyond an existing emitting surface.",
+      "glowPeriod": 7.6,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "rawAlphaRange": [
+        0,
+        218
+      ],
+      "nontransparentPixels": 26893,
+      "maxAlpha": 50,
+      "meanAlpha": 11.305469824861488,
+      "maxAdditiveChannel": 49.41,
+      "bounds": [
+        162,
+        375,
+        888,
+        1149
+      ],
+      "clippedPixels": 111
+    },
+    {
+      "type": "home",
+      "base": "assets/tiles/star/home.png",
+      "source": "raw/home.png",
+      "output": "assets/tiles/star/home-glow.png",
+      "baseSha256": "1e1ae4c311b84e1963de0b2e64507c88823311e6616d4bbd40fca1dd80c0f6e8",
+      "sourceSha256": "492060948dec8a1eccc2cc457d7af2f4a45a24290f9eed7eb445d8867f164f54",
+      "outputSha256": "72b9d3b24d416c28b1c8344ec33c02c0cc6aa932830fca09e7e5ac754209d33a",
+      "prompt": "Use case: background-extraction.\nAsset type: registered emissive overlay for a cosy painted isometric game tile, not a replacement tile.\nInput image 1 is the exact edit target. Output a separate glow-only layer with true transparent alpha, same 1024 x 1536 portrait canvas and pixel registration as image 1. Keep the existing image framing, scale and positions absolutely fixed. Do not center, resize, recrop or rearrange any feature. Do not paint the building, slab, plants, pipes, metallic frames or ground: all those surfaces must become fully transparent. Preserve only a very small, soft, low-intensity halo at the EXISTING painted light locations described below. The layer will be added using canvas lighter blend on top of the unchanged base; it must be gentle, not a neon redraw or bright white wash. Use soft dim teal/cyan and small warm lamp glow where the source already contains it. Black/transparent everywhere else, no opaque black background, no particles or stars, no new lights or objects, no geometry, no outlines, no text. Keep all illumination within x=32..992, y>=24 and above the original tile outline; leave the kerb and surrounding background transparent.\nSpecific allowed emitters: Only the already-painted warm yellow table lamps visible through apartment windows, two tiny door-side lamps, two garden bollard lamps, and a very faint teal light through the central glazing. Do not glow foliage, white or gold structure.\nCritical: Keep halos small, no fog or broad aura. Limit glow extent to 3 to 8 pixels beyond an existing emitting surface.",
+      "glowPeriod": 8.2,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "rawAlphaRange": [
+        0,
+        251
+      ],
+      "nontransparentPixels": 14634,
+      "maxAlpha": 84,
+      "meanAlpha": 24.05705890392237,
+      "maxAdditiveChannel": 84,
+      "bounds": [
+        126,
+        464,
+        913,
+        1258
+      ],
+      "clippedPixels": 0
+    },
+    {
+      "type": "make",
+      "base": "assets/tiles/star/make.png",
+      "source": "raw/make.png",
+      "output": "assets/tiles/star/make-glow.png",
+      "baseSha256": "ff02a3a8b3f8c89b809c9c62892c2b6383545dc0250ee8049f0bfd55f1859653",
+      "sourceSha256": "17f6a7beaa62220e62e07328fbacd53a668138fc3197081c0bcb76ff1639e02f",
+      "outputSha256": "65e91cafbbe480d36210715d4c282f8f54b611a0d1a99b79ecec037bae0da8b7",
+      "prompt": "Use case: background-extraction.\nAsset type: registered emissive overlay for a cosy painted isometric game tile, not a replacement tile.\nInput image 1 is the exact edit target. Output a separate glow-only layer with true transparent alpha, same 1024 x 1536 portrait canvas and pixel registration as image 1. Keep the existing image framing, scale and positions absolutely fixed. Do not center, resize, recrop or rearrange any feature. Do not paint the building, slab, plants, pipes, metallic frames or ground: all those surfaces must become fully transparent. Preserve only a very small, soft, low-intensity halo at the EXISTING painted light locations described below. The layer will be added using canvas lighter blend on top of the unchanged base; it must be gentle, not a neon redraw or bright white wash. Use soft dim teal/cyan and small warm lamp glow where the source already contains it. Black/transparent everywhere else, no opaque black background, no particles or stars, no new lights or objects, no geometry, no outlines, no text. Keep all illumination within x=32..992, y>=24 and above the original tile outline; leave the kerb and surrounding background transparent.\nSpecific allowed emitters: The existing thin teal nanolab spindle inside the tall central glass tower, the small teal light windows and slim control strips, and two existing amber entry wall lamps. Keep the bright central spindle narrow and soft.\nCritical: Keep halos small, no fog or broad aura. Limit glow extent to 3 to 8 pixels beyond an existing emitting surface.",
+      "glowPeriod": 5.2,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "rawAlphaRange": [
+        0,
+        254
+      ],
+      "nontransparentPixels": 53956,
+      "maxAlpha": 80,
+      "meanAlpha": 20.76223218919119,
+      "maxAdditiveChannel": 79.37,
+      "bounds": [
+        192,
+        489,
+        837,
+        1166
+      ],
+      "clippedPixels": 0
+    },
+    {
+      "type": "waste",
+      "base": "assets/tiles/star/waste.png",
+      "source": "raw/waste.png",
+      "output": "assets/tiles/star/waste-glow.png",
+      "baseSha256": "dd9a69b5e3fe709211a316788cf83540a973b1bd3517f148106b37754d7215f0",
+      "sourceSha256": "28e3a1a6c0dc2fbdeccc061b1260336e5b5f6c3122c107db9457c1058e313169",
+      "outputSha256": "517f59bcb7d48b4d7d4f3f063c5186a0061e61ee4c3237ccf667c3aa33815f6f",
+      "prompt": "Use case: background-extraction.\nAsset type: registered emissive overlay for a cosy painted isometric game tile, not a replacement tile.\nInput image 1 is the exact edit target. Output a separate glow-only layer with true transparent alpha, same 1024 x 1536 portrait canvas and pixel registration as image 1. Keep the existing image framing, scale and positions absolutely fixed. Do not center, resize, recrop or rearrange any feature. Do not paint the building, slab, plants, pipes, metallic frames or ground: all those surfaces must become fully transparent. Preserve only a very small, soft, low-intensity halo at the EXISTING painted light locations described below. The layer will be added using canvas lighter blend on top of the unchanged base; it must be gentle, not a neon redraw or bright white wash. Use soft dim teal/cyan and small warm lamp glow where the source already contains it. Black/transparent everywhere else, no opaque black background, no particles or stars, no new lights or objects, no geometry, no outlines, no text. Keep all illumination within x=32..992, y>=24 and above the original tile outline; leave the kerb and surrounding background transparent.\nSpecific allowed emitters: Only the central turquoise reclaimer glass core, the three little cyan bin indicator slots at the front, the already-existing turquoise bollard at lower left, and the small teal glass/light strips already painted on the circular housing.\nCritical: Keep halos small, no fog or broad aura. Limit glow extent to 3 to 8 pixels beyond an existing emitting surface.",
+      "glowPeriod": 6.2,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "rawAlphaRange": [
+        0,
+        250
+      ],
+      "nontransparentPixels": 55496,
+      "maxAlpha": 85,
+      "meanAlpha": 17.440734467349,
+      "maxAdditiveChannel": 84,
+      "bounds": [
+        289,
+        690,
+        887,
+        1269
+      ],
+      "clippedPixels": 0
+    },
+    {
+      "type": "wild",
+      "base": "assets/tiles/star/wild.png",
+      "source": "raw/wild.png",
+      "output": "assets/tiles/star/wild-glow.png",
+      "baseSha256": "109575f8a47eebb9303164f884016911d49f302a58c4476106546e3fa139ea53",
+      "sourceSha256": "d562fe918d01377f434e3c0720e28a657c7c4a0131ad63ce5a058aa1a80868f1",
+      "outputSha256": "19ba94b4cbb9e38ff832c4bbe78d5ce43c5790f7358329462fb547d83cb3876e",
+      "prompt": "Use case: background-extraction.\nAsset type: registered emissive overlay for a cosy painted isometric game tile, not a replacement tile.\nInput image 1 is the exact edit target. Output a separate glow-only layer with true transparent alpha, same 1024 x 1536 portrait canvas and pixel registration as image 1. Keep the existing image framing, scale and positions absolutely fixed. Do not center, resize, recrop or rearrange any feature. Do not paint the building, slab, plants, pipes, metallic frames or ground: all those surfaces must become fully transparent. Preserve only a very small, soft, low-intensity halo at the EXISTING painted light locations described below. The layer will be added using canvas lighter blend on top of the unchanged base; it must be gentle, not a neon redraw or bright white wash. Use soft dim teal/cyan and small warm lamp glow where the source already contains it. Black/transparent everywhere else, no opaque black background, no particles or stars, no new lights or objects, no geometry, no outlines, no text. Keep all illumination within x=32..992, y>=24 and above the original tile outline; leave the kerb and surrounding background transparent.\nSpecific allowed emitters: Only faint turquoise light in existing dome glass near the cap, the small cyan slit lights along the lower front wall, the existing teal entrance windows and canopy, and the one existing pale cyan garden bollard at the right. Do not trace the gold dome struts as neon or glow the plants, water, flowers or foliage.\nCritical: Keep halos small, no fog or broad aura. Limit glow extent to 3 to 8 pixels beyond an existing emitting surface.",
+      "glowPeriod": 8.8,
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "rawAlphaRange": [
+        0,
+        251
+      ],
+      "nontransparentPixels": 33249,
+      "maxAlpha": 72,
+      "meanAlpha": 18.240608740112485,
+      "maxAdditiveChannel": 68,
+      "bounds": [
+        122,
+        587,
+        952,
+        1238
+      ],
+      "clippedPixels": 14
+    }
+  ]
+}

@@ -40,3 +40,13 @@ The [Leaf batch](leaf-static/README.md) records eight separate built-in imagegen
 ## Magic full-hex static tiles
 
 The [Magic batch](magic-static/README.md) records eight separate built-in imagegen tiles, exact shared arcane kerb compositing, source/final checksums and reproducible geometry completion. Raw and intermediate images remain in an external private archive; only the final tiles and one real-renderer town close-up are committed. Exact prompts are in `art-provenance.json`, and `magic-static/source-archive.json` records the archived sources.
+
+## Round 2 core actors and travellers
+
+The [core actor batch](round-2-actors/README.md) adds 14 painted sprite files, six age-specific travellers and 15 actor instances across 11 tiles. The missing wind turbine blades, Sun Mirror panels and mill waterwheel now move independently of the unchanged static bases. The mill wheel includes a stationary axle and trough backing. Rail vehicles reverse without mirroring their diagonal painting. Exact prompts, transformations, source/final hashes, portable rebuilding and actual-renderer review sheets are recorded with the batch. Raw generations and intermediate images remain outside git.
+## Round 2 remaining moving parts
+
+The [detail actor batch](round-2-details/README.md) restores the five remaining reserved moving parts: foundry arm, Repair Guild wheel, food-stack lift, forge flame and transmutation orb. Each has a separately generated transparent sprite, exact placement and calm motion using the existing renderer. Source/final checksums, full prompts and portable source reconstruction are versioned; raw/intermediate PNGs remain outside git. All static bases are unchanged.
+## Round 2 emissive layers
+
+The 20 generated glow overlays are documented in [the Round 2 glow archive](round-2-glows/README.md), including full prompts, raw/base/final hashes, deterministic registration and alpha normalization, production-renderer day/night reviews and reproduction checks. All existing base art is unchanged. Raw sources and large diagnostic images remain outside git.

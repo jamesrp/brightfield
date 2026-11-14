@@ -1,0 +1,98 @@
+[
+  {
+    "name": "horse-cart",
+    "raw": "horse-cart-raw-v1.png",
+    "rawSha256": "bd5a47ff904176d48a041f5e41232065af5990bceb7a42f94de480e63b0d55ec",
+    "rawDimensions": [
+      1774,
+      887
+    ],
+    "crop": [
+      65,
+      5,
+      1626,
+      854
+    ],
+    "draw": [
+      4,
+      4,
+      176,
+      92
+    ],
+    "dimensions": [
+      184,
+      100
+    ],
+    "anchor": [
+      92,
+      94
+    ],
+    "src": "actors/horse-cart.png",
+    "sha256": "6726256702058f0d4ff5b8d61da3f8630111f7a3d7a9ab237de5db4ff8297e1a",
+    "operation": "Only alpha-guided rectangular crop, uniform resize (integer height rounding), transparent padding. No painting, masks or replacement pixels."
+  },
+  {
+    "name": "motor-car",
+    "raw": "motor-car-raw-v1.png",
+    "rawSha256": "05fa120899e5954e0ff405f72068288dee35b495b305fc7b521266a6cc0300ea",
+    "rawDimensions": [
+      1536,
+      1024
+    ],
+    "crop": [
+      97,
+      106,
+      1323,
+      839
+    ],
+    "draw": [
+      4,
+      4,
+      156,
+      99
+    ],
+    "dimensions": [
+      164,
+      107
+    ],
+    "anchor": [
+      69,
+      95
+    ],
+    "src": "actors/motor-car.png",
+    "sha256": "48d0d3ba5799b5aa2c1e4d04a766e9f6df773d8eb9a80075028c7c684633a24a",
+    "operation": "Only alpha-guided rectangular crop, uniform resize (integer height rounding), transparent padding. No painting, masks or replacement pixels."
+  },
+  {
+    "name": "electric-car",
+    "raw": "electric-car-raw-v2.png",
+    "rawSha256": "ac52c37093c09b67227536324f17107155ad5bfa162f313a87739ed1cb652e4b",
+    "rawDimensions": [
+      1774,
+      887
+    ],
+    "crop": [
+      318,
+      119,
+      1120,
+      680
+    ],
+    "draw": [
+      4,
+      4,
+      160,
+      97
+    ],
+    "dimensions": [
+      168,
+      105
+    ],
+    "anchor": [
+      71,
+      95
+    ],
+    "src": "actors/electric-car.png",
+    "sha256": "d8d5273fac33aa90b6c42d737133618ecc685e840ba2b32d623c0de55c975271",
+    "operation": "Only alpha-guided rectangular crop, uniform resize (integer height rounding), transparent padding. No painting, masks or replacement pixels."
+  }
+]

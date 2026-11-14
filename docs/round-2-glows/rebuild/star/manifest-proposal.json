@@ -1,0 +1,36 @@
+{
+  "tiles": {
+    "power:star": {
+      "glow": "star/power-glow.png",
+      "glowPeriod": 5.8
+    },
+    "move:star": {
+      "glow": "star/move-glow.png",
+      "glowPeriod": 6.5
+    },
+    "food:star": {
+      "glow": "star/food-glow.png",
+      "glowPeriod": 6.8
+    },
+    "water:star": {
+      "glow": "star/water-glow.png",
+      "glowPeriod": 7.6
+    },
+    "home:star": {
+      "glow": "star/home-glow.png",
+      "glowPeriod": 8.2
+    },
+    "make:star": {
+      "glow": "star/make-glow.png",
+      "glowPeriod": 5.2
+    },
+    "waste:star": {
+      "glow": "star/waste-glow.png",
+      "glowPeriod": 6.2
+    },
+    "wild:star": {
+      "glow": "star/wild-glow.png",
+      "glowPeriod": 8.8
+    }
+  }
+}

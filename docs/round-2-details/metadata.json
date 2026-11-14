@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "date": "2026-11-12",
+  "method": "Built-in image_gen; deterministic Canvas crop/resize only",
+  "sourceRoot": "raw",
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100"
+  },
+  "assets": [
+    {
+      "name": "robot-arm",
+      "raw": "raw/robot-arm.png",
+      "rawSHA256": "aa0d2838de6ec679b84c8a05f8a29130c82f9f7ab73aff02a422f1a147fdbd74",
+      "crop": [
+        208,
+        220,
+        837,
+        975
+      ],
+      "paintSize": [
+        167,
+        195
+      ],
+      "padding": 4,
+      "anchor": [
+        58,
+        191
+      ],
+      "tile": "make:2",
+      "actor": {
+        "sprite": "robot-arm",
+        "at": [
+          630,
+          1157
+        ],
+        "sway": 1.5,
+        "period": 7
+      },
+      "qaCrop": [
+        460,
+        920,
+        360,
+        330
+      ]
+    },
+    {
+      "name": "repair-wheel",
+      "raw": "raw/repair-wheel.png",
+      "rawSHA256": "513453ca7291ed8aa4a23951f11308fe0d3013b59c5349ac6cc8413ab11d0085",
+      "crop": [
+        110,
+        84,
+        1029,
+        1086
+      ],
+      "paintSize": [
+        118,
+        118
+      ],
+      "padding": 4,
+      "anchor": [
+        63,
+        63
+      ],
+      "tile": "make:leaf",
+      "actor": {
+        "sprite": "repair-wheel",
+        "at": [
+          845,
+          1207
+        ],
+        "spin": 0.07
+      },
+      "qaCrop": [
+        610,
+        1070,
+        350,
+        310
+      ]
+    },
+    {
+      "name": "lift-platform",
+      "raw": "raw/lift-platform.png",
+      "rawSHA256": "230e4880964239afc1a46f9260a0716dd0fa4c8f9ece7dd5f937bc151ff1e5bf",
+      "crop": [
+        363,
+        154,
+        1184,
+        509
+      ],
+      "paintSize": [
+        90,
+        39
+      ],
+      "padding": 4,
+      "anchor": [
+        49,
+        24
+      ],
+      "tile": "food:star",
+      "actor": {
+        "sprite": "lift-platform",
+        "at": [
+          750,
+          760
+        ],
+        "bob": 190,
+        "period": 12
+      },
+      "qaCrop": [
+        640,
+        480,
+        230,
+        560
+      ]
+    },
+    {
+      "name": "forge-flame",
+      "raw": "raw/forge-flame.png",
+      "rawSHA256": "3cc714f9cb3ae0c51343e0694647fe232d3268fa4c8b74c16d9021b9ce3c6daa",
+      "crop": [
+        340,
+        324,
+        759,
+        530
+      ],
+      "paintSize": [
+        116,
+        81
+      ],
+      "padding": 4,
+      "anchor": [
+        62,
+        78
+      ],
+      "tile": "make:magic",
+      "actor": {
+        "sprite": "forge-flame",
+        "at": [
+          596,
+          1102
+        ],
+        "pulse": 0.22,
+        "period": 3.6
+      },
+      "qaCrop": [
+        470,
+        960,
+        260,
+        230
+      ]
+    },
+    {
+      "name": "transmutation-orb",
+      "raw": "raw/transmutation-orb.png",
+      "rawSHA256": "900ba45bfcf765c02f212c5475a1ed4f216de8bf90629a252010482e4d49d7a7",
+      "crop": [
+        193,
+        171,
+        862,
+        876
+      ],
+      "paintSize": [
+        156,
+        158
+      ],
+      "padding": 4,
+      "anchor": [
+        82,
+        83
+      ],
+      "tile": "waste:magic",
+      "actor": {
+        "sprite": "transmutation-orb",
+        "at": [
+          522,
+          944
+        ],
+        "spin": 0.025,
+        "bob": 3,
+        "period": 8
+      },
+      "qaCrop": [
+        360,
+        820,
+        330,
+        430
+      ]
+    }
+  ]
+}

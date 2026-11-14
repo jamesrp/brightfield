@@ -1,0 +1,84 @@
+{
+  "tiles": {
+    "power:star": {
+      "glow": "star/power-glow.png",
+      "glowPeriod": 5.8
+    },
+    "move:star": {
+      "glow": "star/move-glow.png",
+      "glowPeriod": 6.5
+    },
+    "food:star": {
+      "glow": "star/food-glow.png",
+      "glowPeriod": 6.8
+    },
+    "water:star": {
+      "glow": "star/water-glow.png",
+      "glowPeriod": 7.6
+    },
+    "home:star": {
+      "glow": "star/home-glow.png",
+      "glowPeriod": 8.2
+    },
+    "make:star": {
+      "glow": "star/make-glow.png",
+      "glowPeriod": 5.2
+    },
+    "waste:star": {
+      "glow": "star/waste-glow.png",
+      "glowPeriod": 6.2
+    },
+    "wild:star": {
+      "glow": "star/wild-glow.png",
+      "glowPeriod": 8.8
+    },
+    "power:magic": {
+      "glow": "magic/power-glow.png",
+      "glowPeriod": 5
+    },
+    "move:magic": {
+      "glow": "magic/move-glow.png",
+      "glowPeriod": 6
+    },
+    "food:magic": {
+      "glow": "magic/food-glow.png",
+      "glowPeriod": 7
+    },
+    "water:magic": {
+      "glow": "magic/water-glow.png",
+      "glowPeriod": 6
+    },
+    "home:magic": {
+      "glow": "magic/home-glow.png",
+      "glowPeriod": 6
+    },
+    "make:magic": {
+      "glow": "magic/make-glow.png",
+      "glowPeriod": 5
+    },
+    "waste:magic": {
+      "glow": "magic/waste-glow.png",
+      "glowPeriod": 7
+    },
+    "wild:magic": {
+      "glow": "magic/wild-glow.png",
+      "glowPeriod": 7
+    },
+    "home:0": {
+      "glow": "0/home-glow.png",
+      "glowPeriod": 7.2
+    },
+    "home:1": {
+      "glow": "1/home-glow.png",
+      "glowPeriod": 8.4
+    },
+    "home:2": {
+      "glow": "2/home-glow.png",
+      "glowPeriod": 9.1
+    },
+    "home:leaf": {
+      "glow": "leaf/home-glow.png",
+      "glowPeriod": 8.8
+    }
+  }
+}

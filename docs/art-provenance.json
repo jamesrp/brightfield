@@ -1144,5 +1144,946 @@
         "process": "docs/magic-static/rebuild.cjs"
       }
     ]
+  },
+  "tile_spec_v2_round_2_actors": {
+    "date": "2026-11-12",
+    "base_commit": "38f6cee23ae608066b91e356e2bb134da3f9282a",
+    "method": "Built-in imagegen; deterministic crop, scale, source rotation and transparent placement",
+    "generation": {
+      "mechanical": {
+        "version": 1,
+        "date": "2026-11-12",
+        "generator": "built-in image_gen.imagegen; transparent_background=true; supplied actual static tile references",
+        "canvas": "@napi-rs/canvas 0.1.100",
+        "prompts": [
+          {
+            "name": "turbine-rotor",
+            "ref": "2/power.png",
+            "prompt": "Use case: stylized-concept. Asset: one transparent standalone painterly miniature game actor for Brightfield. The supplied base tile is a STYLE, CAMERA, LIGHTING and MATERIAL reference only. Do not reproduce the building, scenery or hex tile. Match its cosy detailed painted 3D miniature style, warm light from upper left, softly shaded textured surfaces, board camera about 40 degree elevation. No text, no logo, no backdrop, no ground, no cast shadow outside the object; actual transparent alpha. Crisp clean silhouette, centred with generous transparent padding. Paint ONLY one detached three-blade modern wind turbine rotor with a compact rounded ivory hub and slender gently tapered cream-white blades, tiny warm brass details at the hub. The hub needs to cover the empty circular socket on the reference tower. Its face is nearly circular and faces the viewer slightly left, matching that visible front socket. The blades are evenly spaced at 120 degrees around the hub, all fully visible, radii identical so it can rotate as a single sprite. Make the centre of the shaft exactly at canvas centre; one blade points straight up. Blade radius about 40% of canvas width. No tower, no stalk, no pedestal, no additional machinery. Square image."
+          },
+          {
+            "name": "mill-waterwheel",
+            "ref": "0/make.png",
+            "prompt": "Use case: stylized-concept. Asset: one transparent standalone painterly miniature game actor for Brightfield. The supplied base tile is a STYLE, CAMERA, LIGHTING and MATERIAL reference only. Do not reproduce the building, scenery or hex tile. Match its cosy detailed painted 3D miniature style, warm light from upper left, softly shaded textured surfaces, board camera about 40 degree elevation. No text, no logo, no backdrop, no ground, no cast shadow outside the object; actual transparent alpha. Crisp clean silhouette, centred with generous transparent padding. Paint ONLY one complete detached wooden mill waterwheel, front-facing almost circular geometry suitable for rotating the whole sprite around its exact centre. Warm aged oak, iron bands and bolts, twelve evenly spaced paddle buckets around the circumference, eight sturdy spokes, small iron axle cap at the exact centre. Very shallow dimensional thickness visible on upper/right rim, subtle water-worn wood, no water splashes. It will mount to the mill's left masonry wall. No support stand, no pipe, no channel, no attached building, no ground. Equal visual radius in every direction with the axle hub exactly at the centre of the square canvas. Keep the wheel within central 80% of image."
+          },
+          {
+            "name": "tractor",
+            "ref": "0/food.png",
+            "prompt": "Use case: stylized-concept. Asset: one transparent standalone painterly miniature game actor for Brightfield. The supplied base tile is a STYLE, CAMERA, LIGHTING and MATERIAL reference only. Do not reproduce the building, scenery or hex tile. Match its cosy detailed painted 3D miniature style, warm light from upper left, softly shaded textured surfaces, board camera about 40 degree elevation. No text, no logo, no backdrop, no ground, no cast shadow outside the object; actual transparent alpha. Crisp clean silhouette, centred with generous transparent padding. Paint ONLY one charming small vintage farm tractor facing RIGHT and very slightly away from viewer, so its length follows a shallow line rising toward screen right (roughly 15 degrees). Rounded muted forest-green engine hood, warm red-brown wheel hubs, large rear black rubber wheels at screen left and smaller front wheels at screen right, small open saddle and steering wheel, short iron exhaust. No driver. Three-quarter isometric view about 40-degree elevation, visible top and front side, match the scale and rich painted texture of the farm tools. Entire tractor fully visible isolated on transparency, with its tyres forming the bottom ground point. No trailer, no crops, no slab, no scenery."
+          },
+          {
+            "name": "coal-wagon",
+            "ref": "0/power.png",
+            "prompt": "Use case: stylized-concept. Asset: one transparent standalone painterly miniature game actor for Brightfield. The supplied base tile is a STYLE, CAMERA, LIGHTING and MATERIAL reference only. Do not reproduce the building, scenery or hex tile. Match its cosy detailed painted 3D miniature style, warm light from upper left, softly shaded textured surfaces, board camera about 40 degree elevation. No text, no logo, no backdrop, no ground, no cast shadow outside the object; actual transparent alpha. Crisp clean silhouette, centred with generous transparent padding. Paint ONLY one small four-wheel Victorian coal mine wagon loaded with a modest mound of black coal chunks, warm oak hopper with dark iron rims and straps, small flanged iron rail wheels, a short coupler on right. Wagon faces RIGHT along a shallow railway line that rises toward screen right at about 20 degrees, exactly matching the rails in the reference. Board camera 40-degree elevation, visible interior coal and near side planks. Its long axis is parallel to the two rails pictured in the supplied base. Fully isolated on transparency, wheel contact points visible. No track, no base, no ground shadow, no building, no writing."
+          }
+        ],
+        "normalization": "normalization.json",
+        "rebuild": "rebuild.cjs",
+        "proposal": "proposal.json",
+        "raw": [
+          {
+            "source": "turbine-rotor-raw.png",
+            "sha256": "2ae6a174faa1d22120f7a28997f5ab71eac8a9b2a76052478386f63a243731dc"
+          },
+          {
+            "source": "mill-waterwheel-raw.png",
+            "sha256": "427100331f3e37e24dcf2f21590d4fb5e616571c76aab6e45bc708c75edec06f"
+          },
+          {
+            "source": "mill-wheel-mount-raw.png",
+            "sha256": "e4c4407adbe3b8e60618ef0b65ecab8455339b9e91bb1268b962d41ef9365537"
+          },
+          {
+            "source": "tractor-raw.png",
+            "sha256": "4c2de1a332465f9b42def70245515503971bbe337e19616dae093e280cb4ae0e"
+          },
+          {
+            "source": "coal-wagon-raw.png",
+            "sha256": "b4e85712961b135266f78140d20f42efce6da2e2fb7b6d416d00c6b95d8f95d9"
+          }
+        ],
+        "finals": [
+          {
+            "name": "turbine-rotor",
+            "src": "actors/turbine-rotor.png",
+            "sha256": "d71f516353cd782c3054de80a2953f07ca8879d00c54e65ce7c3196d86d8d179",
+            "dimensions": [
+              520,
+              520
+            ],
+            "anchor": [
+              260,
+              260
+            ],
+            "source": "turbine-rotor-raw.png",
+            "sourcePivot": [
+              600,
+              666
+            ],
+            "scale": 0.4,
+            "rotation": 0
+          },
+          {
+            "name": "turbine-rotor-small",
+            "src": "actors/turbine-rotor-small.png",
+            "sha256": "45055deec5abbe8086e32cfccb1fad90886c2058ed22e1099845076b89d40972",
+            "dimensions": [
+              336,
+              336
+            ],
+            "anchor": [
+              168,
+              168
+            ],
+            "source": "turbine-rotor-raw.png",
+            "sourcePivot": [
+              600,
+              666
+            ],
+            "scale": 0.25,
+            "rotation": 0
+          },
+          {
+            "name": "mill-waterwheel",
+            "src": "actors/mill-waterwheel.png",
+            "sha256": "58da66b49921a29c8144c7e72b00e56dadc3c0b95c85a62d0d684743059fd269",
+            "dimensions": [
+              256,
+              256
+            ],
+            "anchor": [
+              128,
+              128
+            ],
+            "source": "mill-waterwheel-raw.png",
+            "sourcePivot": [
+              625,
+              646
+            ],
+            "scale": 0.2,
+            "rotation": 0
+          },
+          {
+            "name": "mill-wheel-mount",
+            "src": "actors/mill-wheel-mount.png",
+            "sha256": "b84052c1fea6d6b198d3e05cfdaa8fe5ef9bc8e4db32500bce68915e8e5821d9",
+            "dimensions": [
+              248,
+              240
+            ],
+            "anchor": [
+              120,
+              62
+            ],
+            "source": "mill-wheel-mount-raw.png",
+            "sourcePivot": [
+              644,
+              432
+            ],
+            "scale": 0.2,
+            "rotation": 0
+          },
+          {
+            "name": "tractor",
+            "src": "actors/tractor.png",
+            "sha256": "f4022e598632ded90f86e1d1aadb8c445bdb6ce8ce7fb10d7c306fb7f78b80a8",
+            "dimensions": [
+              200,
+              152
+            ],
+            "anchor": [
+              96,
+              135
+            ],
+            "source": "tractor-raw.png",
+            "sourcePivot": [
+              745,
+              914
+            ],
+            "scale": 0.15,
+            "rotation": 0
+          },
+          {
+            "name": "coal-wagon",
+            "src": "actors/coal-wagon.png",
+            "sha256": "c74b4c9bcf19df730b6d2076f3b9c52ae68ef0ddea151748402e86c2d9e06a31",
+            "dimensions": [
+              304,
+              240
+            ],
+            "anchor": [
+              152,
+              200
+            ],
+            "source": "coal-wagon-raw.png",
+            "sourcePivot": [
+              800,
+              850
+            ],
+            "scale": 0.24,
+            "rotation": -0.1065
+          }
+        ],
+        "validation": "motion-check.json",
+        "notes": [
+          "Static bases unchanged.",
+          "Both bare turbine hubs have attached rotors.",
+          "Rotor swept discs are separate: 393 px summed radius versus 414.6 px centre distance.",
+          "Mill stationary bearing and water trough render before wheel; base remains intact.",
+          "Coal wagon fixed facing preserves rail alignment while reversing.",
+          "Sixteen visual phases per tile and continuous conservative envelope checks."
+        ],
+        "rebuildValidation": "rebuild-check.json",
+        "mountPrompt": "Use case: compositing. Make ONE transparent standalone stationary backing sprite for the mill waterwheel shown in reference image 1, with image 2 as the exact wheel material/scale guide. The wheel itself rotates separately and MUST NOT appear in this new image. Paint only a compact coherent mill-wheel mounting assembly: a short thick iron axle and its small aged oak bearing box at upper centre-right, attached to a small stone-and-oak upright bracket that reaches the adjacent brick masonry; below it a shallow broad rustic wooden water trough with a little clear muted blue-green flowing water. The trough is under the unseen wheel, not behind its hub, and its top opening is large enough to catch the wheel's bottom paddles. The axle end at the upper centre is the rotation centre of the absent wheel; from axle to trough bottom should be approximately 65 percent of trough width. Trough width approximately 25 percent of the whole mill's hex width at final scale, like the wheel diameter in reference 1. The axle and trough form one assembly, with sparse woodwork at the right edge so the central circular wheel area remains transparent. Camera and lighting exactly match the 40-degree elevation cosy painted miniature reference, warm upper-left light, warm aged oak and soft grey iron. It will fit in the left front yard beside the building, so keep it narrow and don't add grass or the building. Isolated on actual transparent background, no wheel, no ground or slab, no full masonry wall, no ambient halo or external cast shadow, no text, no logos. Square image, ample transparent margin. Preserve transparent holes behind the future wheel.\n"
+      },
+      "earthTravellers": {
+        "schema": 1,
+        "tool": "built-in image_gen.imagegen",
+        "generatedAt": "2026-11-12",
+        "coordinateSpace": "tile pixels",
+        "sources": [
+          {
+            "name": "horse-cart",
+            "raw": "horse-cart-raw-v1.png",
+            "prompt": "Use case: stylized-concept. Asset type: one production game actor sprite on genuine transparent background. Paint a single gentle chestnut horse pulling a compact two-wheel timber cart with a little golden hay. Horse at the RIGHT, cart at the LEFT, travelling RIGHT. Full entire rig with clean readable silhouette, no driver. Cosy richly hand-painted isometric town miniature, soft detailed painterly texture, warm honey-coloured wood, gentle brown horse, small dark iron-rimmed wooden wheels, restrained cream highlights. Camera at 40 degrees elevation with a three-quarter view, enough top surfaces visible to sit on an isometric ground plane, long axis almost horizontal, horse nose points screen-right and slightly upward. Warm upper-left light, soft lower-right shading. Must match a charming timber stable with olive-green tiled roof and warm ochre dirt road. Compact calm resting/walking pose, no dramatic action. Entire rig will be downscaled to about 176 pixels long, therefore strong leg/wheel silhouettes and simple details. Isolated actor only, tightly grouped, comfortable transparent margin on all sides. No land, no hex tile, no building, no background, no horizon, no frame, no text, no logo, no detached shadow, no extra props. Actual transparent RGBA, not a checkerboard drawing. One horse, one cart, facing right.",
+            "bodyWidth": 176,
+            "anchorSource": [
+              880,
+              836
+            ],
+            "rawSha256": "bd5a47ff904176d48a041f5e41232065af5990bceb7a42f94de480e63b0d55ec"
+          },
+          {
+            "name": "motor-car",
+            "raw": "motor-car-raw-v1.png",
+            "prompt": "Use case: stylized-concept. Asset type: one production game actor sprite, genuinely transparent background. Paint a compact early-midcentury motor car, about 1940s–1950s, a small rounded sage-green two-door saloon with cream roof, warm chrome bumper, round headlights, small dark rubber wheels. The FRONT and headlights are at the RIGHT, the rear at the LEFT, travelling RIGHT. Isometric three-quarter view at 40 degrees elevation: see roof, front/right nose and near side, long axis goes almost horizontally screen-right with a subtle up-right angle. Cosy richly hand-painted town miniature, softly textured brushwork, gentle rounded forms, warm upper-left sunlight, darker lower-right shading, restrained rich soft colours. Must suit a warm brick and terracotta-roof village motor garage with cobbled driveway. Entire car will be downscaled to about 156 pixels long, so a clean instantly readable silhouette and simple highlights. One car only, no people. Isolated on full genuine transparency with comfortable clear margin around all parts. No land, no building, no hex tile, no ground patch, no background, no detached shadow, no frame, no text, no badges, no logos, no checkerboard drawing. Facing right.",
+            "bodyWidth": 156,
+            "anchorSource": [
+              650,
+              878
+            ],
+            "rawSha256": "05fa120899e5954e0ff405f72068288dee35b495b305fc7b521266a6cc0300ea"
+          },
+          {
+            "name": "electric-car",
+            "raw": "electric-car-raw-v2.png",
+            "initialRaw": "electric-car-raw-v1.png",
+            "initialPrompt": "Use case: stylized-concept. Asset type: one production game actor sprite on a genuine transparent background. Paint one compact modern electric hatchback, soft ivory-white body with a sage/teal lower trim, simple warm dark-blue windows, small graphite wheels, clean closed front grille, modest warm headlight marks. FRONT at the RIGHT, rear at the LEFT, travelling RIGHT. Isometric three-quarter view at 40 degrees elevation, visible roof, near side and front, its long axis almost horizontal toward screen-right with only a slight up-right angle. Cosy richly hand-painted village miniature, gentle rounded forms, subtle brush texture, warm upper-left sunlight and shaded lower-right surfaces. Same style as a warm terracotta-roof solar charging hub, stone columns and flower beds. Entire car will be downscaled to about 160 pixels long, therefore simple readable silhouette and restrained highlights, not photorealistic product gloss. One car only, no people, no cable. Full object with comfortable transparent margin. Absolutely no painted backdrop or glow haze: every pixel outside the vehicle must be fully alpha-transparent. No ground, no shadow patch, no land, no building, no hex tile, no road, no frame, no text, no badge, no logos. Not a scene. Transparent cutout actor only.",
+            "prompt": "Use case: precise-object-edit. This image is the edit target. Preserve this exact cosy painted ivory and sage compact electric hatchback, its shape, right-facing direction, 40-degree isometric camera, details and warm upper-left lighting. Change ONLY its framing and the clipped very bottom of its front tire: show the entire whole vehicle, completing the round bottom edge of that tire naturally. Reduce the vehicle within the canvas so every part has at least 10% fully transparent clear margin to all four image edges. All car parts, especially BOTH wheels, must be completely visible and not clipped. Remove tiny floating speckles outside the car. Genuine alpha-transparent background only, with no ground, no glow haze, no shadow patch, no scenery, no new objects, no text.",
+            "bodyWidth": 160,
+            "anchorSource": [
+              790,
+              760
+            ],
+            "rawSha256": "ac52c37093c09b67227536324f17107155ad5bfa162f313a87739ed1cb652e4b",
+            "initialRawSha256": "b8c79c25dbbc86695da5f81a58c665ce835b47f7ecb28938c5943e90ba039425"
+          }
+        ],
+        "normalization": [
+          {
+            "name": "horse-cart",
+            "raw": "horse-cart-raw-v1.png",
+            "rawSha256": "bd5a47ff904176d48a041f5e41232065af5990bceb7a42f94de480e63b0d55ec",
+            "rawDimensions": [
+              1774,
+              887
+            ],
+            "crop": [
+              65,
+              5,
+              1626,
+              854
+            ],
+            "draw": [
+              4,
+              4,
+              176,
+              92
+            ],
+            "dimensions": [
+              184,
+              100
+            ],
+            "anchor": [
+              92,
+              94
+            ],
+            "src": "actors/horse-cart.png",
+            "sha256": "6726256702058f0d4ff5b8d61da3f8630111f7a3d7a9ab237de5db4ff8297e1a",
+            "operation": "Only alpha-guided rectangular crop, uniform resize (integer height rounding), transparent padding. No painting, masks or replacement pixels."
+          },
+          {
+            "name": "motor-car",
+            "raw": "motor-car-raw-v1.png",
+            "rawSha256": "05fa120899e5954e0ff405f72068288dee35b495b305fc7b521266a6cc0300ea",
+            "rawDimensions": [
+              1536,
+              1024
+            ],
+            "crop": [
+              97,
+              106,
+              1323,
+              839
+            ],
+            "draw": [
+              4,
+              4,
+              156,
+              99
+            ],
+            "dimensions": [
+              164,
+              107
+            ],
+            "anchor": [
+              69,
+              95
+            ],
+            "src": "actors/motor-car.png",
+            "sha256": "48d0d3ba5799b5aa2c1e4d04a766e9f6df773d8eb9a80075028c7c684633a24a",
+            "operation": "Only alpha-guided rectangular crop, uniform resize (integer height rounding), transparent padding. No painting, masks or replacement pixels."
+          },
+          {
+            "name": "electric-car",
+            "raw": "electric-car-raw-v2.png",
+            "rawSha256": "ac52c37093c09b67227536324f17107155ad5bfa162f313a87739ed1cb652e4b",
+            "rawDimensions": [
+              1774,
+              887
+            ],
+            "crop": [
+              318,
+              119,
+              1120,
+              680
+            ],
+            "draw": [
+              4,
+              4,
+              160,
+              97
+            ],
+            "dimensions": [
+              168,
+              105
+            ],
+            "anchor": [
+              71,
+              95
+            ],
+            "src": "actors/electric-car.png",
+            "sha256": "d8d5273fac33aa90b6c42d737133618ecc685e840ba2b32d623c0de55c975271",
+            "operation": "Only alpha-guided rectangular crop, uniform resize (integer height rounding), transparent padding. No painting, masks or replacement pixels."
+          }
+        ]
+      },
+      "garden": {
+        "generatedWith": "Built-in image_gen.imagegen, transparent_background=true",
+        "references": {
+          "sun-mirror": [
+            "assets/tiles/leaf/power.png"
+          ],
+          "garden-tram": [
+            "assets/tiles/leaf/move.png"
+          ],
+          "garden-tram-fixed": [
+            "garden-tram-raw.png",
+            "assets/tiles/leaf/move.png"
+          ],
+          "garden-bike": [
+            "assets/tiles/leaf/move.png"
+          ]
+        },
+        "promptSource": "prompts.json",
+        "rawFiles": [
+          "sun-mirror-raw.png",
+          "garden-tram-raw.png",
+          "garden-tram-fixed-raw.png",
+          "garden-bike-raw.png"
+        ],
+        "selectedSources": {
+          "sun-mirror": "sun-mirror-raw.png",
+          "garden-tram": "garden-tram-fixed-raw.png",
+          "garden-bike": "garden-bike-raw.png"
+        },
+        "normalization": [
+          {
+            "name": "sun-mirror",
+            "source": "sun-mirror-raw.png",
+            "crop": [
+              266,
+              118,
+              996,
+              781
+            ],
+            "width": 136,
+            "padding": 4,
+            "anchor": [
+              72,
+              57
+            ],
+            "file": "sun-mirror.png",
+            "draw": [
+              4,
+              4,
+              136,
+              107
+            ],
+            "raw": "sun-mirror-raw.png",
+            "rawSha256": "b6002cd77c7c1b98f29b406ed4f50130bea575c427f59ec5d39f05c35f8cc756",
+            "dimensions": [
+              144,
+              115
+            ],
+            "source_sha256": "b6002cd77c7c1b98f29b406ed4f50130bea575c427f59ec5d39f05c35f8cc756",
+            "sha256": "bd9c11641cc19da56276b66d6f1b77765567b66ffd17fdda34413954e70f7ed2",
+            "method": "Crop source rectangle without rotation; uniformly resize with canvas high smoothing; add 4px transparent padding. No pixel recoloring, painted geometry or alpha masking."
+          },
+          {
+            "name": "garden-tram",
+            "source": "garden-tram-fixed-raw.png",
+            "crop": [
+              291,
+              1,
+              949,
+              969
+            ],
+            "width": 180,
+            "padding": 4,
+            "anchor": [
+              116,
+              163
+            ],
+            "file": "garden-tram.png",
+            "draw": [
+              4,
+              4,
+              180,
+              184
+            ],
+            "raw": "garden-tram-fixed-raw.png",
+            "rawSha256": "a4de16c304f0eec923ca9a8b89390dc08072cadb1da805e0917f2137006a24a5",
+            "dimensions": [
+              188,
+              192
+            ],
+            "source_sha256": "a4de16c304f0eec923ca9a8b89390dc08072cadb1da805e0917f2137006a24a5",
+            "sha256": "e234ca164fdda4fe0302f2933a4df33c2a79e71afb816b5b88aa68e1401592d9",
+            "method": "Crop source rectangle without rotation; uniformly resize with canvas high smoothing; add 4px transparent padding. No pixel recoloring, painted geometry or alpha masking."
+          },
+          {
+            "name": "garden-bike",
+            "source": "garden-bike-raw.png",
+            "crop": [
+              312,
+              3,
+              916,
+              1013
+            ],
+            "width": 156,
+            "padding": 4,
+            "anchor": [
+              82,
+              168
+            ],
+            "file": "garden-bike.png",
+            "draw": [
+              4,
+              4,
+              156,
+              173
+            ],
+            "raw": "garden-bike-raw.png",
+            "rawSha256": "8f6fc72d0f095a2dc750876b2f4507d19ba39dfcd1d28d619fcfa17a19cf965b",
+            "dimensions": [
+              164,
+              181
+            ],
+            "source_sha256": "8f6fc72d0f095a2dc750876b2f4507d19ba39dfcd1d28d619fcfa17a19cf965b",
+            "sha256": "2fec1fede81dec1c786411431ff985ad86ac7afa31c77af86429cec971e54d31",
+            "method": "Crop source rectangle without rotation; uniformly resize with canvas high smoothing; add 4px transparent padding. No pixel recoloring, painted geometry or alpha masking."
+          }
+        ],
+        "validation": {
+          "motion": "motion-report.json: passed; all four actors have 131 sampled poses plus continuous conservative envelopes, no crossings.",
+          "rebuild": "All three final PNGs byte-identical to independently rebuilt private copies.",
+          "baseUnchanged": {
+            "assets/tiles/leaf/power.png": "e8e6709a7cbcf60eddcd04700a7003834ebde6e3d61968f859a5b9d87f00e824",
+            "assets/tiles/leaf/move.png": "b1a2e5f03ef329ccd7e8933f1c5319b2d98c02d91a340b06c36b6c794fb0724a"
+          }
+        },
+        "visualQA": {
+          "sweep": "garden-sweep.png; source-composition rows power and move, columns t=0,2.5,5,7.5 seconds",
+          "mirrors": "Three panels visually meet their existing gold U-cradles. Subtle independent 1.3–1.5 degree sways, no spin. Tower silhouette and all plot margins remain clear.",
+          "tram": "Compact green-roof timber tram follows the exposed painted track corridor in a calm 10-second ping-pong cycle. face:none preserves the painted upper-right wheelbase orientation and the tram reverses along the same rails without horizontal mirroring. Neither endpoint reaches the pavilion columns or plot edge. Updated sweep inspected for both travel directions.",
+          "bike": "One right-facing tiny cyclist with a 156px painted target width, 164x181 padded canvas and ground anchor [82,168]. The integrated traveller sheet checks both directions."
+        },
+        "sharedFilesEdited": false,
+        "prompts": {
+          "mirror": "Use case: stylized-concept. Production transparent game ACTOR sprite for Brightfield's Sun Mirror Tower. Reference image is STYLE and attachment context only, do not reproduce any tile, tower, cradle, pedestal, scenery or ground. Paint ONE detached golden sunlight mirror PANEL, a softly oval circular polished warm gold reflective mirror face in a beautifully crafted narrow brass rim with tiny leaf engravings, seen from about 40 degrees elevation. Broad face directed toward camera, width slightly more than height, restrained pale buttery sunlight reflections across the solid reflective face, no reflected scene. Tiny gold horizontal axle nubs at exact mid-left and mid-right, so it can sit BETWEEN the open ends of the empty U-shaped gold cradles shown in the reference. No supporting pole or stand below it. The panel itself only. Cozy richly detailed hand-painted toy-miniature material exactly matching the reference, warm upper-left light, shaded lower-right edge, polished but not photoreal or vector. Center isolated object on fully transparent RGBA background with ample transparent border. Clear silhouette, no glow or cast shadow outside object, no ground, text, logos, labels, grid or checkerboard. Asset will be resized to about 148 pixels wide and pivoted around its center for a very small slow tracking sway.",
+          "tram": "Use case: stylized-concept. Production transparent game vehicle ACTOR sprite for Brightfield's Garden Tram. Reference image is STYLE and scale/camera context only; do not reproduce station, ground or rails. Paint ONE small delightful wooden garden streetcar, a compact single-car tram with honey-colored timber body, three warm glazed windows along the side, brass trim, small dark iron rail wheels, moss-green softly curved planted roof with a few tiny flower accents. Front cabin at the RIGHT end, clearly facing RIGHT and slightly away/upward along an isometric railway going from lower-left toward upper-right. Compact narrow carriage, no trailer, no trolley power pole. Camera at roughly 40 degrees elevation, visible top and long near side, readable at final width about 180 pixels. Match the reference's highly detailed painterly cozy miniature, rich warm timber, green moss, golden fittings, soft warm upper-left daylight. No rider needed. Isolated whole vehicle centered on genuine transparent RGBA background with clear border on all sides. Nothing beneath wheels: no track, platform, slab, ground, drop shadow, external glow, smoke, text, logo, numbers or checkerboard. One complete vehicle only.",
+          "bike": "Use case: stylized-concept. Production transparent garden bicycle TRAVELLER sprite for Brightfield's Nature-future town lanes. Reference image is STYLE and camera context only; do not reproduce station, ground or railway. Paint ONE tiny friendly cyclist riding one green-and-warm-timber bicycle, facing RIGHT, shown from an elevated 40 degree isometric camera with visible top and near side. Front wheel and handlebars on the RIGHT. A friendly helmeted tiny adult rider in a moss-green jacket and ochre trousers, casual upright riding posture, two small dark tires, fine brass wheel rims, small wicker rear basket with a few garden flowers. Compact clear cohesive silhouette that will read at about 160 pixels long; proportions like a little toy figure beside the reference's bench. Cozy detailed hand-painted miniature, soft rich colours and tactile wood/metal/fabric, warm upper-left daylight. Genuine transparent RGBA background with ample clear border. One bicycle and one rider only. No road, grass, ground, plinth, scene, rails, drop shadow outside subject, text, logos, numbers, labels or checkerboard.",
+          "tramEdit": "Use case: precise-object-edit. Image 1 is the garden tram vehicle edit target. Image 2 is its intended track and style context, do not reproduce the station or ground. Preserve exactly this charming garden tram's honey timber cabin, planted green roof, brass details, compact single car and painterly style. Change ONLY its viewpoint/orientation: the tram must face diagonally toward the UPPER RIGHT of the canvas, away from the viewer, rather than toward the lower right. Its rear end is LOWER LEFT, its front end is UPPER RIGHT. The two near-side wheel contact points form a line rising from left to right, approximately minus 25 degrees slope, to match the exposed rails in image 2. Camera elevation about40 degrees, show roof and long visible flank with rear closer to viewer and driver front further away. Repaint coherent three-dimensional perspective, do not merely rotate the cutout on the image plane. One detached vehicle only on true transparent background, no ground, rails, platform, external shadow, halo, glow, scene, text, labels, borders or checkerboard."
+        }
+      },
+      "futureTravellers": {
+        "round": 2,
+        "date": "2026-11-12",
+        "tool": "built-in image_gen.imagegen",
+        "transparent_background": true,
+        "style_references": [
+          "assets/tiles/star/move.png",
+          "assets/tiles/magic/move.png"
+        ],
+        "reference_method": "Both actual local base tiles were inspected with view_image before generation. Separate brand-new sprite prompts used the visible tile style and descriptive matching; no file edit target.",
+        "assets": [
+          {
+            "name": "maglev-pod",
+            "source": "maglev-pod.raw.png",
+            "destination": "assets/tiles/actors/maglev-pod.png",
+            "prompt": "Use case: stylized-concept.\nAsset type: a single transparent RGBA game actor sprite, the Maglev Pod for Brightfield, a cosy painterly isometric miniature town-builder.\nPrimary request: Paint one tiny elegant passenger maglev pod facing RIGHT, isolated on true transparent background. It belongs on the white pearl, teal-glass and warm gold railway station seen in this conversation. Make the pod compact and charming, like a single short futuristic carriage, no people.\nStyle/medium: richly detailed but soft hand-painted storybook game art, the same refined illustrated miniature style as the reference station, with readable silhouette at a final 166-pixel width. Pearl ivory body, teal glass roof and windows, restrained gold rails and trim; rounded corners, a brighter tapered nose on the right, slightly blunter rear on the left, a small teal hovering undercarriage.\nCamera: 40-degree elevated isometric view, visible top and front-facing long side. Its projected long axis rises gently toward the right, about 18 degrees above horizontal, following the station track that runs from lower-left to upper-right. Not side-on, not top-down.\nLighting: warm upper-left illumination, soft lower-right form shading, match the station's golden highlights and teal glass.\nComposition: only ONE pod, fully in frame with generous transparent margins. No track, platform, ground, tile, building, smoke, wheels, text, letters, logo, frame or cast ground shadow. Preserve genuine alpha transparency. The vehicle itself is continuous opaque painted material, with a very subtle contained teal glow below its skirt, no scattered sparkle particles. It will be cropped and uniformly resized to roughly 166 pixels long.",
+            "raw_dimensions": [
+              1536,
+              1024
+            ],
+            "crop": [
+              138,
+              162,
+              1260,
+              710
+            ],
+            "resize": "Uniform scaling to 166 px crop width, 3 px inset on 172×100 RGBA canvas.",
+            "anchor": [
+              87,
+              82
+            ],
+            "sha256": "dabfc418a23918ec5d0934bacbcf088e1096e5036d6d8feadd54d2836e8c1cad"
+          },
+          {
+            "name": "lantern-wisp",
+            "source": "lantern-wisp.raw.png",
+            "destination": "assets/tiles/actors/lantern-wisp.png",
+            "prompt": "Use case: stylized-concept.\nAsset type: a single transparent RGBA game actor sprite, the Lantern Wisp for Brightfield, a cosy painterly isometric miniature town-builder for children.\nPrimary request: Paint one friendly luminous lantern wisp facing and drifting to the RIGHT, isolated on true transparent background. It belongs to the purple stone and golden lantern Portal Pavilion shown in this conversation. The subject is a small enchanted warm golden lantern borne inside a soft lavender wisp: bright pear-shaped head around the lantern at the right, one gentle curling lavender mist tail tapering left. No face and no limbs. It must read as a magical travelling lantern rather than a flame or a ghost.\nStyle/medium: warm, detailed but soft hand-painted storybook miniature game art matching the Portal Pavilion, clean silhouette and simplified detail for final 140-pixel width. A tiny ornate gold lantern cage with a honey-yellow glow, restrained purple enamel top, lavender/soft violet mist body. Keep the glow contained and graceful, not blazing.\nCamera: elevated isometric view at about 40 degrees, see a little of the lantern roof and two adjacent sides, matching the pavilion.\nLighting: warm upper-left illumination, soft lower-right painted shading, mellow golden emissive light.\nComposition: ONE elongated horizontal wisp, motion toward the right. The mist tail trails left and curls slightly upward. Roughly 1.6 times as wide as tall. Fully visible with generous transparent margins, ready to crop and uniformly resize as a 140-pixel-long sprite. Keep lantern and mist together as one compact silhouette. True alpha transparency with delicate translucent mist edges.\nAvoid: no ground, no shadow, no pathway, no pedestal, no plinth, no portal, no building, no separate particles or sparkle scatter, no characters, no lettering, no text, no logo, no frame, no background. No hard black outline, no flat vector shapes, no photorealism.",
+            "raw_dimensions": [
+              1586,
+              992
+            ],
+            "crop": [
+              139,
+              181,
+              1291,
+              617
+            ],
+            "resize": "Uniform scaling to 140 px crop width, 3 px inset on 146×96 RGBA canvas. Transparent foot space accommodates a floating ground anchor.",
+            "anchor": [
+              112,
+              90
+            ],
+            "sha256": "045c1c10d2f970068ac6e6ea4348484e223e8776a0540263b12ea3cab5f8b1f9"
+          }
+        ],
+        "processing": "Node @napi-rs/canvas performs crop, uniform resize, and transparent-canvas placement only. No procedural painting, no replacement alpha, no static base edits. Crop rectangles contain all pixels with alpha greater than 1 and padding; outlying alpha=1 generation haze is excluded by cropping.",
+        "visual_qa": {
+          "inspected": [
+            "star-composite.png",
+            "magic-composite.png",
+            "star-sweep.png",
+            "magic-sweep.png"
+          ],
+          "result": "Both transparent sprites match the warm upper-left-lit painterly miniatures and fit the actual travel surfaces. The pod remains on the exposed elevated guideway without crossing the station's right column. Wisp lantern floats above the curving path with a contained mist tail; no plot edge, neighbor or lane clipping.",
+          "motion": "check-motion.cjs check(proposal): passed. Pod 131 samples, wisp 216 samples, zero out-of-region painted pixels.",
+          "caveat": "Use pod face:'none' on its on-tile motion to keep the projected body angle aligned to the diagonal track during its gentle bidirectional glide. Inter-tile travellers retain standard renderer flips."
+        }
+      }
+    },
+    "finals": [
+      {
+        "name": "turbine-rotor",
+        "file": "assets/tiles/actors/turbine-rotor.png",
+        "anchor": [
+          260,
+          260
+        ],
+        "sha256": "d71f516353cd782c3054de80a2953f07ca8879d00c54e65ce7c3196d86d8d179"
+      },
+      {
+        "name": "turbine-rotor-small",
+        "file": "assets/tiles/actors/turbine-rotor-small.png",
+        "anchor": [
+          168,
+          168
+        ],
+        "sha256": "45055deec5abbe8086e32cfccb1fad90886c2058ed22e1099845076b89d40972"
+      },
+      {
+        "name": "mill-waterwheel",
+        "file": "assets/tiles/actors/mill-waterwheel.png",
+        "anchor": [
+          128,
+          128
+        ],
+        "sha256": "58da66b49921a29c8144c7e72b00e56dadc3c0b95c85a62d0d684743059fd269"
+      },
+      {
+        "name": "mill-wheel-mount",
+        "file": "assets/tiles/actors/mill-wheel-mount.png",
+        "anchor": [
+          120,
+          62
+        ],
+        "sha256": "b84052c1fea6d6b198d3e05cfdaa8fe5ef9bc8e4db32500bce68915e8e5821d9"
+      },
+      {
+        "name": "tractor",
+        "file": "assets/tiles/actors/tractor.png",
+        "anchor": [
+          96,
+          135
+        ],
+        "sha256": "f4022e598632ded90f86e1d1aadb8c445bdb6ce8ce7fb10d7c306fb7f78b80a8"
+      },
+      {
+        "name": "coal-wagon",
+        "file": "assets/tiles/actors/coal-wagon.png",
+        "anchor": [
+          152,
+          200
+        ],
+        "sha256": "c74b4c9bcf19df730b6d2076f3b9c52ae68ef0ddea151748402e86c2d9e06a31"
+      },
+      {
+        "name": "horse-cart",
+        "file": "assets/tiles/actors/horse-cart.png",
+        "anchor": [
+          92,
+          94
+        ],
+        "sha256": "6726256702058f0d4ff5b8d61da3f8630111f7a3d7a9ab237de5db4ff8297e1a"
+      },
+      {
+        "name": "motor-car",
+        "file": "assets/tiles/actors/motor-car.png",
+        "anchor": [
+          69,
+          95
+        ],
+        "sha256": "48d0d3ba5799b5aa2c1e4d04a766e9f6df773d8eb9a80075028c7c684633a24a"
+      },
+      {
+        "name": "electric-car",
+        "file": "assets/tiles/actors/electric-car.png",
+        "anchor": [
+          71,
+          95
+        ],
+        "sha256": "d8d5273fac33aa90b6c42d737133618ecc685e840ba2b32d623c0de55c975271"
+      },
+      {
+        "name": "sun-mirror",
+        "file": "assets/tiles/actors/sun-mirror.png",
+        "anchor": [
+          72,
+          57
+        ],
+        "sha256": "bd9c11641cc19da56276b66d6f1b77765567b66ffd17fdda34413954e70f7ed2"
+      },
+      {
+        "name": "garden-tram",
+        "file": "assets/tiles/actors/garden-tram.png",
+        "anchor": [
+          116,
+          163
+        ],
+        "sha256": "e234ca164fdda4fe0302f2933a4df33c2a79e71afb816b5b88aa68e1401592d9"
+      },
+      {
+        "name": "garden-bike",
+        "file": "assets/tiles/actors/garden-bike.png",
+        "anchor": [
+          82,
+          168
+        ],
+        "sha256": "2fec1fede81dec1c786411431ff985ad86ac7afa31c77af86429cec971e54d31"
+      },
+      {
+        "name": "maglev-pod",
+        "file": "assets/tiles/actors/maglev-pod.png",
+        "anchor": [
+          87,
+          82
+        ],
+        "sha256": "dabfc418a23918ec5d0934bacbcf088e1096e5036d6d8feadd54d2836e8c1cad"
+      },
+      {
+        "name": "lantern-wisp",
+        "file": "assets/tiles/actors/lantern-wisp.png",
+        "anchor": [
+          112,
+          90
+        ],
+        "sha256": "045c1c10d2f970068ac6e6ea4348484e223e8776a0540263b12ea3cab5f8b1f9"
+      }
+    ],
+    "manifest": "docs/round-2-actors/manifest-additions.json",
+    "source_archive": "docs/round-2-actors/source-archive.json",
+    "review": "docs/round-2-actors/README.md"
+  },
+  "tile_spec_v2_round_2_details": {
+    "date": "2026-11-12",
+    "base_commit": "38f6cee23ae608066b91e356e2bb134da3f9282a",
+    "method": "Built-in imagegen; deterministic source crop and resize",
+    "prompts": {
+      "robot-arm": "Use case: stylized-concept. Create a separate transparent actor sprite of the missing robot arm for the pictured Brightfield modern factory miniature. Reference image is style, camera, materials, light, and installation context only; do not output the factory or the existing large pedestal. Subject: one compact friendly industrial robot arm, muted sage-green painted metal panels, brushed steel round joints, two articulated links bent in a clear inverted elbow shape, tiny simple two-finger gripper reaching slightly right. A short circular attachment at its base sits directly on the large empty round pedestal already in the reference. No pedestal, floor, ground shadow, scenery, text or UI. Match the reference's warm highly detailed painterly toy-miniature 3D look, soft upper-left light and 40-degree elevated isometric view. Show its metal top surfaces in that camera. Entire robot silhouette isolated on genuine transparent alpha with generous empty padding; no checkerboard painted. It will be downscaled to roughly 150 pixels wide by 185 tall in the tile, so keep readable chunky parts and restrained fine details. Keep the gripper safely within its compact silhouette. Only the one missing movable robot arm.",
+      "repair-wheel": "Use case: stylized-concept. Create a separate transparent actor sprite of one bicycle wheel for the pictured Brightfield Nature Repair Guild miniature. Reference image is style, camera, materials and fitting context only; do not output the cottage, bicycle frame or stand. Subject: exactly one complete classic bicycle wheel, soft dark charcoal rubber tire, warm silvery thin rim, evenly spaced thin silver spokes and a tiny brass central hub, similar to a charming refurbished garden bicycle. The wheel is upright; clear near-circular face with a very slight three-quarter view, almost face-on to allow the sprite to spin naturally around its exact centre. No axle extending out, no frame, fork, pedestal, stand, ground shadow or props. Match reference's warm detailed painterly toy-miniature look and light from upper left, soft surfaces, no sharp vector outlines. Transparent holes between spokes, genuine alpha all around with generous padding. It will be about 118 pixels in diameter at tile scale, so spokes must remain visible but delicate. Only one missing front wheel for the wheel-free bicycle frame; no more than one wheel.",
+      "lift-platform": "Use case: stylized-concept. Create a separate transparent actor sprite of the missing small cargo lift platform for the pictured Brightfield futuristic vertical food-stack miniature. Reference image is style, camera, materials and the existing right-hand narrow empty lift shaft only. Do not output the building, shaft, rails or structural supports. Subject: one shallow elegant rectangular pearl-white and warm gold cargo lift platform, shown in the same 40-degree elevated isometric view, its long front edge gently slopes down-right, with a tiny teal light strip inset into its front fascia. Small gold edge lip, no railings, no upright frame and no crops or cargo. It should fit inside the pictured narrow shaft, about 88 pixels wide by 35 pixels high at native tile scale. A clear visible pale top plane and a shallow cream-gold front edge, cosy detailed softly painterly toy-miniature materials, soft upper-left light. Isolate this single platform on genuine transparent alpha with generous padding, no ground shadow, no text, no logo, no other objects.",
+      "forge-flame": "Use case: stylized-concept. Create a separate transparent actor sprite of the missing forge fire for the pictured Brightfield magic workshop miniature. Reference image is style, light, camera and placement context only; do not output any building, fireplace, bricks, hearth or floor. Subject: a small low cluster of warm golden magical flames with amber-orange edges and buttery yellow-white centre, softly painted tongues of fire rising from a compact glowing ember core. The fire will fit completely within the empty brick forge aperture in the reference at about 115 pixels wide by 85 pixels high, so keep it compact, not tall. No smoke, no flying sparks outside its silhouette, no logs, no new supports or structures. Match the cosy richly colored painterly miniatures, not photoreal fire and not flat vector art. Gentle localized orange light within the sprite itself; preserve actual transparent alpha outside the fire, including soft translucent edge glow. Entire single flame cluster isolated with generous empty padding; no checkerboard painted, text or UI.",
+      "transmutation-orb": "Use case: stylized-concept. Create a separate transparent actor sprite of the missing floating transmutation orb for the pictured Brightfield magical recycling miniature. Reference image is style, lighting and placement context only; do not output its existing golden three-pronged cradle, stand, scenery, or plot. Subject: one round luminous violet-and-lilac glass magical orb with softly swirling pale lavender light inside, tiny warm gold glints and a few subtle curving translucent internal bands. A complete clean circular silhouette, rich purple shaded lower right and soft upper-left pearly highlight. No external rings, spikes, rays, starbursts, particles, supports or shadow. Keep internal glints restrained so this little orb can slowly rotate and gently bob in the existing golden cradle. It will be about 150 pixels in diameter at native tile scale. Match the cosy detailed painterly toy-miniature look of the image, gently luminous and dimensional, not realistic gemstone photography or flat vector. Genuine transparent alpha with generous padding and only a very close soft halo around the sphere. Only the orb, no duplicate stand."
+    },
+    "metadata": {
+      "version": 1,
+      "date": "2026-11-12",
+      "method": "Built-in image_gen; deterministic Canvas crop/resize only",
+      "sourceRoot": "raw",
+      "dependencies": {
+        "@napi-rs/canvas": "0.1.100"
+      },
+      "assets": [
+        {
+          "name": "robot-arm",
+          "raw": "raw/robot-arm.png",
+          "rawSHA256": "aa0d2838de6ec679b84c8a05f8a29130c82f9f7ab73aff02a422f1a147fdbd74",
+          "crop": [
+            208,
+            220,
+            837,
+            975
+          ],
+          "paintSize": [
+            167,
+            195
+          ],
+          "padding": 4,
+          "anchor": [
+            58,
+            191
+          ],
+          "tile": "make:2",
+          "actor": {
+            "sprite": "robot-arm",
+            "at": [
+              630,
+              1157
+            ],
+            "sway": 1.5,
+            "period": 7
+          },
+          "qaCrop": [
+            460,
+            920,
+            360,
+            330
+          ]
+        },
+        {
+          "name": "repair-wheel",
+          "raw": "raw/repair-wheel.png",
+          "rawSHA256": "513453ca7291ed8aa4a23951f11308fe0d3013b59c5349ac6cc8413ab11d0085",
+          "crop": [
+            110,
+            84,
+            1029,
+            1086
+          ],
+          "paintSize": [
+            118,
+            118
+          ],
+          "padding": 4,
+          "anchor": [
+            63,
+            63
+          ],
+          "tile": "make:leaf",
+          "actor": {
+            "sprite": "repair-wheel",
+            "at": [
+              845,
+              1207
+            ],
+            "spin": 0.07
+          },
+          "qaCrop": [
+            610,
+            1070,
+            350,
+            310
+          ]
+        },
+        {
+          "name": "lift-platform",
+          "raw": "raw/lift-platform.png",
+          "rawSHA256": "230e4880964239afc1a46f9260a0716dd0fa4c8f9ece7dd5f937bc151ff1e5bf",
+          "crop": [
+            363,
+            154,
+            1184,
+            509
+          ],
+          "paintSize": [
+            90,
+            39
+          ],
+          "padding": 4,
+          "anchor": [
+            49,
+            24
+          ],
+          "tile": "food:star",
+          "actor": {
+            "sprite": "lift-platform",
+            "at": [
+              750,
+              760
+            ],
+            "bob": 190,
+            "period": 12
+          },
+          "qaCrop": [
+            640,
+            480,
+            230,
+            560
+          ]
+        },
+        {
+          "name": "forge-flame",
+          "raw": "raw/forge-flame.png",
+          "rawSHA256": "3cc714f9cb3ae0c51343e0694647fe232d3268fa4c8b74c16d9021b9ce3c6daa",
+          "crop": [
+            340,
+            324,
+            759,
+            530
+          ],
+          "paintSize": [
+            116,
+            81
+          ],
+          "padding": 4,
+          "anchor": [
+            62,
+            78
+          ],
+          "tile": "make:magic",
+          "actor": {
+            "sprite": "forge-flame",
+            "at": [
+              596,
+              1102
+            ],
+            "pulse": 0.22,
+            "period": 3.6
+          },
+          "qaCrop": [
+            470,
+            960,
+            260,
+            230
+          ]
+        },
+        {
+          "name": "transmutation-orb",
+          "raw": "raw/transmutation-orb.png",
+          "rawSHA256": "900ba45bfcf765c02f212c5475a1ed4f216de8bf90629a252010482e4d49d7a7",
+          "crop": [
+            193,
+            171,
+            862,
+            876
+          ],
+          "paintSize": [
+            156,
+            158
+          ],
+          "padding": 4,
+          "anchor": [
+            82,
+            83
+          ],
+          "tile": "waste:magic",
+          "actor": {
+            "sprite": "transmutation-orb",
+            "at": [
+              522,
+              944
+            ],
+            "spin": 0.025,
+            "bob": 3,
+            "period": 8
+          },
+          "qaCrop": [
+            360,
+            820,
+            330,
+            430
+          ]
+        }
+      ]
+    },
+    "finals": [
+      {
+        "name": "robot-arm",
+        "width": 175,
+        "height": 203,
+        "sha256": "aa3a008415453406744a439bb982ef7d5ee2fd83db566cb34fa8ddfbc14083bf",
+        "rawSHA256": "aa0d2838de6ec679b84c8a05f8a29130c82f9f7ab73aff02a422f1a147fdbd74"
+      },
+      {
+        "name": "repair-wheel",
+        "width": 126,
+        "height": 126,
+        "sha256": "34933a0ea1a7374493fb4b3ed9bb76a01f50c15111c76e2d431cb317555d27d4",
+        "rawSHA256": "513453ca7291ed8aa4a23951f11308fe0d3013b59c5349ac6cc8413ab11d0085"
+      },
+      {
+        "name": "lift-platform",
+        "width": 98,
+        "height": 47,
+        "sha256": "24ffc1369c1c18a367a6d39b1990fabc3e889c08701a5c1be579c7a4edd07cfc",
+        "rawSHA256": "230e4880964239afc1a46f9260a0716dd0fa4c8f9ece7dd5f937bc151ff1e5bf"
+      },
+      {
+        "name": "forge-flame",
+        "width": 124,
+        "height": 89,
+        "sha256": "a3d28b58228f851702ddcc97a6c8f9f395b7a4e77b15e0a7caf57cef9d47af40",
+        "rawSHA256": "3cc714f9cb3ae0c51343e0694647fe232d3268fa4c8b74c16d9021b9ce3c6daa"
+      },
+      {
+        "name": "transmutation-orb",
+        "width": 164,
+        "height": 166,
+        "sha256": "00b33632ec3ef46b1a5215c82e2b1cc0e808a6cd75c8be47590c93acb52554e4",
+        "rawSHA256": "900ba45bfcf765c02f212c5475a1ed4f216de8bf90629a252010482e4d49d7a7"
+      }
+    ],
+    "review": "docs/round-2-details/README.md",
+    "source_archive": "docs/round-2-details/source-archive.json"
+  },
+  "tile_spec_v2_round_2_glows": {
+    "base_commit": "38f6cee23ae608066b91e356e2bb134da3f9282a",
+    "generator": "Built-in image_gen.imagegen",
+    "generated_date": "2026-11-12",
+    "description": "20 registered emissive overlays: eight Star, eight Magic, four home windows. Existing emitter texture only; no new light sources or painted base changes.",
+    "final_assets": "docs/round-2-glows/final-assets.json",
+    "recipes": "docs/round-2-glows/rebuild.cjs",
+    "full_prompts": [
+      "docs/round-2-glows/rebuild/star/prompts.json",
+      "docs/round-2-glows/rebuild/magic/metadata.json",
+      "docs/round-2-glows/rebuild/homes/prompts.json"
+    ],
+    "review": "docs/round-2-glows/README.md",
+    "source_archive": "docs/round-2-glows/source-archive.json"
   }
 }

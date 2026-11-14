@@ -1,7 +1,7 @@
 // BRIGHTFIELD core rules. Pure, deterministic, seeded. Runs in the browser (window.BF) and Node (require).
 (function (root) {
   'use strict';
-  const VERSION = '0.12.0';
+  const VERSION = '1.0.0';
   const AXES = ['power', 'move', 'food', 'water', 'home', 'make', 'waste', 'wild'];
   // v0.6: adjacency OPINIONS with real-world reasons (the son's wish #2: "why do things go next to each other?").
   // Each rule is directed: tile type `a` (the one who thinks) has an opinion about a neighbouring `b`.

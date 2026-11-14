@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "tool": "built-in image_gen",
+  "operations": "RGBA source compositing only: uniform resize, optional fixed rotation, and transparent canvas crop. No painted substitute pixels.",
+  "sprites": [
+    {
+      "name": "turbine-rotor",
+      "source": "turbine-rotor-raw.png",
+      "width": 520,
+      "height": 520,
+      "anchor": [
+        260,
+        260
+      ],
+      "sourcePivot": [
+        600,
+        666
+      ],
+      "scale": 0.4,
+      "rotation": 0
+    },
+    {
+      "name": "turbine-rotor-small",
+      "source": "turbine-rotor-raw.png",
+      "width": 336,
+      "height": 336,
+      "anchor": [
+        168,
+        168
+      ],
+      "sourcePivot": [
+        600,
+        666
+      ],
+      "scale": 0.25,
+      "rotation": 0
+    },
+    {
+      "name": "mill-waterwheel",
+      "source": "mill-waterwheel-raw.png",
+      "width": 256,
+      "height": 256,
+      "anchor": [
+        128,
+        128
+      ],
+      "sourcePivot": [
+        625,
+        646
+      ],
+      "scale": 0.2,
+      "rotation": 0
+    },
+    {
+      "name": "mill-wheel-mount",
+      "source": "mill-wheel-mount-raw.png",
+      "width": 248,
+      "height": 240,
+      "anchor": [
+        120,
+        62
+      ],
+      "sourcePivot": [
+        644,
+        432
+      ],
+      "scale": 0.2,
+      "rotation": 0
+    },
+    {
+      "name": "tractor",
+      "source": "tractor-raw.png",
+      "width": 200,
+      "height": 152,
+      "anchor": [
+        96,
+        135
+      ],
+      "sourcePivot": [
+        745,
+        914
+      ],
+      "scale": 0.15,
+      "rotation": 0
+    },
+    {
+      "name": "coal-wagon",
+      "source": "coal-wagon-raw.png",
+      "width": 304,
+      "height": 240,
+      "anchor": [
+        152,
+        200
+      ],
+      "sourcePivot": [
+        800,
+        850
+      ],
+      "scale": 0.24,
+      "rotation": -0.1065
+    }
+  ]
+}

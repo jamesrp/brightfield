@@ -1,0 +1,126 @@
+{
+  "count": 20,
+  "ok": true,
+  "results": [
+    {
+      "key": "power:star",
+      "output": "assets/tiles/star/power-glow.png",
+      "sha256": "6ecf05c1747cc35fbce2379cfd56d911c9065f43544103c823ca220de534fe91",
+      "byteIdentical": true
+    },
+    {
+      "key": "move:star",
+      "output": "assets/tiles/star/move-glow.png",
+      "sha256": "ff1f9a75c2337791800818f5c7f5aa17bb6ba38d29fccaaa48883397296cda87",
+      "byteIdentical": true
+    },
+    {
+      "key": "food:star",
+      "output": "assets/tiles/star/food-glow.png",
+      "sha256": "022be614a9e5d215df9a9deeab97e66ec0ce13b6cfaf32bea9dbfa8056ee3b9f",
+      "byteIdentical": true
+    },
+    {
+      "key": "water:star",
+      "output": "assets/tiles/star/water-glow.png",
+      "sha256": "ce5ff575078a3695c4f158e8f7a6126b354a17065c5d0e2c9d1d625544e5fcbb",
+      "byteIdentical": true
+    },
+    {
+      "key": "home:star",
+      "output": "assets/tiles/star/home-glow.png",
+      "sha256": "72b9d3b24d416c28b1c8344ec33c02c0cc6aa932830fca09e7e5ac754209d33a",
+      "byteIdentical": true
+    },
+    {
+      "key": "make:star",
+      "output": "assets/tiles/star/make-glow.png",
+      "sha256": "65e91cafbbe480d36210715d4c282f8f54b611a0d1a99b79ecec037bae0da8b7",
+      "byteIdentical": true
+    },
+    {
+      "key": "waste:star",
+      "output": "assets/tiles/star/waste-glow.png",
+      "sha256": "517f59bcb7d48b4d7d4f3f063c5186a0061e61ee4c3237ccf667c3aa33815f6f",
+      "byteIdentical": true
+    },
+    {
+      "key": "wild:star",
+      "output": "assets/tiles/star/wild-glow.png",
+      "sha256": "19ba94b4cbb9e38ff832c4bbe78d5ce43c5790f7358329462fb547d83cb3876e",
+      "byteIdentical": true
+    },
+    {
+      "key": "power:magic",
+      "output": "assets/tiles/magic/power-glow.png",
+      "sha256": "cbe11f87515ac4ac2646462dc07dcb05849674130bb07a308e47e572aa4b4001",
+      "byteIdentical": true
+    },
+    {
+      "key": "move:magic",
+      "output": "assets/tiles/magic/move-glow.png",
+      "sha256": "30e713770ec995e2d7c7575dc2d6da10c2e2ec1332502ade27f46ede5f4bbc2d",
+      "byteIdentical": true
+    },
+    {
+      "key": "food:magic",
+      "output": "assets/tiles/magic/food-glow.png",
+      "sha256": "ba040e5025d8d6e2234de698531d7f8f1a65456993f3640fd542e25453a7588f",
+      "byteIdentical": true
+    },
+    {
+      "key": "water:magic",
+      "output": "assets/tiles/magic/water-glow.png",
+      "sha256": "63316b4c1f76ac7f82fb7392d3d1c64f4dcd839f8347158f3e68fb224926a0e1",
+      "byteIdentical": true
+    },
+    {
+      "key": "home:magic",
+      "output": "assets/tiles/magic/home-glow.png",
+      "sha256": "bc40fdd04ea20f42a88db855e54169f03a5cb8ef689609ce6f349229ddb7511a",
+      "byteIdentical": true
+    },
+    {
+      "key": "make:magic",
+      "output": "assets/tiles/magic/make-glow.png",
+      "sha256": "fc8b6d4823b483062c8a951761cc77bc8ff7a7ae31204bbe8e52180a453182e5",
+      "byteIdentical": true
+    },
+    {
+      "key": "waste:magic",
+      "output": "assets/tiles/magic/waste-glow.png",
+      "sha256": "d15e33cecadd764148064d50e22b70d7c6b1cb2565bde2e036c975be446dbc90",
+      "byteIdentical": true
+    },
+    {
+      "key": "wild:magic",
+      "output": "assets/tiles/magic/wild-glow.png",
+      "sha256": "18e51c72ab4123e47b19507a1fe897959eca7948ed49e5387f02a03fce348cff",
+      "byteIdentical": true
+    },
+    {
+      "key": "home:0",
+      "output": "assets/tiles/0/home-glow.png",
+      "sha256": "b672024980e53473d2a55892fddc71618cef6689375f702067757ddb95a43e1b",
+      "byteIdentical": true
+    },
+    {
+      "key": "home:1",
+      "output": "assets/tiles/1/home-glow.png",
+      "sha256": "f5b6d03cb267fed116404838b7dab105e21cf39bbd00416d879a3ddd134069e6",
+      "byteIdentical": true
+    },
+    {
+      "key": "home:2",
+      "output": "assets/tiles/2/home-glow.png",
+      "sha256": "d81e6d2dc7585dbdbefcec642a51f8ba6f90e43ed8aa7d0b6323daa652b80226",
+      "byteIdentical": true
+    },
+    {
+      "key": "home:leaf",
+      "output": "assets/tiles/leaf/home-glow.png",
+      "sha256": "aebb307402af5b5467fa9a59e23c3aa37c4931c32617f40e8f7f3f644c613d42",
+      "byteIdentical": true
+    }
+  ]
+}

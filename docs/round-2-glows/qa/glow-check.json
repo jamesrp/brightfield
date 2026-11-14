@@ -1,0 +1,828 @@
+{
+  "ok": true,
+  "fails": [],
+  "entries": [
+    {
+      "key": "home:0",
+      "src": "0/home-glow.png",
+      "period": 7.2,
+      "file": "assets/tiles/0/home-glow.png",
+      "fails": [],
+      "notes": [
+        "7527 emitting px; alpha max 46, mean 31.089; additive channel max 46",
+        "bounds 277,816..699,1170; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 7527,
+        "alphaGt16Pixels": 5641,
+        "emissionPixels": 7527,
+        "bounds": {
+          "minX": 277,
+          "minY": 816,
+          "maxX": 699,
+          "maxY": 1170
+        },
+        "alphaGt16Bounds": {
+          "minX": 279,
+          "minY": 817,
+          "maxX": 696,
+          "maxY": 1169
+        },
+        "maxAlpha": 46,
+        "meanAlpha": 31.089,
+        "alphaSum": 234007,
+        "coverage": 0.0048,
+        "maxAdditiveChannel": 46,
+        "additiveRgbSum": 434073.0353,
+        "meanAdditiveChannel": 19.2229,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "home:1",
+      "src": "1/home-glow.png",
+      "period": 8.4,
+      "file": "assets/tiles/1/home-glow.png",
+      "fails": [],
+      "notes": [
+        "16167 emitting px; alpha max 38, mean 26.9738; additive channel max 38",
+        "bounds 191,755..908,1171; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 16167,
+        "alphaGt16Pixels": 12204,
+        "emissionPixels": 16167,
+        "bounds": {
+          "minX": 191,
+          "minY": 755,
+          "maxX": 908,
+          "maxY": 1171
+        },
+        "alphaGt16Bounds": {
+          "minX": 192,
+          "minY": 756,
+          "maxX": 905,
+          "maxY": 1169
+        },
+        "maxAlpha": 38,
+        "meanAlpha": 26.9738,
+        "alphaSum": 436085,
+        "coverage": 0.0103,
+        "maxAdditiveChannel": 38,
+        "additiveRgbSum": 962532.4078,
+        "meanAdditiveChannel": 19.8456,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "home:2",
+      "src": "2/home-glow.png",
+      "period": 9.1,
+      "file": "assets/tiles/2/home-glow.png",
+      "fails": [],
+      "notes": [
+        "45178 emitting px; alpha max 33, mean 21.7988; additive channel max 33",
+        "bounds 110,619..880,1247; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 45178,
+        "alphaGt16Pixels": 30371,
+        "emissionPixels": 45178,
+        "bounds": {
+          "minX": 110,
+          "minY": 619,
+          "maxX": 880,
+          "maxY": 1247
+        },
+        "alphaGt16Bounds": {
+          "minX": 114,
+          "minY": 620,
+          "maxX": 880,
+          "maxY": 1246
+        },
+        "maxAlpha": 33,
+        "meanAlpha": 21.7988,
+        "alphaSum": 984827,
+        "coverage": 0.0287,
+        "maxAdditiveChannel": 33,
+        "additiveRgbSum": 1999238.4157,
+        "meanAdditiveChannel": 14.7508,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "power:star",
+      "src": "star/power-glow.png",
+      "period": 5.8,
+      "file": "assets/tiles/star/power-glow.png",
+      "fails": [],
+      "notes": [
+        "112456 emitting px; alpha max 74, mean 14.5763; additive channel max 71.9686",
+        "bounds 117,433..907,1250; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 112456,
+        "alphaGt16Pixels": 37631,
+        "emissionPixels": 112456,
+        "bounds": {
+          "minX": 117,
+          "minY": 433,
+          "maxX": 907,
+          "maxY": 1250
+        },
+        "alphaGt16Bounds": {
+          "minX": 143,
+          "minY": 453,
+          "maxX": 881,
+          "maxY": 1236
+        },
+        "maxAlpha": 74,
+        "meanAlpha": 14.5763,
+        "alphaSum": 1639195,
+        "coverage": 0.0715,
+        "maxAdditiveChannel": 71.9686,
+        "additiveRgbSum": 2820232.2863,
+        "meanAdditiveChannel": 8.3595,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "move:star",
+      "src": "star/move-glow.png",
+      "period": 6.5,
+      "file": "assets/tiles/star/move-glow.png",
+      "fails": [],
+      "notes": [
+        "102395 emitting px; alpha max 81, mean 18.4082; additive channel max 81",
+        "bounds 76,341..967,1275; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 102395,
+        "alphaGt16Pixels": 53424,
+        "emissionPixels": 102395,
+        "bounds": {
+          "minX": 76,
+          "minY": 341,
+          "maxX": 967,
+          "maxY": 1275
+        },
+        "alphaGt16Bounds": {
+          "minX": 84,
+          "minY": 345,
+          "maxX": 964,
+          "maxY": 1273
+        },
+        "maxAlpha": 81,
+        "meanAlpha": 18.4082,
+        "alphaSum": 1884907,
+        "coverage": 0.0651,
+        "maxAdditiveChannel": 81,
+        "additiveRgbSum": 3977570.749,
+        "meanAdditiveChannel": 12.9485,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "food:star",
+      "src": "star/food-glow.png",
+      "period": 6.8,
+      "file": "assets/tiles/star/food-glow.png",
+      "fails": [],
+      "notes": [
+        "37973 emitting px; alpha max 70, mean 30.1306; additive channel max 67.1059",
+        "bounds 283,334..830,1085; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 37973,
+        "alphaGt16Pixels": 26840,
+        "emissionPixels": 37973,
+        "bounds": {
+          "minX": 283,
+          "minY": 334,
+          "maxX": 830,
+          "maxY": 1085
+        },
+        "alphaGt16Bounds": {
+          "minX": 289,
+          "minY": 336,
+          "maxX": 828,
+          "maxY": 1082
+        },
+        "maxAlpha": 70,
+        "meanAlpha": 30.1306,
+        "alphaSum": 1144150,
+        "coverage": 0.0241,
+        "maxAdditiveChannel": 67.1059,
+        "additiveRgbSum": 2439521.1373,
+        "meanAdditiveChannel": 21.4145,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "water:star",
+      "src": "star/water-glow.png",
+      "period": 7.6,
+      "file": "assets/tiles/star/water-glow.png",
+      "fails": [],
+      "notes": [
+        "26893 emitting px; alpha max 50, mean 11.3055; additive channel max 49.0196",
+        "bounds 162,375..888,1149; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 26893,
+        "alphaGt16Pixels": 6361,
+        "emissionPixels": 26893,
+        "bounds": {
+          "minX": 162,
+          "minY": 375,
+          "maxX": 888,
+          "maxY": 1149
+        },
+        "alphaGt16Bounds": {
+          "minX": 191,
+          "minY": 386,
+          "maxX": 881,
+          "maxY": 1147
+        },
+        "maxAlpha": 50,
+        "meanAlpha": 11.3055,
+        "alphaSum": 304038,
+        "coverage": 0.0171,
+        "maxAdditiveChannel": 49.0196,
+        "additiveRgbSum": 521015.4902,
+        "meanAdditiveChannel": 6.4579,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "home:star",
+      "src": "star/home-glow.png",
+      "period": 8.2,
+      "file": "assets/tiles/star/home-glow.png",
+      "fails": [],
+      "notes": [
+        "14634 emitting px; alpha max 84, mean 24.0571; additive channel max 84",
+        "bounds 126,464..913,1258; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 14634,
+        "alphaGt16Pixels": 7269,
+        "emissionPixels": 14634,
+        "bounds": {
+          "minX": 126,
+          "minY": 464,
+          "maxX": 913,
+          "maxY": 1258
+        },
+        "alphaGt16Bounds": {
+          "minX": 128,
+          "minY": 609,
+          "maxX": 911,
+          "maxY": 1256
+        },
+        "maxAlpha": 84,
+        "meanAlpha": 24.0571,
+        "alphaSum": 352051,
+        "coverage": 0.0093,
+        "maxAdditiveChannel": 84,
+        "additiveRgbSum": 869069.1686,
+        "meanAdditiveChannel": 19.7957,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "make:star",
+      "src": "star/make-glow.png",
+      "period": 5.2,
+      "file": "assets/tiles/star/make-glow.png",
+      "fails": [],
+      "notes": [
+        "53956 emitting px; alpha max 80, mean 20.7622; additive channel max 79.0588",
+        "bounds 192,489..837,1166; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 53956,
+        "alphaGt16Pixels": 26067,
+        "emissionPixels": 53956,
+        "bounds": {
+          "minX": 192,
+          "minY": 489,
+          "maxX": 837,
+          "maxY": 1166
+        },
+        "alphaGt16Bounds": {
+          "minX": 194,
+          "minY": 495,
+          "maxX": 823,
+          "maxY": 1164
+        },
+        "maxAlpha": 80,
+        "meanAlpha": 20.7622,
+        "alphaSum": 1120247,
+        "coverage": 0.0343,
+        "maxAdditiveChannel": 79.0588,
+        "additiveRgbSum": 2393020.7059,
+        "meanAdditiveChannel": 14.7838,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "waste:star",
+      "src": "star/waste-glow.png",
+      "period": 6.2,
+      "file": "assets/tiles/star/waste-glow.png",
+      "fails": [],
+      "notes": [
+        "55496 emitting px; alpha max 85, mean 17.4407; additive channel max 84",
+        "bounds 289,690..887,1269; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 55496,
+        "alphaGt16Pixels": 30732,
+        "emissionPixels": 55496,
+        "bounds": {
+          "minX": 289,
+          "minY": 690,
+          "maxX": 887,
+          "maxY": 1269
+        },
+        "alphaGt16Bounds": {
+          "minX": 291,
+          "minY": 693,
+          "maxX": 883,
+          "maxY": 1268
+        },
+        "maxAlpha": 85,
+        "meanAlpha": 17.4407,
+        "alphaSum": 967891,
+        "coverage": 0.0353,
+        "maxAdditiveChannel": 84,
+        "additiveRgbSum": 1904813.7412,
+        "meanAdditiveChannel": 11.4411,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "wild:star",
+      "src": "star/wild-glow.png",
+      "period": 8.8,
+      "file": "assets/tiles/star/wild-glow.png",
+      "fails": [],
+      "notes": [
+        "33249 emitting px; alpha max 72, mean 18.2406; additive channel max 68",
+        "bounds 122,587..952,1238; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 33249,
+        "alphaGt16Pixels": 18679,
+        "emissionPixels": 33249,
+        "bounds": {
+          "minX": 122,
+          "minY": 587,
+          "maxX": 952,
+          "maxY": 1238
+        },
+        "alphaGt16Bounds": {
+          "minX": 139,
+          "minY": 589,
+          "maxX": 943,
+          "maxY": 1233
+        },
+        "maxAlpha": 72,
+        "meanAlpha": 18.2406,
+        "alphaSum": 606482,
+        "coverage": 0.0211,
+        "maxAdditiveChannel": 68,
+        "additiveRgbSum": 1197621.8314,
+        "meanAdditiveChannel": 12.0066,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "home:leaf",
+      "src": "leaf/home-glow.png",
+      "period": 8.8,
+      "file": "assets/tiles/leaf/home-glow.png",
+      "fails": [],
+      "notes": [
+        "5626 emitting px; alpha max 80, mean 35.2983; additive channel max 80",
+        "bounds 195,391..826,999; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 5626,
+        "alphaGt16Pixels": 4204,
+        "emissionPixels": 5626,
+        "bounds": {
+          "minX": 195,
+          "minY": 391,
+          "maxX": 826,
+          "maxY": 999
+        },
+        "alphaGt16Bounds": {
+          "minX": 195,
+          "minY": 392,
+          "maxX": 826,
+          "maxY": 998
+        },
+        "maxAlpha": 80,
+        "meanAlpha": 35.2983,
+        "alphaSum": 198588,
+        "coverage": 0.0036,
+        "maxAdditiveChannel": 80,
+        "additiveRgbSum": 423216.3333,
+        "meanAdditiveChannel": 25.075,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "power:magic",
+      "src": "magic/power-glow.png",
+      "period": 5,
+      "file": "assets/tiles/magic/power-glow.png",
+      "fails": [],
+      "notes": [
+        "58158 emitting px; alpha max 60, mean 57.4562; additive channel max 60",
+        "bounds 172,507..859,1237; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 58158,
+        "alphaGt16Pixels": 57038,
+        "emissionPixels": 58158,
+        "bounds": {
+          "minX": 172,
+          "minY": 507,
+          "maxX": 859,
+          "maxY": 1237
+        },
+        "alphaGt16Bounds": {
+          "minX": 172,
+          "minY": 507,
+          "maxX": 858,
+          "maxY": 1237
+        },
+        "maxAlpha": 60,
+        "meanAlpha": 57.4562,
+        "alphaSum": 3341536,
+        "coverage": 0.037,
+        "maxAdditiveChannel": 60,
+        "additiveRgbSum": 6883032.251,
+        "meanAdditiveChannel": 39.4502,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "move:magic",
+      "src": "magic/move-glow.png",
+      "period": 6,
+      "file": "assets/tiles/magic/move-glow.png",
+      "fails": [],
+      "notes": [
+        "85284 emitting px; alpha max 60, mean 53.2035; additive channel max 60",
+        "bounds 148,668..900,1309; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 85284,
+        "alphaGt16Pixels": 84701,
+        "emissionPixels": 85284,
+        "bounds": {
+          "minX": 148,
+          "minY": 668,
+          "maxX": 900,
+          "maxY": 1309
+        },
+        "alphaGt16Bounds": {
+          "minX": 148,
+          "minY": 668,
+          "maxX": 900,
+          "maxY": 1309
+        },
+        "maxAlpha": 60,
+        "meanAlpha": 53.2035,
+        "alphaSum": 4537409,
+        "coverage": 0.0542,
+        "maxAdditiveChannel": 60,
+        "additiveRgbSum": 10118061.3843,
+        "meanAdditiveChannel": 39.5465,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "food:magic",
+      "src": "magic/food-glow.png",
+      "period": 7,
+      "file": "assets/tiles/magic/food-glow.png",
+      "fails": [],
+      "notes": [
+        "64473 emitting px; alpha max 55, mean 48.4896; additive channel max 55",
+        "bounds 110,185..943,1137; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 64473,
+        "alphaGt16Pixels": 62170,
+        "emissionPixels": 64473,
+        "bounds": {
+          "minX": 110,
+          "minY": 185,
+          "maxX": 943,
+          "maxY": 1137
+        },
+        "alphaGt16Bounds": {
+          "minX": 110,
+          "minY": 186,
+          "maxX": 943,
+          "maxY": 1137
+        },
+        "maxAlpha": 55,
+        "meanAlpha": 48.4896,
+        "alphaSum": 3126267,
+        "coverage": 0.041,
+        "maxAdditiveChannel": 55,
+        "additiveRgbSum": 6427887.5412,
+        "meanAdditiveChannel": 33.233,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "water:magic",
+      "src": "magic/water-glow.png",
+      "period": 6,
+      "file": "assets/tiles/magic/water-glow.png",
+      "fails": [],
+      "notes": [
+        "26302 emitting px; alpha max 55, mean 49.9788; additive channel max 55",
+        "bounds 272,484..753,1293; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 26302,
+        "alphaGt16Pixels": 26071,
+        "emissionPixels": 26302,
+        "bounds": {
+          "minX": 272,
+          "minY": 484,
+          "maxX": 753,
+          "maxY": 1293
+        },
+        "alphaGt16Bounds": {
+          "minX": 272,
+          "minY": 484,
+          "maxX": 753,
+          "maxY": 1293
+        },
+        "maxAlpha": 55,
+        "meanAlpha": 49.9788,
+        "alphaSum": 1314543,
+        "coverage": 0.0167,
+        "maxAdditiveChannel": 55,
+        "additiveRgbSum": 2369825.651,
+        "meanAdditiveChannel": 30.0335,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "home:magic",
+      "src": "magic/home-glow.png",
+      "period": 6,
+      "file": "assets/tiles/magic/home-glow.png",
+      "fails": [],
+      "notes": [
+        "25858 emitting px; alpha max 55, mean 53.265; additive channel max 55",
+        "bounds 99,612..977,1262; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 25858,
+        "alphaGt16Pixels": 25535,
+        "emissionPixels": 25858,
+        "bounds": {
+          "minX": 99,
+          "minY": 612,
+          "maxX": 977,
+          "maxY": 1262
+        },
+        "alphaGt16Bounds": {
+          "minX": 99,
+          "minY": 612,
+          "maxX": 977,
+          "maxY": 1262
+        },
+        "maxAlpha": 55,
+        "meanAlpha": 53.265,
+        "alphaSum": 1377326,
+        "coverage": 0.0164,
+        "maxAdditiveChannel": 55,
+        "additiveRgbSum": 2698637.7451,
+        "meanAdditiveChannel": 34.7879,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "make:magic",
+      "src": "magic/make-glow.png",
+      "period": 5,
+      "file": "assets/tiles/magic/make-glow.png",
+      "fails": [],
+      "notes": [
+        "24201 emitting px; alpha max 55, mean 53.2128; additive channel max 55",
+        "bounds 208,622..962,1261; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 24201,
+        "alphaGt16Pixels": 23693,
+        "emissionPixels": 24201,
+        "bounds": {
+          "minX": 208,
+          "minY": 622,
+          "maxX": 962,
+          "maxY": 1261
+        },
+        "alphaGt16Bounds": {
+          "minX": 208,
+          "minY": 622,
+          "maxX": 962,
+          "maxY": 1261
+        },
+        "maxAlpha": 55,
+        "meanAlpha": 53.2128,
+        "alphaSum": 1287802,
+        "coverage": 0.0154,
+        "maxAdditiveChannel": 55,
+        "additiveRgbSum": 2380331.7294,
+        "meanAdditiveChannel": 32.7856,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "waste:magic",
+      "src": "magic/waste-glow.png",
+      "period": 7,
+      "file": "assets/tiles/magic/waste-glow.png",
+      "fails": [],
+      "notes": [
+        "11947 emitting px; alpha max 60, mean 58.8408; additive channel max 60",
+        "bounds 171,1095..979,1347; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 11947,
+        "alphaGt16Pixels": 11820,
+        "emissionPixels": 11947,
+        "bounds": {
+          "minX": 171,
+          "minY": 1095,
+          "maxX": 979,
+          "maxY": 1347
+        },
+        "alphaGt16Bounds": {
+          "minX": 171,
+          "minY": 1096,
+          "maxX": 979,
+          "maxY": 1347
+        },
+        "maxAlpha": 60,
+        "meanAlpha": 58.8408,
+        "alphaSum": 702971,
+        "coverage": 0.0076,
+        "maxAdditiveChannel": 60,
+        "additiveRgbSum": 1542549.0353,
+        "meanAdditiveChannel": 43.0387,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    },
+    {
+      "key": "wild:magic",
+      "src": "magic/wild-glow.png",
+      "period": 7,
+      "file": "assets/tiles/magic/wild-glow.png",
+      "fails": [],
+      "notes": [
+        "19558 emitting px; alpha max 61, mean 58.1014; additive channel max 60",
+        "bounds 142,969..882,1277; 0 out-of-bounds px"
+      ],
+      "metrics": {
+        "width": 1024,
+        "height": 1536,
+        "nontransparentPixels": 19558,
+        "alphaGt16Pixels": 19317,
+        "emissionPixels": 19558,
+        "bounds": {
+          "minX": 142,
+          "minY": 969,
+          "maxX": 882,
+          "maxY": 1277
+        },
+        "alphaGt16Bounds": {
+          "minX": 142,
+          "minY": 969,
+          "maxX": 882,
+          "maxY": 1276
+        },
+        "maxAlpha": 61,
+        "meanAlpha": 58.1014,
+        "alphaSum": 1136348,
+        "coverage": 0.0124,
+        "maxAdditiveChannel": 60,
+        "additiveRgbSum": 2702925.5647,
+        "meanAdditiveChannel": 46.0668,
+        "outsidePixels": 0,
+        "outsideColumns": 0,
+        "aboveHeadroom": 0,
+        "belowFrontEdge": 0
+      }
+    }
+  ],
+  "count": 20,
+  "requiredCount": 20
+}

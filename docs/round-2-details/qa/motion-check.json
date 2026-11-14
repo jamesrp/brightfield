@@ -1,0 +1,130 @@
+{
+  "passed": true,
+  "failures": [],
+  "sprites": {
+    "robot-arm": {
+      "width": 175,
+      "height": 203,
+      "anchor": [
+        58,
+        191
+      ],
+      "paintedPixels": 14038
+    },
+    "repair-wheel": {
+      "width": 126,
+      "height": 126,
+      "anchor": [
+        63,
+        63
+      ],
+      "paintedPixels": 5542
+    },
+    "lift-platform": {
+      "width": 98,
+      "height": 47,
+      "anchor": [
+        49,
+        24
+      ],
+      "paintedPixels": 1985
+    },
+    "forge-flame": {
+      "width": 124,
+      "height": 89,
+      "anchor": [
+        62,
+        78
+      ],
+      "paintedPixels": 4807
+    },
+    "transmutation-orb": {
+      "width": 164,
+      "height": 166,
+      "anchor": [
+        82,
+        83
+      ],
+      "paintedPixels": 17330
+    }
+  },
+  "actors": [
+    {
+      "tile": "make:2",
+      "sprite": "robot-arm",
+      "samples": 131,
+      "duration": 7,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        576.4,
+        972.3,
+        743.2,
+        1162.7
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "food:star",
+      "sprite": "lift-platform",
+      "samples": 131,
+      "duration": 12,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        706.5,
+        551.5,
+        793.5,
+        967.5
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "make:leaf",
+      "sprite": "repair-wheel",
+      "samples": 131,
+      "duration": 14.285714285714285,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        786.9,
+        1148.9,
+        903.1,
+        1265.1
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "make:magic",
+      "sprite": "forge-flame",
+      "samples": 131,
+      "duration": 3.6,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        543.5,
+        1033.5,
+        648.5,
+        1103.5
+      ],
+      "outside": 0,
+      "crossings": []
+    },
+    {
+      "tile": "waste:magic",
+      "sprite": "transmutation-orb",
+      "samples": 233,
+      "duration": 40,
+      "coverage": "continuous conservative envelope",
+      "bounds": [
+        446.6,
+        865.6,
+        597.4,
+        1022.4
+      ],
+      "outside": 0,
+      "crossings": []
+    }
+  ],
+  "glows": [],
+  "travellers": {}
+}

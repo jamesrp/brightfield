@@ -1,0 +1,37 @@
+[
+  {
+    "name": "robot-arm",
+    "width": 175,
+    "height": 203,
+    "sha256": "aa3a008415453406744a439bb982ef7d5ee2fd83db566cb34fa8ddfbc14083bf",
+    "rawSHA256": "aa0d2838de6ec679b84c8a05f8a29130c82f9f7ab73aff02a422f1a147fdbd74"
+  },
+  {
+    "name": "repair-wheel",
+    "width": 126,
+    "height": 126,
+    "sha256": "34933a0ea1a7374493fb4b3ed9bb76a01f50c15111c76e2d431cb317555d27d4",
+    "rawSHA256": "513453ca7291ed8aa4a23951f11308fe0d3013b59c5349ac6cc8413ab11d0085"
+  },
+  {
+    "name": "lift-platform",
+    "width": 98,
+    "height": 47,
+    "sha256": "24ffc1369c1c18a367a6d39b1990fabc3e889c08701a5c1be579c7a4edd07cfc",
+    "rawSHA256": "230e4880964239afc1a46f9260a0716dd0fa4c8f9ece7dd5f937bc151ff1e5bf"
+  },
+  {
+    "name": "forge-flame",
+    "width": 124,
+    "height": 89,
+    "sha256": "a3d28b58228f851702ddcc97a6c8f9f395b7a4e77b15e0a7caf57cef9d47af40",
+    "rawSHA256": "3cc714f9cb3ae0c51343e0694647fe232d3268fa4c8b74c16d9021b9ce3c6daa"
+  },
+  {
+    "name": "transmutation-orb",
+    "width": 164,
+    "height": 166,
+    "sha256": "00b33632ec3ef46b1a5215c82e2b1cc0e808a6cd75c8be47590c93acb52554e4",
+    "rawSHA256": "900ba45bfcf765c02f212c5475a1ed4f216de8bf90629a252010482e4d49d7a7"
+  }
+]

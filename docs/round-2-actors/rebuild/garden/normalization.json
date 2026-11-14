@@ -1,0 +1,98 @@
+[
+  {
+    "name": "sun-mirror",
+    "source": "sun-mirror-raw.png",
+    "crop": [
+      266,
+      118,
+      996,
+      781
+    ],
+    "width": 136,
+    "padding": 4,
+    "anchor": [
+      72,
+      57
+    ],
+    "file": "sun-mirror.png",
+    "draw": [
+      4,
+      4,
+      136,
+      107
+    ],
+    "raw": "sun-mirror-raw.png",
+    "rawSha256": "b6002cd77c7c1b98f29b406ed4f50130bea575c427f59ec5d39f05c35f8cc756",
+    "dimensions": [
+      144,
+      115
+    ],
+    "source_sha256": "b6002cd77c7c1b98f29b406ed4f50130bea575c427f59ec5d39f05c35f8cc756",
+    "sha256": "bd9c11641cc19da56276b66d6f1b77765567b66ffd17fdda34413954e70f7ed2",
+    "method": "Crop source rectangle without rotation; uniformly resize with canvas high smoothing; add 4px transparent padding. No pixel recoloring, painted geometry or alpha masking."
+  },
+  {
+    "name": "garden-tram",
+    "source": "garden-tram-fixed-raw.png",
+    "crop": [
+      291,
+      1,
+      949,
+      969
+    ],
+    "width": 180,
+    "padding": 4,
+    "anchor": [
+      116,
+      163
+    ],
+    "file": "garden-tram.png",
+    "draw": [
+      4,
+      4,
+      180,
+      184
+    ],
+    "raw": "garden-tram-fixed-raw.png",
+    "rawSha256": "a4de16c304f0eec923ca9a8b89390dc08072cadb1da805e0917f2137006a24a5",
+    "dimensions": [
+      188,
+      192
+    ],
+    "source_sha256": "a4de16c304f0eec923ca9a8b89390dc08072cadb1da805e0917f2137006a24a5",
+    "sha256": "e234ca164fdda4fe0302f2933a4df33c2a79e71afb816b5b88aa68e1401592d9",
+    "method": "Crop source rectangle without rotation; uniformly resize with canvas high smoothing; add 4px transparent padding. No pixel recoloring, painted geometry or alpha masking."
+  },
+  {
+    "name": "garden-bike",
+    "source": "garden-bike-raw.png",
+    "crop": [
+      312,
+      3,
+      916,
+      1013
+    ],
+    "width": 156,
+    "padding": 4,
+    "anchor": [
+      82,
+      168
+    ],
+    "file": "garden-bike.png",
+    "draw": [
+      4,
+      4,
+      156,
+      173
+    ],
+    "raw": "garden-bike-raw.png",
+    "rawSha256": "8f6fc72d0f095a2dc750876b2f4507d19ba39dfcd1d28d619fcfa17a19cf965b",
+    "dimensions": [
+      164,
+      181
+    ],
+    "source_sha256": "8f6fc72d0f095a2dc750876b2f4507d19ba39dfcd1d28d619fcfa17a19cf965b",
+    "sha256": "2fec1fede81dec1c786411431ff985ad86ac7afa31c77af86429cec971e54d31",
+    "method": "Crop source rectangle without rotation; uniformly resize with canvas high smoothing; add 4px transparent padding. No pixel recoloring, painted geometry or alpha masking."
+  }
+]

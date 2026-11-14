@@ -1,0 +1,596 @@
+
+> brightfield@0.12.0 test
+> node --test tests/*.test.*
+
+TAP version 13
+# Subtest: all generated atlases load, all 48 buildings render, representative live animations change pixels
+ok 1 - all generated atlases load, all 48 buildings render, representative live animations change pixels
+  ---
+  duration_ms: 293.83025
+  type: 'test'
+  ...
+# Subtest: all 48 legacy atlas illustrations stay within their raised hex footprint
+ok 2 - all 48 legacy atlas illustrations stay within their raised hex footprint
+  ---
+  duration_ms: 374.138292
+  type: 'test'
+  ...
+# Subtest: grounded live overlays animate and default guide/icon framing is unchanged
+ok 3 - grounded live overlays animate and default guide/icon framing is unchanged
+  ---
+  duration_ms: 92.459
+  type: 'test'
+  ...
+# Subtest: generated art and camera render overview and close-up on desktop, tablet and phone
+ok 4 - generated art and camera render overview and close-up on desktop, tablet and phone
+  ---
+  duration_ms: 2353.984792
+  type: 'test'
+  ...
+# Subtest: native hex sprites are never clipped and negative tile time never creates negative ripple radii
+ok 5 - native hex sprites are never clipped and negative tile time never creates negative ripple radii
+  ---
+  duration_ms: 714.753958
+  type: 'test'
+  ...
+# Subtest: all eight Magic miniature overlays animate independently
+ok 6 - all eight Magic miniature overlays animate independently
+  ---
+  duration_ms: 176.244208
+  type: 'test'
+  ...
+# Subtest: Magic has a distinct uplifting score with bounded, finite planner events
+ok 7 - Magic has a distinct uplifting score with bounded, finite planner events
+  ---
+  duration_ms: 2.512542
+  type: 'test'
+  ...
+# Subtest: shared finales weave only selected paths; legacy mixed defaults to Nature/Future
+ok 8 - shared finales weave only selected paths; legacy mixed defaults to Nature/Future
+  ---
+  duration_ms: 1.208125
+  type: 'test'
+  ...
+# Subtest: audio stays silent before interaction and mute controls every voice through master
+ok 9 - audio stays silent before interaction and mute controls every voice through master
+  ---
+  duration_ms: 7.964292
+  type: 'test'
+  ...
+# Subtest: 4096 original town/Nature/Future/shared audio plans match the frozen v0.8 score
+ok 10 - 4096 original town/Nature/Future/shared audio plans match the frozen v0.8 score
+  ---
+  duration_ms: 18.316375
+  type: 'test'
+  ...
+# Subtest: camera clamps 1–3×; anchored zoom and inverse hex picking agree
+ok 11 - camera clamps 1–3×; anchored zoom and inverse hex picking agree
+  ---
+  duration_ms: 7.43025
+  type: 'test'
+  ...
+# Subtest: zoomed mouse drag pans without placing; click still places and inspects
+ok 12 - zoomed mouse drag pans without placing; click still places and inspects
+  ---
+  duration_ms: 6.387959
+  type: 'test'
+  ...
+# Subtest: pinch consumes both fingers without placing, then a fresh touch tap works
+ok 13 - pinch consumes both fingers without placing, then a fresh touch tap works
+  ---
+  duration_ms: 65.523834
+  type: 'test'
+  ...
+# Subtest: cancelled touch drag and pan-only mouse never place
+ok 14 - cancelled touch drag and pan-only mouse never place
+  ---
+  duration_ms: 11.756541
+  type: 'test'
+  ...
+# Subtest: modal, fork, title and finale block zoom; finale resets overview
+ok 15 - modal, fork, title and finale block zoom; finale resets overview
+  ---
+  duration_ms: 31.8545
+  type: 'test'
+  ...
+# Subtest: resize and growth retain bounded zoom; fit restores an accessible town
+ok 16 - resize and growth retain bounded zoom; fit restores an accessible town
+  ---
+  duration_ms: 95.061459
+  type: 'test'
+  ...
+# Subtest: pinch cancels a pending hand drag, and capture release keeps the other finger consumed
+ok 17 - pinch cancels a pending hand drag, and capture release keeps the other finger consumed
+  ---
+  duration_ms: 1.602375
+  type: 'test'
+  ...
+# Subtest: Space preserves focused camera button activation instead of starting a pan
+ok 18 - Space preserves focused camera button activation instead of starting a pan
+  ---
+  duration_ms: 1.089541
+  type: 'test'
+  ...
+# Subtest: held Space remains pan-only across repeated gestures until keyup, blur or reset
+ok 19 - held Space remains pan-only across repeated gestures until keyup, blur or reset
+  ---
+  duration_ms: 2.820709
+  type: 'test'
+  ...
+# Subtest: future bonus is directed, gentle, unmultiplied, and capped once per link
+ok 20 - future bonus is directed, gentle, unmultiplied, and capped once per link
+  ---
+  duration_ms: 1.242541
+  type: 'test'
+  ...
+# Subtest: discoveries require both tracks and add exactly one sun per matching link
+ok 21 - discoveries require both tracks and add exactly one sun per matching link
+  ---
+  duration_ms: 0.589584
+  type: 'test'
+  ...
+# Subtest: every track can reach its future through the tech tree and total progression is 24
+ok 22 - every track can reach its future through the tech tree and total progression is 24
+  ---
+  duration_ms: 2.254209
+  type: 'test'
+  ...
+# Subtest: mixed endings require at least three of each future
+ok 23 - mixed endings require at least three of each future
+  ---
+  duration_ms: 0.37575
+  type: 'test'
+  ...
+# Subtest: last challenge tile allows earned ideas, then ends after spending
+ok 24 - last challenge tile allows earned ideas, then ends after spending
+  ---
+  duration_ms: 0.784542
+  type: 'test'
+  ...
+# Subtest: merging groups crosses 5 and 9, without repeating existing milestones
+ok 25 - merging groups crosses 5 and 9, without repeating existing milestones
+  ---
+  duration_ms: 0.889708
+  type: 'test'
+  ...
+# Subtest: save, reload, replay and one-step undo preserve exact seeded results
+ok 26 - save, reload, replay and one-step undo preserve exact seeded results
+  ---
+  duration_ms: 20.577709
+  type: 'test'
+  ...
+# Subtest: crowned continuation survives save/reload with explicit continuation log
+ok 27 - crowned continuation survives save/reload with explicit continuation log
+  ---
+  duration_ms: 2.023625
+  type: 'test'
+  ...
+# Subtest: legacy action logs still load deterministically
+ok 28 - legacy action logs still load deterministically
+  ---
+  duration_ms: 8.145958
+  type: 'test'
+  ...
+# Subtest: legacy logs with unlogged post-crown play recover continuation
+ok 29 - legacy logs with unlogged post-crown play recover continuation
+  ---
+  duration_ms: 1176.093958
+  type: 'test'
+  ...
+# Subtest: Magic has eight explicit fantasy entries and a distinct three-neighbour bonus
+ok 30 - Magic has eight explicit fantasy entries and a distinct three-neighbour bonus
+  ---
+  duration_ms: 1.134625
+  type: 'test'
+  ...
+# Subtest: all Magic upgrades still cost 24 ideas and do not end at 23
+ok 31 - all Magic upgrades still cost 24 ideas and do not end at 23
+  ---
+  duration_ms: 3.332542
+  type: 'test'
+  ...
+# Subtest: two and three path shared crowns are symmetric, with dominant Magic retained
+ok 32 - two and three path shared crowns are symmetric, with dominant Magic retained
+  ---
+  duration_ms: 0.336791
+  type: 'test'
+  ...
+# Subtest: Magic save, continuation and undo preserve variants and exact state
+ok 33 - Magic save, continuation and undo preserve variants and exact state
+  ---
+  duration_ms: 3.06025
+  type: 'test'
+  ...
+# Subtest: v0.8 schema-2 snapshots retain historic score, choices and RNG
+ok 34 - v0.8 schema-2 snapshots retain historic score, choices and RNG
+  ---
+  duration_ms: 0.48325
+  type: 'test'
+  ...
+# Subtest: each prerequisite blocks only its own step, spends nothing, and opens once met
+ok 35 - each prerequisite blocks only its own step, spends nothing, and opens once met
+  ---
+  duration_ms: 2.826584
+  type: 'test'
+  ...
+# Subtest: every future needs a clear sky, and the step that clears it says so once
+ok 36 - every future needs a clear sky, and the step that clears it says so once
+  ---
+  duration_ms: 0.248167
+  type: 'test'
+  ...
+# Subtest: the sky stays hazy while any kind is smoky, however much nature, and clears exactly at the last upgrade
+ok 37 - the sky stays hazy while any kind is smoky, however much nature, and clears exactly at the last upgrade
+  ---
+  duration_ms: 10.4705
+  type: 'test'
+  ...
+# Subtest: smog dims placement sunbeams, but a placement still earns at least one
+ok 38 - smog dims placement sunbeams, but a placement still earns at least one
+  ---
+  duration_ms: 2.594833
+  type: 'test'
+  ...
+# Subtest: coal and gas give factories a cheap-power heart that clean power does not
+ok 39 - coal and gas give factories a cheap-power heart that clean power does not
+  ---
+  duration_ms: 0.2715
+  type: 'test'
+  ...
+# Subtest: a bucket-and-rope well makes no smoke, and the renamed futures match their cards
+ok 40 - a bucket-and-rope well makes no smoke, and the renamed futures match their cards
+  ---
+  duration_ms: 0.274417
+  type: 'test'
+  ...
+# Subtest: the tree has no loops and every link points at a real step
+ok 41 - the tree has no loops and every link points at a real step
+  ---
+  duration_ms: 14.6615
+  type: 'test'
+  ...
+# Subtest: a v0.9 town saved mid-tree loads, keeps its history and can still finish
+ok 42 - a v0.9 town saved mid-tree loads, keeps its history and can still finish
+  ---
+  duration_ms: 1.486667
+  type: 'test'
+  ...
+# Subtest: greedy play stays short and clears the sky well before the crown
+ok 43 - greedy play stays short and clears the sky well before the crown
+  ---
+  duration_ms: 2437.390791
+  type: 'test'
+  ...
+# Subtest: free play offers all eight types, keeps them after placing, and has nothing to swap
+ok 44 - free play offers all eight types, keeps them after placing, and has nothing to swap
+  ---
+  duration_ms: 2.737709
+  type: 'test'
+  ...
+# Subtest: the daily Challenge still deals three cards from its 80-tile deck and keeps its swaps
+ok 45 - the daily Challenge still deals three cards from its 80-tile deck and keeps its swaps
+  ---
+  duration_ms: 0.299583
+  type: 'test'
+  ...
+# Subtest: a v0.10 free-play town saved with a 3-card hand continues with the full palette and nothing else changes
+ok 46 - a v0.10 free-play town saved with a 3-card hand continues with the full palette and nothing else changes
+  ---
+  duration_ms: 0.791
+  type: 'test'
+  ...
+# Subtest: town demand asks for a mix in free play only, and scales the whole placement
+ok 47 - town demand asks for a mix in free play only, and scales the whole placement
+  ---
+  duration_ms: 0.182333
+  type: 'test'
+  ...
+# Subtest: with every type on offer, a points-maximising player still builds a mixed town
+ok 48 - with every type on offer, a points-maximising player still builds a mixed town
+  ---
+  duration_ms: 602.909417
+  type: 'test'
+  ...
+# Subtest: another future can be learned only after the track reaches its future, for one idea each, once per look
+ok 49 - another future can be learned only after the track reaches its future, for one idea each, once per look
+  ---
+  duration_ms: 1.856708
+  type: 'test'
+  ...
+# Subtest: each building keeps the look it was built in, and the card cycles through known looks
+ok 50 - each building keeps the look it was built in, and the card cycles through known looks
+  ---
+  duration_ms: 1.949834
+  type: 'test'
+  ...
+# Subtest: three touching buildings, one of each future, merge into the one Paragon for that track
+ok 51 - three touching buildings, one of each future, merge into the one Paragon for that track
+  ---
+  duration_ms: 1.720833
+  type: 'test'
+  ...
+# Subtest: two of the same look, or a line instead of a triangle, never merges
+ok 52 - two of the same look, or a line instead of a triangle, never merges
+  ---
+  duration_ms: 0.5185
+  type: 'test'
+  ...
+# Subtest: building next to a Paragon earns double sunbeams, and only next to it
+ok 53 - building next to a Paragon earns double sunbeams, and only next to it
+  ---
+  duration_ms: 0.315042
+  type: 'test'
+  ...
+# Subtest: learning and merging replay, save and undo exactly
+ok 54 - learning and merging replay, save and undo exactly
+  ---
+  duration_ms: 1.169375
+  type: 'test'
+  ...
+# Subtest: a v0.11 save without the new fields still plays, and a town that never learns plays exactly as before
+ok 55 - a v0.11 save without the new fields still plays, and a town that never learns plays exactly as before
+  ---
+  duration_ms: 13.594708
+  type: 'test'
+  ...
+# Subtest: glow checker accepts sparse emission and reports alpha, bounds and additive intensity
+ok 56 - glow checker accepts sparse emission and reports alpha, bounds and additive intensity
+  ---
+  duration_ms: 220.492209
+  type: 'test'
+  ...
+# Subtest: glow checker rejects empty or black emission, wrong dimensions, and nontransparent corners
+ok 57 - glow checker rejects empty or black emission, wrong dimensions, and nontransparent corners
+  ---
+  duration_ms: 487.69625
+  type: 'test'
+  ...
+# Subtest: glow checker applies alpha > 16 and one-pixel tolerance to columns, headroom and front edge
+ok 58 - glow checker applies alpha > 16 and one-pixel tolerance to columns, headroom and front edge
+  ---
+  duration_ms: 290.044458
+  type: 'test'
+  ...
+# Subtest: glow checker returns useful file and malformed-manifest failures without throwing
+ok 59 - glow checker returns useful file and malformed-manifest failures without throwing
+  ---
+  duration_ms: 182.501959
+  type: 'test'
+  ...
+# Subtest: glow periods must be explicit finite positive numeric seconds
+ok 60 - glow periods must be explicit finite positive numeric seconds
+  ---
+  duration_ms: 310.914334
+  type: 'test'
+  ...
+# Subtest: glow checker CLI exits successfully or unsuccessfully with useful JSON and text
+ok 61 - glow checker CLI exits successfully or unsuccessfully with useful JSON and text
+  ---
+  duration_ms: 440.282875
+  type: 'test'
+  ...
+# Subtest: required glow inventory covers all eight Star, all eight Magic and four other homes
+ok 62 - required glow inventory covers all eight Star, all eight Magic and four other homes
+  ---
+  duration_ms: 0.4315
+  type: 'test'
+  ...
+# Subtest: production glow renderer breathes at the actual low and peak and holds full brightness at night
+ok 63 - production glow renderer breathes at the actual low and peak and holds full brightness at night
+  ---
+  duration_ms: 114.380584
+  type: 'test'
+  ...
+# Subtest: review framing matches the complete production tile canvas without squashing or clipping
+ok 64 - review framing matches the complete production tile canvas without squashing or clipping
+  ---
+  duration_ms: 86.369875
+  type: 'test'
+  ...
+# Subtest: all 20 shipped glow layers pass pixel checks and render through the production low/peak/night path
+ok 65 - all 20 shipped glow layers pass pixel checks and render through the production low/peak/night path
+  ---
+  duration_ms: 646.76725
+  type: 'test'
+  ...
+# Subtest: the renderer and the art tools agree on the Paragon canvas
+ok 66 - the renderer and the art tools agree on the Paragon canvas
+  ---
+  duration_ms: 31.627333
+  type: 'test'
+  ...
+# Subtest: each layout puts its three painted plots exactly on the three board hexes, at the tile scale
+ok 67 - each layout puts its three painted plots exactly on the three board hexes, at the tile scale
+  ---
+  duration_ms: 6.11675
+  type: 'test'
+  ...
+# Subtest: Paragon images load only once a Paragon is on the board, and a missing one falls back to the placeholder
+ok 68 - Paragon images load only once a Paragon is on the board, and a missing one falls back to the placeholder
+  ---
+  duration_ms: 475.95225
+  type: 'test'
+  ...
+# Subtest: a spec v2 tile lands exactly on the board hex, animates its actors, and keeps emitters
+ok 69 - a spec v2 tile lands exactly on the board hex, animates its actors, and keeps emitters
+  ---
+  duration_ms: 176.230708
+  type: 'test'
+  ...
+# Subtest: a listed tile whose file is missing, and every unlisted tile, keep the atlas art
+ok 70 - a listed tile whose file is missing, and every unlisted tile, keep the atlas art
+  ---
+  duration_ms: 197.554416
+  type: 'test'
+  ...
+# Subtest: every shipped manifest tile and image loads with a known type and stage
+ok 71 - every shipped manifest tile and image loads with a known type and stage
+  ---
+  duration_ms: 3300.089875
+  type: 'test'
+  ...
+# Subtest: every listed tile reuses its family’s shared side pixels
+ok 72 - every listed tile reuses its family’s shared side pixels
+  ---
+  duration_ms: 715.424667
+  type: 'test'
+  ...
+# Subtest: manifest keys select the matching slab family and reject malformed keys
+ok 73 - manifest keys select the matching slab family and reject malformed keys
+  ---
+  duration_ms: 1.699959
+  type: 'test'
+  ...
+# Subtest: loader status counts shared tile, glow and sprite sources only once
+ok 74 - loader status counts shared tile, glow and sprite sources only once
+  ---
+  duration_ms: 65.069292
+  type: 'test'
+  ...
+# Subtest: tap current building inspects, preserves selection and never places
+ok 75 - tap current building inspects, preserves selection and never places
+  ---
+  duration_ms: 947.237458
+  type: 'test'
+  ...
+# Subtest: upgrades stay optional, connections are readable, all statuses exist
+ok 76 - upgrades stay optional, connections are readable, all statuses exist
+  ---
+  duration_ms: 6.398541
+  type: 'test'
+  ...
+# Subtest: schema-2 save is discoverable and reloads exact state through UI lifecycle
+ok 77 - schema-2 save is discoverable and reloads exact state through UI lifecycle
+  ---
+  duration_ms: 19.129458
+  type: 'test'
+  ...
+# Subtest: finale clears all inspection state and continuing keeps future save
+ok 78 - finale clears all inspection state and continuing keeps future save
+  ---
+  duration_ms: 9.233
+  type: 'test'
+  ...
+# Subtest: row without ideas inspects, press cancel does not upgrade, modal blocks keyboard
+ok 79 - row without ideas inspects, press cancel does not upgrade, modal blocks keyboard
+  ---
+  duration_ms: 1.7435
+  type: 'test'
+  ...
+# Subtest: all responsive canvas sizes render without exceptions
+ok 80 - all responsive canvas sizes render without exceptions
+  ---
+  duration_ms: 2215.21125
+  type: 'test'
+  ...
+# Subtest: real title resume handler restores continued town without replaying the finale
+ok 81 - real title resume handler restores continued town without replaying the finale
+  ---
+  duration_ms: 2.569875
+  type: 'test'
+  ...
+# Subtest: last challenge ideas have a clear goal and no forced inspection card
+ok 82 - last challenge ideas have a clear goal and no forced inspection card
+  ---
+  duration_ms: 2.191584
+  type: 'test'
+  ...
+# Subtest: three distinct choice targets fit mobile, tablet and desktop and keyboard 3 chooses Magic
+ok 83 - three distinct choice targets fit mobile, tablet and desktop and keyboard 3 chooses Magic
+  ---
+  duration_ms: 430.933625
+  type: 'test'
+  ...
+# Subtest: native Magic choice and cancel do not place buildings
+ok 84 - native Magic choice and cancel do not place buildings
+  ---
+  duration_ms: 2.853959
+  type: 'test'
+  ...
+# Subtest: Magic fallback art, guide, future preview and finales render at responsive sizes
+ok 85 - Magic fallback art, guide, future preview and finales render at responsive sizes
+  ---
+  duration_ms: 1758.536833
+  type: 'test'
+  ...
+# Subtest: browser QA storage is isolated while ordinary game keeps its historic save key
+ok 86 - browser QA storage is isolated while ordinary game keeps its historic save key
+  ---
+  duration_ms: 3.030458
+  type: 'test'
+  ...
+# Subtest: tapping a tree-locked row keeps the idea and opens the locked step with its reason
+ok 87 - tapping a tree-locked row keeps the idea and opens the locked step with its reason
+  ---
+  duration_ms: 239.240375
+  type: 'test'
+  ...
+# Subtest: a future locked by smog explains the clear-sky rule and lists the next step it opens
+ok 88 - a future locked by smog explains the clear-sky rule and lists the next step it opens
+  ---
+  duration_ms: 1.650792
+  type: 'test'
+  ...
+# Subtest: the last smoky upgrade celebrates the clear sky and every future row opens
+ok 89 - the last smoky upgrade celebrates the clear sky and every future row opens
+  ---
+  duration_ms: 360.976125
+  type: 'test'
+  ...
+# Subtest: smog shows as lost sunbeams on the preview and after placing, at every size
+ok 90 - smog shows as lost sunbeams on the preview and after placing, at every size
+  ---
+  duration_ms: 915.628375
+  type: 'test'
+  ...
+# Subtest: locked rows, peeks and the hazy sun render without errors at every size
+ok 91 - locked rows, peeks and the hazy sun render without errors at every size
+  ---
+  duration_ms: 478.698209
+  type: 'test'
+  ...
+# Subtest: the free-play palette shows all eight cards on screen, clear of buttons and tech rows
+ok 92 - the free-play palette shows all eight cards on screen, clear of buttons and tech rows
+  ---
+  duration_ms: 801.278125
+  type: 'test'
+  ...
+# Subtest: keys 1 to 8 pick a type, placing keeps it selected, and the Challenge keeps three cards and a swap
+ok 93 - keys 1 to 8 pick a type, placing keeps it selected, and the Challenge keeps three cards and a swap
+  ---
+  duration_ms: 29.922791
+  type: 'test'
+  ...
+# Subtest: tapping a finished track offers the futures you do not have yet, for one idea
+ok 94 - tapping a finished track offers the futures you do not have yet, for one idea
+  ---
+  duration_ms: 190.695834
+  type: 'test'
+  ...
+# Subtest: completing a triangle opens the merge prompt; merging makes the Paragon, shows it and opens its card
+ok 95 - completing a triangle opens the merge prompt; merging makes the Paragon, shows it and opens its card
+  ---
+  duration_ms: 1091.338458
+  type: 'test'
+  ...
+# Subtest: the merge prompt and a Paragon render at every screen size
+ok 96 - the merge prompt and a Paragon render at every screen size
+  ---
+  duration_ms: 1568.712375
+  type: 'test'
+  ...
+# Subtest: keys: Enter merges, Escape waits; the same digit twice switches the look
+ok 97 - keys: Enter merges, Escape waits; the same digit twice switches the look
+  ---
+  duration_ms: 10.935584
+  type: 'test'
+  ...
+1..97
+# tests 97
+# suites 0
+# pass 97
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5136.742125
